@@ -1,0 +1,8 @@
+.btn,
+.btn-buy {
+    &.disabled,
+    &:disabled {
+        color: $gray-600;
+        background-color: $gray-200;
+    }
+}

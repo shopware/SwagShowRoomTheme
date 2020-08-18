@@ -1,0 +1,123 @@
+{
+    "name": "SwagShowroomTheme",
+    "author": "Shopware AG",
+    "views": [
+        "@Storefront",
+        "@Plugins",
+        "@SwagShowroomTheme"
+    ],
+    "style": [
+        "app/storefront/src/scss/overrides.scss",
+        "@Storefront",
+        "app/storefront/src/scss/base.scss"
+    ],
+    "script": [
+        "@Storefront",
+        "app/storefront/dist/storefront/js/swag-showroom-theme.js"
+    ],
+    "asset": [
+        "app/storefront/src/assets"
+    ],
+    "config": {
+        "blocks": {
+            "footer": {
+                "label": {
+                    "en-GB": "Footer / Topbar",
+                    "de-DE": "Footer / Topbar"
+                }
+            }
+        },
+        "fields": {
+            "sw-color-brand-primary": {
+                "value": "#26262f"
+            },
+            "sw-color-brand-secondary": {
+                "value": "#cab898"
+            },
+            "sw-border-color": {
+                "value": "#e4e6ea"
+            },
+            "sw-background-color": {
+                "value": "#f9f9f9"
+            },
+            "sw-color-success": {
+                "value": "#4bc87b"
+            },
+            "sw-color-info": {
+                "value": "#4babbc"
+            },
+            "sw-color-warning": {
+                "value": "#ee994a"
+            },
+            "sw-color-danger": {
+                "value": "#a1090b"
+            },
+            "sw-font-family-base": {
+                "value": "'Work Sans', sans-serif"
+            },
+            "sw-text-color": {
+                "value": "#141719"
+            },
+            "sw-font-family-headline": {
+                "value": "'Work Sans', sans-serif"
+            },
+            "sw-headline-color": {
+                "value": "#525a62"
+            },
+            "sw-color-price": {
+                "value": "#141719"
+            },
+            "sw-color-buy-button": {
+                "value": "#26262f"
+            },
+            "sw-color-buy-button-text": {
+                "value": "#fdfdfd"
+            },
+            "sw-logo-desktop": {
+                "type": "media",
+                "value": "public/assets/logo/demostore-logo-desktop.svg"
+            },
+            "sw-logo-tablet": {
+                "type": "media",
+                "value": "public/assets/logo/demostore-logo-desktop.svg"
+            },
+            "sw-logo-mobile": {
+                "type": "media",
+                "value": "public/assets/logo/demostore-logo-mobile.svg"
+            },
+            "sw-footer-bg-color": {
+                "label": {
+                    "en-GB": "Background colour",
+                    "de-DE": "Hintergrundfarbe"
+                },
+                "type": "color",
+                "value": "#26262f",
+                "editable": true,
+                "block": "footer",
+                "order": 100
+            },
+            "sw-footer-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
+                "type": "color",
+                "value": "#fdfdfd",
+                "editable": true,
+                "block": "footer",
+                "order": 200
+            },
+            "sw-footer-logo": {
+                "label": {
+                    "en-GB": "Footer logo",
+                    "de-DE": "Footer Logo"
+                },
+                "type": "media",
+                "value": "public/assets/logo/demostore-logo-desktop.svg",
+                "editable": true,
+                "block": "media",
+                "order": 300
+            }
+        }
+    }
+}
