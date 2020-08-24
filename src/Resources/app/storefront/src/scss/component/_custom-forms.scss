@@ -23,8 +23,34 @@
 }
 
 .custom-control-label::after {
-  top: 5px;
-  left: -22px;
-  width: 12px;
-  height: 12px;
+    top: 5px;
+    left: -22px;
+    width: 12px;
+    height: 12px;
+}
+
+// Select
+.custom-select {
+    border: none;
+    outline: none;
+    border-bottom: $custom-select-border-width solid $custom-select-border-color;
+
+    &:invalid {
+        opacity: 0.4;
+    }
+}
+
+.was-validated {
+    .custom-select {
+        &:invalid {
+            opacity: 1;
+            color: $form-feedback-invalid-color;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .custom-select {
+        font-size: $custom-select-font-size-lg;
+    }
 }

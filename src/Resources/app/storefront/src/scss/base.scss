@@ -29,10 +29,13 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/alert';
 @import 'component/custom-forms';
 @import 'component/icon';
+@import 'component/forms';
+@import 'component/input-group';
 
 /*
  * Layout-related sections
  * ----------------------- */
+@import 'layout/container';
 
 /*
  * Page-specific styles
