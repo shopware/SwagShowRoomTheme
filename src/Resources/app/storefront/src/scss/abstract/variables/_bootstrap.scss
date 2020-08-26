@@ -7,6 +7,7 @@ shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstra
 
 // Options
 $enable-responsive-font-sizes: false !default;
+$font-size-base: 0.875rem !default;
 
 // Color system
 $gray-100: #f9f9f9 !default;
@@ -33,8 +34,9 @@ $border-radius-lg: 1px !default;
 $border-radius-sm: 0 !default;
 
 // Buttons + Forms
-$input-btn-padding-y-lg: 0.656rem !default;
-$input-btn-padding-y-sm: 0.188rem !default;
+$input-btn-padding-y-sm: 0.4375rem !default;
+$input-btn-padding-y: 0.4375rem !default;
+$input-btn-padding-y-lg: 0.875rem !default;
 
 // Button
 $btn-line-height-sm: 22px !default;
@@ -50,17 +52,22 @@ $btn-padding-x-lg: 40px !default;
 $btn-padding-y-lg: 10px !default;
 
 // Forms
-$input-placeholder-color: $gray-600 !default;
-$input-padding-x: 1rem !default;
-$input-padding-x-lg: 1rem !default;
-$input-padding-x-sm: 0.75rem !default;
-$input-font-size-lg: 14px !default;
-$input-font-size-sm: 14px !default;
+$input-bg: transparent !default;
+$input-color: $sw-color-brand-primary !default;
+$input-border-color: $gray-300 !default;
+$input-placeholder-color: $sw-color-brand-primary !default;
+$form-feedback-invalid-color: $sw-color-danger;
 
-$custom-control-indicator-border-color: $gray-400 !default;
+$input-padding-x: 0 !default;
+$input-font-size: 0.875rem !default;
+$input-font-size-lg: 1.125rem !default;
+
+// Select
+$custom-control-indicator-border-color: $gray-300 !default;
 $custom-checkbox-indicator-border-radius: 4px !default;
 
-$custom-select-bg-size: 16px !default;
+$custom-select-indicator: url(/bundles/swagshowroomtheme/assets/icon/chevron-down.svg) !default;
+$custom-select-bg-size: 1rem !default;
 
 $custom-switch-width: 1.75rem !default;
 $custom-switch-indicator-size: 0.75rem !default;
