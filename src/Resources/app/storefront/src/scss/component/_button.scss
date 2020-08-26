@@ -1,8 +1,78 @@
 .btn,
 .btn-buy {
+    font-weight: 500;
+
     &.disabled,
     &:disabled {
         color: $gray-600;
-        background-color: $gray-200;
     }
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline-secondary,
+.btn-light,
+.btn-link,
+.btn-buy {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.btn-buy {
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+            background-color: $black;
+        }
+    }
+}
+
+.btn-secondary {
+    .icon {
+        color: $sw-color-buy-button-text;
+    }
+
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+            background-color: $btn-secondary-hover-color;
+        }
+    }
+}
+
+.btn-light {
+    background-color: $gray-200;
+
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+            background-color: $gray-400;
+        }
+    }
+}
+
+.btn-outline-secondary {
+    color: $sw-color-brand-primary;
+    border: 1px solid $sw-color-brand-primary;
+
+    &:not(:disabled):not(.disabled) {
+        &:hover, &:focus, &:active {
+            color: $btn-secondary-hover-color;
+            border: 1px solid $btn-secondary-hover-color;
+        }
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: unset;
+    }
+}
+
+.btn-link {
+    &:disabled,
+    &.disabled {
+        background-color: unset;
+        border: unset;
+    }
+}
+
+.btn-lg {
+    letter-spacing: 2px;
 }
