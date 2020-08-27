@@ -1,25 +1,25 @@
 .custom-switch {
-  .custom-control-label {
-    &::before {
-      border-radius: 1px;
-      background-color: $gray-300;
-    }
+    .custom-control-label {
+        &::before {
+            border-radius: 1px;
+            background-color: $gray-300;
+        }
 
-    &::after {
-      border-radius: 1px;
-      background-color: $white;
+        &::after {
+            border-radius: 1px;
+            background-color: $white;
+        }
     }
-  }
 }
 
 .custom-checkbox {
-  .custom-control-label::before {
-    border-radius: 0;
-  }
+    .custom-control-label::before {
+        border-radius: 0;
+    }
 }
 
 .custom-control-label::before {
-  border: 1px solid $sw-color-brand-primary;
+    border: 1px solid $sw-color-brand-primary;
 }
 
 .custom-control-label::after {
