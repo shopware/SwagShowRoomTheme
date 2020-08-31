@@ -1,7 +1,26 @@
+@mixin icon-lg() {
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  &.icon-lg {
+    @include icon-lg();
+  }
+}
+
 .btn {
     .icon {
         > svg {
             top: 2px;
         }
     }
+}
+
+.icon-showroom {
+  .icon {
+    > svg {
+      top: 3px;
+    }
+  }
 }
