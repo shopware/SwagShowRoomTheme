@@ -1,0 +1,95 @@
+/*
+Search suggest
+==================================================
+Contains styles for the search suggest popover in the shop header.
+*/
+
+$image-width-sm: 40px;
+$image-width-lg: 70px;
+$product-image-bg: $gray-100;
+
+$search-suggest-padding-sm: 18px;
+$search-suggest-padding-md: 30px;
+$search-suggest-padding-lg: 50px;
+
+.search-suggest-container {
+    padding: 0 0 $search-suggest-padding-md;
+    margin: 0;
+    top: 30px;
+    left: 0;
+    right: 0;
+
+    border: none;
+    box-shadow: none;
+    position: relative;
+
+    &::after {
+        content: none;
+    }
+
+    .search-suggest-product:first-child {
+        border-top: 1px solid $border-color;
+    }
+
+    .search-suggest-product-link {
+        padding: 14px;
+        font-size: 11px;
+        font-weight: $font-weight-bold;
+    }
+
+    .search-suggest-product-image-container {
+        border-radius: 2px;
+        width: $image-width-sm;
+        height: $image-width-sm;
+        margin: inherit;
+
+        background-color: $product-image-bg;
+        padding: 0 8px;
+    }
+
+    .search-suggest-product-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .search-suggest-product-name {
+        padding-left: $search-suggest-padding-sm;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+        transform: none;
+        top: 55px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 0 $search-suggest-padding-lg;
+
+        .search-suggest-product-image-container {
+            width: $image-width-lg;
+            height: $image-width-lg;
+        }
+
+        .search-suggest-product-name {
+            padding-left: $search-suggest-padding-md;
+        }
+
+        .search-suggest-product-link {
+            font-size: 14px;
+        }
+    }
+}
+
+.search-suggest-total {
+    padding: $search-suggest-padding-md 0 0;
+
+
+    .search-suggest-total-link {
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: $search-suggest-padding-lg 0 0;
+    }
+}

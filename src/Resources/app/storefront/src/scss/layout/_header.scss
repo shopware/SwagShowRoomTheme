@@ -1,0 +1,46 @@
+// Header search
+$header-search-form-width-md: 770px !default;
+$header-search-form-width-lg: 900px !default;
+
+$input-group-width-md: 360px !default;
+$input-group-width-lg: 590px !default;
+
+.header-search {
+    margin: 0;
+    background-color: $white;
+    max-width: 100%;
+
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0 10px 25px -15px $black;
+
+    .header-search-form {
+        @extend .container;
+        margin: 30px auto;
+    }
+
+    .input-group {
+        margin: 0 auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        .header-search-form {
+            margin: 55px auto;
+            max-width: $header-search-form-width-md;
+        }
+
+        .input-group {
+            width: $input-group-width-md;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .header-search-form {
+            max-width: $header-search-form-width-lg;
+        }
+        .input-group {
+            width: $input-group-width-lg;
+        }
+    }
+}
