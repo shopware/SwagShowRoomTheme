@@ -17,7 +17,7 @@
                                 {% block layout_header_navigation_toggle_button_icon %}
                                     {{ parent() }}
                                 {% endblock %}
-                                <span>{{ "general.menuLink"|trans|striptags }}</span>
+                                <span class="d-none d-sm-inline">{{ "general.menuLink"|trans|striptags }}</span>
                             </button>
                         {% endblock %}
                     </div>
@@ -28,6 +28,10 @@
             {% block layout_header_actions %}
                 <div class="col-12 order-1 col-sm-auto order-sm-2 header-actions-col">
                     <div class="row no-gutters">
+                        {% block layout_header_navigation_toggle %}
+                            {{ parent() }}
+                        {% endblock %}
+
                         {% block layout_header_search_toggle %}
                             <div class="col-auto d-none d-xl-block">
 {#                                <div class="language-currency">#}
