@@ -1,0 +1,54 @@
+.language-currency {
+    .top-bar-nav-item {
+        .currency-form,
+        .language-form {
+            width: 100%;
+        }
+
+        &.top-bar-language {
+            margin-right: 0;
+        }
+    }
+
+    .top-bar-list {
+        padding: 12px 0 12px 0;
+    }
+
+    .top-bar-list-label {
+        padding: 3px 0;
+    }
+
+    .top-bar-list-icon {
+        height: 10px;
+        border: unset;
+    }
+}
+
+.global-collapse-headline {
+    cursor: pointer;
+    padding: $spacer-sm 0;
+    border-bottom: 1px solid $sw-color-brand-primary;
+
+    .global-collapse-column-toggle {
+        float: right;
+    }
+
+    .global-collapse-column-toggle,
+    .top-bar-list-icon {
+        pointer-events: none;
+    }
+
+    .global-collapse-minus-icon {
+        display: none;
+    }
+
+    &.show {
+        .global-collapse-plus-icon {
+            display: none;
+        }
+
+        .global-collapse-minus-icon {
+            display: block;
+        }
+    }
+}

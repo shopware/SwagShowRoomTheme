@@ -1,0 +1,45 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+
+{% block layout_header_actions_currency_widget_content %}
+    <div data-showroom-collapse="true">
+        <div class="js-collapse-column">
+            {% block layout_header_actions_currency_widget_dropdown_toggle %}
+                <div class="global-collapse-headline js-collapse-column-trigger"
+                     id="collapseCurrency"
+                     data-target="#collapseCurrency"
+                     aria-expanded="true"
+                     aria-controls="collapseCurrency">
+                    {{ page.header.activeCurrency.symbol }} {{ page.header.activeCurrency.translated.shortName }}
+                    <div class="global-collapse-column-toggle">
+                        <span class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
+                        <span class="global-collapse-minus-icon">{% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}</span>
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block layout_header_actions_currency_widget_form_items %}
+                <div id="collapseCurrency"
+                     class="global-collapse-content collapse js-column-content"
+                     aria-labelledby="collapseCurrency">
+                    <div class="top-bar-list" aria-labelledby="currenciesDropdown-{{ position }}">
+                        {% for currency in page.header.currencies %}
+                            {% if currency.id is same as(page.header.activeCurrency.id) %}
+                            {% else %}
+                                <div class="top-bar-list-item"
+                                     title="{{ currency.translated.shortName }}">
+                                    {% block layout_header_actions_currency_widget_form_items_element_label %}
+                                        {{ parent() }}
+                                    {% endblock %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block layout_header_actions_currency_widget_form_redirect %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+
+{% block layout_header_actions_language_widget_content %}
+    <div data-showroom-collapse="true">
+        <div class="js-collapse-column">
+            {% set isoCode = page.header.activeLanguage.translationCode.code|lower|split('-') %}
+            {% set country = isoCode[0] %}
+            {% set language = isoCode[1] %}
+
+            <div class="global-collapse-headline js-collapse-column-trigger"
+                 id="collapseLanguage"
+                 data-target="#collapseLanguage"
+                 aria-expanded="true"
+                 aria-controls="collapseLanguage">
+                <span class="top-bar-list-icon language-flag country-{{ country }} language-{{ language }}"></span>
+                {{ page.header.activeLanguage.name }}
+                <div class="global-collapse-column-toggle">
+                    <span class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
+                    <span class="global-collapse-minus-icon">{% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}</span>
+                </div>
+            </div>
+            <div id="collapseLanguage"
+                 class="global-collapse-content collapse js-column-content"
+                 aria-labelledby="collapseLanguage">
+                {% block layout_header_actions_languages_widget_form_items %}
+                    <div class="top-bar-list" aria-labelledby="currenciesDropdown-{{ position }}">
+                        {% for language in  page.header.languages %}
+                            {% block layout_header_actions_languages_widget_form_items_flag %}
+                                {% if language.id is same as(page.header.activeLanguage.id) %}
+                                {% else %}
+                                    {% set isoCode = language.translationCode.code|lower|split('-') %}
+                                    {% set flagCountry = isoCode[0] %}
+                                    {% set flagLanguage = isoCode[1] %}
+
+                                    <label class="top-bar-list-label"
+                                           for="{{ position }}-{{ language.id }}">
+                                        <input id="{{ position }}-{{ language.id }}"
+                                               class="top-bar-list-radio"
+                                               value="{{ language.id }}"
+                                               name="languageId"
+                                               type="radio">
+                                        <div class="top-bar-list-icon language-flag country-{{ flagCountry }} language-{{ flagLanguage }}"></div>
+                                        {{ language.name }}
+                                    </label>
+                                {% endif %}
+                            {% endblock %}
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+            </div>
+
+            <input name="redirectTo" type="hidden" value="{{ app.request.get('_route') }}"/>
+
+            {% for key, value in app.request.attributes.get('_route_params') %}
+                <input name="redirectParameters[{{ key }}]" type="hidden" value="{{ value }}">
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
