@@ -1,0 +1,48 @@
+.account-menu-dropdown {
+    @extend .open-in-center;
+}
+
+.account-menu-header {
+    font-weight: 500;
+    font-size: $font-size-sm;
+    color: $sw-color-brand-primary;
+    text-transform: uppercase;
+    padding-bottom: 24px;
+}
+
+.account-menu-login {
+    border-bottom: unset;
+    padding: 40px 0 0 0;
+    margin-bottom: 0;
+}
+
+.account-menu-dropdown {
+    .account-aside-footer {
+        padding-top: 40px;
+    }
+
+    .account-guest-abort {
+        padding-top: 0;
+    }
+}
+
+.account-aside-list-group {
+    .account-aside-item::before {
+        content: '';
+        background: $icon-account-aside-item;
+        padding: 5px 15px 5px 5px;
+        margin-right: 10px;
+    }
+
+    .account-aside-item {
+        padding: 4px 0;
+
+        &:first-child {
+            padding-top: 40px;
+        }
+
+        &:last-child {
+            padding-bottom: 40px;
+        }
+    }
+}

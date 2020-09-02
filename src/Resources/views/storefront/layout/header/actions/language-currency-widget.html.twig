@@ -1,0 +1,17 @@
+<div class="dropdown" data-language-currency="true">
+    <button class="btn header-actions-btn"
+            type="button"
+            id="languageCurrencyWidget"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+        {% sw_icon 'globe' style { 'pack':'showroom' } %}
+    </button>
+
+    <div class="dropdown-menu open-in-center language-currency-menu-dropdown js-language-currency-menu-dropdown"
+         aria-labelledby="languageCurrencyWidget">
+        {% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+
+        {% sw_include '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+    </div>
+</div>
