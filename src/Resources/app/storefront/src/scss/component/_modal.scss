@@ -1,0 +1,59 @@
+$modal-padding: 50px;
+$modal-title-font-size: 18px;
+
+.modal {
+
+    &-title {
+        font-size: $modal-title-font-size;
+        line-height: 30px;
+        color: $gray-700;
+        font-weight: $font-weight-bold;
+    }
+
+    &-dialog {
+        top: 50px;
+    }
+
+    &-content {
+        border: 1px solid $border-color;
+        border-radius: 1px;
+        box-shadow: $modal-content-box-shadow-xs;
+    }
+
+    &-header {
+        align-items: center;
+        padding: $modal-padding $modal-padding 40px;
+        border-bottom: unset;
+
+        .close {
+            padding: 0;
+        }
+    }
+
+    &-close {
+        opacity: 1;
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &-body {
+        padding: 0 $modal-padding $modal-padding;
+    }
+
+    .card-title {
+        font-weight: $font-weight-bold;
+        color: $sw-color-brand-primary;
+        font-size: $h2-font-size;
+        line-height: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .modal-title {
+            font-size: $h2-font-size;
+        }
+    }
+}
+

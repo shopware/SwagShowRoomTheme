@@ -1,0 +1,32 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/confirm-shipping.html.twig' %}
+
+{% block page_checkout_confirm_shipping_modal %}
+    <div class="modal fade confirm-shipping-modal"
+         id="confirmShippingModal"
+         tabindex="-1"
+         role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable"
+             role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title h5">
+                        {{ "checkout.confirmChangeShipping"|trans|sw_sanitize }}
+                    </div>
+                    <button type="button"
+                            class="modal-close close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">
+                            {% sw_icon 'x' style { 'size': 'lg' } %}
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% block page_checkout_confirm_shipping_form %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
