@@ -1,0 +1,51 @@
+.pagination {
+    @extend .d-flex;
+    @extend .justify-content-center;
+
+    .page-item {
+        @extend .d-flex;
+        @extend .align-items-center;
+
+        text-align: center;
+
+        .page-link {
+            color: $sw-color-brand-primary;
+            width: 53px;
+            font-size: $font-size-sm;
+            font-weight: 500;
+        }
+
+        &.disabled .page-link,
+        .page-link {
+            background: unset;
+            border: unset;
+        }
+
+        &.disabled {
+            .page-link, .page-link svg {
+                color: $gray-300;
+            }
+        }
+
+        &.active {
+            .page-link {
+                margin-top: 2px;
+                border-bottom: 2px solid $sw-color-brand-primary;
+            }
+        }
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .page-item {
+            .page-link {
+                font-size: $showroom-font-size-sm;
+                width: 32px;
+            }
+        }
+    }
+}
