@@ -1,0 +1,190 @@
+.footer-main {
+    .footer-column-content-inner {
+        padding-bottom: 0;
+    }
+
+    .footer-contact-hotline {
+        a {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer-newsletter-info {
+        font-size: $showroom-font-size-xs;
+
+        .form-label {
+            font-size: $font-size-sm;
+        }
+    }
+
+    .footer-newsletter-your-email {
+        font-size: $showroom-font-size-sm;
+    }
+
+    .footer-columns {
+        border-bottom: unset;
+    }
+
+    .footer-column-headline {
+        padding-top: 0;
+    }
+
+    .footer-bottom {
+        background: $sw-footer-bg-color;
+        color: $sw-footer-text-color;
+        padding: 30px 0;
+
+        a {
+            color: $sw-footer-text-color;
+        }
+
+        .footer-copyright {
+            text-align: right;
+        }
+    }
+
+    .footer-logo {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .footer-service-menu-item {
+        display: block;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .footer-service-menu-item,
+    .footer-link-item {
+        .footer-service-menu-link::before,
+        .footer-link::before {
+            content: '';
+            background: $icon-chevron-right;
+            padding: 5px 15px 5px 5px;
+            margin-right: 10px;
+        }
+
+        .footer-service-menu-link {
+            padding: 10px 0;
+        }
+    }
+
+    .footer-service-menu-list {
+        text-align: unset;
+    }
+
+    .footer-copyright {
+        .icon-shopware {
+            color: $shopware-color-brand;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .footer-columns {
+            padding-bottom: unset;
+        }
+
+        .footer-newsletter {
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            .footer-newsletter-container {
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 40px;
+            }
+        }
+
+        .footer-service-menu-item {
+            display: none;
+        }
+
+        .footer-newsletter-header-headline {
+            font-weight: 500;
+            padding-bottom: 14px;
+        }
+
+        .footer-newsletter-content {
+            padding-top: 16px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .footer-columns {
+            padding: 100px 0 68px 0;
+        }
+
+        .footer-newsletter {
+            padding-top: unset;
+            padding-bottom: unset;
+
+            .footer-newsletter-container {
+                border-bottom: unset;
+                padding-bottom: unset;
+            }
+        }
+
+        .footer-newsletter-header {
+            padding-bottom: 24px;
+        }
+
+        .footer-newsletter-content {
+            padding-top: 0;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .footer-bottom {
+            padding: 24px 0;
+        }
+
+        .footer-columns {
+            padding-right: $grid-gutter-width / 2;
+            padding-left: $grid-gutter-width / 2;
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        .footer-column {
+            background: $gray-100;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-bottom: unset;
+
+            .footer-column-headline {
+                padding: 0;
+            }
+
+            .footer-column-content {
+                padding-top: 32px;
+            }
+        }
+
+        .footer-service-menu-list {
+            padding: 0 10px;
+        }
+
+        .footer-vat {
+            text-align: right;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .footer-service-menu-item,
+        .footer-link-item {
+            .footer-service-menu-link::before,
+            .footer-link::before {
+                background-size: 16px;
+                background-repeat: no-repeat;
+                padding: 0 10px 0 5px;
+            }
+        }
+
+        .footer-contact-hotline a,
+        .footer-column-headline {
+            font-size: $showroom-font-size-sm;
+        }
+    }
+}

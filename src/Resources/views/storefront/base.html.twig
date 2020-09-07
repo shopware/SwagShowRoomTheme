@@ -11,3 +11,11 @@
     {# move navigation to header and show search collapse instead #}
     {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
 {% endblock %}
+
+{% block base_footer %}
+    <footer class="footer-main">
+        {% block base_footer_inner %}
+            {% sw_include '@Storefront/storefront/layout/footer/footer.html.twig' %}
+        {% endblock %}
+    </footer>
+{% endblock %}

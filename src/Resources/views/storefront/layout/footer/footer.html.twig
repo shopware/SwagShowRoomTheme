@@ -1,0 +1,183 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_navigation %}
+    <div class="container">
+        <div id="footerColumns"
+             class="row footer-columns"
+             data-collapse-footer="true">
+            {% block layout_footer_navigation_hotline %}
+                <div class="col-12 col-md-4 col-lg-3 order-2 order-lg-1 footer-column js-footer-column">
+                    {% block layout_footer_navigation_hotline_headline %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block layout_footer_navigation_hotline_content %}
+                        <div id="collapseFooterHotline"
+                             class="footer-column-content collapse js-footer-column-content footer-contact"
+                             aria-labelledby="collapseFooterHotlineTitle">
+                            <div class="footer-column-content-inner">
+                                <div class="footer-contact-hotline">
+                                    {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                                </div>
+                            </div>
+                            <div class="footer-contact-form">
+                                {{ 'footer.serviceContactLink'|trans({
+                                    '%url%': path('frontend.cms.page', { id: shopware.config.core.basicInformation.contactPage })
+                                })|raw }}
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
+            {% block layout_footer_navigation_columns %}
+                {% set orderIndex = 3 %}
+                {% for root in page.footer.navigation.tree %}
+                    {% block layout_footer_navigation_column %}
+                        <div class="col-12 col-md-4 col-lg-3 order-{{ orderIndex }} order-lg-2 footer-column js-footer-column">
+                            {% block layout_footer_navigation_information_headline %}
+                                {{ parent() }}
+                            {% endblock %}
+
+                            {% block layout_footer_navigation_information_content %}
+                                {{ parent() }}
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+
+                    {% set orderIndex = orderIndex + 1 %}
+                {% endfor %}
+
+                {% block layout_footer_navigation_newsletter %}
+                    <div class="col-12 col-lg-3 order-1 order-lg-3 footer-column footer-newsletter js-footer-column">
+                        <div class="footer-newsletter-container">
+                            {% block layout_footer_navigation_newsletter_headline %}
+                                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                                     id="collapseFooterNewsletterTitle"
+                                     data-target="#collapseFooterNewsletter"
+                                     aria-expanded="true"
+                                     aria-controls="collapseFooterNewsletter">
+                                    <span class="d-md-none d-lg-block">{{ 'footer.newsletterHeadline'|trans|sw_sanitize }}</span>
+                                    {% block layout_footer_navigation_newsletter_icons %}
+                                        <div class="footer-column-toggle">
+                                            <span class="footer-plus-icon">
+                                                {% sw_icon 'plus' %}
+                                            </span>
+                                            <span class="footer-minus-icon">
+                                                {% sw_icon 'minus' %}
+                                            </span>
+                                        </div>
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+
+                            {% block layout_footer_navigation_newsletter_content %}
+                                {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter-widget.html.twig' %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                {% endblock %}
+            {% endblock %}
+        </div>
+    </div>
+
+    {% block layout_footer_service_menu %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}
+
+{% block layout_footer_bottom %}
+    <div class="footer-bottom d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                {% block layout_footer_logo %}
+                    <div class="col-3 footer-logo">
+                        <a class="footer-logo-main-link"
+                           href="{{ path('frontend.home.page') }}"
+                           title="{{ "header.logoLink"|trans|striptags }}">
+                            {% block layout_header_footer_image %}
+                                {% if shopware.theme['sw-footer-logo'] %}
+                                    <img src="{{ shopware.theme['sw-footer-logo'] |sw_encode_url }}"
+                                         alt="{{ "header.logoLink"|trans|striptags }}"
+                                         class="img-fluid header-logo-main-img"/>
+                                {% endif %}
+                            {% endblock %}
+                        </a>
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_vat %}
+                    <div class="col-6 footer-vat">
+                        {% if context.taxState == "gross" %}
+                            <span>
+                                {{ "showroom.footer.includeVat"|trans({
+                                    '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                })|raw }}
+                            </span>
+                        {% else %}
+                            <span>
+                                {{ "showroom.footer.excludeVat"|trans({
+                                    '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                })|raw }}
+                            </span>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_copyright %}
+                    <div class="col-3 footer-copyright">
+                        {% sw_icon 'shopware' style { 'color': 'primary' } %}
+                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom footer-bottom-mobile d-md-none">
+        <div class="container row no-gutters">
+            {% block layout_footer_mobile_logo %}
+                <div class="col footer-logo d-flex align-items-center">
+                    <a class="footer-logo-main-link"
+                       href="{{ path('frontend.home.page') }}"
+                       title="{{ "header.logoLink"|trans|striptags }}">
+                        {% block layout_footer_mobile__image %}
+                            {% if shopware.theme['sw-footer-logo-mobile'] %}
+                                <img src="{{ shopware.theme['sw-footer-logo-mobile'] |sw_encode_url }}"
+                                     alt="{{ "header.logoLink"|trans|striptags }}"
+                                     class="img-fluid header-logo-main-img"/>
+                            {% endif %}
+                        {% endblock %}
+                    </a>
+                </div>
+            {% endblock %}
+
+            <div class="col-8">
+                {% block layout_footer_mobile_vat %}
+                    <div class="footer-vat">
+                        {% if context.taxState == "gross" %}
+                            <span>
+                            {{ "showroom.footer.includeVat"|trans({
+                                '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                            })|raw }}
+                        </span>
+                        {% else %}
+                            <span>
+                            {{ "showroom.footer.excludeVat"|trans({
+                                '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                            })|raw }}
+                        </span>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+
+                {% block layout_footer_mobile_copyright %}
+                    <div class="footer-copyright">
+                        {% sw_icon 'shopware' style { 'color': 'primary' } %}
+                        {{ "footer.copyrightInfo"|trans|sw_sanitize }}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
