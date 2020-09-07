@@ -19,7 +19,6 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Base stuff
  * ---------- */
-@import 'base/base';
 @import 'base/font';
 @import 'base/typography';
 
@@ -35,14 +34,13 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/dropdown';
 @import 'component/language-currency-widget';
 @import 'component/account-menu';
-@import 'component/scroll-up';
+@import 'component/pagination';
 
 /*
  * Layout-related sections
  * ----------------------- */
 @import 'layout/container';
 @import 'layout/header';
-@import 'layout/footer';
 @import 'layout/search-suggest';
 
 /*
