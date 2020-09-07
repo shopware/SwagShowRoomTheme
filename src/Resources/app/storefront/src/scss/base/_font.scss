@@ -2,5 +2,12 @@
     font-family: 'Work Sans';
     src: url('/bundles/swagshowroomtheme/assets/font/worksans/WorkSans-VariableFont_wght.ttf');
     font-style: normal;
-    font-weight: 400 500 600;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/bundles/swagshowroomtheme/assets/font/worksans/WorkSans-Medium.ttf');
+    font-style: normal;
+    font-weight: 500 600;
 }
