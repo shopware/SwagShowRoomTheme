@@ -53,6 +53,7 @@ $input-group-width-lg: 590px !default;
         .btn, &.btn {
             padding: 4px 10px;
             font-size: $h6-font-size;
+            font-weight: normal;
         }
     }
 
@@ -79,6 +80,10 @@ $input-group-width-lg: 590px !default;
     .header-cart-badge {
         top: 6px;
         right: 11px;
+    }
+
+    .header-cart-total {
+        font-weight: 500;
     }
 }
 
