@@ -1,6 +1,6 @@
 body {
     @include media-breakpoint-down(md) {
-        font-size: $showroom-font-size-sm;
+        font-size: $showroom-font-size-base;
         line-height: 19px;
     }
 }
