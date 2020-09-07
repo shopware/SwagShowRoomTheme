@@ -19,6 +19,11 @@ $alert-color-info: #d0ecf1 !default;
 $alert-color-success: #d7f0e1 !default;
 $alert-color-error: #eee3e3 !default;
 $alert-color-warning: #f8e7d7 !default;
+$shopware-color-brand: #189eff !default;
 
 // Icon
-$icon-account-aside-item: url(/bundles/swagshowroomtheme/assets/icon/chevron-right-xs.svg) !default;
+$icon-chevron-right: url(/bundles/swagshowroomtheme/assets/icon/chevron-right-xs.svg) !default;
+
+// Font
+$showroom-font-size-sm: 11px;
+$showroom-font-size-xs: 8px;

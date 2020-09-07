@@ -38,7 +38,7 @@
                 "value": "#e4e6ea"
             },
             "sw-background-color": {
-                "value": "#f9f9f9"
+                "value": "#ffffff"
             },
             "sw-color-success": {
                 "value": "#4bc87b"
@@ -113,10 +113,21 @@
                     "de-DE": "Footer Logo"
                 },
                 "type": "media",
-                "value": "public/assets/logo/demostore-logo-desktop.svg",
+                "value": "public/assets/logo/demostore-logo-footer-desktop.svg",
                 "editable": true,
                 "block": "media",
                 "order": 300
+            },
+            "sw-footer-logo-mobile": {
+                "label": {
+                    "en-GB": "Footer mobile logo",
+                    "de-DE": "Footer mobile Logo"
+                },
+                "type": "media",
+                "value": "public/assets/logo/demostore-logo-footer-mobile.svg",
+                "editable": true,
+                "block": "media",
+                "order": 400
             }
         }
     }
