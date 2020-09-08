@@ -7,15 +7,27 @@ $offcanvas-primary-color: $gray-900;
         color: $offcanvas-primary-color;
         padding: 20px 24px;
         border: 0;
-        font-size: 11px;
+        font-size: $font-size-xs;
         text-transform: none;
 
         .icon {
             color: $offcanvas-primary-color;
         }
     }
+}
 
-    @include media-breakpoint-up(md) {
+@include media-breakpoint-up(md) {
+    .offcanvas {
         width: auto;
     }
 }
+
+@include media-breakpoint-up(lg) {
+    .offcanvas {
+        .offcanvas-close {
+            font-size: $font-size-base;
+        }
+    }
+}
+
+

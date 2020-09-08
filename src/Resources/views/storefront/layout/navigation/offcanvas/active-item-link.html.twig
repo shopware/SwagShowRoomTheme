@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/active-item-link.html.twig' %}
 
 {% block layout_navigation_offcanvas_navigation_category_headline %}
-    <a class="nav-item nav-link navigation-offcanvas-headline navigation-offcanvas-link"
+    <a class="nav-item nav-link navigation-offcanvas-headline navigation-offcanvas-link d-lg-none"
        href="{{ seoUrl('frontend.navigation.page', { 'navigationId': item.parentId}) }}"
        itemprop="url">
         {% block layout_navigation_offcanvas_navigation_category_headline_text %}

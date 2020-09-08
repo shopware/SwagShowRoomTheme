@@ -4,8 +4,6 @@
     <div class="navigation-offcanvas-container js-navigation-offcanvas">
         <div class="navigation-offcanvas-overlay-content js-navigation-offcanvas-overlay-content">
             {% if not isRoot %}
-                {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/show-all-link.html.twig' %}
-
                 {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/back-link.html.twig' with { item: active } %}
 
                 {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/active-item-link.html.twig' with { item: active } %}
@@ -24,6 +22,9 @@
                     {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/item-link.html.twig' with { item: item, activeId: activeId } %}
                 {% endfor %}
             </ul>
+            {% if not isRoot %}
+                {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/item-media.html.twig' %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}

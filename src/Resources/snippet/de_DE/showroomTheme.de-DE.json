@@ -6,6 +6,10 @@
         "footer": {
             "includeVat": "* Alle Preise inkl. Mehrwertsteuer",
             "excludeVat": "* Alle Preise exkl. Mehrwertsteuer"
+        },
+        "general": {
+            "offcanvasCloseMenu": "Schließen",
+            "mainMenu": "Menü"
         }
     },
     "footer": {
