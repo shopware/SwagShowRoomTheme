@@ -1,0 +1,48 @@
+.filter-panel {
+    .filter-active {
+        border-color: $sw-color-brand-primary;
+        border-radius: 17px;
+    }
+
+    .filter-active-preview {
+        border-radius: 10px;
+    }
+
+    .btn.filter-reset-all {
+        border-radius: 17px;
+        padding-top: 2px;
+        font-size: $font-size-base;
+    }
+
+    .filter-active,
+    .btn.filter-reset-all {
+        height: 34px;
+    }
+
+    .filter-active {
+        &:hover,
+        &:active {
+            border-color: $sw-color-brand-secondary;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .filter-active,
+        .btn.filter-reset-all {
+            height: 24px;
+            font-size: $showroom-font-size-xs;
+            padding-top: 0;
+            line-height: 22px;
+        }
+
+        .filter-active-preview {
+            display: none;
+        }
+
+        .filter-active-remove {
+            font-size: $showroom-font-size-base;
+            right: -6px;
+            top: 1px;
+        }
+    }
+}
