@@ -39,6 +39,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/scroll-up';
 @import 'component/modal';
 @import 'component/pagination';
+@import 'component/offcanvas';
 
 /*
  * Layout-related sections
@@ -47,6 +48,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/search-suggest';
+@import 'layout/navigation-offcanvas';
 
 /*
  * Page-specific styles

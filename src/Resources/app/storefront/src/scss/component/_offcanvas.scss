@@ -1,0 +1,21 @@
+$offcanvas-primary-color: $gray-900;
+
+.offcanvas {
+    width: 100%;
+
+    .offcanvas-close {
+        color: $offcanvas-primary-color;
+        padding: 20px 24px;
+        border: 0;
+        font-size: 11px;
+        text-transform: none;
+
+        .icon {
+            color: $offcanvas-primary-color;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        width: auto;
+    }
+}
