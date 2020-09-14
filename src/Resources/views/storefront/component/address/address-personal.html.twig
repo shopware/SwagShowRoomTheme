@@ -1,0 +1,85 @@
+{% sw_extends '@Storefront/storefront/component/address/address-personal.html.twig' %}
+
+{% block component_address_personal_account_type %}
+    {% if shopware.config.core.loginRegistration.showAccountTypeSelection and not hideCustomerTypeSelect %}
+        <div class="form-row">
+            <div class="form-group col-md-3 col-sm-6 contact-type">
+                {% block component_address_personal_account_type_label %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block component_address_personal_account_type_select %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block component_address_personal_account_type_error %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    {% else %}
+        <input type="hidden" name="accountType">
+    {% endif %}
+{% endblock %}
+
+{% block component_address_personal_fields_salutation %}
+    <div class="form-group col-12">
+        {% block component_address_personal_fields_salutation_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_salutation_select %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_salutation_select_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_address_personal_fields_title %}
+    {% if shopware.config.core.loginRegistration.showTitleField %}
+        <div class="form-group col-12">
+            {% block component_address_personal_fields_title_label %}
+                {{ parent() }}
+            {% endblock %}
+
+            {% block component_address_personal_fields_title_input %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block component_address_personal_fields_first_name %}
+    <div class="form-group col-12">
+        {% block component_address_personal_fields_first_name_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_first_name_input %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_first_name_input_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_address_personal_fields_last_name %}
+    <div class="form-group col-12">
+        {% block component_address_personal_fields_last_name_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_last_name_input %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_last_name_input_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
