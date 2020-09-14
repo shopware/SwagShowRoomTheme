@@ -1,0 +1,9 @@
+.table-striped {
+    border-collapse: separate;
+    border-spacing: 4px 5px;
+
+    tbody tr {
+        background-color: $table-accent-bg;
+        line-height: 28px;
+    }
+}

@@ -28,6 +28,7 @@ https://sass-guidelin.es/#the-7-1-pattern
  * ---------- */
 @import 'component/button';
 @import 'component/alert';
+@import 'component/table';
 @import 'component/custom-forms';
 @import 'component/icon';
 @import 'component/forms';
@@ -53,4 +54,4 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Page-specific styles
  * -------------------- */
-
+@import 'page/product-detail/product-detail';
