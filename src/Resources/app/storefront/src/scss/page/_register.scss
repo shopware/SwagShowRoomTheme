@@ -109,6 +109,13 @@
             .register-personal {
                 padding-right: $grid-gutter-width /2;
             }
+
+            .address-contact-type-department,
+            .address-form-street-front {
+                &.form-group {
+                    padding-right: 0;
+                }
+            }
         }
     }
 }
