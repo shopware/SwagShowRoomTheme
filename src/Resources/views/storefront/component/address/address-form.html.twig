@@ -108,19 +108,19 @@
             {% endset %}
 
             {% if shopware.config.core.address.showZipcodeInFrontOfCity %}
-                <div class="form-group col-md-5 col-12">
+                <div class="address-form-street-front form-group col-md-6 col-12">
                     {{ zipcodeField }}
                 </div>
 
-                <div class="form-group col-md-7 col-12 pl-md-0">
+                <div class="form-group col-md-6 col-12 pl-md-0">
                     {{ cityField }}
                 </div>
             {% else %}
-                <div class="form-group col-md-7 col-12">
+                <div class="address-form-street-front form-group col-md-6 col-12">
                     {{ cityField }}
                 </div>
 
-                <div class="form-group col-md-5 col-12 pl-md-0">
+                <div class="form-group col-md-6 col-12 pl-md-0">
                     {{ zipcodeField }}
                 </div>
             {% endif %}
@@ -211,3 +211,46 @@
     </div>
 {% endblock %}
 
+{% block component_address_form_company_department %}
+    <div class="address-contact-type-department form-group col-md-6">
+        {% if formViolations.getViolations("/department") is not empty %}
+            {% set violationPath = "/department" %}
+        {% elseif formViolations.getViolations("/#{prefix}/department") is not empty %}
+            {% set violationPath = "/#{prefix}/department" %}
+        {% endif %}
+
+        {% block component_address_form_company_department_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_company_department_input %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_company_department_input_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_address_form_company_vatId %}
+    <div class="form-group col-md-6 pl-md-0">
+        {% if formViolations.getViolations("/vatId") is not empty %}
+            {% set violationPath = "/vatId" %}
+        {% elseif formViolations.getViolations("/#{prefix}/vatId") is not empty %}
+            {% set violationPath = "/#{prefix}/vatId" %}
+        {% endif %}
+
+        {% block component_address_form_company_vatId_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_company_vatId_input %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_company_vatId_input_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
