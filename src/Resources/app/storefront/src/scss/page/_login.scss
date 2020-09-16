@@ -1,0 +1,106 @@
+.account-register {
+    .login-card,
+    .register-card {
+        padding-top: 50px;
+    }
+
+    .login-card {
+        padding-bottom: 54px;
+    }
+
+    .login-advantages {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        padding: 0;
+    }
+
+    .login-advantages-background {
+        pointer-events: none;
+        position: absolute;
+        width: 400px;
+        z-index: -1;
+    }
+
+    .login-advantages-content {
+        padding: 40px 50px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .account-register-login-container {
+            background: $gray-100;
+            padding: 0;
+            max-width: 400px;
+        }
+
+        .login-card,
+        .register-card {
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+
+        .global-collapse-headline {
+            display: none;
+        }
+
+        .global-collapse-content {
+            display: block;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .is-act-loginpage {
+        .content-main {
+            background: $gray-100;
+        }
+
+        .global-collapse-headline {
+            border-bottom: unset;
+            padding: $grid-gutter-width / 2;
+            font-size: $h6-font-size;
+            font-weight: 500;
+            background: $white;
+        }
+
+        .account-register-login-container {
+            padding-bottom: 15px;
+        }
+
+        .login-card {
+            background: $white;
+            margin-bottom: 0;
+            padding-top: 20px;
+            padding-bottom: $grid-gutter-width / 2;
+
+            .card-title {
+                display: none;
+            }
+        }
+
+        .form-row {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .login-submit,
+        .register-submit {
+            .btn {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .login-password-recover,
+        .login-submit {
+            padding-left: $grid-gutter-width / 2;
+            padding-right: $grid-gutter-width / 2;
+        }
+
+        .login-advantages-content {
+            display: none;
+        }
+    }
+}

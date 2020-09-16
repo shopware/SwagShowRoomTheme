@@ -1,12 +1,16 @@
 {
     "showroom": {
         "account": {
-            "orRegisterLink": "registrieren"
+            "orRegisterLink": "registrieren",
+            "loginHeader": "Anmeldung"
         },
         "footer": {
             "includeVat": "* Alle Preise inkl. Mehrwertsteuer",
             "excludeVat": "* Alle Preise exkl. Mehrwertsteuer"
         }
+    },
+    "header": {
+        "supportInfo": "<b>Questions regarding your order?<br /><a href=\"tel:+4912345-123456789\">+49 1234-56798</a></b> <small>Daily from 7:30 am to 10:00 pm</small>"
     },
     "footer": {
         "newsletterHeadline": "Newsletter",

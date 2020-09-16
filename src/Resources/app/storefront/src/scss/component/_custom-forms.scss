@@ -36,6 +36,10 @@
     border-bottom: $custom-select-border-width solid $custom-select-border-color;
 
     &:invalid {
+        color: $gray-600;
+    }
+
+    &:disabled {
         opacity: 0.4;
     }
 }

@@ -1,0 +1,143 @@
+{% sw_extends '@Storefront/storefront/component/account/register.html.twig' %}
+
+{% block component_account_register_header %}
+    {% if cardTitle %}
+        <div class="card-title d-none d-lg-block">
+            {{ cardTitle }}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block component_account_register_form %}
+    <form action="{{ path('frontend.account.register.save') }}"
+          class="register-form"
+          method="post"
+          data-form-csrf-handler="true"
+          data-form-validation="true">
+
+        {% block component_account_register_form_csrf %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_account_register_redirect %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_account_register_form_action %}
+            {{ parent() }}
+        {% endblock %}
+
+        <div class="row register-group">
+            {% block component_account_register_personal %}
+                <div class="register-personal col-md-6">
+                    <div class="card-title">{{ "checkout.addressRegisterCardTitle"|trans|sw_sanitize }}</div>
+                    {% block component_account_register_personal_fields %}
+                        {% block component_account_register_personal_address_fields %}
+                            {{ parent() }}
+                        {% endblock %}
+
+                        {% set formGroupMail %}
+                            {% block component_account_register_personal_mail %}
+                                {{ parent() }}
+                            {% endblock %}
+                        {% endset %}
+
+                        {% set formGroupMailConfirmation %}
+                            {% block component_account_register_personal_mail_confirmation %}
+                                {{ parent() }}
+                            {% endblock %}
+                        {% endset %}
+
+                        {% set formGroupPassword %}
+                            {% block component_account_register_personal_password %}
+                                {{ parent() }}
+                            {% endblock %}
+                        {% endset %}
+
+                        {% set formGroupPasswordConfirmation %}
+                            {% block component_account_register_personal_password_confirmation %}
+                                {{ parent() }}
+                            {% endblock %}
+                        {% endset %}
+
+                        {% block component_account_register_personal_account_fields %}
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    {{ formGroupMail }}
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    {% if shopware.config.core.loginRegistration.requireEmailConfirmation %}
+                                        {{ formGroupMailConfirmation }}
+                                    {% elseif not shopware.config.core.loginRegistration.requirePasswordConfirmation %}
+                                        {{ formGroupPassword }}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    {% if shopware.config.core.loginRegistration.requireEmailConfirmation or shopware.config.core.loginRegistration.requirePasswordConfirmation %}
+                                        {{ formGroupPassword }}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    {% if shopware.config.core.loginRegistration.requirePasswordConfirmation %}
+                                        {{ formGroupPasswordConfirmation }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
+            {% block component_account_register_address %}
+                <div class="register-address col-md-6">
+                    {% block component_account_register_address_fields %}
+                        <div class="register-billing">
+                            {% block component_account_register_address_billing %}
+                                {% block component_account_register_address_billing_header %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block component_account_register_address_billing_fields %}
+                                    {{ parent() }}
+                                {% endblock %}
+                            {% endblock %}
+
+                            {% block component_account_register_address_different_shipping %}
+                                <div class="address-different-shipping">
+                                    {% block component_account_register_address_different_shipping_control %}
+                                        {{ parent() }}
+                                    {% endblock %}
+
+                                    {% block component_account_register_address_shipping %}
+                                        {{ parent() }}
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+
+        {% block component_account_register_captcha %}
+            {{ parent() }}
+        {% endblock %}
+
+        <div class="row register-footer">
+            <div class="col-md">
+                {% block component_account_register_privacy %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block component_account_register_required_fields %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+            <div class="col-md-auto">
+                {% block component_account_register_submit %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </form>
+{% endblock %}

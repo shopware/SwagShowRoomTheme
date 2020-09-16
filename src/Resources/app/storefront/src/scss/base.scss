@@ -41,6 +41,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/modal';
 @import 'component/pagination';
 @import 'component/offcanvas';
+@import 'component/container';
 
 /*
  * Layout-related sections
@@ -54,4 +55,6 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Page-specific styles
  * -------------------- */
+@import 'page/login';
+@import 'page/register';
 @import 'page/product-detail/product-detail';

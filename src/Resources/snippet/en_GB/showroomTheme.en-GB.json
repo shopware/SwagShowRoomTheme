@@ -1,7 +1,8 @@
 {
     "showroom": {
         "account": {
-            "orRegisterLink": "register"
+            "orRegisterLink": "register",
+            "loginHeader": "Login"
         },
         "footer": {
             "includeVat": "* All prices incl. value added tax",

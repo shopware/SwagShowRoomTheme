@@ -1,0 +1,122 @@
+.account-register {
+    .register-card {
+        .register-personal,
+        .register-billing {
+            .card-title {
+                font-size: $h4-font-size;
+            }
+        }
+
+        .register-personal {
+            .form-group {
+                @extend .col-12;
+                @extend .col-sm-12;
+                @extend .col-md-12;
+            }
+        }
+
+        .register-footer {
+            padding-top: 60px;
+
+            .privacy-notice {
+                margin-bottom: 0;
+            }
+        }
+
+        .register-group {
+            &:after {
+                content: '';
+                border-bottom: 1px solid $border-color;
+                width: calc(100% - #{$grid-gutter-width});
+                margin-left: $grid-gutter-width / 2;
+            }
+        }
+
+        .address-different-shipping {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .form-label {
+            line-height: 16px;
+        }
+
+        @include media-breakpoint-down(md) {
+            background: $white;
+            padding-top: 20px;
+
+            .register-personal,
+            .register-billing {
+                .card-title {
+                    font-size: $h6-font-size;
+                    padding-left: $grid-gutter-width / 2;
+                    padding-right: $grid-gutter-width / 2;
+                    margin-bottom: 30px;
+                }
+            }
+
+            .address-different-shipping {
+                padding-left: $grid-gutter-width / 2;
+                padding-right: $grid-gutter-width / 2;
+            }
+
+            .register-shipping,
+            .register-shipping .card-title {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .register-footer {
+                padding: $grid-gutter-width / 2;
+            }
+
+            .address-different-shipping {
+                .form-group {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+
+            .address-contact-type-department,
+            .address-form-street-front {
+                &.form-group {
+                    padding-right: $grid-gutter-width / 2;
+                }
+            }
+
+            .register-group {
+                &:after {
+                    width: calc(100% - #{$grid-gutter-width} * 2);
+                    margin-left: $grid-gutter-width;
+                }
+            }
+
+            .register-address {
+                margin-bottom: 30px;
+                padding-left: 0;
+            }
+
+            .register-personal {
+                padding-right: 0;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            .register-address {
+                padding-left: $grid-gutter-width / 2;
+            }
+
+            .register-personal {
+                padding-right: $grid-gutter-width /2;
+            }
+
+            .address-contact-type-department,
+            .address-form-street-front {
+                &.form-group {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
