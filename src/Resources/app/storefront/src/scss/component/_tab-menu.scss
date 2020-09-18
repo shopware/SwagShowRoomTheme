@@ -1,0 +1,30 @@
+.card-tabs {
+    @include media-breakpoint-up(sm) {
+        .nav-item {
+            margin-right: $grid-gutter-width/2;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        .nav-item {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+
+            .nav-link {
+                padding-top: 0;
+                padding-bottom: 4px;
+            }
+        }
+
+        .nav-tabs {
+            border-bottom: unset;
+
+            .btn {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

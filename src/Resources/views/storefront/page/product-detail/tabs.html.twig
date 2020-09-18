@@ -1,0 +1,49 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/tabs.html.twig' %}
+
+{% block page_product_detail_tabs_navigation_description %}
+    <li class="nav-item">
+        <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
+           id="description-tab"
+           data-toggle="tab"
+           data-offcanvas-tabs="true"
+           href="#description-tab-pane"
+           role="tab"
+           aria-controls="description-tab-pane"
+           aria-selected="true">
+            <span class="nav-link-title">{{ "detail.tabsDescription"|trans|sw_sanitize }}</span>
+            <span class="product-detail-tab-navigation-icon">
+                {% sw_icon 'arrow-simple-long-right' style { 'size': 'lg', 'color': 'primary' } %}
+            </span>
+            {% if page.product.translated.description|length > 0 %}
+                <span class="product-detail-tab-preview">
+                    {{ page.product.translated.description|raw|striptags|u.truncate(125, '…') }}
+                    {% if page.product.translated.description|length >= 126 %}
+                        <span class="btn btn-sm btn-block btn-outline-secondary product-detail-tab-preview-more">
+                            {{ "detail.tabsPreviewMore"|trans|sw_sanitize }}
+                        </span>
+                    {% endif %}
+                </span>
+            {% endif %}
+        </a>
+    </li>
+{% endblock %}
+
+{% block page_product_detail_tabs_navigation_review %}
+    {% if shopware.config.core.listing.showReview %}
+        <li class="nav-item">
+            <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link"
+               id="review-tab"
+               data-toggle="tab"
+               data-offcanvas-tabs="true"
+               href="#review-tab-pane"
+               role="tab"
+               aria-controls="review-tab-pane"
+               aria-selected="true">
+                <span class="nav-link-title">{{ "detail.tabsReview"|trans|sw_sanitize }}</span>
+                <span class="product-detail-tab-navigation-icon">
+                    {% sw_icon 'arrow-simple-long-right' style { 'size': 'lg', 'color': 'primary' } %}
+                </span>
+            </a>
+        </li>
+    {% endif %}
+{% endblock %}
