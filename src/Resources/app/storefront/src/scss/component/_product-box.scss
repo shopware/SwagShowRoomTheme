@@ -1,0 +1,159 @@
+$custom-box-standard-height-img: 220px;
+$box-image-height-img: 250px;
+
+.product-image {
+    height: 100%;
+    object-fit: cover;
+
+    &-wrapper {
+        height: $custom-box-standard-height-img;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+}
+
+.product-box {
+    border: none;
+    text-align: center;
+    position: relative;
+
+    .card-body {
+        padding: 0;
+    }
+
+    .product-info {
+        padding: 0 30px 30px 30px;
+    }
+
+    .product-rating {
+        padding: 10px 0;
+    }
+
+    .product-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 26px;
+        font-size: 16px;
+        height: 26px;
+
+        font-weight: $font-weight-bold;
+        color: $sw-color-brand-primary;
+        margin-bottom: 0;
+    }
+
+    .product-description {
+        font-size: $font-size-xs;
+    }
+
+    .product-price-info {
+        margin-top: 5px;
+    }
+
+    .product-price {
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 24px;
+        margin-top: 0;
+    }
+
+    // big image
+    &.box-image {
+        .product-image-wrapper {
+            height: $box-image-height-img;
+        }
+
+        .product-image {
+            max-height: $box-image-height-img;
+        }
+    }
+}
+
+.product-action {
+    display: flex;
+    width: 100%;
+
+    > * {
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
+
+    .btn {
+        text-transform: uppercase;
+        white-space: normal;
+        padding: 20px 10px;
+
+        line-height: 11px;
+        letter-spacing: 1.5px;
+        font-size: 10px;
+    }
+
+    .btn-buy {
+        margin-left: 5px;
+        width: 100%;
+    }
+}
+
+.product-badges {
+    top: 0;
+    left: 0;
+    text-align: left;
+
+    .badge {
+        font-size: $font-size-sm;
+        height: auto;
+        line-height: 14px;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    background-color: $white;
+    border-radius: 1px;
+    z-index: 10;
+
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    &__action {
+        margin-top: auto;
+    }
+}
+
+.product-box:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-variant-characteristics {
+    &-group {
+        font-size: 8px;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+    }
+
+    &-option {
+        font-size: $font-size-base;
+        line-height: 28px;
+        font-weight: $font-weight-normal;
+    }
+
+    & &-text {
+        max-height: initial;
+    }
+}
+
