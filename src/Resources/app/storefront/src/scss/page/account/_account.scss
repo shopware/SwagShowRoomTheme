@@ -1,0 +1,133 @@
+.is-ctl-accountprofile {
+    .account-content {
+        @extend .row;
+
+        .account-content-main {
+            @extend .col-xl;
+            @extend .col-lg-7;
+        }
+
+        .account-content-aside {
+            @extend .col-xl-4;
+        }
+
+        .card-title {
+            font-size: $h4-font-size;
+            margin-bottom: 20px;
+        }
+
+        .card-actions a {
+            text-decoration: underline;
+        }
+
+        .account-content-aside {
+            @extend .col-xl-3;
+        }
+
+        .account-welcome {
+            margin-bottom: 30px;
+        }
+
+        .account-content-aside {
+            padding: 70px 50px;
+
+            .card-header {
+                padding: 0;
+                font-size: $h2-font-size;
+            }
+        }
+
+        .account-aside-footer {
+            padding: 50px 0;
+        }
+
+        .account-aside-item::before {
+            content: unset;
+        }
+
+        .account-aside-list-group {
+            font-size: $h4-font-size;
+            padding: 50px 0;
+
+            .account-aside-item {
+                margin: 10px 0;
+                padding: 0;
+            }
+        }
+
+        .account-welcome {
+            padding-top: 75px;
+            border-bottom: 1px solid $border-color;
+
+            p {
+                padding-bottom: 40px;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            .account-content-aside {
+                max-width: 400px;
+            }
+
+            .account-content-main {
+                margin-left: 64px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        h1, h2 {
+            color: $sw-color-brand-primary;
+        }
+        
+        .content-main {
+            > .container {
+                background: $gray-100;
+            }
+        }
+
+        .container-main {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .account-information {
+            font-size: 18px;
+            font-weight: 500;
+            padding-top: 27px;
+            padding-bottom: 27px;
+            justify-content: space-between;
+        }
+
+        .account-content {
+            background: $white;
+
+            .card-title {
+                font-size: $h6-font-size;
+                margin-bottom: 5px;
+            }
+
+            h1 {
+                font-size: $h3-font-size;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .card-actions {
+                margin-top: 10px;
+            }
+
+
+            .account-welcome {
+                margin-bottom: 0;
+                padding-top: 30px;
+
+                p {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+}

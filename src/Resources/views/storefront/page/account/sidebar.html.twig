@@ -1,5 +1,15 @@
 {% sw_extends '@Storefront/storefront/page/account/sidebar.html.twig' %}
 
+{% block page_account_sidebar_header %}
+    {% if not headerWidget %}
+        <div class="card-header account-aside-header">
+            {{ "account.greetings"|trans|sw_sanitize }}
+            {{ context.customer.title }}
+            {{ context.customer.firstName }}
+        </div>
+    {% endif %}
+{% endblock %}
+
 {% block page_account_sidebar_footer %}
     {% if context.customer %}
         {% if not context.customer.guest %}
