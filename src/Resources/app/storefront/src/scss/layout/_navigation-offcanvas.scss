@@ -1,11 +1,15 @@
-$navigation-offcanvas-size: 11px;
 $navigation-offcanvas-padding: 24px;
 $navigation-offcanvas-spacing: 10px;
+$offcanvas-overlay-font-size: 18px;
+
+$navigation-offcanvas-image-width: 500px;
+$navigation-offcanvas-image-height: 307px;
 
 .navigation-offcanvas {
     &-container {
-        font-size: $navigation-offcanvas-size;
+        font-size: $font-size-xs;
         line-height: 19px;
+        margin-top: 24px;
     }
 
     &-headline {
@@ -23,16 +27,16 @@ $navigation-offcanvas-spacing: 10px;
         border-radius: 1px;
     }
 
+    &-headline,
     &-link {
         padding: 16px 20px;
         margin-left: $navigation-offcanvas-padding;
         margin-right: $navigation-offcanvas-padding;
         background-color: $gray-100;
 
-        &.is-home-link,
         &.is-back-link,
+        &.is-current-category,
         &.navigation-offcanvas-headline {
-            font-size: $navigation-offcanvas-size;
             font-weight: $font-weight-bolder;
             color: $gray-900;
             margin-bottom: $navigation-offcanvas-spacing;
@@ -44,8 +48,8 @@ $navigation-offcanvas-spacing: 10px;
     }
 
     &-actions {
-        padding: $navigation-offcanvas-padding 0;
-        margin: 0 $navigation-offcanvas-padding $navigation-offcanvas-padding;
+        padding: $navigation-offcanvas-padding 0px;
+        margin: 0px $navigation-offcanvas-padding 0px;
         border-bottom: 1px solid $border-color;
 
         .top-bar-nav-item {
@@ -55,6 +59,143 @@ $navigation-offcanvas-spacing: 10px;
 
         .language-form,
         .currency-form {
+            width: 100%;
+        }
+    }
+
+    &-teaser-image-container {
+        display: none;
+    }
+
+    &-header {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: $gray-100;
+        padding: 30px 32px;
+
+        .offcanvas-close,
+        .is-home-link {
+            flex: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .is-home-link {
+            display: flex;
+            align-items: center;
+
+            span ~ span {
+                margin-left: 1rem;
+            }
+        }
+
+        .offcanvas-close.sticky-top {
+            justify-content: flex-start;
+            align-items: center;
+
+            .icon {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .navigation-offcanvas {
+        width: 800px;
+
+        &-container {
+            font-size: $h4-font-size;
+        }
+
+        &-actions {
+            display: none;
+        }
+
+        &-link {
+            background-color: transparent;
+            color: $gray-700;
+            border-bottom: 1px solid $border-color;
+            margin-left: 150px;
+            margin-right: 150px;
+            padding-left: 0;
+            padding-right: 10px;
+
+            &.is-back-link {
+                font-size: $font-size-base;
+                border-bottom: none;
+
+                .icon {
+                    opacity: 1;
+                }
+            }
+
+            &.is-current-category,
+            &.navigation-offcanvas-headline {
+                font-size: $h4-font-size;
+                margin-bottom: 0;
+            }
+
+            .icon {
+                opacity: 0.6;
+            }
+
+            &:hover {
+                .icon {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-back-link {
+            display: flex;
+            justify-content: space-between;
+
+            .navigation-offcanvas-link {
+                padding: 0;
+                margin-bottom: 18px;
+            }
+
+            .navigation-offcanvas-headline {
+                font-size: $font-size-base;
+                font-weight: $font-weight-bold;
+                line-height: 28px;
+                margin-left: 0;
+                border-bottom: 0;
+            }
+        }
+
+        &-list-item {
+            margin-bottom: 0;
+            border-radius: 1px;
+        }
+
+        &-overlay {
+            font-size: $offcanvas-overlay-font-size;
+        }
+
+        &-teaser-image-container {
+            display: block;
+            width: $navigation-offcanvas-image-width;
+            height: $navigation-offcanvas-image-height;
+
+            margin-top: 98px;
+            margin-bottom: 98px;
+            border-bottom: 0;
+        }
+
+        &-teaser-image {
+            object-fit: cover;
+            font-family: 'object-fit: cover;'; // IE polyfill
+            display: block;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .offcanvas {
+        .offcanvas-content-container {
             width: 100%;
         }
     }

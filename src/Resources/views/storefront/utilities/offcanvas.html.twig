@@ -1,5 +1,16 @@
 {% sw_extends '@Storefront/storefront/utilities/offcanvas.html.twig' %}
 
-{% block utilities_offcanvas_close_icon %}
-    {% sw_icon 'x' style { 'size': 'lg' } %}
+{% block utilities_offcanvas_close %}
+    <div class="navigation-offcanvas-header">
+        {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/show-all-link.html.twig' %}
+        <button class="btn btn-block offcanvas-close js-offcanvas-close sticky-top">
+            {% block utilities_offcanvas_close_icon %}
+                {% sw_icon 'x' style { 'size': 'lg' } %}
+            {% endblock %}
+
+            {% block utilities_offcanvas_close_text %}
+                {{ "showroom.general.offcanvasCloseMenu"|trans|sw_sanitize }}
+            {% endblock %}
+        </button>
+    </div>
 {% endblock %}
