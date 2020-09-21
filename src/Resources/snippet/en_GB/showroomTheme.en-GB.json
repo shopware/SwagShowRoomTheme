@@ -11,6 +11,9 @@
         "general": {
             "offcanvasCloseMenu": "Close",
             "mainMenu": "Menu"
+        },
+        "listing": {
+            "boxAddProduct": "Add to cart"
         }
     },
     "header": {
