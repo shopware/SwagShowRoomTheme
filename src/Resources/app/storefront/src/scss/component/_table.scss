@@ -1,9 +1,33 @@
-.table-striped {
+.table {
     border-collapse: separate;
     border-spacing: 4px 5px;
 
+    th,
+    td {
+        padding: 6px 20px;
+    }
+
+    tr {
+        line-height: 28px;
+    }
+
+    thead {
+        background-color: transparent;
+
+        tr {
+            letter-spacing: 2px;
+            font-weight: $font-weight-bold;
+        }
+    }
+
     tbody tr {
         background-color: $table-accent-bg;
-        line-height: 28px;
+    }
+}
+
+.table-sm {
+    th,
+    td {
+        padding: 6px 20px;
     }
 }

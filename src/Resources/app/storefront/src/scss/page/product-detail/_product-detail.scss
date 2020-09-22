@@ -1,7 +1,119 @@
-.product-detail-properties-table {
-    th,
-    td {
-        padding: 16px 8px 16px 16px;
+.product-detail {
+    &-headline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    &-name-container {
+        padding-left: 0;
+    }
+
+    &-name {
+        color: $sw-color-brand-primary;
+        font-weight: $font-weight-bold;
+        font-size: $product-detail-name-sm;
+    }
+
+    &-price-container {
+        text-align: right;
+        width: 100%;
+    }
+
+    &-price {
+        font-size: $product-detail-price;
+        font-weight: $font-weight-semibold;
+    }
+
+    &-tax-link {
+        text-decoration: underline;
+        font-size: 8px;
+        line-height: 1rem;
+    }
+
+    &-description-title {
+        font-weight: $font-weight-semibold;
+    }
+
+    &-ordernumber-container {
+        margin-top: 28px;
+    }
+
+    &-configurator-group.product-detail-quantity {
+        margin-bottom: 0;
+    }
+
+    &-properties-table {
+        th,
+        td {
+            padding: 16px 8px 16px 16px;
+            font-weight: $font-weight-base;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-name {
+            font-size: $product-detail-name;
+        }
+
+        &-price {
+            font-size: $product-detail-price-lg;
+        }
+    }
+}
+
+// Tablet stripped for graduated price
+.product-block-prices-table {
+    .product-block-prices-head {
+        background: $gray-100;
+    }
+
+    thead th {
+        border-right: 1px solid $white;
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    th {
         font-weight: $font-weight-base;
+    }
+}
+
+.product-block-prices {
+    &-table {
+        margin-bottom: 0;
+
+        th,
+        td {
+            border: 0;
+        }
+    }
+
+    &-head {
+        background-color: transparent;
+    }
+}
+
+.buy-widget-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &-block {
+        flex-wrap: wrap;
+    }
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        > .btn-buy {
+            flex-basis: 303px;
+            margin-left: 14px;
+            flex-shrink: 0;
+        }
     }
 }
