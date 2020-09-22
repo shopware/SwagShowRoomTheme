@@ -75,5 +75,13 @@
 }
 
 .btn-lg {
-    letter-spacing: 2px;
+    letter-spacing: $letter-spacing-base;
+}
+
+.btn-buy {
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+
+    @include media-breakpoint-up(lg) {
+        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+    }
 }

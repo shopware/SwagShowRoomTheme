@@ -1,0 +1,36 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+{% set isGraduatedPrice = page.product.calculatedPrices|length > 1 %}
+
+{% block page_product_detail_buy_container %}
+    {% if buyable %}
+        <div class="buy-widget-container {% if isGraduatedPrice %}buy-widget-container-block{% endif %}">
+            {% block page_product_detail_buy_quantity_container %}
+                {% block page_product_detail_buy_quantity %}
+                    <div class="product-detail-price-container">
+                        {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+                        {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
+                    </div>
+                {% endblock %}
+            {% endblock %}
+
+            {% block page_product_detail_buy_redirect_input %}
+                {{ parent() }}
+            {% endblock %}
+
+            {% block page_product_detail_buy_product_buy_info %}
+                {{ parent() }}
+            {% endblock %}
+
+            {% block page_product_detail_product_buy_meta %}
+                {{ parent() }}
+            {% endblock %}
+
+            {% block page_product_detail_buy_button_container %}
+                {% block page_product_detail_buy_button %}
+                    {{ parent() }}
+                {% endblock %}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
