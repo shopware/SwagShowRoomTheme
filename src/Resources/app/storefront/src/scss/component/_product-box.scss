@@ -97,6 +97,7 @@ $box-image-height-img: 250px;
     top: 0;
     left: 0;
     text-align: left;
+    z-index: 2;
 
     .badge {
         font-size: $font-size-sm;
@@ -104,7 +105,7 @@ $box-image-height-img: 250px;
         line-height: 14px;
         padding: 5px 10px;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: $letter-spacing-base;
     }
 }
 
@@ -119,7 +120,7 @@ $box-image-height-img: 250px;
 
     background-color: $white;
     border-radius: 1px;
-    z-index: 10;
+    z-index: 2;
 
     padding: 25px 20px;
     display: flex;
@@ -145,7 +146,7 @@ $box-image-height-img: 250px;
     }
 
     &-group--special {
-        letter-spacing: 2px;
+        letter-spacing: $letter-spacing-base;
         font-size: 8px;
         font-weight: $font-weight-bold;
         text-transform: uppercase;
