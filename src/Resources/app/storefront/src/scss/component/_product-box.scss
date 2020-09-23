@@ -129,10 +129,6 @@ $box-image-height-img: 250px;
         margin-top: auto;
         margin-bottom: auto;
     }
-
-    &__action {
-        margin-top: auto;
-    }
 }
 
 .product-box:hover .product-overlay {
@@ -140,20 +136,24 @@ $box-image-height-img: 250px;
 }
 
 .product-variant-characteristics {
+    font-size: 12px;
+    min-height: initial;
+
     &-group {
-        font-size: 8px;
-        text-transform: uppercase;
-        font-weight: $font-weight-bold;
+        text-transform: capitalize;
+        line-height: 8px;
     }
 
-    &-option {
-        font-size: $font-size-base;
+    &-group--special {
+        letter-spacing: 2px;
+        font-size: 8px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+    }
+
+    & &-option {
         line-height: 28px;
         font-weight: $font-weight-normal;
-    }
-
-    & &-text {
-        max-height: initial;
     }
 }
 
