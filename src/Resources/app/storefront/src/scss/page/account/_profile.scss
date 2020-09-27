@@ -1,0 +1,65 @@
+.is-ctl-accountprofile {
+    .account-profile-personal {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $border-color;
+
+        .form-group {
+            @extend .col-md-4;
+
+            &:not(:first-child) {
+                @extend .pl-md-0;
+            }
+        }
+    }
+
+    .account-profile-credentials {
+        margin-bottom: 50px;
+    }
+
+    .profile-form-submit {
+        text-transform: uppercase;
+    }
+
+    .account-profile-credentials-current-mail {
+        padding-bottom: 20px;
+    }
+
+    .account-profile-required-info {
+        display: flex;
+        margin-bottom: 0;
+        align-items: center;
+        font-size: $showroom-font-size-base;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .account-profile-credentials-current-mail {
+            span {
+                display: block;
+            }
+        }
+
+        .account-profile-personal {
+            padding-top: 30px;
+            margin-bottom: 30px;
+
+            .card-actions {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .profile-form-submit {
+            width: unset;
+            padding: $btn-padding-y $btn-padding-x;
+        }
+
+        .account-profile-personal {
+            .card-actions {
+                padding-top: 10px;
+                margin-top: 0;
+            }
+        }
+    }
+}
