@@ -1,0 +1,55 @@
+{% sw_extends '@Storefront/storefront/page/account/_page.html.twig' %}
+
+{% block base_main_inner %}
+    <div class="container">
+        {% block base_main_container %}
+            {% if context.customer %}
+                <div class="account-information d-flex align-items-center d-lg-none">
+                    {{ "account.greetings"|trans|sw_sanitize }}
+                    {{ context.customer.title }}
+                    {{ context.customer.firstName }}
+
+                    {% if not context.customer.guest %}
+                        <a href="{{ path('frontend.account.logout.page') }}"
+                           class="btn btn-sm btn-outline-secondary">
+                            {{ "account.logout"|trans|sw_sanitize }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('frontend.account.logout.page') }}"
+                           class="btn btn-sm btn-outline-secondary">
+                            {{ "account.guestAbort"|trans|sw_sanitize }}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <div class="container-main">
+                {% block base_breadcrumb %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block base_content %}
+                    {% block page_account %}
+                        <div class="account account-content">
+                            {% block page_account_sidebar %}
+                                <div class="account-content-aside">
+                                    {% if context.customer and not context.customer.guest %}
+                                        {% sw_include '@Storefront/storefront/page/account/sidebar.html.twig' %}
+                                    {% endif %}
+                                </div>
+                            {% endblock %}
+
+                            {% block page_account_main %}
+                                <div class="account-content-main">
+                                    {% block page_account_main_content %}{% endblock %}
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+
