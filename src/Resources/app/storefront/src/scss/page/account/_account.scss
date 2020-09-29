@@ -76,10 +76,10 @@
     }
 
     @include media-breakpoint-down(md) {
-        h1, h2 {
+        h1, h2, .card-title {
             color: $sw-color-brand-primary;
         }
-        
+
         .content-main {
             > .container {
                 background: $gray-100;
