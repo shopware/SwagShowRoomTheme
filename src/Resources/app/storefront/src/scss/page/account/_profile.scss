@@ -32,6 +32,12 @@
         font-size: $showroom-font-size-base;
     }
 
+    .account-email {
+        .card-actions {
+            padding-bottom: 30px;
+        }
+    }
+
     @include media-breakpoint-down(sm) {
         .account-profile-credentials-current-mail {
             span {

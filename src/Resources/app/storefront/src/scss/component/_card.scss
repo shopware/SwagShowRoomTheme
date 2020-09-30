@@ -4,3 +4,9 @@
     color: $sw-headline-color;
     margin-bottom: 50px;
 }
+
+.card-body {
+    .text-muted {
+        padding-bottom: 20px;
+    }
+}
