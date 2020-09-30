@@ -14,9 +14,6 @@
         },
         "listing": {
             "boxAddProduct": "Add to cart"
-        },
-        "detail": {
-            "quantity": "Menge"
         }
     },
     "header": {
