@@ -1,0 +1,27 @@
+.is-ctl-accountpayment {
+    .account-payment-card {
+        padding-top: 10px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .account-payment-card {
+            padding-top: 50px;
+            padding-bottom: 70px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .account-payment-card {
+            padding-top: 30px;
+            padding-bottom: 50px;
+
+            .btn {
+                width: 100%;
+            }
+
+            .card-title {
+                margin-bottom: 14px;
+            }
+        }
+    }
+}
