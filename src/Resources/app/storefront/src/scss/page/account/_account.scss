@@ -1,4 +1,5 @@
-.is-ctl-accountprofile {
+.is-ctl-accountprofile,
+.is-ctl-address {
     .account-content {
         @extend .row;
 
@@ -14,10 +15,6 @@
         .card-title {
             font-size: $h4-font-size;
             margin-bottom: 20px;
-        }
-
-        .card-actions a {
-            text-decoration: underline;
         }
 
         .account-content-aside {
@@ -58,10 +55,7 @@
         .account-welcome {
             padding-top: 75px;
             border-bottom: 1px solid $border-color;
-
-            p {
-                padding-bottom: 40px;
-            }
+            padding-bottom: 40px;
         }
 
         @include media-breakpoint-up(lg) {
@@ -119,15 +113,20 @@
                 margin-top: 10px;
             }
 
-
             .account-welcome {
                 margin-bottom: 0;
                 padding-top: 30px;
-
-                p {
-                    padding-bottom: 30px;
-                }
+                padding-bottom: 30px;
             }
+        }
+    }
+}
+
+.is-act-accountcreateaddress {
+    .account-address {
+        .account-welcome {
+            padding-right: 0;
+            padding-left: 0;
         }
     }
 }

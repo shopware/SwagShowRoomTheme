@@ -1,0 +1,46 @@
+{% sw_extends '@Storefront/storefront/page/account/addressbook/index.html.twig' %}
+
+{% block page_account_main_content %}
+    <div class="account-address">
+        {% block page_account_address_welcome %}
+            <div class="row account-welcome-container">
+                {{ parent() }}
+
+                {% block page_account_address_item_content_create %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block page_account_address_success_messages %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block page_account_address_error_messages %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block page_account_address_main %}
+            {% set defaultBillingAddress = context.customer.defaultBillingAddress %}
+            {% set defaultShippingAddress = context.customer.defaultShippingAddress %}
+
+            {% block page_account_address_default %}
+                <div class="default-address">
+                    <div class="row">
+                        {% block page_account_address_billing %}
+                            {{ parent() }}
+                        {% endblock %}
+
+                        {% block page_account_address_shipping %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block page_account_address_list %}
+                {{ parent() }}
+            {% endblock %}
+        {% endblock %}
+    </div>
+{% endblock %}

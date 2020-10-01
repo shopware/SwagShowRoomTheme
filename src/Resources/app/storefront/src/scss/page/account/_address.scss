@@ -1,0 +1,108 @@
+.is-ctl-address {
+    .account-content {
+        .account-welcome {
+            @extend .col-12;
+            @extend .col-md-8;
+        }
+    }
+
+    .address-action-create {
+        @extend .col-12;
+        @extend .col-md-4;
+    }
+
+    .account-welcome-container {
+        border-bottom: 1px solid $border-color;
+    }
+
+    .default-address {
+        padding-top: 30px;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .address-action-set-default {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .address-form-actions,
+    .address-card {
+        padding-bottom: 30px;
+    }
+
+    .address-list {
+        padding-bottom: 24px;
+    }
+
+    .account-address {
+        .alert {
+            margin-top: 30px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .account-welcome-container {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .account-content {
+            .account-welcome {
+                border-bottom: unset;
+                margin-bottom: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .address-action-create {
+            padding-top: 75px;
+            padding-right: 0;
+            text-align: end;
+        }
+
+        .address-list {
+            padding-bottom: 30px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .account-content {
+            .account-welcome {
+                border-bottom: unset;
+            }
+        }
+
+        .address-actions-buttons .btn,
+        .address-action-create a {
+            width: 100%;
+        }
+
+        .address-action-delete {
+            margin-left: 14px;
+        }
+
+        .address-list {
+            padding-bottom: unset;
+        }
+    }
+}
+
+.is-act-accountcreateaddress,
+.is-act-accounteditaddress {
+    .address-required-info {
+        padding-bottom: 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+        .address-form-actions {
+            text-align: right;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .address-form-submit {
+            width: 100%;
+        }
+    }
+}
