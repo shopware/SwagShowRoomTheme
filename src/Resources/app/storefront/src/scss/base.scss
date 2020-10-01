@@ -46,6 +46,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/nav';
 @import 'component/container';
 @import 'component/grid-framework';
+@import 'component/payment-method';
 
 /*
  * Layout-related sections
@@ -67,3 +68,4 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/account/overview';
 @import 'page/account/profile';
 @import 'page/account/address';
+@import 'page/account/payment';
