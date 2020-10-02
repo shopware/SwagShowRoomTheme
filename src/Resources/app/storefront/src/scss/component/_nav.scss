@@ -1,4 +1,8 @@
 .product-detail-tabs {
+    .navigation-offcanvas-header {
+        display: none;
+    }
+
     @include media-breakpoint-up(sm) {
         .nav-link {
             border-bottom: 0;

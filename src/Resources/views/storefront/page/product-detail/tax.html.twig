@@ -1,0 +1,21 @@
+{% block page_product_detail_tax %}
+    <div class="product-detail-tax-container">
+        {% if context.taxState == "gross" %}
+            {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+        {% else %}
+            {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+        {% endif %}
+
+        <p class="product-detail-tax">
+            {% block page_product_detail_tax_link %}
+                <a class="product-detail-tax-link"
+                   href="{{ path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage }) }}"
+                   title="{{ taxText }}"
+                   data-toggle="modal"
+                   data-url="{{ path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage }) }}">
+                    {{ taxText }}
+                </a>
+            {% endblock %}
+        </p>
+    </div>
+{% endblock %}
