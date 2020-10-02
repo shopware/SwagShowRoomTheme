@@ -75,15 +75,15 @@
             },
             "sw-logo-desktop": {
                 "type": "media",
-                "value": "public/assets/logo/demostore-logo-desktop.svg"
+                "value": "public/assets/logo/showroom-logo-desktop.svg"
             },
             "sw-logo-tablet": {
                 "type": "media",
-                "value": "public/assets/logo/demostore-logo-desktop.svg"
+                "value": "public/assets/logo/showroom-logo-desktop.svg"
             },
             "sw-logo-mobile": {
                 "type": "media",
-                "value": "public/assets/logo/demostore-logo-mobile.svg"
+                "value": "public/assets/logo/showroom-logo-mobile.svg"
             },
             "sw-footer-bg-color": {
                 "label": {
@@ -113,7 +113,7 @@
                     "de-DE": "Footer Logo"
                 },
                 "type": "media",
-                "value": "public/assets/logo/demostore-logo-footer-desktop.svg",
+                "value": "public/assets/logo/showroom-logo-footer-desktop.svg",
                 "editable": true,
                 "block": "media",
                 "order": 300
@@ -124,7 +124,7 @@
                     "de-DE": "Footer mobile Logo"
                 },
                 "type": "media",
-                "value": "public/assets/logo/demostore-logo-footer-mobile.svg",
+                "value": "public/assets/logo/showroom-logo-footer-mobile.svg",
                 "editable": true,
                 "block": "media",
                 "order": 400
