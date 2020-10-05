@@ -1,14 +1,28 @@
 {% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/navigation.html.twig' %}
 
+{% block utilities_offcanvas_close %}
+    <div class="navigation-offcanvas-header">
+        {% block utilities_offcanvas_show_all_link %}
+            {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/show-all-link.html.twig' %}
+        {% endblock %}
+
+        <button class="btn btn-block offcanvas-close js-offcanvas-close sticky-top">
+            {% block utilities_offcanvas_close_icon %}
+                {% sw_icon 'x' style { 'size': 'lg' } %}
+            {% endblock %}
+        </button>
+    </div>
+{% endblock %}
+
 {% block layout_navigation_offcanvas_navigation_actions %}
     <div data-language-currency="true">
         <nav class="nav navigation-offcanvas-actions">
             {% block layout_navigation_offcanvas_navigation_action_currency %}
-                {% sw_include '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' with {position: 'offcanvas'} %}
+                {{ parent() }}
             {% endblock %}
 
             {% block layout_navigation_offcanvas_navigation_action_language %}
-                {% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' with {position: 'offcanvas'} %}
+                {{ parent() }}
             {% endblock %}
         </nav>
     </div>
