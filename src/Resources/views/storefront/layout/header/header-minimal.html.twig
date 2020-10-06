@@ -1,0 +1,31 @@
+{% sw_extends '@Storefront/storefront/layout/header/header-minimal.html.twig' %}
+
+{% block layout_header_minimal_row %}
+    <div class="row header-row header-minimal-row">
+        {% block layout_header_minimal_contact %}
+            <div class="col-md-4 header-minimal-contact">
+                {{ "showroom.header.supportInfo"|trans|sw_sanitize }}
+            </div>
+        {% endblock %}
+
+        {% block layout_header_minimal_logo %}
+            <div class="col-auto header-minimal-logo">
+                {% sw_include '@Storefront/storefront/layout/header/logo.html.twig' %}
+            </div>
+        {% endblock %}
+
+        {% block layout_header_minimal_button %}
+            <div class="col-auto header-minimal-back-to-shop">
+                <a href="{{ path('frontend.home.page') }}"
+                   class="header-minimal-back-to-shop-button"
+                   title="{{ "checkout.finishButtonBackToShop"|trans|striptags }}">
+                    {% sw_icon 'arrow-right' style {
+                        'color': 'primary',
+                        'pack':'solid'
+                    } %}
+                    {{ "showroom.checkout.finishButtonBackToShop"|trans|striptags }}
+                </a>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

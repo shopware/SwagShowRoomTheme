@@ -1,5 +1,8 @@
 {
     "showroom": {
+        "header": {
+            "supportInfo": "<b>Questions regarding your order?</b>"
+        },
         "account": {
             "orRegisterLink": "registrieren",
             "loginHeader": "Anmeldung"
@@ -17,10 +20,10 @@
         },
         "detail": {
             "quantity": "Menge"
+        },
+        "checkout": {
+            "finishButtonBackToShop": "Zur Startseite"
         }
-    },
-    "header": {
-        "supportInfo": "<b>Questions regarding your order?<br /><a href=\"tel:+4912345-123456789\">+49 1234-56798</a></b> <small>Daily from 7:30 am to 10:00 pm</small>"
     },
     "footer": {
         "newsletterHeadline": "Newsletter",
