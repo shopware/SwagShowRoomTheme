@@ -2,20 +2,22 @@
 {% set title = category.media.translated.title ?: '' %}
 
 {% block layout_navigation_offcanvas_navigation_home_link_text %}
-    <a class="navigation-offcanvas-link navigation-offcanvas-teaser-image-container"
-       href="{{ seoUrl('frontend.navigation.page', { navigationId: category.id }) }}"
-       title="{{ title }}">
-        {% sw_thumbnails 'navigation-offcanvas-teaser-image-thumbnails' with {
-            media: category.media,
-            sizes: {
-                'default': '500px'
-            },
-            attributes: {
-                'class': 'navigation-offcanvas-teaser-image',
-                'alt': (category.media.translated.alt ?: ''),
-                'title': title,
-                'data-object-fit': 'cover'
-            }
-        } %}
-    </a>
+    {% if category.media %}
+        <a class="navigation-offcanvas-link navigation-offcanvas-teaser-image-container"
+           href="{{ seoUrl('frontend.navigation.page', { navigationId: category.id }) }}"
+           title="{{ title }}">
+            {% sw_thumbnails 'navigation-offcanvas-teaser-image-thumbnails' with {
+                media: category.media,
+                sizes: {
+                    'default': '500px'
+                },
+                attributes: {
+                    'class': 'navigation-offcanvas-teaser-image',
+                    'alt': (category.media.translated.alt ?: ''),
+                    'title': title,
+                    'data-object-fit': 'cover'
+                }
+            } %}
+        </a>
+    {% endif %}
 {% endblock %}
