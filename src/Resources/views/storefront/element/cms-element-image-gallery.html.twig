@@ -1,0 +1,38 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-image-gallery.html.twig' %}
+
+{% block element_image_gallery_inner_controls %}
+{% endblock %}
+
+{% block element_image_gallery_slider_dots %}
+{% endblock %}
+
+{% block element_image_gallery_inner_thumbnails %}
+    {{ parent() }}
+
+    {% block element_image_gallery_controls %}
+        <div class="gallery-slider-controls"
+             data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
+            {% block element_image_gallery_inner_control_items %}
+                {% block element_image_gallery_inner_control_prev %}
+                    <button
+                        class="base-slider-controls-prev gallery-slider-controls-prev{% if navigationArrows == "outside" %} is-nav-prev-outside{% elseif navigationArrows == "inside" %} is-nav-prev-inside{% endif %}"
+                        aria-label="{{ 'general.previous'|trans|striptags }}">
+                        {% block element_image_gallery_inner_control_prev_icon %}
+                            {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+                        {% endblock %}
+                    </button>
+                {% endblock %}
+
+                {% block element_image_gallery_inner_control_next %}
+                    <button
+                        class="base-slider-controls-next gallery-slider-controls-next{% if navigationArrows == "outside" %} is-nav-next-outside{% elseif navigationArrows == "inside" %} is-nav-next-inside{% endif %}"
+                        aria-label="{{ 'general.next'|trans|striptags }}">
+                        {% block element_image_gallery_inner_control_next_icon %}
+                            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+                        {% endblock %}
+                    </button>
+                {% endblock %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}

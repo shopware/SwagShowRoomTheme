@@ -1,4 +1,13 @@
 .card-tabs {
+    .nav-link {
+        color: $gray-700;
+
+        &.active {
+            font-weight: $font-weight-bold;
+            color: $gray-700;
+        }
+    }
+
     @include media-breakpoint-up(sm) {
         .nav-item {
             margin-right: $grid-gutter-width/2;

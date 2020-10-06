@@ -1,0 +1,18 @@
+$base-slider-controls-height: 50px;
+
+.base-slider-controls-prev,
+.base-slider-controls-next {
+    height: $base-slider-controls-height;
+    width: $base-slider-controls-height;
+    line-height: $base-slider-controls-height;
+    border: 0;
+    background-color: transparent;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.base-slider.has-nav-outside {
+    padding: 0;
+}
