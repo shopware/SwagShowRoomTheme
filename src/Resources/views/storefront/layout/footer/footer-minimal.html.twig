@@ -1,0 +1,34 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
+
+{% block layout_footer_inner_container %}
+    <footer class="footer-minimal">
+        {% block layout_footer_bottom %}
+            <div class="footer-bottom container">
+                {% block layout_footer_service_menu %}
+                    {% block layout_footer_service_menu_content %}
+                        <ul class="footer-service-menu-list list-unstyled">
+                            {% for serviceMenuItem in page.header.serviceMenu %}
+                                {% block layout_footer_service_menu_item %}
+                                    <li class="footer-service-menu-item">
+                                        <a class="footer-service-menu-link"
+                                           href="{% if serviceMenuItem.externalLink %}{{ serviceMenuItem.externalLink }}{% else %}{{ seoUrl('frontend.navigation.page', { navigationId: serviceMenuItem.id }) }}{% endif %}"
+                                           title="{{ serviceMenuItem.translated.name }}">
+                                            {% sw_icon 'arrow-right' style {
+                                                'color': 'primary',
+                                                'pack':'solid'
+                                            } %}
+                                            {{ serviceMenuItem.translated.name }}
+                                        </a>
+                                    </li>
+                                {% endblock %}
+                            {% endfor %}
+                        </ul>
+                    {% endblock %}
+                {% endblock %}
+            </div>
+            <div class="footer-main">
+                {{ parent() }}
+            </div>
+        {% endblock %}
+    </footer>
+{% endblock %}
