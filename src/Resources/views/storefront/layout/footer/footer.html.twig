@@ -91,7 +91,7 @@
         <div class="container">
             <div class="row">
                 {% block layout_footer_logo %}
-                    <div class="col-3 footer-logo">
+                    <div class="col-4 footer-logo">
                         <a class="footer-logo-main-link"
                            href="{{ path('frontend.home.page') }}"
                            title="{{ "header.logoLink"|trans|striptags }}">
@@ -107,7 +107,7 @@
                 {% endblock %}
 
                 {% block layout_footer_vat %}
-                    <div class="col-6 footer-vat">
+                    <div class="col-4 footer-vat">
                         {% if context.taxState == "gross" %}
                             <span>
                                 {{ "showroom.footer.includeVat"|trans({
@@ -125,7 +125,7 @@
                 {% endblock %}
 
                 {% block layout_footer_copyright %}
-                    <div class="col-3 footer-copyright">
+                    <div class="col-4 footer-copyright">
                         {% sw_icon 'shopware' style { 'color': 'primary' } %}
                         {{ "footer.copyrightInfo"|trans|sw_sanitize }}
                     </div>

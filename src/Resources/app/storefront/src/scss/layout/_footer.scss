@@ -188,3 +188,56 @@
         }
     }
 }
+
+.is-act-checkoutregisterpage {
+    .footer-minimal {
+        .footer-service-menu-list {
+            margin-bottom: 0;
+            text-align: left;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.footer-minimal {
+    .footer-bottom {
+        border-top: 1px solid $border-color;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    .footer-main {
+        border-top: 0;
+    }
+
+    .footer-service-menu-item {
+        margin-right: 1rem;
+
+        &:after {
+            content: none;
+        }
+    }
+
+    .footer-service-menu-link {
+        padding: 0;
+        line-height: 28px;
+
+        > .icon {
+            margin-right: 10px;
+        }
+    }
+}
+
