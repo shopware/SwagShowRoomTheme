@@ -1,0 +1,105 @@
+.is-ctl-accountorder,
+.is-ctl-accountprofile {
+    .order-table {
+        background: $gray-100;
+        border: unset;
+    }
+
+    .order-table-header-context-menu {
+        border: unset;
+        &:focus {
+            box-shadow: unset;
+        }
+    }
+
+    .order-table-header-context-menu-content-link:before {
+        content: '';
+        background: $icon-chevron-right;
+        padding: 5px 15px 5px 5px;
+        margin-right: 10px;
+    }
+
+    .order-table-header-context-menu-content {
+        min-width: 290px;
+        padding: 40px;
+    }
+
+    .order-item-header {
+        padding-bottom: 20px;
+        background: $gray-100;
+
+        .order-table-header-heading {
+            font-size: $h4-font-size;
+        }
+
+        .order-table-header-context-menu-wrapper,
+        .order-table-header-heading {
+            margin-bottom: unset;
+        }
+
+        .order-table-header-order-table-header {
+            padding-top: 20px;
+            border-top: 1px solid $border-color;
+        }
+
+        .order-table-header-order-table-body {
+            border-top: unset;
+
+            .order-table-header-order-table-body-cell[class*='col-'] {
+                margin-top: 0;
+            }
+        }
+
+        .order-table-header-order-table-header-cell {
+            font-size: $btn-font-size-sm;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            letter-spacing: 1.88px;
+            color: $sw-color-brand-primary;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .order-item-header {
+            .order-table-header-order-table-body {
+                .order-hide-btn {
+                    position: absolute;
+                    top: -20px;
+                    right: 0;
+                }
+            }
+
+            .order-table-header-label {
+                font-weight: normal;
+            }
+
+            .order-table-header-order-number {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .account-orders-main {
+            padding-top: 30px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .order-item-header {
+            padding-top: 30px;
+            padding-bottom: 0;
+
+            .order-table-header-order-table-body {
+                .order-hide-btn {
+                    width: 100%;
+                    margin: 20px 0;
+                }
+            }
+        }
+
+        .account-orders-main {
+            padding-top: 30px;
+        }
+    }
+}
