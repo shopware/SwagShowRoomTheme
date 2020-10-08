@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block base_main_inner %}
+    <div class="checkout-wrapper">
+        <div class="container">
+            {% block base_main_container %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -22,7 +22,11 @@
             "quantity": "Menge"
         },
         "checkout": {
-            "finishButtonBackToShop": "Zur Startseite"
+            "finishButtonBackToShop": "Zur Startseite",
+            "summaryPositionPrice": "Artikel gesamt",
+            "summaryTotalPrice": "Gesamt",
+            "summaryTax": "einschließlich. %rate% % MwSt.",
+            "lineItems": "{1} 1 punkt|]1,Inf[ %count% artikel"
         }
     },
     "footer": {

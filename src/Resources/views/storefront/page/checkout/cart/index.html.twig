@@ -1,0 +1,71 @@
+{% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
+
+{% block page_checkout_cart_header %}
+    <div class="cart-main-header-wrapper">
+        {{ parent() }}
+
+        {% block page_checkout_cart_total %}
+            <div class="cart-main-total-items">
+                {{ "showroom.checkout.lineItems"|trans({
+                    '%count%': page.cart.lineItems|length,
+                })|sw_sanitize }}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_cart_add_product_and_shipping %}{% endblock %}
+
+{% block page_checkout_cart_add_promotion_submit %}
+    <div class="input-group-append">
+        <button class="btn btn-primary"
+                type="submit"
+                id="addPromotion">
+            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+        </button>
+    </div>
+{% endblock %}
+
+{% block page_checkout_aside_actions %}
+    <div class="checkout-aside-action checkout-aside-action-code">
+        {% block page_checkout_cart_add_promotion %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+
+    {% block page_checkout_cart_action_proceed %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_cart_shipping_costs %}
+        <div class="mt-3 cart-shipping-costs-container">
+            <form name="precalc"
+                  method="post"
+                  action="{{ path('frontend.checkout.configure') }}"
+                  data-form-auto-submit="true">
+
+                {% block page_checkout_cart_shipping_costs_csrf %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_cart_shipping_costs_trigger %}
+                    <a class="btn btn-lg btn-block btn-outline-primary cart-shipping-costs-btn"
+                       data-toggle="collapse"
+                       href="#collapseShippingCost"
+                       role="button"
+                       aria-expanded="false"
+                       aria-controls="collapseExample">
+                        {{ "checkout.shippingCosts"|trans|sw_sanitize }}
+                        {% block page_checkout_cart_shipping_costs_trigger_icon %}{% endblock %}
+                    </a>
+                {% endblock %}
+
+                {% block page_checkout_cart_shipping_costs_form_group %}
+                    {{ parent() }}
+                {% endblock %}
+            </form>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+

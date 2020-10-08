@@ -1,0 +1,17 @@
+.checkout-wrapper {
+    background-color: $gray-100;
+
+    .checkout-aside-summary {
+        background-color: $white;
+    }
+
+    .container-main {
+        display: flex;
+        padding-bottom: 0;
+    }
+}
+
+.checkout-container {
+    height: 100%;
+    margin-bottom: 0;
+}
