@@ -1,0 +1,51 @@
+{% sw_extends '@Storefront/storefront/page/error/error-404.html.twig' %}
+
+{% block not_found_error_content %}
+    <div class="container-404 mt-4 align-middle d-flex h-100">
+        <div class="row no-gutters m-0 w-100">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                {% block not_found_error_picture %}
+                    <picture>
+                        <source srcset="{{ asset('bundles/SwagShowroomTheme/assets/images/404-tablet.png', 'theme') }}"
+                                media="(min-width: {{ shopware.theme.breakpoint.md }}px) and (max-width: {{ shopware.theme.breakpoint.lg - 1 }}px)">
+
+                        <source srcset="{{ asset('bundles/SwagShowroomTheme/assets/images/404-mobile.png', 'theme') }}"
+                                media="(max-width: {{ shopware.theme.breakpoint.md - 1 }}px)">
+
+                        <img src="{{ asset('bundles/SwagShowroomTheme/assets/images/404-desktop.png', 'theme') }}"
+                                alt="{{ "general.404ErrorPageHeader"|trans|striptags }}"
+                                class="img-fluid w-100"/>
+                    </picture>
+                {% endblock %}
+            </div>
+            <div class="col-12 col-lg-3 offset-lg-1">
+                <div class="row no-gutters align-items-center h-100">
+                    <div class="col-12 col-md-6 col-lg-12">
+                        {% block not_found_error_header %}
+                            <h2>{{ "general.404ErrorPageHeader"|trans|sw_sanitize }}</h2>
+                        {% endblock %}
+                        {% block not_found_error_description %}
+                            <p>{{ "general.404ErrorDescription"|trans|sw_sanitize }}</p>
+                        {% endblock %}
+                        <div class="d-none d-lg-block">
+                            {% block not_found_error_return_desktop %}
+                                <a href="{{ path('frontend.home.page') }}"
+                                   class="btn btn-primary">
+                                    {{ "general.404ErrorReturn"|trans|sw_sanitize }}
+                                </a>
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex d-lg-none justify-content-md-end">
+                        {% block not_found_error_return_mobile %}
+                            <a href="{{ path('frontend.home.page') }}"
+                               class="btn btn-primary">
+                                {{ "general.404ErrorReturn"|trans|sw_sanitize }}
+                            </a>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
