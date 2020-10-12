@@ -1,0 +1,188 @@
+.filter-panel {
+    .filter-panel-item {
+        .filter-panel-item-toggle {
+            background: $gray-100;
+            border-color: $gray-100;
+            font-size: $h6-font-size;
+            justify-content: space-between;
+            display: flex;
+            width: 326px;
+            max-width: 326px;
+
+            &:focus {
+                box-shadow: unset;
+            }
+        }
+
+        .filter-panel-item-dropdown {
+            width: 326px;
+            max-width: 326px;
+            overflow: unset;
+            max-height: 313px;
+            padding: 30px 20px 30px 0;
+
+            ul {
+                max-height: 252px;
+                overflow: auto;
+
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: $gray-300;
+                    border-radius: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: $gray-800;
+                    border-radius: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: $gray-800;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            background: $gray-100;
+            border-color: $gray-100;
+            margin: 0;
+        }
+
+        .global-collapse-column-toggle {
+            float: right;
+        }
+
+        .global-collapse-column-toggle,
+        .top-bar-list-icon {
+            pointer-events: none;
+        }
+
+        .global-collapse-minus-icon {
+            display: none;
+        }
+
+        &.show {
+            .global-collapse-plus-icon {
+                display: none;
+            }
+
+            .global-collapse-minus-icon {
+                display: block;
+            }
+        }
+
+        .filter-multi-select-count {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+    }
+
+    .filter-active {
+        border-color: $sw-color-brand-primary;
+        border-radius: 17px;
+    }
+
+    .filter-active-preview {
+        border-radius: 10px;
+    }
+
+    .btn.filter-reset-all {
+        border-radius: 17px;
+        padding-top: 2px;
+        font-size: $font-size-base;
+    }
+
+    .filter-active,
+    .btn.filter-reset-all {
+        height: 34px;
+    }
+
+    .filter-active {
+        &:hover,
+        &:active {
+            border-color: $sw-color-brand-secondary;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .filter-panel-items-container {
+            border-top: 1px solid $border-color;
+            padding-top: 20px;
+        }
+
+        .filter-active,
+        .btn.filter-reset-all {
+            height: 24px;
+            font-size: $showroom-font-size-xs;
+            padding-top: 0;
+            line-height: 22px;
+        }
+
+        .filter-active-preview {
+            display: none;
+        }
+
+        .filter-active-remove {
+            font-size: $showroom-font-size-base;
+            right: -6px;
+            top: 1px;
+        }
+
+        .filter-panel-active-container {
+            border-top: 1px solid $border-color;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .filter-multi-select,
+        .filter-range,
+        .filter-rating {
+            width: 100%;
+        }
+
+        .filter-panel-item {
+            margin-right: 0;
+
+            .filter-panel-item-toggle {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .filter-panel-item-dropdown {
+                width: calc(100% - 50px);
+                max-width: 100%;
+            }
+
+            &.show {
+                .filter-multi-name {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.filter-panel-wrapper-toggle {
+    @extend .btn-lg;
+
+    text-transform: uppercase;
+    font-size: $btn-font-size-sm;
+
+    .icon {
+        display: none;
+    }
+}
+
+.offcanvas-filter {
+    .filter-panel-offcanvas-header {
+        padding-bottom: 0;
+
+        h3 {
+            color: $sw-color-brand-primary;
+        }
+    }
+}
+
