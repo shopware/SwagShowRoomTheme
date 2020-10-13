@@ -3,6 +3,7 @@
 
     .alert-content-container {
         color: $sw-color-info;
+        background-color: transparent;
     }
 
     &.alert-has-icon {
@@ -23,6 +24,7 @@
 
     .alert-content-container {
         color: $sw-color-success;
+        background-color: transparent;
     }
 
     &.alert-has-icon {
@@ -43,6 +45,7 @@
 
     .alert-content-container {
         color: $sw-color-danger;
+        background-color: transparent;
     }
 
     &.alert-has-icon {
@@ -63,6 +66,7 @@
 
     .alert-content-container {
         color: $sw-color-warning;
+        background-color: transparent;
     }
 
     &.alert-has-icon {
