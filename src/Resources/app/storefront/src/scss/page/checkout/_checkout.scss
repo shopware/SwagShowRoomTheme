@@ -1,3 +1,6 @@
+$checkout-aside-spacer: 50px;
+$checkout-aside-spacer-lg: 100px;
+
 .checkout-wrapper {
     background-color: $gray-100;
 
@@ -9,9 +12,35 @@
         display: flex;
         padding-bottom: 0;
     }
+
+    .checkout-main,
+    .checkout-aside {
+        padding-top: $checkout-aside-spacer;
+        padding-bottom: $checkout-aside-spacer;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .checkout-main,
+        .checkout-aside {
+            padding-top: $checkout-aside-spacer-lg;
+            padding-bottom: $checkout-aside-spacer-lg;
+        }
+    }
 }
 
 .checkout-container {
     height: 100%;
     margin-bottom: 0;
+}
+
+.checkout-card {
+    .card-title {
+        font-size: $font-size-base;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .card-title {
+            font-size: $h2-font-size;
+        }
+    }
 }

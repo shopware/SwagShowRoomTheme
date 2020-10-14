@@ -1,0 +1,72 @@
+$confirm-product-spacer: 30px;
+$confirm-product-spacer-lg: 50px;
+
+.is-act-confirmpage,
+.is-ctl-accountorder {
+    .checkout {
+        padding-top: 0;
+
+        .checkout-container {
+            .checkout-main {
+                @extend .col-12;
+                @extend .col-md-5;
+                @extend .col-lg-4;
+                @include make-col-offset(0);
+                background-color: $white;
+            }
+
+            .checkout-aside {
+                @extend .col-12;
+                @extend .col-md-7;
+                @extend .col-lg-8;
+                @include make-col-offset(0);
+
+                background-color: $gray-100;
+            }
+        }
+    }
+
+    .confirm-product,
+    .confirm-main-header,
+    .confirm-product-header {
+        margin-bottom: $confirm-product-spacer;
+    }
+
+    .confirm-main-sub {
+        margin-bottom: 30px;
+    }
+
+    .confirm-address-link,
+    .confirm-shipping-link,
+    .confirm-payment-link {
+        text-decoration: underline !important;
+    }
+
+    .confirm-tos-title {
+        margin-bottom: 0;
+    }
+
+    .confirm-payment,
+    .confirm-shipping,
+    .confirm-shipping-address,
+    .confirm-billing-address {
+        @extend .col-6;
+        margin-bottom: 0;
+    }
+
+    .confirm-payment-shipping {
+        margin-bottom: 0;
+    }
+
+    .cart-item-tax-price {
+        padding-top: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .confirm-product,
+        .confirm-main-header,
+        .confirm-product-header {
+            margin-bottom: $confirm-product-spacer-lg;
+        }
+    }
+}

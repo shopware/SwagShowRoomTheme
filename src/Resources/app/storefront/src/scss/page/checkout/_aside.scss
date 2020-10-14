@@ -6,6 +6,9 @@ $checkout-header-font-size: 28px;
 $checkout-aside-spacing: 20px;
 
 .checkout-aside-summary {
+    padding-bottom: $checkout-aside-spacing;
+    border-bottom: 1px solid $border-color;
+
     &-list {
         @extend .no-gutters;
 
@@ -53,7 +56,6 @@ $checkout-aside-spacing: 20px;
 }
 
 .checkout-aside-action-code {
-    border-top: 1px solid $border-color;
     padding: 30px 0;
 
     @include media-breakpoint-up(lg) {

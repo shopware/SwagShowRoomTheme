@@ -1,0 +1,74 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/index.html.twig' %}
+
+{% block page_checkout_confirm %}
+    {% block page_checkout_confirm_header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_alerts %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_address %}
+        <h2 class="confirm-main-sub">{{ "showroom.checkout.confirmAddress"|trans|sw_sanitize }}</h2>
+        {{ parent() }}
+    {% endblock %}
+
+
+    {% block page_checkout_confirm_payment_shipping %}
+        <h2 class="confirm-main-sub">{{ "showroom.checkout.confirmPaymentShipping"|trans|sw_sanitize }}</h2>
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_hidden_line_items_information %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}
+
+{% block page_checkout_confirm_form_submit %}
+    <button id="confirmFormSubmit"
+            class="btn btn-primary btn-block btn-lg"
+            form="confirmOrderForm"
+        {% if page.cart.errors.blockOrder %}
+            disabled
+        {% endif %}
+            type="submit">
+        {{ "showroom.checkout.confirmSubmit"|trans|sw_sanitize }}
+    </button>
+{% endblock %}
+
+{% block page_checkout_confirm_tos_header %}
+    <div class="card-title confirm-tos-title">
+        {{ "checkout.confirmTermsHeader"|trans|sw_sanitize }}
+    </div>
+{% endblock %}
+
+{% block page_checkout_aside_container %}
+    <div class="checkout-aside-container">
+        {% block page_checkout_cart_header %}
+            <h2 class="confirm-product-header">
+                {{ "checkout.cartHeader"|trans|sw_sanitize }}
+            </h2>
+        {% endblock %}
+
+        {% block page_checkout_confirm_product_table %}
+            {{ parent() }}
+        {% endblock %}
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                {% block page_checkout_confirm_tos %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+            <div class="col-12 col-lg-4">
+                {% block page_checkout_aside_summary %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_aside_actions %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
