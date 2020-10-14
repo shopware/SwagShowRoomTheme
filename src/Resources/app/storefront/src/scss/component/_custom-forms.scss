@@ -10,16 +10,16 @@
             background-color: $white;
         }
     }
+
+    .custom-control-input:checked ~ .custom-control-label::after {
+        background-color: $white;
+    }
 }
 
 .custom-checkbox {
     .custom-control-label::before {
         border-radius: 0;
     }
-}
-
-.custom-control-label::before {
-    border: 1px solid $sw-color-brand-primary;
 }
 
 .custom-control-label::after {

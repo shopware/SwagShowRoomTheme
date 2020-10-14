@@ -1,0 +1,12 @@
+.filter-property-select-preview {
+    border-radius: 0;
+}
+
+.filter-property-select-preview.is-color {
+    border-radius: 20px;
+}
+
+.filter-property-select-preview-checkmark {
+    background: $sw-color-brand-primary;
+    border: unset;
+}
