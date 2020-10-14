@@ -1,0 +1,51 @@
+{% block layout_footer_simple %}
+    <footer class="footer-simple w-100">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-4">
+                    {% block layout_footer_logo %}
+                        <a class="footer-logo-main-link"
+                           href="{{ path('frontend.home.page') }}"
+                           title="{{ "header.logoLink"|trans|striptags }}">
+                            {% block layout_header_footer_image %}
+                                <picture>
+                                    {% if shopware.theme['sw-footer-logo-mobile'] %}
+                                        <source srcset="{{ shopware.theme['sw-footer-logo-mobile']|sw_encode_url }}"
+                                                media="(max-width: {{ shopware.theme.breakpoint.md - 1 }}px)">
+                                    {% endif %}
+
+                                    {% if shopware.theme['sw-footer-logo'] %}
+                                        <img src="{{ shopware.theme['sw-footer-logo']|sw_encode_url }}"
+                                             alt="{{ "general.404ErrorPageHeader"|trans|striptags }}"
+                                             class="img-fluid header-logo-main-img"/>
+                                    {% endif %}
+                                </picture>
+                            {% endblock %}
+                        </a>
+                    {% endblock %}
+                </div>
+
+                <div class="col-8 d-flex justify-content-end align-items-center">
+                    {% block layout_footer_content %}
+                        {% if shopware.config.core.basicInformation.imprintPage is not null %}
+                            <a href="{{ seoUrl('frontend.maintenance.singlepage',{ id: shopware.config.core.basicInformation.imprintPage }) }}"
+                               title="{{ "general.imprintLink"|trans|sw_sanitize }}"
+                               class="px-2 footer-link">
+                                {% sw_icon 'arrow-right' style { 'color':'primary', 'pack':'solid' } %}
+                                {{ "general.imprintLink"|trans|sw_sanitize }}
+                            </a>
+                        {% endif %}
+                        {% if shopware.config.core.basicInformation.privacyPage is not null %}
+                            <a href="{{ seoUrl('frontend.maintenance.singlepage',{ id: shopware.config.core.basicInformation.privacyPage }) }}"
+                               title="{{ "general.privacyLink"|trans|sw_sanitize }}"
+                               class="px-2 footer-link">
+                                {% sw_icon 'arrow-right' style { 'color':'primary', 'pack':'solid' } %}
+                                {{ "general.privacyLink"|trans|sw_sanitize }}
+                            </a>
+                        {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
