@@ -241,3 +241,12 @@
     }
 }
 
+.footer-simple {
+    background: $sw-footer-bg-color;
+    padding: 30px 0;
+
+    .footer-link {
+        color: $sw-footer-text-color;
+        font-size: $showroom-font-size-base;
+    }
+}
