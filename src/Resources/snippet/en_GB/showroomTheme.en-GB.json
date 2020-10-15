@@ -22,7 +22,11 @@
             "quantity": "Quantity"
         },
         "checkout": {
-            "finishButtonBackToShop": "Go to homepage"
+            "finishButtonBackToShop": "Go to homepage",
+            "summaryPositionPrice": "item total",
+            "summaryTotalPrice": "Total",
+            "summaryTax": "including %rate%% VAT",
+            "lineItems": "{1} 1 item|]1,Inf[ %count% items"
         }
     },
     "footer": {

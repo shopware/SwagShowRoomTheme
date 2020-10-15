@@ -1,0 +1,85 @@
+$checkout-total-font-size: $font-size-base;
+$checkout-total-font-size-md: 20px;
+
+$checkout-header-font-size-sm: 18px;
+$checkout-header-font-size: 28px;
+$checkout-aside-spacing: 20px;
+
+.checkout-aside-summary {
+    &-list {
+        @extend .no-gutters;
+
+        dd {
+            margin-bottom: 0;
+        }
+    }
+
+    &-header {
+        font-size: $checkout-header-font-size-sm;
+    }
+
+    &-label {
+        line-height: $line-height-lg;
+    }
+
+    &-total {
+        font-size: $checkout-total-font-size;
+        padding-top: $checkout-aside-spacing;
+        padding-bottom: $checkout-aside-spacing;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &-net {
+        padding-top: $checkout-aside-spacing;
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-total {
+            font-size: $checkout-total-font-size;
+        }
+
+        &-header {
+            font-size: $checkout-header-font-size;
+            margin-bottom: $spacer-lg;
+        }
+    }
+}
+
+.cart-add-promotion {
+    input.form-control {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.checkout-aside-action-code {
+    border-top: 1px solid $border-color;
+    padding: 30px 0;
+
+    @include media-breakpoint-up(lg) {
+        padding: 50px 0;
+    }
+}
+
+.checkout-aside-add-code {
+    input {
+        @include text-truncate();
+        padding-right: $spacer-md;
+
+        &:focus + div .icon {
+            opacity: 1;
+        }
+    }
+
+    input:focus + div {
+        color: red;
+    }
+
+    .btn-primary {
+        > .icon {
+            width: 1.5rem;
+            color: $sw-color-brand-primary;
+            opacity: 0.4;
+        }
+    }
+}
