@@ -57,6 +57,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/filter-property-select';
 @import 'component/filter-boolean';
 @import 'component/cms-section-sidebar';
+@import 'component/breadcrumb';
 
 /*
  * Layout-related sections
@@ -73,7 +74,6 @@ https://sass-guidelin.es/#the-7-1-pattern
  * -------------------- */
 @import 'page/login';
 @import 'page/register';
-@import 'page/product-detail/product-detail';
 @import 'page/account/aside';
 @import 'page/account/account';
 @import 'page/account/overview';
@@ -81,7 +81,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/account/address';
 @import 'page/account/payment';
 @import 'page/product-detail/configurator';
-
+@import 'page/product-detail/product-detail';
 @import 'page/checkout/checkout';
 @import 'page/checkout/cart';
 @import 'page/checkout/cart-item';
