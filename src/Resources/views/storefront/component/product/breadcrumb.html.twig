@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/component/product/breadcrumb.html.twig' %}
+
+{% block component_product_breadcrumb_category %}
+    <div class="breadcrumb-placeholder">
+        {% sw_icon 'arrow-medium-right' style { 'pack': 'solid'} %}
+    </div>
+
+    {{ parent() }}
+{% endblock %}
+
+{% block component_product_breadcrumb_placeholder %}{% endblock %}
