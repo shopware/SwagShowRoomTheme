@@ -29,11 +29,12 @@
             "summaryTotalPrice": "Total",
             "summaryTax": "including %rate%% VAT",
             "lineItems": "{1} 1 item|]1,Inf[ %count% items",
-            "confirmAddress": "Address",
+            "confirmAddress": "Addresses",
             "confirmPaymentShipping": "Payment & Shipping",
             "confirmChangeShipping": "Edit Shipping",
             "confirmChangePayment": "Edit Payment",
-            "confirmSubmit": "Send Order"
+            "confirmSubmit": "Send Order",
+            "finishCartHeader": "Your Order"
         }
     },
     "footer": {

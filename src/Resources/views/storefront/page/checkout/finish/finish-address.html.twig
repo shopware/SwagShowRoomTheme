@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/finish-address.html.twig' %}
+
+{% block page_checkout_finish_address_billing %}
+    <div class="col-6">
+        <div class="card checkout-card">
+            <div class="card-body">
+                {% block page_checkout_finish_address_billing_title %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_finish_address_billing_data %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_checkout_finish_address_shipping %}
+    <div class="col-6">
+        <div class="card checkout-card">
+            <div class="card-body">
+                {% block page_checkout_finish_address_shipping_title %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_finish_address_shipping_data %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
