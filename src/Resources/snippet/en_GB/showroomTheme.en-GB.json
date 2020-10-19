@@ -17,7 +17,8 @@
         },
         "general": {
             "offcanvasCloseMenu": "Close",
-            "mainMenu": "Menu"
+            "mainMenu": "Menu",
+            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information</a>."
         },
         "listing": {
             "boxAddProduct": "Add to cart"
@@ -36,7 +37,9 @@
             "confirmChangeShipping": "Edit Shipping",
             "confirmChangePayment": "Edit Payment",
             "confirmSubmit": "Send Order",
-            "finishCartHeader": "Your Order"
+            "finishCartHeader": "Your Order",
+            "addressLoginToggle": "If you already have an account.",
+            "registerHeader": "Register"
         },
         "navigation": {
             "title": "Categories"

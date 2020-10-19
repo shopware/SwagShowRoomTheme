@@ -1,0 +1,38 @@
+{% sw_extends '@Storefront/storefront/page/checkout/address/register.html.twig' %}
+
+{% block component_account_register_address_billing_header %}
+{% endblock %}
+
+{% block component_account_register %}
+    <div class="card register-card" data-showroom-collapse="true">
+        <div class="card-body js-collapse-column">
+
+            {% block component_account_register_header %}
+                <div
+                    class="card-title global-collapse-headline js-collapse-column-trigger show"
+                    id="registerCollapse"
+                    data-target="#registerCollapse"
+                    aria-expanded="true"
+                    aria-controls="registerCollapse"
+                >
+                    {{ "showroom.checkout.registerHeader"|trans|sw_sanitize }}
+                    <div class="global-collapse-column-toggle">
+                        <span class="global-collapse-plus-icon">
+                            {% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}
+                        </span>
+                        <span class="global-collapse-minus-icon">
+                            {% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}
+                        </span>
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block component_account_register_form %}
+                <div class="global-collapse-content collapse js-column-content show" id="registerCollapse">
+                    {{ parent() }}
+                </div>
+            {% endblock %}
+
+        </div>
+    </div>
+{% endblock %}

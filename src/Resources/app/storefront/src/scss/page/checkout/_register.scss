@@ -1,0 +1,92 @@
+$register-form-control-height: 28px;
+
+.is-act-checkoutregisterpage {
+    .checkout {
+        padding-top: 0;
+
+        .checkout-container {
+            margin-left: 0;
+            margin-right: 0;
+
+            .checkout-main {
+                background-color: $gray-100;
+                padding-left: 0;
+                padding-right: 0;
+
+                @include media-breakpoint-up(lg) {
+                    padding-right: 1.5rem;
+                }
+            }
+
+            .checkout-aside {
+                @extend .col-lg-4;
+                @include make-col-offset(0);
+
+                background-color: $white;
+            }
+        }
+    }
+
+    .register-personal {
+        .card-title {
+            @extend .d-none;
+        }
+    }
+
+    .checkout,
+    .checkout-container {
+        @extend .w-100;
+    }
+
+    .register-card {
+        background-color: $white;
+        padding: 30px 24px;
+        margin-bottom: $spacer;
+    }
+
+    .global-collapse-headline {
+        border-bottom: 0;
+        font-size: $font-size-base;
+    }
+
+    .register-footer,
+    .global-collapse-content {
+        padding-top: $spacer-xl;
+    }
+
+    .address-main-header {
+        margin-bottom: 30px;
+    }
+
+    .login-form {
+        .form-control {
+            height: $register-form-control-height;
+        }
+    }
+
+    .login-password-recover {
+        font-size: $font-size-xs;
+    }
+
+    .register-footer {
+        border-top: 1px solid $border-color;
+    }
+
+    .login-card,
+    .login-password-recover,
+    .global-collapse-headline,
+    .register-personal {
+        margin-bottom: 0;
+    }
+
+    .privacy-notice a {
+       text-decoration: underline;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .global-collapse-headline {
+            font-size: $h4-font-size;
+        }
+    }
+}
+

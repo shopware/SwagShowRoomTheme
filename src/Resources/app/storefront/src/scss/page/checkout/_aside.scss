@@ -85,3 +85,23 @@ $checkout-aside-spacing: 20px;
         }
     }
 }
+
+.checkout-aside {
+    &-products {
+        @extend .px-0;
+    }
+
+    &-product-header {
+        margin-top: $spacer-xl;
+    }
+
+    &-item {
+        padding: 30px 0px;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 0;
+    }
+
+    &-item-link-price {
+        font-weight: $font-weight-bold;
+    }
+}
