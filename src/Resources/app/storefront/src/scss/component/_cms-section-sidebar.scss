@@ -1,4 +1,9 @@
 .cms-section-sidebar {
+    .cms-section-sidebar-sidebar-content {
+        background: $gray-100;
+        padding: $grid-gutter-width / 2;
+    }
+
     .filter-panel {
         .filter-panel-item {
             .filter-panel-item-toggle {
@@ -44,14 +49,6 @@
         padding: 0;
         margin-bottom: 30px;
         height: unset;
-        border-bottom: 1px solid $border-color;
-
-        h3 {
-            font-size: $font-size-sm;
-            text-transform: uppercase;
-            color: $sw-color-brand-primary;
-            letter-spacing: $letter-spacing-base;
-        }
     }
 
     .filter-panel-offcanvas-only,
@@ -61,5 +58,12 @@
 
     .filter-panel-offcanvas-close {
         display: none;
+    }
+
+    .filter-panel-item {
+        .filter-panel-item-dropdown,
+        .filter-panel-item-toggle {
+            background: $white;
+        }
     }
 }

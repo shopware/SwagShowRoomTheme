@@ -1,0 +1,39 @@
+.category-navigation {
+    &[class*='level-'] {
+        &:not(.level-0) {
+            .category-navigation-link {
+                font-size: $h6-font-size;
+
+                &:before {
+                    content: '';
+                    background: $icon-chevron-right no-repeat right 0 center/1rem;
+                    background-size: 15px 15px;
+                    padding: 0 10px 3px 5px;
+                    margin-right: 5px;
+                }
+            }
+
+            .category-navigation-link.is-active {
+                color: $gray-900;
+
+                &:before {
+                    content: '\2022';
+                    background: unset;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    .category-navigation-link {
+        padding: 10px 0;
+    }
+}
+
+.category-navigation-box {
+   .category-navigation {
+       .category-navigation-entry {
+           border-bottom: unset;
+       }
+   }
+}
