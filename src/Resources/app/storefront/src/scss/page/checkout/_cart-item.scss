@@ -35,6 +35,7 @@ $cart-item-spacing: 20px;
     }
 
     &-total-price,
+    &-tax-price,
     &-unit-price {
         order: 2;
     }
@@ -74,6 +75,10 @@ $cart-item-spacing: 20px;
     &-tax-price {
         justify-content: space-between;
         display: flex;
+
+        @extend .col-12;
+        @extend .col-md-12;
+        @extend .col-lg-2;
     }
 
     &-quantity-label,

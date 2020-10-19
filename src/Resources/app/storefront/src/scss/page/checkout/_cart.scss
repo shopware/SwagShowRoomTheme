@@ -28,8 +28,6 @@ $checkout-aside-spacing: 50px;
 
 .checkout-container {
     .flashbags {
-        padding-top: $checkout-aside-spacing;
-
         .alert {
             margin-top: 0;
         }
@@ -44,16 +42,11 @@ $checkout-aside-spacing: 50px;
         .checkout-aside {
             background-color: $white;
         }
-
-        .checkout-aside-summary-header {
-            padding-top: $checkout-aside-spacing;
-        }
     }
 }
 
 .cart-main-header {
     margin-bottom: 0;
-    font-size: $h3-font-size;
 
     &-wrapper {
         margin-bottom: 30px;
@@ -63,10 +56,6 @@ $checkout-aside-spacing: 50px;
         &-wrapper {
             margin-bottom: 40px;
         }
-    }
-
-    @include media-breakpoint-up(lg) {
-        font-size: $h1-font-size;
     }
 }
 

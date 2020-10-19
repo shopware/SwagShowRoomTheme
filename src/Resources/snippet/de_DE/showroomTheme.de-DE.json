@@ -5,7 +5,9 @@
         },
         "account": {
             "orRegisterLink": "registrieren",
-            "loginHeader": "Anmeldung"
+            "loginHeader": "Anmeldung",
+            "overviewChangeBilling": "Adresse bearbeiten",
+            "overviewChangeShipping": "Adresse bearbeiten"
         },
         "footer": {
             "includeVat": "* Alle Preise inkl. Mehrwertsteuer",
@@ -26,7 +28,12 @@
             "summaryPositionPrice": "Artikel gesamt",
             "summaryTotalPrice": "Gesamt",
             "summaryTax": "einschließlich. %rate% % MwSt.",
-            "lineItems": "{1} 1 punkt|]1,Inf[ %count% artikel"
+            "lineItems": "{1} 1 punkt|]1,Inf[ %count% artikel",
+            "confirmAddress": "Adresse",
+            "confirmPaymentShipping": "Bezahlung & Versand",
+            "confirmChangeShipping": "Versand bearbeiten",
+            "confirmChangePayment": "Zahlung bearbeiten",
+            "confirmSubmit": "Bestellung absenden"
         }
     },
     "footer": {

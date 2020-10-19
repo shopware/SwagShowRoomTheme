@@ -23,8 +23,10 @@ $gray-800: #31383c !default;
 $gray-900: #141719 !default;
 
 // Typography
-$h1-font-size: 36px !default;
-$h2-font-size: 28px !default;
+$h1-font-size: 24px !default;
+$h1-font-size-lg: 36px !default;
+$h2-font-size: 20px !default;
+$h2-font-size-lg: 28px !default;
 $h3-font-size: 24px !default;
 $h4-font-size: 20px !default;
 $h5-font-size: 16px !default;
@@ -95,3 +97,6 @@ $form-grid-gutter-width: $grid-gutter-width;
 
 // Modal
 $modal-content-box-shadow-xs: 0 0 20px 0 rgba(38, 38, 47, 0.2) !default;
+
+// Card
+$card-spacer-y: 20px;

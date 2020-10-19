@@ -1,5 +1,32 @@
 {% sw_extends '@Storefront/storefront/page/checkout/confirm/confirm-shipping.html.twig' %}
 
+{% block page_checkout_confirm_shipping_current_text %}
+    <strong>{{ "checkout.confirmCurrentPaymentShipping"|trans|sw_sanitize }}</strong>
+    <br>
+    <span>
+        {% if shippingMethodInvalid %}
+            {{ "checkout.confirmSelectionNone"|trans|sw_sanitize }}
+        {% else %}
+            {{ context.shippingMethod.translated.name }}
+        {% endif %}
+    </span>
+{% endblock %}
+
+{% block page_checkout_confirm_shipping_modal_toggle %}
+ <a type="button"
+    data-toggle="modal"
+    data-backdrop="static"
+    data-target="#confirmShippingModal"
+    class="confirm-shipping-link"
+ >
+     {% if shippingMethodInvalid %}
+         {{ "checkout.confirmChooseShipping"|trans|sw_sanitize }}
+     {% else %}
+         {{ "showroom.checkout.confirmChangeShipping"|trans|sw_sanitize }}
+     {% endif %}
+ </a>
+{% endblock %}
+
 {% block page_checkout_confirm_shipping_modal %}
     <div class="modal fade confirm-shipping-modal"
          id="confirmShippingModal"

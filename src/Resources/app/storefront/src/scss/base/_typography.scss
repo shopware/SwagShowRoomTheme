@@ -27,3 +27,15 @@ h6,
 .h6 {
     line-height: 20px;
 }
+
+@include media-breakpoint-up(lg) {
+    h1,
+    .h1 {
+        font-size: $h1-font-size-lg;
+    }
+
+    h2,
+    .h2 {
+        font-size: $h2-font-size-lg;
+    }
+}

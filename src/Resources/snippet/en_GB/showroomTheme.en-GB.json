@@ -5,7 +5,9 @@
         },
         "account": {
             "orRegisterLink": "register",
-            "loginHeader": "Login"
+            "loginHeader": "Login",
+            "overviewChangeBilling": "Edit address",
+            "overviewChangeShipping": "Edit address"
         },
         "footer": {
             "includeVat": "* All prices incl. value added tax",
@@ -26,7 +28,12 @@
             "summaryPositionPrice": "item total",
             "summaryTotalPrice": "Total",
             "summaryTax": "including %rate%% VAT",
-            "lineItems": "{1} 1 item|]1,Inf[ %count% items"
+            "lineItems": "{1} 1 item|]1,Inf[ %count% items",
+            "confirmAddress": "Address",
+            "confirmPaymentShipping": "Payment & Shipping",
+            "confirmChangeShipping": "Edit Shipping",
+            "confirmChangePayment": "Edit Payment",
+            "confirmSubmit": "Send Order"
         }
     },
     "footer": {
