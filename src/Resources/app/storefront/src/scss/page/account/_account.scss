@@ -1,6 +1,7 @@
 .is-ctl-accountprofile,
 .is-ctl-address,
-.is-ctl-accountpayment {
+.is-ctl-accountpayment,
+.is-ctl-accountorder {
     .account-content {
         @extend .row;
 

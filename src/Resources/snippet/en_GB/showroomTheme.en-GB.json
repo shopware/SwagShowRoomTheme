@@ -6,6 +6,8 @@
         "account": {
             "orRegisterLink": "register",
             "loginHeader": "Login",
+            "orderStatus": "-",
+            "orderItemColumnDate": "Date:",
             "overviewChangeBilling": "Edit address",
             "overviewChangeShipping": "Edit address"
         },
