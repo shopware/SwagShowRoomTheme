@@ -31,11 +31,12 @@
             "summaryTotalPrice": "Gesamt",
             "summaryTax": "einschließlich. %rate% % MwSt.",
             "lineItems": "{1} 1 punkt|]1,Inf[ %count% artikel",
-            "confirmAddress": "Adresse",
+            "confirmAddress": "Adressen",
             "confirmPaymentShipping": "Bezahlung & Versand",
             "confirmChangeShipping": "Versand bearbeiten",
             "confirmChangePayment": "Zahlung bearbeiten",
-            "confirmSubmit": "Bestellung absenden"
+            "confirmSubmit": "Bestellung absenden",
+            "finishCartHeader": "Ihre Bestellung"
         }
     },
     "footer": {

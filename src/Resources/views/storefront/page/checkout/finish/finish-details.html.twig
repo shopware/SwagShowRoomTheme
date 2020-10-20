@@ -1,0 +1,59 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/finish-details.html.twig' %}
+
+{% block page_checkout_finish_action_back %}
+    <div class="finish-back-to-shop-button">
+        <a href="{{ path('frontend.home.page') }}"
+           class="btn btn-sm btn-primary"
+           title="{{ "checkout.finishButtonBackToShop"|trans|striptags }}">
+            {{ "checkout.finishButtonBackToShop"|trans|striptags }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block page_checkout_finish_order_address %}
+    <div class="col-12 finish-address">
+        <block page_checkout_finish_order_address_tittle>
+            <h2 class="confirm-main-sub">
+                {{ "showroom.checkout.confirmAddress"|trans|sw_sanitize }}
+            </h2>
+        </block>
+        {% sw_include '@Storefront/storefront/page/checkout/finish/finish-address.html.twig' %}
+    </div>
+{% endblock %}
+
+{% block page_checkout_finish_order_details %}
+    <div class="col-12 finish-order-details">
+        <div class="card checkout-card">
+            <div class="card-body">
+                {% block page_checkout_finish_order_shipping_title %}
+                    <h2 class="confirm-main-sub">
+                        {{ "showroom.checkout.confirmPaymentShipping"|trans|sw_sanitize }}
+                    </h2>
+                {% endblock %}
+                <div class="row">
+                    <div class="col-6">
+                        {% block page_checkout_finish_order_payment_method %}
+                            <p>
+                                <strong>{{ "checkout.finishInfoPayment"|trans|sw_sanitize }}</strong>
+                            </p>
+                            <p>
+                                {{ page.order.transactions.last.paymentMethod.translated.name }}
+                            </p>
+                        {% endblock %}
+                    </div>
+
+                    <div class="col-6">
+                        {% block page_checkout_finish_order_dispatch_method %}
+                            <p>
+                                <strong>{{ "checkout.finishInfoShipping"|trans|sw_sanitize }}</strong>
+                            </p>
+                            <p>
+                                {{ page.order.deliveries.first.shippingMethod.translated.name }}
+                            </p>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

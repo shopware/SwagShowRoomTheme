@@ -1,0 +1,29 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/index.html.twig' %}
+
+{% block page_checkout_finish %}
+    {% block page_checkout_finish_details %}
+        {% sw_include '@Storefront/storefront/page/checkout/finish/finish-details.html.twig' %}
+    {% endblock %}
+{% endblock %}
+
+{% block page_checkout_aside_container %}
+    <div class="checkout-aside-container">
+        {% block page_checkout_cart_header %}
+            <h2 class="finish-product-header">
+                {{ "showroom.checkout.finishCartHeader"|trans|sw_sanitize }}
+            </h2>
+        {% endblock %}
+
+        {% block page_checkout_finish_product_table %}
+            {{ parent() }}
+        {% endblock %}
+
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-6">
+                {% block page_checkout_aside_summary %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
