@@ -1,5 +1,6 @@
 $checkout-aside-spacer: 50px;
 $checkout-aside-spacer-lg: 100px;
+$checkout-aside-width-lg: 33.33%;
 
 .checkout-wrapper {
     background-color: $gray-100;
@@ -24,6 +25,20 @@ $checkout-aside-spacer-lg: 100px;
         .checkout-aside {
             padding-top: $checkout-aside-spacer-lg;
             padding-bottom: $checkout-aside-spacer-lg;
+        }
+    }
+}
+
+.is-act-checkoutregisterpage {
+    .checkout {
+        padding-top: 0px;
+    }
+
+    .checkout-aside {
+        @include media-breakpoint-up(lg) {
+            margin-left: $checkout-aside-spacer;
+            max-width: calc(#{$checkout-aside-width-lg} - #{$checkout-aside-spacer});
+            flex-basis: calc(#{$checkout-aside-width-lg} - #{$checkout-aside-spacer});
         }
     }
 }
