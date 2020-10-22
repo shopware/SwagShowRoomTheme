@@ -63,26 +63,23 @@ $checkout-aside-spacing: 20px;
     }
 }
 
-.checkout-aside-add-code {
-    input {
-        @include text-truncate();
-        padding-right: $spacer-md;
-
-        &:focus + div .icon {
-            opacity: 1;
-        }
+#addPromotion,
+#addPromotionOffcanvasCart {
+    > .icon {
+        width: 1.5rem;
+        color: $sw-color-brand-primary;
+        opacity: 0.4;
     }
+}
 
-    input:focus + div {
-        color: red;
-    }
+#addPromotionInput,
+#addPromotionOffcanvasCartInput {
+    @include text-truncate();
 
-    .btn-primary {
-        > .icon {
-            width: 1.5rem;
-            color: $sw-color-brand-primary;
-            opacity: 0.4;
-        }
+    padding-right: $spacer-md;
+
+    &:focus + div .icon {
+        opacity: 1;
     }
 }
 

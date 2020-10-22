@@ -1,4 +1,5 @@
 $offcanvas-primary-color: $gray-900;
+$offcanvas-content-width-lg: 800px;
 
 .offcanvas {
     width: 100%;
@@ -12,6 +13,24 @@ $offcanvas-primary-color: $gray-900;
 
         .icon {
             color: $offcanvas-primary-color;
+        }
+    }
+
+    &.is-right {
+        .offcanvas-close {
+            background-color: $gray-100;
+        }
+    }
+
+    &.cart-offcanvas {
+        .offcanvas-content-container {
+            margin-top: 40px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            .offcanvas-content-container {
+                width: $offcanvas-content-width-lg;
+            }
         }
     }
 }
@@ -29,5 +48,3 @@ $offcanvas-primary-color: $gray-900;
         }
     }
 }
-
-
