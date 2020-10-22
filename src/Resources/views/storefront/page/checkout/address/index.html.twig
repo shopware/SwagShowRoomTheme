@@ -1,0 +1,50 @@
+{% sw_extends '@Storefront/storefront/page/checkout/address/index.html.twig' %}
+
+{% block page_checkout_address %}
+    {% block page_checkout_address_header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block component_account_login_form_mail %}
+        <div class="form-group col-md-4">
+            {% block component_account_login_form_mail_label %}{% endblock %}
+
+            {% block component_account_login_form_mail_input %}{% endblock %}
+        </div>
+    {% endblock %}
+
+    {% block page_checkout_address_login_toggle %}
+        <div class="register-card" data-showroom-collapse="true">
+            <div class="js-collapse-column">
+                <div class="card-title global-collapse-headline js-collapse-column-trigger"
+                     id="loginCollapse"
+                     data-target="#loginCollapse"
+                     aria-expanded="true"
+                     aria-controls="loginCollapse"
+                >
+                    {{ "showroom.checkout.addressLoginToggle"|trans|sw_sanitize }}
+                    <div class="global-collapse-column-toggle">
+                        <span class="global-collapse-plus-icon">
+                            {% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}
+                        </span>
+                        <span class="global-collapse-minus-icon">
+                            {% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}
+                        </span>
+                    </div>
+                </div>
+
+                {% block page_checkout_address_login %}
+                    <div class="global-collapse-content collapse js-column-content" id="loginCollapse">
+                        {% block page_checkout_address_login_card %}
+                            {% sw_include '@Storefront/storefront/component/address/login.html.twig' %}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block page_checkout_address_register %}
+        {{ parent() }}
+    {% endblock %}
+{% endblock %}

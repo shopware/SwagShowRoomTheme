@@ -17,7 +17,8 @@
         },
         "general": {
             "offcanvasCloseMenu": "Schließen",
-            "mainMenu": "Menü"
+            "mainMenu": "Menü",
+            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Datenschutzbestimmungen\">Ich habe die Datenschutzbestimmungen zur Kenntnis genommen.</a>"
         },
         "listing": {
             "boxAddProduct": "Add to cart"
@@ -36,7 +37,9 @@
             "confirmChangeShipping": "Versand bearbeiten",
             "confirmChangePayment": "Zahlung bearbeiten",
             "confirmSubmit": "Bestellung absenden",
-            "finishCartHeader": "Ihre Bestellung"
+            "finishCartHeader": "Ihre Bestellung",
+            "addressLoginToggle": "Wenn Sie bereits ein Konto haben.",
+            "registerHeader": "Registrieren"
         },
         "navigation": {
             "title": "Kategorien"

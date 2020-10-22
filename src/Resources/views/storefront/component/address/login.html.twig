@@ -1,0 +1,53 @@
+{% sw_extends '@Storefront/storefront/component/account/login.html.twig' %}
+
+{% block component_account_login_password_recover %}
+    <div class="form-row">
+        {% block component_account_login_form_mail %}
+            <div class="form-group col-md-4">
+                {% block component_account_login_form_mail_label %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block component_account_login_form_mail_input %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block component_account_login_form_password %}
+            <div class="form-group col-md-4">
+                {% block component_account_login_form_password_label %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block component_account_login_form_password_input %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block component_account_address_login_submit %}
+            <div class="form-group col-md-4 login-submit">
+                <button type="submit"
+                        class="btn btn-primary btn-block">
+                    {{ "account.loginSubmit"|trans|sw_sanitize }}
+                </button>
+            </div>
+        {% endblock %}
+    </div>
+
+    {% block component_address_login_form_fields %}
+        <div class="login-password-recover text-right">
+            {% block component_account_login_password_recover_link %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{% block component_account_login_form_description %}{% endblock %}
+
+{% block component_account_login_submit %}{% endblock %}
+
+{% block component_account_login_form_fields %}{% endblock %}
+

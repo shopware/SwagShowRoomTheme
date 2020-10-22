@@ -1,0 +1,11 @@
+{% sw_extends '@Storefront/storefront/component/privacy-notice.html.twig' %}
+
+{% block component_privacy_label %}
+    <label>
+        <strong>{{ "general.privacyTitle"|trans|sw_sanitize }}</strong>
+        <br/>
+        {{ "showroom.general.privacyNotice"|trans({
+            '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.privacyPage })
+        })|raw }}
+    </label>
+{% endblock %}
