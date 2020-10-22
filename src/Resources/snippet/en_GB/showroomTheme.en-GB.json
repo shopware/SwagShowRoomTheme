@@ -37,6 +37,9 @@
             "confirmChangePayment": "Edit Payment",
             "confirmSubmit": "Send Order",
             "finishCartHeader": "Your Order"
+        },
+        "navigation": {
+            "title": "Categories"
         }
     },
     "footer": {

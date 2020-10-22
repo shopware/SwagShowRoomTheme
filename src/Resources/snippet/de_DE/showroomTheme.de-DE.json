@@ -37,6 +37,9 @@
             "confirmChangePayment": "Zahlung bearbeiten",
             "confirmSubmit": "Bestellung absenden",
             "finishCartHeader": "Ihre Bestellung"
+        },
+        "navigation": {
+            "title": "Kategorien"
         }
     },
     "footer": {

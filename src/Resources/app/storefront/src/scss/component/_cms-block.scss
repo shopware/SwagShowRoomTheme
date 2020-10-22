@@ -1,0 +1,12 @@
+.cms-block {
+    .cms-block-container {
+        h3 {
+            font-size: $font-size-sm;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $sw-color-brand-primary;
+            letter-spacing: $letter-spacing-base;
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}
