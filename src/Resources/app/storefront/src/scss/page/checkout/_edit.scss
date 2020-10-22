@@ -1,0 +1,55 @@
+// desktop layout will inherit from the checkout confirm page
+.is-act-editorder {
+
+  // The adustment if using for tablet and mobile only
+  @include media-breakpoint-down(md) {
+    .cart-item-details-container {
+      overflow: hidden;
+
+      .cart-item-ordernumber {
+        white-space: unset;
+      }
+    }
+
+
+    .cart-item-quantity {
+      @include make-col(12);
+
+      margin: 0;
+      order: 1;
+    }
+
+    .cart-item-quantity-row {
+      @include make-row(0);
+
+      margin-bottom: 0;
+      width: 100%;
+
+      .cart-item-quantity {
+        padding: 0;
+      }
+    }
+
+    .cart-item-unit-price {
+      padding-top: 0;
+    }
+
+    .cart-item-quantity-label,
+    .cart-item-quantity-label + div {
+      @include make-col(6);
+
+      text-transform: none;
+      letter-spacing: normal;
+      padding: 0;
+    }
+
+    .cart-item-quantity-label {
+      text-align: left;
+    }
+
+    .cart-item-unit-price {
+      order: 2;
+    }
+
+  }
+}
