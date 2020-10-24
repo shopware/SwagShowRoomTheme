@@ -4,21 +4,18 @@
     {% set isCartNotEmpty = (page.cart.lineItems|length > 0) %}
     <div class="offcanvas-cart">
         {% block component_offcanvas_cart_header %}
-            <div class="h4 offcanvas-cart-header">
-                <div>{{ "checkout.cartHeader"|trans|sw_sanitize }}</div>
-
-                {% block component_offcanvas_cart_header_item_counter %}
-                    {% if isCartNotEmpty %}
-                        {% set checkoutItemCounter = page.cart.lineItems|length %}
-                        <div>
-                            <small class="offcanvas-cart-header-count">
-                                {{ "checkout.itemCounter"|trans({'%count%': checkoutItemCounter})|sw_sanitize }}
-                            </small>
-                        </div>
-                    {% endif %}
-                {% endblock %}
-
+            <div class="offcanvas-cart-header">
+                <h4 class="mb-0">{{ "checkout.cartHeader"|trans|sw_sanitize }}</h4>
             </div>
+        {% endblock %}
+
+        {% block component_offcanvas_cart_header_item_counter %}
+            {% if isCartNotEmpty %}
+                {% set checkoutItemCounter = page.cart.lineItems|length %}
+                <div class="offcanvas-cart-header-count">
+                    {{ "checkout.itemCounter"|trans({'%count%': checkoutItemCounter})|sw_sanitize }}</small>
+                </div>
+            {% endif %}
         {% endblock %}
 
         {% block component_offcanvas_cart_flashbags %}

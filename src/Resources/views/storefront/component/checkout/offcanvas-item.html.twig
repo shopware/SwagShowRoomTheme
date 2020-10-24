@@ -63,3 +63,12 @@
         </div>
     </div>
 {% endblock %}
+
+{% block component_offcanvas_product_remove_submit %}
+    <button type="submit"
+            title="{{ "checkout.removeLineItem"|trans|striptags }}"
+            data-product-id="{{ lineItem.id }}"
+            class="btn cart-item-remove-button">
+        {% sw_icon 'x' style { 'size': 'sm', 'pack': 'solid' } %}
+    </button>
+{% endblock %}

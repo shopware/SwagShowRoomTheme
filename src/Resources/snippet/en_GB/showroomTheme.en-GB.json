@@ -31,7 +31,6 @@
             "summaryPositionPrice": "item total",
             "summaryTotalPrice": "Total",
             "summaryTax": "including %rate%% VAT",
-            "lineItems": "{1} 1 item|]1,Inf[ %count% items",
             "confirmAddress": "Addresses",
             "confirmPaymentShipping": "Payment & Shipping",
             "confirmChangeShipping": "Edit Shipping",
