@@ -55,11 +55,19 @@ $finish-content-spacer-lg: 70px;
         text-align: right;
     }
 
+    .cart-header-info {
+        @extend .col-6
+    }
+
+    .checkout-aside-summary {
+        border-bottom: none;
+    }
+
     @include media-breakpoint-up(lg) {
         .cart-item-quantity {
-            order: 0;
-
             @extend .col-lg-auto;
+
+            order: 0;
         }
     }
 }

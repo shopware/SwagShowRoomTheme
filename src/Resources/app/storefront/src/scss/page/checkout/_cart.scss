@@ -87,3 +87,9 @@ $checkout-aside-spacing: 50px;
         letter-spacing: $letter-spacing-base;
     }
 }
+
+.cart-header-row {
+    > div:last-child {
+        padding-right: $card-spacer-y;
+    }
+}
