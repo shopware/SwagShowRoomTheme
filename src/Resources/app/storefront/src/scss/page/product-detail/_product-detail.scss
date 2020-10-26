@@ -7,7 +7,8 @@
         margin-bottom: 0;
     }
 
-    &-name-container {
+    &-name-container,
+    &-manufacturer {
         padding-left: 0;
     }
 
@@ -15,6 +16,7 @@
         color: $sw-color-brand-primary;
         font-weight: $font-weight-bold;
         font-size: $product-detail-name-sm;
+        margin-bottom: 0;
     }
 
     &-price-container {
@@ -39,6 +41,11 @@
 
     &-ordernumber-container {
         margin-top: 28px;
+        font-size: $font-size-sm;
+    }
+
+    &-ordernumber-label {
+        font-weight: $font-weight-normal;
     }
 
     &-configurator-group.product-detail-quantity {
@@ -51,6 +58,10 @@
             padding: 16px 8px 16px 16px;
             font-weight: $font-weight-base;
         }
+    }
+
+    &-ordernumber-container {
+        margin-top: 0;
     }
 
     @include media-breakpoint-up(lg) {
