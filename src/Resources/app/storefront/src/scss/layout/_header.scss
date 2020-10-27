@@ -5,6 +5,9 @@ $header-search-form-width-lg: 900px !default;
 $input-group-width-md: 360px !default;
 $input-group-width-lg: 590px !default;
 
+$logo-width-min: 80px;
+$logo-width-full: 200px;
+
 .header-search {
     margin: 0;
     background-color: $white;
@@ -74,6 +77,8 @@ $input-group-width-lg: 590px !default;
     margin-right: auto;
     left: 0;
     right: 0;
+    z-index: 1;
+    max-width: $logo-width-min;
 }
 
 .header-cart {
@@ -92,6 +97,10 @@ $input-group-width-lg: 590px !default;
         border-left: 1px solid $border-color;
         padding-left: 16px;
         margin-left: 16px;
+    }
+
+    .header-logo-col-fixed {
+        max-width: $logo-width-full;
     }
 }
 
@@ -128,5 +137,9 @@ $input-group-width-lg: 590px !default;
 
     .header-cart {
         padding-top: 3px;
+    }
+
+    .header-logo-col-fixed {
+        max-width: $logo-width-full;
     }
 }
