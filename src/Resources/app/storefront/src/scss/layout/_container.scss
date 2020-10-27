@@ -1,8 +1,14 @@
 .container {
     padding-left: 24px;
     padding-right: 24px;
+}
 
-    &-main {
+.is-act-checkoutregisterpage,
+.is-act-confirmpage,
+.is-act-finishpage,
+.is-act-index,
+.is-act-cartpage {
+    .container-main {
         padding-top: 0;
     }
 }
