@@ -12,6 +12,11 @@
         padding-left: 0;
     }
 
+    &-manufacturer,
+    &-manufacturer-logo {
+        max-width: 100px;
+    }
+
     &-name {
         color: $sw-color-brand-primary;
         font-weight: $font-weight-bold;
