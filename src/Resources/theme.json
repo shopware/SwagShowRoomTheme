@@ -22,8 +22,8 @@
         "blocks": {
             "footer": {
                 "label": {
-                    "en-GB": "Footer / Topbar",
-                    "de-DE": "Footer / Topbar"
+                    "en-GB": "Footer",
+                    "de-DE": "Footer"
                 }
             }
         },
