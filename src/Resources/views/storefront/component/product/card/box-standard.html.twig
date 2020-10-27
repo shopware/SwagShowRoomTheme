@@ -17,8 +17,16 @@
         {% block component_product_box_info %}
             <div class="product-info">
                 {% block component_product_box_rating %}
-                    {{ parent() }}
+                    {% if shopware.config.core.listing.showReview %}
+                        <div class="product-rating">
+                            {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+                                points: product.ratingAverage,
+                                style: 'text-primary'
+                            } %}
+                        </div>
+                    {% endif %}
                 {% endblock %}
+
                 {% block component_product_box_name %}
                     {{ parent() }}
                 {% endblock %}

@@ -9,4 +9,15 @@
             border-bottom: 1px solid $border-color;
         }
     }
+
+    &.cms-block-sidebar-filter {
+        border-bottom: 1px solid $border-color;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &.cms-block-image-text .cms-row > :first-child,
+        &.cms-block-image-text-cover .cms-row > :first-child {
+            margin-bottom: 0;
+        }
+    }
 }

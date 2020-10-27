@@ -158,3 +158,33 @@ $box-image-height-img: 250px;
     }
 }
 
+@include media-breakpoint-down(md) {
+    .product-image-wrapper {
+        height: 160px;
+    }
+
+    .product-box {
+        .product-info {
+            padding: 0;
+
+            .product-review-rating {
+                margin-right: 0;
+            }
+        }
+
+        .product-price,
+        .product-name {
+            font-size: $showroom-font-size-base;
+        }
+
+        .product-action {
+            .btn {
+                padding: 10px 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+

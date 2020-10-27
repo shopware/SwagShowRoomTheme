@@ -17,4 +17,8 @@
             color: $gray-300;
         }
     }
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 0;
+    }
 }
