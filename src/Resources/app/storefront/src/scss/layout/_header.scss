@@ -123,8 +123,19 @@ $logo-width-full: 200px;
         }
 
         .menu-button {
-            .icon svg {
-                top: 4px;
+            .header-actions-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    margin-right: $spacer;
+                }
+
+                .icon svg {
+                    top: 0;
+                }
+
             }
         }
 
