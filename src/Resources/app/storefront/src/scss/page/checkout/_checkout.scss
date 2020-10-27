@@ -13,6 +13,14 @@ $checkout-aside-spacer-lg: 100px;
         padding-bottom: 0;
     }
 
+    .checkout {
+        width: 100%;
+    }
+
+    .checkout > .alert {
+        margin-top: $checkout-aside-spacer;
+    }
+
     .checkout-main,
     .checkout-aside {
         padding-top: $checkout-aside-spacer;
