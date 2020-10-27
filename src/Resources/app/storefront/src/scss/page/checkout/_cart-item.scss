@@ -1,9 +1,8 @@
 $cart-img-container-width-sm: 80px;
 $cart-img-container-width: 100px;
-$cart-item-spacing: 20px;
 
 .cart-item {
-    padding: $cart-item-spacing;
+    padding: $card-spacer-y;
     margin-bottom: $spacer;
     background-color: $white;
     border: 0;
@@ -52,7 +51,7 @@ $cart-item-spacing: 20px;
 
     &-info {
         margin-bottom: 0;
-        padding-bottom: $cart-item-spacing;
+        padding-bottom: $card-spacer-y;
     }
 
     &-info,
@@ -61,13 +60,13 @@ $cart-item-spacing: 20px;
     }
 
     &-total-price {
-        padding-bottom: $cart-item-spacing;
+        padding-bottom: $card-spacer-y;
     }
 
     &-unit-price,
     &-remove,
     &-quantity {
-        padding-top: $cart-item-spacing;
+        padding-top: $card-spacer-y;
         text-align: left;
     }
 

@@ -21,15 +21,15 @@ $checkout-aside-spacing: 20px;
         font-size: $checkout-header-font-size-sm;
     }
 
-    &-label {
-        line-height: $line-height-lg;
-    }
-
     &-total {
         font-size: $checkout-total-font-size;
         padding-top: $checkout-aside-spacing;
         padding-bottom: $checkout-aside-spacing;
         border-bottom: 1px solid $border-color;
+    }
+
+    &-label {
+        color: $gray-700;
     }
 
     &-net {
@@ -38,7 +38,7 @@ $checkout-aside-spacing: 20px;
 
     @include media-breakpoint-up(lg) {
         &-total {
-            font-size: $checkout-total-font-size;
+            font-size: $h4-font-size;
         }
 
         &-header {

@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/page/checkout/finish/finish-item.html.twig' %}
+
+{% block page_checkout_item_remove %}
+{% endblock %}
+
+{% block page_checkout_item_quantity_number %}
+    <div class="d-flex justify-content-end">
+        {{ lineItem.quantity }}
+    </div>
+{% endblock %}

@@ -5,7 +5,7 @@
         {% block page_checkout_item_info_inner %}
             <div class="row cart-item-row">
                 {% block page_checkout_item_info_image %}
-                    <div class="col-4 cart-item-info-img">
+                    <div class="col-4 col-lg-auto cart-item-info-img">
                         {% block page_checkout_item_info_image_container %}
                             {{ parent() }}
                         {% endblock %}
@@ -13,7 +13,7 @@
                 {% endblock %}
 
                 {% block page_checkout_item_info_details %}
-                    <div class="col-8 cart-item-details">
+                    <div class="col-8 col-lg cart-item-details">
                         {% block page_checkout_item_info_details_inner %}
                             <div class="cart-item-details-container">
                                 {% block page_checkout_item_info_label %}
