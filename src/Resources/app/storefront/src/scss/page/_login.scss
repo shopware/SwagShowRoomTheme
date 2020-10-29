@@ -2,6 +2,10 @@
     .login-card,
     .register-card {
         padding-top: 50px;
+
+        .card-title {
+            font-size: $h2-font-size-lg;
+        }
     }
 
     .login-card {
