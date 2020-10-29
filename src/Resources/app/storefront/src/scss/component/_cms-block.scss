@@ -14,6 +14,22 @@
         border-bottom: 1px solid $border-color;
     }
 
+    @include media-breakpoint-up(md) {
+        &.cms-block-text-two-column {
+            .cms-element-form {
+                padding: 50px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        &.cms-block-text-two-column {
+            .cms-element-form {
+                padding-top: 50px;
+            }
+        }
+    }
+
     @include media-breakpoint-down(sm) {
         &.cms-block-image-text .cms-row > :first-child,
         &.cms-block-image-text-cover .cms-row > :first-child {
