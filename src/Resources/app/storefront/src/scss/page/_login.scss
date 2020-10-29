@@ -6,6 +6,12 @@
 
     .login-card {
         padding-bottom: 54px;
+
+        .card-title {
+            font-size: $h1-font-size-lg;
+            font-weight: $font-weight-bold;
+            line-height: 40px;
+        }
     }
 
     .login-advantages {
