@@ -39,6 +39,10 @@
         color: $gray-600;
     }
 
+    &:valid {
+        border-color: $custom-control-active-border-color;
+    }
+
     &:disabled {
         opacity: 0.4;
     }

@@ -6,7 +6,9 @@ $checkout-aside-spacing: 50px;
             @extend .col-sm-12;
             @extend .col-md-6;
             @extend .col-lg-8;
+
             margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .checkout-aside {
@@ -16,7 +18,6 @@ $checkout-aside-spacing: 50px;
             @extend .col-xl-4;
 
             margin-left: 0;
-            padding-bottom: $spacer;
 
             @include media-breakpoint-up(lg) {
                 padding-left: 24px;
@@ -46,7 +47,7 @@ $checkout-aside-spacing: 50px;
 }
 
 .cart-main-header {
-    margin-bottom: 0;
+    margin-bottom: $spacer-sm;
 
     &-wrapper {
         margin-bottom: 30px;
@@ -91,5 +92,9 @@ $checkout-aside-spacing: 50px;
 .cart-header-row {
     > div:last-child {
         padding-right: $card-spacer-y;
+    }
+
+    .cart-header-total-price {
+        padding-right: 1.5rem;
     }
 }

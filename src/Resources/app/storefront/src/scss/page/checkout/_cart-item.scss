@@ -45,7 +45,8 @@ $cart-img-container-width: 100px;
     }
 
     &-remove-button {
-        padding: 4px 8px;
+        display: flex;
+        padding: 9px;
         border-color: $primary;
     }
 

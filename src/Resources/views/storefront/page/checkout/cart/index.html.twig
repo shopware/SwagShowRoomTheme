@@ -6,9 +6,7 @@
 
         {% block page_checkout_cart_total %}
             <div class="cart-main-total-items">
-                {{ "showroom.checkout.lineItems"|trans({
-                    '%count%': page.cart.lineItems|length,
-                })|sw_sanitize }}
+                {{ "checkout.itemCounter"|trans({'%count%': page.cart.lineItems|length})|sw_sanitize }}
             </div>
         {% endblock %}
     </div>

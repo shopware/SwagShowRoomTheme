@@ -63,6 +63,11 @@ $checkout-aside-spacing: 20px;
     }
 }
 
+.checkout-aside-action-code,
+.checkout-aside-add-code {
+    margin-top: 0;
+}
+
 #addPromotion,
 #addPromotionOffcanvasCart {
     > .icon {

@@ -58,15 +58,17 @@ $confirm-product-spacer-lg: 50px;
         margin-bottom: 0;
     }
 
-    .cart-item-tax-price {
-        padding-top: 20px;
-    }
-
     @include media-breakpoint-up(lg) {
         .confirm-product,
         .confirm-main-header,
         .confirm-product-header {
             margin-bottom: $confirm-product-spacer-lg;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .cart-item-tax-price {
+            padding-top: 20px;
         }
     }
 }
