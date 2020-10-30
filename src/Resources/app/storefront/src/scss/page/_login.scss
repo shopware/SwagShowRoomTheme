@@ -38,6 +38,14 @@
 
     .login-advantages-content {
         padding: 40px 50px;
+
+        ul {
+            padding-inline-start: 16px;
+
+            li {
+                line-height: 2;
+            }
+        }
     }
 
     @include media-breakpoint-up(lg) {
