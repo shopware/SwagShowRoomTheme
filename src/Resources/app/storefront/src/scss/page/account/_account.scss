@@ -5,6 +5,11 @@
         .account-content-main {
             @extend .col-xl;
             @extend .col-lg-7;
+
+            a:not(.btn) {
+                text-decoration: underline;
+            }
+
         }
 
         .account-content-aside {
