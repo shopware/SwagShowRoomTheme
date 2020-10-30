@@ -37,10 +37,6 @@
             padding-right: 0;
         }
 
-        .form-label {
-            line-height: 16px;
-        }
-
         @include media-breakpoint-down(md) {
             background: $white;
             padding-top: 20px;

@@ -54,6 +54,10 @@ $modal-title-font-size: 18px;
         .modal-title {
             font-size: $h2-font-size;
         }
+
+        &-dialog {
+            max-width: 800px;
+        }
     }
 }
 

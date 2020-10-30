@@ -8,7 +8,7 @@
     letter-spacing: $letter-spacing-base;
 
     height: 8px;
-    line-height: 8px;
+    line-height: 16px;
 }
 
 .form-control {
@@ -24,6 +24,11 @@
     &::placeholder {
         opacity: 0.4;
     }
+}
+
+textarea.form-control {
+    border: $input-border-width solid $input-border-color;
+    margin-top: 10px;
 }
 
 @include media-breakpoint-up(lg) {
