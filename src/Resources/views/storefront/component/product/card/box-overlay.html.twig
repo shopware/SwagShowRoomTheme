@@ -2,12 +2,6 @@
 
 {% block component_product_box %}
     {% if product %}
-        {% set name = product.translated.name %}
-        {% set id = product.id %}
-        {% set cover = product.cover.media %}
-        {% set contentVariation = product.variation|filter((variation) => variation.group == "content")|first %}
-        {% set withoutContentVariations = product.variation|filter((variation) => variation.group != "content") %}
-
         <div class="product-overlay shadow rounded">
             <div class="product-overlay__content">
                 {% block component_product_box_rating %}
@@ -19,34 +13,27 @@
                 {% endblock %}
 
                 <div class="product-variant-characteristics">
-                    {% for variation in withoutContentVariations %}
+                    {% for variation in product.variation %}
                         <span class="product-variant-characteristics-group">{{ variation.group }}:</span>
                         <span class="product-variant-characteristics-option">
                             {{ variation.option }}
                         </span>
-                        {% if withoutContentVariations|last != variation %}
+                        {% if product.variation|last != variation %}
                             |
                         {% endif %}
                     {% endfor %}
                 </div>
 
                 {% block component_product_box_price %}
-                    {{ parent() }}
+                    {% sw_include '@Storefront/storefront/component/product/card/box-price.html.twig' %}
                 {% endblock %}
             </div>
 
             <div class="product-overlay__action">
                 <hr>
-                {% if contentVariation %}
-                    <div class="product-variant-characteristics">
-                        <div class="product-variant-characteristics-group product-variant-characteristics-group--special">
-                            {{ contentVariation.group }}:
-                        </div>
-                        <div class="product-variant-characteristics-option">
-                            {{ contentVariation.option }}
-                        </div>
-                    </div>
-                {% endif %}
+                {% block component_product_box_price_unit %}
+                    {% sw_include '@Storefront/storefront/component/product/card/box-price-unit.html.twig' %}
+                {% endblock %}
 
                 {% block component_product_box_action %}
                     {{ parent() }}

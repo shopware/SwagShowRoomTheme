@@ -5,8 +5,6 @@
         {{ parent() }}
     {% endblock %}
 
-    {% block page_product_detail_reviews %}{% endblock %}
-
     {% block page_product_detail_data_rich_snippet_price_range %}
         {{ parent() }}
     {% endblock %}
@@ -30,6 +28,10 @@
          {% block page_product_detail_ordernumber_container %}
             {{ parent() }}
          {% endblock %}
+
+        {% block page_product_detail_reviews %}
+            {{ parent() }}
+        {% endblock %}
 
         {% block page_product_detail_rich_snippets %}
             {{ parent() }}

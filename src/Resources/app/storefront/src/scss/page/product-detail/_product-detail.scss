@@ -49,6 +49,15 @@
         font-size: $font-size-sm;
     }
 
+    &-reviews,
+    &-ordernumber-container {
+        margin-bottom: 0;
+    }
+
+    &-reviews {
+        font-size: $font-size-xs;
+    }
+
     &-ordernumber-label {
         font-weight: $font-weight-normal;
     }
@@ -111,7 +120,6 @@
 .buy-widget-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 
     &-block {
         flex-wrap: wrap;
@@ -119,8 +127,8 @@
 
     @include media-breakpoint-up(md) {
         flex-direction: row;
+        align-items: flex-start;
         justify-content: flex-end;
-        align-items: center;
 
         > .btn-buy {
             flex-basis: 303px;

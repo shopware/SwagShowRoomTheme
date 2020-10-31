@@ -136,6 +136,22 @@ $box-image-height-img: 250px;
     opacity: 1;
 }
 
+.product-unit-label,
+.product-unit-content {
+    display: block;
+}
+
+.price-unit-content {
+    font-size: $font-size-sm;
+}
+
+.product-unit-label {
+    letter-spacing: $letter-spacing-base;
+    font-size: 8px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+}
+
 .product-variant-characteristics {
     font-size: 12px;
     min-height: initial;
@@ -143,13 +159,6 @@ $box-image-height-img: 250px;
     &-group {
         text-transform: capitalize;
         line-height: 8px;
-    }
-
-    &-group--special {
-        letter-spacing: $letter-spacing-base;
-        font-size: 8px;
-        font-weight: $font-weight-bold;
-        text-transform: uppercase;
     }
 
     & &-option {
