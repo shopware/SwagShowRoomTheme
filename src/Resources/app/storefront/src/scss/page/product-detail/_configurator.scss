@@ -56,7 +56,7 @@ $configurator-container-width: 474px;
 
     &-collapse {
         border: 1px solid $gray-800;
-        border-radius: 20px;
+        border-radius: $configurator-border-radius;
         padding: 5px 20px;
     }
 

@@ -25,6 +25,7 @@ $shopware-color-brand: #189eff !default;
 
 // Icon
 $icon-chevron-right: url(/bundles/swagshowroomtheme/assets/icon/chevron-right-xs.svg) !default;
+$custom-select-indicator-black: url(/bundles/swagshowroomtheme/assets/icon/chevron-down-gray.svg) !default;
 
 // Font
 $showroom-font-size-base: 11px;
@@ -38,3 +39,6 @@ $letter-spacing-base: 2px;
 
 // Select
 $custom-control-active-border-color: $gray-800;
+
+// Configurator
+$configurator-border-radius: 20px !default;;
