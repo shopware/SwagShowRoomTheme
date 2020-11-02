@@ -1,27 +1,60 @@
 {% sw_extends '@Storefront/storefront/component/account/login.html.twig' %}
 
-{% block component_account_login_form_mail %}
-    <div class="form-group col-md-12">
-        {% block component_account_login_form_mail_label %}
+{% block component_account_login_form %}
+    <form class="login-form"
+          action="{{ path('frontend.account.login') }}"
+          method="post"
+          data-form-csrf-handler="true"
+          data-form-validation="true">
+
+        {% block component_account_login_form_csrf %}
             {{ parent() }}
         {% endblock %}
 
-        {% block component_account_login_form_mail_input %}
+        {% block component_account_login_form_redirect %}
             {{ parent() }}
         {% endblock %}
-    </div>
-{% endblock %}
 
-{% block component_account_login_form_description %}
-{% endblock %}
+        {% block component_account_login_form_description %}
+        {% endblock %}
 
-{% block component_account_login_form_password %}
-    <div class="form-group col-md-12">
-        {% block component_account_login_form_password_label %}
+        {% block component_account_login_form_error %}
             {{ parent() }}
         {% endblock %}
-        {% block component_account_login_form_password_input %}
+
+        {% block component_account_login_form_fields %}
+            <div class="form-row">
+                {% block component_account_login_form_mail %}
+                    <div class="form-group col-md-12">
+                        {% block component_account_login_form_mail_label %}
+                            {{ parent() }}
+                        {% endblock %}
+
+                        {% block component_account_login_form_mail_input %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block component_account_login_form_password %}
+                    <div class="form-group col-md-12">
+                        {% block component_account_login_form_password_label %}
+                            {{ parent() }}
+                        {% endblock %}
+                        {% block component_account_login_form_password_input %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block component_account_login_submit %}
             {{ parent() }}
         {% endblock %}
-    </div>
+
+        {% block component_account_login_password_recover %}
+            {{ parent() }}
+        {% endblock %}
+    </form>
 {% endblock %}

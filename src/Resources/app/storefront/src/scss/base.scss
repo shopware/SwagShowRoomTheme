@@ -78,8 +78,8 @@ https://sass-guidelin.es/#the-7-1-pattern
 /*
  * Page-specific styles
  * -------------------- */
-@import 'page/login';
-@import 'page/register';
+@import 'page/account/login';
+@import 'page/account/register';
 @import 'page/account/aside';
 @import 'page/account/account';
 @import 'page/account/overview';
