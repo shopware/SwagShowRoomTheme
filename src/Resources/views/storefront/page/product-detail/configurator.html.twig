@@ -8,7 +8,7 @@
             {% set withoutActiveOptions = group.options|filter(option => option.id not in page.product.optionIds) %}
 
             {% block page_product_detail_configurator_group %}
-                <div class="col-12 col-md-3 col-lg-12 product-detail-configurator-group js-collapse-column">
+                <div class="col-12 col-md col-lg-12 product-detail-configurator-group js-collapse-column">
                     <div class="row">
                         <div class="col-4 col-md-12 col-lg-4">
                             {% block page_product_detail_configurator_group_title %}
@@ -107,9 +107,5 @@
                 </div>
             {% endblock %}
         {% endfor %}
-
-        {% block page_product_detail_configurator_quantity %}
-            {% sw_include '@Storefront/storefront/page/product-detail/quantity.html.twig' %}
-        {% endblock %}
     </div>
 {% endblock %}
