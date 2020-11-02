@@ -5,8 +5,11 @@ $header-search-form-width-lg: 900px !default;
 $input-group-width-md: 360px !default;
 $input-group-width-lg: 590px !default;
 
-$logo-width-min: 80px;
-$logo-width-full: 200px;
+$logo-width-sm: 80px;
+$logo-width-md: 200px;
+$logo-width-lg: 320px;
+$logo-height-md: 45px;
+$logo-height-lg: 60px;
 
 .header-search {
     margin: 0;
@@ -78,7 +81,8 @@ $logo-width-full: 200px;
     left: 0;
     right: 0;
     z-index: 1;
-    max-width: $logo-width-min;
+    max-width: $logo-width-sm;
+    overflow: hidden;
 }
 
 .header-cart {
@@ -100,7 +104,11 @@ $logo-width-full: 200px;
     }
 
     .header-logo-col-fixed {
-        max-width: $logo-width-full;
+        max-width: $logo-width-md;
+
+        img {
+            max-height: $logo-height-md;
+        }
     }
 }
 
@@ -151,6 +159,10 @@ $logo-width-full: 200px;
     }
 
     .header-logo-col-fixed {
-        max-width: $logo-width-full;
+        max-width: $logo-width-lg;
+
+        img {
+            max-height: $logo-height-lg;
+        }
     }
 }
