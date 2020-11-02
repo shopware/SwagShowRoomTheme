@@ -71,6 +71,15 @@
         margin-bottom: 0;
     }
 
+    &-quantity-select {
+        @include border-radius($configurator-border-radius);
+
+        border: 1px solid $border-color;
+        padding: 5px 20px;
+        background-position: 92% 50%;
+        background-image: $custom-select-indicator-black;
+    }
+
     &-properties-table {
         th,
         td {
