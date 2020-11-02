@@ -36,8 +36,13 @@
 
     &-tax-link {
         text-decoration: underline;
-        font-size: 8px;
+        font-size: 10px;
         line-height: 1rem;
+    }
+
+    &-price-unit,
+    &-tax {
+        font-size: $font-size-xs;
     }
 
     &-description-title {
