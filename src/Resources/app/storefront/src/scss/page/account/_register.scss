@@ -42,6 +42,10 @@
             padding-right: 0;
         }
 
+        .register-card-title {
+            margin-bottom: $grid-gutter-width;
+        }
+
         @include media-breakpoint-down(md) {
             background: $white;
             padding-top: 20px;
