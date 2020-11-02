@@ -32,9 +32,18 @@
             }
         }
 
+        .register-submit .btn {
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+
         .address-different-shipping {
             padding-left: 0;
             padding-right: 0;
+        }
+
+        .register-card-title {
+            margin-bottom: $grid-gutter-width;
         }
 
         @include media-breakpoint-down(md) {

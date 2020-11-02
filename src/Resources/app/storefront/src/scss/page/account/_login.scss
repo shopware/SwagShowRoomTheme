@@ -48,6 +48,26 @@
         }
     }
 
+    .login-submit {
+        padding-top: $grid-gutter-width / 2;
+
+        .btn {
+            @extend .btn-lg;
+
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+    }
+
+    .login-password-recover {
+        padding-top: 30px;
+        margin-bottom: 0;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .account-register-login-container {
             background: $gray-100;
