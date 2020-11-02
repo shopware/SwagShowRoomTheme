@@ -17,16 +17,24 @@
 }
 
 .custom-checkbox {
-    .custom-control-label::before {
-        border-radius: 0;
-    }
-}
+    .custom-control-label {
+        cursor: pointer;
 
-.custom-control-label::after {
-    top: 5px;
-    left: -22px;
-    width: 12px;
-    height: 12px;
+        &::before {
+            border-radius: 0;
+        }
+
+        &::after {
+            top: 8px;
+            left: -22px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+    
+    .custom-control-input:hover {
+        @extend .custom-control-input:checked;
+    }
 }
 
 // Select
