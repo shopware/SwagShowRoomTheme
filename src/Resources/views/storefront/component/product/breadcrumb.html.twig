@@ -1,9 +1,20 @@
 {% sw_extends '@Storefront/storefront/component/product/breadcrumb.html.twig' %}
 
 {% block component_product_breadcrumb_category %}
-    <div class="breadcrumb-placeholder">
-        {% sw_icon 'arrow-medium-right' style { 'pack': 'solid'} %}
-    </div>
+    {# prepend home as first breadcrumb #}
+    {% block component_listing_breadcrumb_home %}
+        <a class="{% if controllerAction is same as('home') %} is-active{% endif %}"
+           title="{{ 'general.homeLink'|trans|sw_sanitize }}"
+           href="{{ path('frontend.home.page') }}">
+            {% block component_listing_breadcrumb_home_link_name %}
+                {{ "general.homeLink"|trans|sw_sanitize }}
+            {% endblock %}
+        </a>
+
+        <div class="breadcrumb-placeholder">
+            {% sw_icon 'arrow-medium-right' style { 'pack': 'solid'} %}
+        </div>
+    {% endblock %}
 
     {{ parent() }}
 {% endblock %}
