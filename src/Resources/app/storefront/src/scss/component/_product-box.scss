@@ -54,6 +54,17 @@ $box-image-height-img: 250px;
         font-weight: $font-weight-base;
         line-height: 24px;
         margin-top: 0;
+
+        &.with-list-price {
+            color: $gray-900;
+        }
+
+        .list-price {
+            color: $sw-color-brand-primary;
+            opacity: 0.3;
+            font-size: $font-size-base;
+            padding-right: $spacer-md;
+        }
     }
 
     // big image
