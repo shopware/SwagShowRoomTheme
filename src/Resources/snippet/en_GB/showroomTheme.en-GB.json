@@ -9,7 +9,8 @@
             "orderStatus": "-",
             "orderItemColumnDate": "Date:",
             "overviewChangeBilling": "Edit address",
-            "overviewChangeShipping": "Edit address"
+            "overviewChangeShipping": "Edit address",
+            "loginOrRegisterHeadline": "Login or register"
         },
         "footer": {
             "includeVat": "* All prices incl. value added tax",
