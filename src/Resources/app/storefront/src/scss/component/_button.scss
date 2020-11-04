@@ -51,12 +51,13 @@
 .btn-outline-secondary {
     color: $sw-color-brand-primary;
     border: 1px solid $sw-color-brand-primary;
+    background-color: $white;
 
     &:not(:disabled):not(.disabled) {
         &:hover, &:focus, &:active {
             color: $btn-secondary-hover-color;
             border: 1px solid $btn-secondary-hover-color;
-            background-color: unset;
+            background-color: $white;
         }
     }
 
