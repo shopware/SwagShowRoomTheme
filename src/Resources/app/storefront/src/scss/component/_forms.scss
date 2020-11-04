@@ -22,7 +22,7 @@
     }
 
     &::placeholder {
-        opacity: 0.4;
+        color: $input-placeholder-color;
     }
 }
 
