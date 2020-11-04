@@ -12,6 +12,12 @@
 }
 
 @include media-breakpoint-down(md) {
+    .account-overview {
+        .account-overview-main .card-title {
+            margin-bottom: 10px;
+        }
+    }
+
     .account-overview-card {
         margin-top: 50px;
         margin-bottom: 50px;

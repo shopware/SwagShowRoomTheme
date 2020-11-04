@@ -1,19 +1,19 @@
 {% sw_extends '@Storefront/storefront/page/account/index.html.twig' %}
 
 {% block page_account_overview_profile_content %}
-    <p>
+    <strong>
         {% if context.customer.salutation.salutationKey != 'not_specified' %}
-            <strong>{{ context.customer.salutation.translated.displayName }}</strong>
+            {{ context.customer.salutation.translated.displayName }}
         {% endif %}
         {% if context.customer.title %}
-            <strong>{{ context.customer.title }}</strong><br/>
+            {{ context.customer.title }}<br/>
         {% endif %}
-        <strong>{{ context.customer.firstName }} {{ context.customer.lastName }}</strong>
-    </p>
+        {{ context.customer.firstName }} {{ context.customer.lastName }}
+    </strong>
 {% endblock %}
 
 {% block page_account_overview_payment_content %}
-    <p><strong>{{ context.customer.defaultPaymentMethod.translated.name }}</strong></p>
+    <strong>{{ context.customer.defaultPaymentMethod.translated.name }}</strong>
     <p>{{ context.customer.defaultPaymentMethod.description }}</p>
 {% endblock %}
 
