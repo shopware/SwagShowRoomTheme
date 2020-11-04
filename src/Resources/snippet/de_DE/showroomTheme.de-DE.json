@@ -9,7 +9,8 @@
             "orderStatus": "-",
             "orderItemColumnDate": "Datum:",
             "overviewChangeBilling": "Adresse bearbeiten",
-            "overviewChangeShipping": "Adresse bearbeiten"
+            "overviewChangeShipping": "Adresse bearbeiten",
+            "loginOrRegisterHeadline": "Anmelden oder Registrieren"
         },
         "footer": {
             "includeVat": "* Alle Preise inkl. Mehrwertsteuer",

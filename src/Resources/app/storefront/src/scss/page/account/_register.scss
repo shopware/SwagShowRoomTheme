@@ -143,4 +143,10 @@
             }
         }
     }
+
+    @include media-breakpoint-up(lg) {
+        .account-register-login-headline {
+            display: none;
+        }
+    }
 }

@@ -69,6 +69,11 @@
     }
 
     @include media-breakpoint-up(lg) {
+        .account-register-login-headline {
+            padding-top: 70px;
+            padding-bottom: 30px;
+        }
+
         .account-register-login-container {
             background: $gray-100;
             padding: 0;
@@ -103,6 +108,11 @@
             font-size: $h6-font-size;
             font-weight: 500;
             background: $white;
+        }
+
+        .account-register-login-headline {
+            padding-top: 50px;
+            padding-bottom: 30px;
         }
 
         .account-register-login-container {
