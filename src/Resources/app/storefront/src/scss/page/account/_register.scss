@@ -46,6 +46,22 @@
             margin-bottom: $grid-gutter-width;
         }
 
+        .address-form-street-back {
+            padding-left: 0;
+        }
+
+        @include media-breakpoint-only(lg) {
+            .address-form-street-front,
+            .address-form-street-back {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .address-form-street-back {
+                padding-left: $form-grid-gutter-width / 2;
+            }
+        }
+
         @include media-breakpoint-down(md) {
             background: $white;
             padding-top: 20px;
@@ -120,6 +136,10 @@
                 &.form-group {
                     padding-right: 0;
                 }
+            }
+
+            .address-form-street-back {
+                padding-left: $form-grid-gutter-width / 2;
             }
         }
     }
