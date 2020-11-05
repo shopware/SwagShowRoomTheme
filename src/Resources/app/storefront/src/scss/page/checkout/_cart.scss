@@ -76,6 +76,8 @@ $checkout-aside-spacing: 50px;
 }
 
 .cart-shipping-costs-btn {
+    @extend .px-0;
+
     text-transform: uppercase;
     margin-bottom: 40px;
 }
