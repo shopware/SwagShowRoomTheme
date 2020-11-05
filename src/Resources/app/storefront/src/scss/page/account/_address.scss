@@ -1,4 +1,8 @@
 .is-ctl-address {
+    .card-title {
+        line-height: $line-height-base;
+    }
+
     .account-content {
         .account-welcome {
             @extend .col-12;
@@ -33,6 +37,11 @@
 
     .address-list {
         padding-bottom: 24px;
+
+        .h3 {
+            font-size: $h4-font-size;
+            line-height: $line-height-base;
+        }
     }
 
     .account-address {
