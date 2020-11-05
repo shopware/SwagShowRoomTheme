@@ -19,6 +19,7 @@ $offcanvas-content-width-lg: 800px;
     &.is-right {
         .offcanvas-close {
             background-color: $gray-100;
+            letter-spacing: 0;
         }
     }
 
