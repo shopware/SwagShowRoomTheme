@@ -1,11 +1,15 @@
 {% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart.html.twig' %}
 
+{% block utilities_offcanvas_close_icon %}
+    {% sw_icon 'arrow-head-left' style { 'pack':'showroom' } %}
+{% endblock %}
+
 {% block component_offcanvas_cart %}
     {% set isCartNotEmpty = (page.cart.lineItems|length > 0) %}
     <div class="offcanvas-cart">
         {% block component_offcanvas_cart_header %}
             <div class="offcanvas-cart-header">
-                <h4 class="mb-0">{{ "checkout.cartHeader"|trans|sw_sanitize }}</h4>
+                <h1 class="mb-0">{{ "checkout.cartHeader"|trans|sw_sanitize }}</h1>
             </div>
         {% endblock %}
 
