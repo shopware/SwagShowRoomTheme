@@ -25,12 +25,13 @@ $offcanvas-content-width-lg: 800px;
 
     &.cart-offcanvas {
         .offcanvas-content-container {
-            margin-top: 40px;
+            padding-top: 40px;
         }
 
         @include media-breakpoint-up(lg) {
             .offcanvas-content-container {
                 width: $offcanvas-content-width-lg;
+                padding-top: 70px;
             }
         }
     }
