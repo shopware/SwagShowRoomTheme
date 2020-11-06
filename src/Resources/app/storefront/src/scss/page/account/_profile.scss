@@ -21,10 +21,6 @@
         text-transform: uppercase;
     }
 
-    .account-profile-credentials-current-mail {
-        padding-bottom: 20px;
-    }
-
     .account-profile-required-info {
         display: flex;
         margin-bottom: 0;
@@ -35,6 +31,31 @@
     .account-email {
         .card-actions {
             padding-bottom: 30px;
+        }
+    }
+
+    .account-profile-change,
+    .account-profile-credentials-current-mail {
+        font-size: $showroom-font-size-base;
+    }
+
+    .account-profile-change-password {
+        padding-left: 20px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .account-profile-credentials {
+            .card-title {
+                margin-bottom: 20px;
+            }
+        }
+
+        .account-profile-personal {
+            padding-top: 50px;
+
+            .card-title {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -52,6 +73,10 @@
             .card-actions {
                 margin-top: 20px;
             }
+        }
+
+        .account-profile-credentials-current-mail {
+            padding-bottom: 20px;
         }
     }
 
