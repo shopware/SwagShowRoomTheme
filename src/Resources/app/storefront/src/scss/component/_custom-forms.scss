@@ -19,6 +19,7 @@
 .custom-checkbox {
     .custom-control-label {
         cursor: pointer;
+        line-height: $font-size-base * $line-height-base;
 
         &::before {
             border-radius: 0;
