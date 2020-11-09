@@ -1,0 +1,28 @@
+.address-editor-list-wrapper,
+.address-editor-create-address-wrapper,
+.address-editor-create-address-wrapper {
+  margin-top: $modal-padding;
+  border-top: 1px solid $gray-300;
+}
+
+.address-editor-modal {
+  .modal-header {
+    padding: $modal-padding-mobile;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: $btn-padding-y $btn-padding-y;
+    cursor: pointer;
+  }
+
+  .js-address-editor > .row .col-6 {
+    @extend .px-3;
+  }
+}
+@include media-breakpoint-between(md, lg) {
+  .modal-dialog {
+    max-width: 700px;
+  }
+}

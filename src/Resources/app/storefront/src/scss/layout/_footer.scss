@@ -47,6 +47,10 @@
     .footer-logo {
         margin-right: 0;
         margin-bottom: 0;
+
+        img {
+            max-height: $logo-max-height;
+        }
     }
 
     .footer-service-menu-item {

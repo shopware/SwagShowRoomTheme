@@ -6,6 +6,10 @@
         justify-content: center;
     }
 
+    .header-logo-main-img {
+        max-height: $logo-max-height;
+    }
+
     &-contact {
         color: $gray-700;
     }
