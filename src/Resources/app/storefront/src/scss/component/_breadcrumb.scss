@@ -21,4 +21,8 @@
     @include media-breakpoint-down(md) {
         margin-bottom: 0;
     }
+
+    &.cms-breadcrumb {
+        margin-bottom: 0px;
+    }
 }
