@@ -4,7 +4,7 @@
     <div class="footer-column-content-inner">
         {% block layout_footer_navigation_newsletter_form %}
             <div class="row footer-newsletter-form">
-                <div class="col-6 col-lg-12 footer-newsletter-header">
+                <div class="col-12 footer-newsletter-header">
                     {% block layout_footer_navigation_newsletter_header %}
                         <span class="footer-newsletter-header-headline d-none d-md-block d-lg-none">{{ 'footer.newsletterHeadline'|trans|sw_sanitize }}</span>
                         <span class="footer-newsletter-info">
@@ -15,7 +15,7 @@
                     {% endblock %}
                 </div>
 
-                <div class="col-6 col-lg-12 cms-block footer-newsletter-content">
+                <div class="col-12 cms-block footer-newsletter-content">
                     <div class="cms-element-form">
                         {% block layout_footer_navigation_newsletter_form_element %}
                             <form action="{{ path('frontend.form.newsletter.register.handle') }}"
