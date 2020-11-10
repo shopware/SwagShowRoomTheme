@@ -22,11 +22,11 @@
                     {{ parent() }}
                 {% endblock %}
 
-                <a type="submit"
+                <button type="submit"
                         class="btn btn-outline-secondary btn-sm"
                         title="{{ "account.addressesContentItemActionDelete"|trans|striptags }}">
                     {{ "account.addressesContentItemActionDelete"|trans|sw_sanitize }}
-                </a>
+                </button>
             </form>
         </div>
     {% endif %}
