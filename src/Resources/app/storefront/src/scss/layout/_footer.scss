@@ -82,19 +82,17 @@
         }
     }
 
+    .footer-column {
+        padding-bottom: 70px;
+    }
+
     @include media-breakpoint-up(md) {
         .footer-columns {
-            padding-bottom: unset;
+            padding: 100px 0 0 0;
         }
 
         .footer-newsletter {
-            padding-top: 40px;
             padding-bottom: 40px;
-
-            .footer-newsletter-container {
-                border-bottom: 1px solid $border-color;
-                padding-bottom: 40px;
-            }
         }
 
         .footer-service-menu-item {
@@ -105,17 +103,9 @@
             font-weight: 500;
             padding-bottom: 14px;
         }
-
-        .footer-newsletter-content {
-            padding-top: 16px;
-        }
     }
 
     @include media-breakpoint-up(lg) {
-        .footer-columns {
-            padding: 100px 0 68px 0;
-        }
-
         .footer-newsletter {
             padding-top: unset;
             padding-bottom: unset;
