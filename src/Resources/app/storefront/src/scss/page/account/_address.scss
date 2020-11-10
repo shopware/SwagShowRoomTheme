@@ -74,6 +74,10 @@
         .address-list {
             padding-bottom: 30px;
         }
+
+        .address-action-delete {
+            margin-left: 20px;
+        }
     }
 
     @include media-breakpoint-down(md) {
