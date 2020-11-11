@@ -10,6 +10,9 @@ $footer-color: $sw-footer-text-color !default;
 $footer-border-color: $gray-800 !default;
 $footer-bottom-color: $gray-700 !default;
 
+// Max-height for mininal header and footer logo
+$logo-max-height: 50px;
+
 // Product Detail font sizes
 $product-detail-name-sm: 24px;
 $product-detail-name: 34px;
@@ -41,4 +44,4 @@ $letter-spacing-base: 2px;
 $custom-control-active-border-color: $gray-800;
 
 // Configurator
-$configurator-border-radius: 20px !default;;
+$configurator-border-radius: 20px !default;

@@ -1,4 +1,5 @@
 $modal-padding: 50px;
+$modal-padding-mobile: 20px;
 $modal-title-font-size: 18px;
 
 .modal {
@@ -59,5 +60,10 @@ $modal-title-font-size: 18px;
             max-width: 800px;
         }
     }
-}
 
+    @include media-breakpoint-down(sm) {
+        &-body {
+            padding: 0 $modal-padding-mobile $modal-padding-mobile;
+        }
+    }
+}
