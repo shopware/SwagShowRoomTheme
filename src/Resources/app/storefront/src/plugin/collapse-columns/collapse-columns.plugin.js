@@ -17,4 +17,30 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
     _isInAllowedViewports() {
         return true;
     }
+
+    _onClickCollapseTrigger(event) {
+        const trigger = event.target;
+        const collapse = trigger.parentNode.querySelector(this.options.collapseColumnContentSelector);
+        const collapseColumn = trigger.parentNode
+
+        const $collapse = $(collapse);
+        const collapseShowClass = this.options.collapseShowClass;
+        const groupIdx = +(collapseColumn.dataset.idx || 0) + 1;
+
+        $collapse.collapse('toggle');
+
+        $collapse.on('shown.bs.collapse', () => {
+            trigger.classList.add(collapseShowClass);
+            this.$emitter.publish('onCollapseShown');
+        });
+
+        $collapse.on('hidden.bs.collapse', () => {
+            trigger.classList.remove(collapseShowClass);
+            this.$emitter.publish('onCollapseHidden');
+        });
+
+        this.$emitter.publish('onClickCollapseTrigger');
+
+        collapseColumn.style.zIndex = groupIdx;
+    }
 }
