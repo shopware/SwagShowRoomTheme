@@ -98,6 +98,10 @@
 
 @include media-breakpoint-down(md) {
     .is-act-loginpage {
+        .account-register-container {
+            padding-bottom: 50px;
+        }
+
         .content-main {
             background: $gray-100;
         }
