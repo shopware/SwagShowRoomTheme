@@ -43,6 +43,7 @@
             .order-item-name {
                 @extend .col;
 
+                display: block;
                 padding-right: 0;
                 padding-left: 0;
             }
@@ -54,6 +55,7 @@
 
         .order-item-detail-list-item {
             padding-bottom: 10px;
+            font-size: $font-size-sm;
         }
 
         .order-item-product-image {
@@ -67,7 +69,7 @@
         }
 
         .order-item-product-name strong {
-            font-weight: normal;
+            font-weight: $font-weight-bold;
         }
 
         .order-item-detail-summary {
@@ -119,7 +121,7 @@
         .order-item-detail-amount-label,
         .order-item-detail-amount-value {
             font-weight: $font-weight-bold;
-            font-size: $h4-font-size;
+            font-size: $h6-font-size;
         }
 
         .order-detail-content-header {
@@ -179,7 +181,6 @@
 
             .order-item-detail-amount-label,
             .order-item-detail-amount-value {
-                font-size: $h6-font-size;
                 margin-top: 10px;
             }
         }
