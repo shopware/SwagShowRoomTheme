@@ -1,9 +1,4 @@
 .account-overview {
-    .account-overview-newsletter {
-        padding: 30px 0;
-        border-bottom: 1px solid $border-color;
-    }
-
     .account-overview-newest-order {
         margin-top: 0;
         padding-top: 50px;
@@ -13,8 +8,10 @@
 
 @include media-breakpoint-down(md) {
     .account-overview {
-        .account-overview-main .card-title {
-            margin-bottom: 10px;
+        .account-overview-main {
+            .card-title {
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -27,16 +24,12 @@
             margin-bottom: 20px;
         }
     }
-
-    .account-overview-newsletter {
-        display: none;
-    }
 }
 
 @include media-breakpoint-down(sm) {
     .account-overview-card {
-        margin-top: 24px;
-        margin-bottom: 24px;
+        margin-top: 30px;
+        margin-bottom: 30px;
 
         &.account-overview-newsletter-mobile {
             margin-bottom: 0;
@@ -45,6 +38,16 @@
                 border-bottom: 1px solid $border-color;
                 padding-bottom: 30px;
             }
+        }
+    }
+
+
+    .account-overview-newsletter {
+        margin-bottom: 0;
+
+        .card {
+            padding-bottom: 30px;
+            border-bottom: 1px solid $border-color;
         }
     }
 }
@@ -59,7 +62,7 @@
             padding-left: 0;
         }
 
-        .account-overview-newsletter-mobile {
+        .account-overview-newsletter {
             padding-right: 0;
         }
     }
@@ -70,6 +73,18 @@
 
         .overview-billing-address {
             padding-left: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .row.account-overview-main {
+        border-bottom: unset;
+
+        .account-overview-newsletter {
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            padding: 30px 0;
         }
     }
 }
