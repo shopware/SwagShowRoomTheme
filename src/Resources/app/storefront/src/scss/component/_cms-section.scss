@@ -5,9 +5,5 @@
 
     .cms-section-default.boxed {
         padding: 0;
-
-        .cms-block-container-row {
-            @extend .no-gutters;
-        }
     }
 }

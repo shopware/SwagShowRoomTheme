@@ -1,0 +1,94 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-types/contact-form.html.twig' %}
+
+{% block cms_form_contact %}
+    <form action="{{ path(action) }}"
+            method="post"
+            data-form-csrf-handler="true"
+            data-form-validation="true">
+
+        <div class="form-content">
+            <div class="form-row">
+                {% block cms_form_contact_select_salutation %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
+                        with {
+                            additionalClass: 'col-md-6',
+                            required: true
+                        }
+                    %}
+                {% endblock %}
+            </div>
+            <div class="form-row">
+                {% block cms_form_contact_input_first_name %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                        with {
+                            fieldName: 'firstName',
+                            required: true,
+                            additionalClass: 'col-md-6',
+                            label: 'account.personalFirstNameLabel',
+                            placeholder: 'account.personalFirstNamePlaceholder'
+                        }
+                    %}
+                {% endblock %}
+
+                {% block cms_form_contact_input_last_name %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                        with {
+                            fieldName: 'lastName',
+                            required: true,
+                            additionalClass: 'col-md-6',
+                            label: 'account.personalLastNameLabel',
+                            placeholder: 'account.personalLastNamePlaceholder'
+                        }
+                    %}
+                {% endblock %}
+            </div>
+
+            <div class="form-row">
+                {% block cms_form_contact_input_email %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block cms_form_contact_input_phome %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            <div class="form-row">
+                {% block cms_form_contact_input_subject %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            <div class="form-row">
+                {% block cms_form_contact_comment_textarea %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            <div class="form-row d-flex mt-1 justify-content-between align-items-center">
+                <div class="col-12 col-md-8">
+                    {% block cms_form_contact_required_fields_info %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block cms_form_contact_captcha %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block cms_form_contact_privacy %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+                <div class="col-12 col-md-4 mt-3 mt-md-0">
+                    {% block cms_form_contact_submit %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {% block cms_form_contact_hidden_fields %}
+            {{ parent() }}
+        {% endblock %}
+    </form>
+{% endblock %}

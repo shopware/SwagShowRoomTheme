@@ -139,6 +139,26 @@
                 "editable": true,
                 "block": "media",
                 "order": 500
+            },
+            "sw-contact-form": {
+                "label": {
+                    "en-GB": "Contact form image",
+                    "de-DE": "Kontaktformular Bild"
+                },
+                "type": "media",
+                "value": "public/assets/images/contact-form.png",
+                "editable": true,
+                "block": "media"
+            },
+            "sw-newsletter-form": {
+                "label": {
+                    "en-GB": "Newsletter form image",
+                    "de-DE": "Newsletter Formular Bild"
+                },
+                "type": "media",
+                "value": "public/assets/images/newsletter-form.png",
+                "editable": true,
+                "block": "media"
             }
         }
     }

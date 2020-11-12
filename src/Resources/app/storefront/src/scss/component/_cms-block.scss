@@ -14,6 +14,12 @@
         border-bottom: 1px solid $border-color;
     }
 
+    .cms-element-form {
+        .card-title {
+            font-size: $h1-font-size-lg;
+        }
+    }
+
     @include media-breakpoint-up(md) {
         &.cms-block-text-two-column {
             .cms-element-form {

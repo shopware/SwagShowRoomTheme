@@ -1,0 +1,52 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-form/form-types/newsletter-form.html.twig' %}
+
+{% block cms_form_newsletter %}
+    <form action="{{ path(action) }}"
+          method="post"
+          data-form-csrf-handler="true"
+          data-form-validation="true">
+
+        <div class="form-content">
+            <div class="form-row">
+                {% block cms_form_newsletter_select_action %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            <div class="form-row">
+                {% block cms_form_newsletter_input_email %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+
+            {% block cms_form_newsletter_additional_fields %}
+                {{ parent() }}
+            {% endblock %}
+
+            <div class="form-row d-flex mt-1 justify-content-between align-items-center">
+                <div class="col-12 col-md-8">
+                    {% block cms_form_newsletter_captcha %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block cms_form_newsletter_privacy %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block cms_form_newsletter_required_fields_info %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+                <div class="col-12 col-md-4 mt-3 mt-md-0">
+                    {% block cms_form_newsletter_submit %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {% block cms_form_newsletter_hidden_fields %}
+            {{ parent() }}
+        {% endblock %}
+    </form>
+{% endblock %}
