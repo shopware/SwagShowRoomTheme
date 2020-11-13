@@ -3,9 +3,7 @@
 {% block layout_header_minimal_row %}
     <div class="row header-row header-minimal-row">
         {% block layout_header_minimal_contact %}
-            <div class="col-md-4 header-minimal-contact">
-                {{ "showroom.header.supportInfo"|trans|sw_sanitize }}
-            </div>
+            {{ parent() }}
         {% endblock %}
 
         {% block layout_header_minimal_logo %}
