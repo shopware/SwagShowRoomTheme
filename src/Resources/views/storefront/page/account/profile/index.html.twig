@@ -48,9 +48,9 @@
             </div>
         {% endblock %}
 
-        <div class="col-auto col-md text-md-right">
+        <div class="col-auto col-md text-md-right account-profile-change">
             {% block page_account_profile_credentials_change_mail %}
-                <a class="account-profile-change{% if not emailFormViolation %} collapsed{% endif %}"
+                <a class="{% if not emailFormViolation %} collapsed{% endif %}"
                    data-toggle="collapse"
                    href="#profile-email-form"
                    role="button"
@@ -61,7 +61,7 @@
             {% endblock %}
 
             {% block page_account_profile_credentials_change_password %}
-                <a class="account-profile-change account-profile-change-password{% if not passwordFormViolation %} collapsed{% endif %}"
+                <a class="account-profile-change-password{% if not passwordFormViolation %} collapsed{% endif %}"
                    data-toggle="collapse"
                    href="#profile-password-form"
                    role="button"
