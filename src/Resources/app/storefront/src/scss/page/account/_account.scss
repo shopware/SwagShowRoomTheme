@@ -6,10 +6,9 @@
             @extend .col-xl;
             @extend .col-lg-7;
 
-            a:not(.btn) {
+            a:not(.btn):not(.order-table-header-context-menu-content-link) {
                 text-decoration: underline;
             }
-
         }
 
         .account-content-aside {
