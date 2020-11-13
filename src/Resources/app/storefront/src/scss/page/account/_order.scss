@@ -97,6 +97,11 @@
                     margin: 20px 0;
                 }
             }
+
+            [class^=col-] {
+                padding-right: 0;
+                padding-left: 0;
+            }
         }
 
         .account-orders-main {
