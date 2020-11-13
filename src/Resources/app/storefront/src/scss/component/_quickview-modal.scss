@@ -38,13 +38,13 @@ $manufacturer-max-width: 200px;
         border-bottom: 2px solid $sw-color-brand-primary;
     }
 
-    &-footer-description {
-        padding: $spacer;
+    &-footer-description-wrapper {
         background-color: $gray-100;
+        padding: $spacer;
     }
 
     @include media-breakpoint-up(md) {
-        &-footer-description {
+        &-footer-description-wrapper {
             padding: $spacer-lg;
         }
     }
@@ -54,7 +54,7 @@ $manufacturer-max-width: 200px;
             font-size: $h1-font-size-lg;
         }
 
-        &-footer-description {
+        &-footer-description-wrapper {
           padding: 40px $spacer-xl;
         }
     }
