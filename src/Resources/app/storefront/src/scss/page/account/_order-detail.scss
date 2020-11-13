@@ -70,7 +70,12 @@
         }
 
         .order-item-product-name strong {
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-bolder;
+            color: $sw-color-brand-primary;
+        }
+
+        .order-item-variants {
+            color: $gray-600;
         }
 
         .order-item-detail-summary {
@@ -159,10 +164,6 @@
 
             .order-item-label {
                 font-weight: normal;
-            }
-
-            .order-item-product-name strong {
-                font-weight: $font-weight-bold;
             }
 
             .order-item-detail-footer-repeat .btn {
