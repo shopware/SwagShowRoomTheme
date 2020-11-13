@@ -154,6 +154,8 @@
             .filter-panel-item-dropdown {
                 width: calc(100% - 50px);
                 max-width: 100%;
+                background: $gray-100;
+                border-color: $gray-100;
             }
 
             &.show {
