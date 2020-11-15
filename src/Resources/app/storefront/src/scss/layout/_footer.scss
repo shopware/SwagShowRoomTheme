@@ -90,6 +90,10 @@
         padding-bottom: 70px;
     }
 
+    .footer-vat {
+        font-size: $font-size-sm;
+    }
+
     @include media-breakpoint-up(md) {
         .footer-columns {
             padding: 100px 0 0 0;

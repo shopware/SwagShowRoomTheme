@@ -116,13 +116,13 @@
                     <div class="col-4 footer-vat">
                         {% if context.taxState == "gross" %}
                             <span>
-                                {{ "showroom.footer.includeVat"|trans({
+                                {{ "footer.includeVat"|trans({
                                     '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
                                 })|raw }}
                             </span>
                         {% else %}
                             <span>
-                                {{ "showroom.footer.excludeVat"|trans({
+                                {{ "footer.excludeVat"|trans({
                                     '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
                                 })|raw }}
                             </span>
@@ -163,13 +163,13 @@
                     <div class="footer-vat">
                         {% if context.taxState == "gross" %}
                             <span>
-                            {{ "showroom.footer.includeVat"|trans({
+                            {{ "footer.includeVat"|trans({
                                 '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
                             })|raw }}
                         </span>
                         {% else %}
                             <span>
-                            {{ "showroom.footer.excludeVat"|trans({
+                            {{ "footer.excludeVat"|trans({
                                 '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
                             })|raw }}
                         </span>
