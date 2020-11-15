@@ -20,6 +20,12 @@
 
     @include media-breakpoint-up(lg) {
         font-size: $font-size-base;
+
+        &-contact {
+            > strong:first-child {
+                font-size: 18px;
+            }
+        }
     }
 }
 

@@ -1,8 +1,5 @@
 {
     "showroom": {
-        "header": {
-            "supportInfo": "<b>Questions regarding your order?</b>"
-        },
         "account": {
             "orRegisterLink": "register",
             "loginHeader": "Login",
