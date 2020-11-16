@@ -9,10 +9,6 @@
             "overviewChangeShipping": "Edit address",
             "loginOrRegisterHeadline": "Login or register"
         },
-        "footer": {
-            "includeVat": "* All prices incl. value added tax",
-            "excludeVat": "* All prices excl. value added tax"
-        },
         "general": {
             "offcanvasCloseMenu": "Close",
             "mainMenu": "Menu",

@@ -9,10 +9,6 @@
             "overviewChangeShipping": "Adresse bearbeiten",
             "loginOrRegisterHeadline": "Anmelden oder Registrieren"
         },
-        "footer": {
-            "includeVat": "* Alle Preise inkl. Mehrwertsteuer",
-            "excludeVat": "* Alle Preise exkl. Mehrwertsteuer"
-        },
         "general": {
             "offcanvasCloseMenu": "Schließen",
             "mainMenu": "Menü",
