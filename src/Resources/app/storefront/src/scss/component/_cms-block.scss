@@ -27,6 +27,12 @@
                 padding: 50px;
             }
         }
+
+        .sw-cms-form-cover-image {
+            min-height: $cms-form-cover-image-height;
+            object-fit: cover;
+            height: 100%;
+        }
     }
 
     @include media-breakpoint-down(md) {
@@ -34,6 +40,12 @@
             .cms-element-form {
                 padding-top: 50px;
             }
+        }
+
+        .sw-cms-form-cover-image {
+            min-height: $cms-form-cover-image-height-sm;
+            object-fit: unset;
+            height: auto;
         }
     }
 

@@ -14,12 +14,12 @@
                                 <picture>
                                     <img src="{{ shopware.theme['sw-contact-form'] |sw_encode_url }}"
                                          alt="{{ "contact.headline"|trans|striptags }}"
-                                         class="img-fluid w-100"/>
+                                         class="sw-cms-form-cover-image img-fluid"/>
                                 </picture>
                             {% endif %}
                         {% endblock %}
                     </div>
-                {% endif %}  
+                {% endif %}
 
                 <div class="col d-flex flex-column justify-content-center px-lg-5 w-100">
                     {% block element_form_contact_form_title %}
@@ -39,7 +39,7 @@
                                 <picture>
                                     <img src="{{ shopware.theme['sw-newsletter-form'] |sw_encode_url }}"
                                          alt="{{ "newsletter.headline"|trans|striptags }}"
-                                         class="img-fluid w-100"/>
+                                         class="sw-cms-form-cover-image img-fluid"/>
                                 </picture>
                             {% endif %}
                         {% endblock %}
