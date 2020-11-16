@@ -18,11 +18,12 @@
                         {% block page_product_detail_configurator_options %}
                             <div class="col-8 col-md-12 col-lg-8">
                                 <div class="product-detail-configurator-collapse-wrapper js-collapse-column">
-                                    <div class="product-detail-configurator-collapse" data-idx="{{ loop.length - loop.index }}">
+                                    <div class="product-detail-configurator-collapse"
+                                         data-idx="{{ loop.length - loop.index }}">
                                         <div
                                             class="js-collapse-column-trigger global-collapse-headline product-detail-configurator-active-option">
 
-                                            {{ activeOption.translated.name }}
+                                            {{ activeOption.translated.name | u.truncate(30, '...') }}
 
                                             <div class="global-collapse-column-toggle">
                                                 <span class="global-collapse-plus-icon">
