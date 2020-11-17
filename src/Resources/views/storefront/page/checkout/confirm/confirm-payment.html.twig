@@ -13,22 +13,24 @@
 {% endblock %}
 
 {% block page_checkout_confirm_payment_modal_toggle %}
-    <a type="button"
-       data-toggle="modal"
-       data-backdrop="static"
-        {% if page.paymentChangeable is not null and page.paymentChangeable == false %}
-            disabled="disabled"
-        {% endif %}
-       data-target="#confirmPaymentModal"
-       class="confirm-payment-link"
-    >
+    <div class="card-actions">
+        <a type="button"
+           data-toggle="modal"
+           data-backdrop="static"
+            {% if page.paymentChangeable is not null and page.paymentChangeable == false %}
+                disabled="disabled"
+            {% endif %}
+           data-target="#confirmPaymentModal"
+           class="confirm-payment-link"
+        >
 
-        {% if paymentMethodInvalid %}
-            {{ "checkout.confirmChoosePayment"|trans|sw_sanitize }}
-        {% else %}
-            {{ "showroom.checkout.confirmChangePayment"|trans|sw_sanitize }}
-        {% endif %}
-    </a>
+            {% if paymentMethodInvalid %}
+                {{ "checkout.confirmChoosePayment"|trans|sw_sanitize }}
+            {% else %}
+                {{ "showroom.checkout.confirmChangePayment"|trans|sw_sanitize }}
+            {% endif %}
+        </a>
+    </div>
 {% endblock %}
 
 {% block page_checkout_confirm_payment_modal %}
