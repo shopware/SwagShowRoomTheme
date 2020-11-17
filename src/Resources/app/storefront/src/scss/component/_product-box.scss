@@ -1,14 +1,11 @@
 $custom-box-standard-height-img: 220px;
-$box-image-height-img: 250px;
 
 .product-image {
     height: 100%;
     object-fit: cover;
 
     &-wrapper {
-        height: $custom-box-standard-height-img;
         margin-bottom: 0;
-        overflow: hidden;
     }
 }
 
@@ -64,17 +61,6 @@ $box-image-height-img: 250px;
             opacity: 0.3;
             font-size: $font-size-base;
             padding-right: $spacer-md;
-        }
-    }
-
-    // big image
-    &.box-image {
-        .product-image-wrapper {
-            height: $box-image-height-img;
-        }
-
-        .product-image {
-            max-height: $box-image-height-img;
         }
     }
 }
