@@ -170,6 +170,11 @@ $custom-box-standard-height-img: 220px;
     }
 
     .product-box {
+
+        .card-body {
+            padding-bottom: $spacer-xl;
+        }
+
         .product-info {
             padding: 0;
 
@@ -194,3 +199,8 @@ $custom-box-standard-height-img: 220px;
     }
 }
 
+@include media-breakpoint-only(md) {
+    .product-box {
+        padding-bottom: $spacer-sm;
+    }
+}
