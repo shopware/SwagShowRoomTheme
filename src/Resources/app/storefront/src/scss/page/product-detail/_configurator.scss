@@ -1,7 +1,6 @@
 $configurator-group-line-height: 28px !default;
 $configurator-padding-sm: 30px;
 $configurator-padding: 40px;
-$configurator-container-width: 474px;
 
 .product-detail-configurator {
     width: 100%;
@@ -10,12 +9,6 @@ $configurator-container-width: 474px;
     &-active-option {
         width: 100%;
         cursor: pointer;
-    }
-
-    &-active-option {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
     }
 
     &-group {
@@ -30,12 +23,20 @@ $configurator-container-width: 474px;
     }
 
     &-active-option {
+        display: flex;
         flex-wrap: nowrap;
+        justify-content: space-between;
         font-weight: $font-weight-bold;
 
         &.global-collapse-headline {
             padding: 0;
             border: 0;
+        }
+
+        .product-detail-configurator-option-label {
+            @include text-truncate();
+
+            width: calc(100% - 1rem);
         }
     }
 
@@ -67,7 +68,6 @@ $configurator-container-width: 474px;
             cursor: pointer;
         }
     }
-
 
     &-option-input + &-option-label {
         &.is-display-text {
@@ -161,10 +161,7 @@ $configurator-container-width: 474px;
         &-wrapper,
         &-configurator-container,
         &-form-container {
-            max-width: $configurator-container-width;
             width: 100%;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         &-form-container {

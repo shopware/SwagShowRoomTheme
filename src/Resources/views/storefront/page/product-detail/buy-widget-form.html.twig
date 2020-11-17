@@ -4,7 +4,7 @@
     {% if buyable %}
         <div class="form-row buy-widget-container">
             {% block page_product_detail_buy_quantity_container %}
-                <div class="row product-detail-configurator-container">
+                <div class="row">
                     <div class="col-4 col-md-12 col-lg-4">
                         <div class="product-detail-configurator-group-title">
                             {{ "showroom.detail.quantity"|trans|sw_sanitize }}
@@ -20,7 +20,7 @@
 
             <div class="row no-gutters product-detail-button-container">
                 {% block page_product_detail_price_container %}
-                    <div class="col-12 col-md">
+                    <div class="col-12 col-lg-4">
                         <div class="product-detail-price-container">
                             {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
                             {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
@@ -28,7 +28,7 @@
                     </div>
                 {% endblock %}
 
-                <div class="col-12 col-md-7 offset-md-1">
+                <div class="col-12 col-lg-7 offset-lg-1">
                     {% block page_product_detail_buy_redirect_input %}
                         {{ parent() }}
                     {% endblock %}
