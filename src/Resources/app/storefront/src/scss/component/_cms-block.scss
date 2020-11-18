@@ -12,7 +12,13 @@
     }
 
     &.cms-block-sidebar-filter {
-        border-bottom: 1px solid $border-color;
+        &::after {
+            content: "";
+            display: block;
+            margin: auto 20px;
+            max-width: 100%;
+            border-bottom: 1px solid $border-color;
+        }
     }
 
     .cms-element-form {
