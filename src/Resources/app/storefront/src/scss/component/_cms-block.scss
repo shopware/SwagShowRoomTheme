@@ -1,13 +1,15 @@
 .cms-block {
     .cms-block-container {
         h3 {
-            font-size: $h4-font-size;
+            font-size: $font-size-sm;
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             color: $sw-color-brand-primary;
+
             letter-spacing: $letter-spacing-base;
             border-bottom: 1px solid $border-color;
             padding-bottom: 3px;
+            margin-bottom: 20px;
         }
     }
 
