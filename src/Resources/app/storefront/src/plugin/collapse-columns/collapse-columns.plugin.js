@@ -20,8 +20,8 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
 
     _onClickCollapseTrigger(event) {
         const trigger = event.target;
-        const collapse = trigger.parentNode.querySelector(this.options.collapseColumnContentSelector);
-        const collapseColumn = trigger.parentNode
+        const collapse = trigger.parentNode.parentNode.querySelector(this.options.collapseColumnContentSelector);
+        const collapseColumn = trigger.parentNode.parentNode
 
         const $collapse = $(collapse);
         const collapseShowClass = this.options.collapseShowClass;
