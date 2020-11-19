@@ -1,0 +1,121 @@
+$carousel-control-button-width: 80px;
+$carousel-control-button-height: 80px;
+
+$carousel-control-button-width-sm: 40px;
+$carousel-control-button-height-sm: 40px;
+
+$carousel-control-icon-width: 32px;
+$carousel-control-icon-width-sm: 16px;
+
+.swag-cms-extensions-quickview-modal {
+    .modal-dialog {
+        max-width: 1000px;
+    }
+
+    .swag-cms-extensions-quickview-close-button {
+        display: none;
+    }
+
+    .swag-cms-extensions-quickview-detail-page-button {
+        padding: 3px;
+    }
+}
+
+.swag-cms-extensions-quickview-container {
+
+    .product-detail-configurator-collapse {
+        padding: 5px 20px;
+        border-radius: 12px;
+    }
+    .product-detail-quantity-select {
+        height: 40px;
+        border-radius: 12px;
+        line-height: 1;
+    }
+
+    .product-detail-button-container {
+        margin-top: 30px;
+    }
+
+    .product-detail-configurator-group-title {
+        padding: 10px 0;
+    }
+}
+
+#swag-cms-extensions-quickview-carousel {
+    .carousel-control {
+        &-next, &-prev {
+            background: none;
+            height: 33%;
+            top: 33%;
+
+            .icon {
+                display: inline-block;
+                background: no-repeat 50% / 100% 100%;
+                background-color: $white;
+
+                &-arrow-head-left {
+                    background-image: $carousel-control-prev-icon-bg;
+                }
+
+                &-arrow-head-right {
+                    background-image: $carousel-control-next-icon-bg;
+                }
+
+                svg {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .gallery-slider-controls-prev {
+        left: 50%;
+        transform: translate(calc(-50% - #{$gallery-prev-outside-height}), 0%);
+
+        @include media-breakpoint-up(md) {
+            left: auto;
+            right: 55px;
+            transform: translate(0, calc(-50% + #{$gallery-prev-outside-height-sm}));
+        }
+    }
+
+    .gallery-slider-controls-next {
+        right: 50%;
+        transform: translate(calc(50% + #{$gallery-prev-outside-height}), 0%);
+
+        @include media-breakpoint-up(md) {
+            right: 0;
+            transform: translate(0, calc(-50% + #{$gallery-prev-outside-height-sm}));
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #swag-cms-extensions-quickview-carousel {
+        .carousel-control {
+            &-next, &-prev {
+                .icon {
+                    width: $carousel-control-button-width;
+                    height: $carousel-control-button-width;
+                    background-size: $carousel-control-icon-width auto;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #swag-cms-extensions-quickview-carousel {
+        .carousel-control {
+            &-next, &-prev {
+                .icon {
+                    width: $carousel-control-button-width-sm;
+                    height: $carousel-control-button-width-sm;
+                    background-size: $carousel-control-icon-width-sm auto;
+                }
+            }
+        }
+    }
+}
+
