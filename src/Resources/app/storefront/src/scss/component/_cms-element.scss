@@ -4,8 +4,6 @@
 
         border-bottom: 1px solid $border-color;
         padding-bottom: 30px;
-        margin-left: -20px;
-        margin-right: -20px;
 
         @include media-breakpoint-up(sm) {
             .pagination {
