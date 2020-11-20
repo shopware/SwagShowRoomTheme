@@ -21,7 +21,7 @@
                     </div>
                 {% endif %}
 
-                <div class="col d-flex flex-column justify-content-center px-lg-5 w-100">
+                <div class="col d-flex flex-column justify-content-center w-100 {% if not app.request.xmlHttpRequest %}sw-cms-form-content{% endif %}">
                     {% block element_form_contact_form_title %}
                         {{ parent() }}
                     {% endblock %}
@@ -31,7 +31,7 @@
                 </div>
             </div>
         {% elseif element.config.type.value is same as('newsletter') %}
-            <div class="row no-gutters">
+            <div class="row">
                 {% if not app.request.xmlHttpRequest %}
                     <div class="col-12 col-lg-6 mb-5 mb-lg-0">
                         {% block element_form_newsletter_form_image %}
@@ -46,7 +46,7 @@
                     </div>
                 {% endif %}
 
-                <div class="col d-flex flex-column justify-content-center px-lg-5 w-100">
+                <div class="col d-flex flex-column justify-content-center w-100 {% if not app.request.xmlHttpRequest %}sw-cms-form-content{% endif %}">
                     {% block element_form_newsletter_form_title %}
                         {{ parent() }}
                     {% endblock %}
