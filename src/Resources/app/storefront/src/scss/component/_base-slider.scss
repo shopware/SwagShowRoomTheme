@@ -14,5 +14,19 @@ $base-slider-controls-height: 50px;
 }
 
 .base-slider.has-nav-outside {
-    padding: 0;
+    padding: 0 25px;
+}
+
+// dots navigation styles
+.base-slider .tns-nav .base-slider-dot,
+.base-slider .tns-nav button,
+.base-slider .base-slider-dots .base-slider-dot,
+.base-slider .base-slider-dots button {
+    border-radius: 0;
+    background: $gray-100;
+
+    &:hover,
+    &.tns-nav-active {
+        background: $gray-900;
+    }
 }

@@ -1,20 +1,6 @@
-$base-slider-controls-height: 50px;
+$cms-slider-padding: 40px;
 
 .product-slider.has-nav {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.product-slider-controls-prev,
-.product-slider-controls-next {
-    top: 10px;
-
-    @include media-breakpoint-up(md) {
-        top: calc(-#{$base-slider-controls-height} - 4px)
-    }
-}
-
-.product-slider-controls-prev {
-    right: calc(#{$base-slider-controls-height} + 5px);
-    left: auto;
+  padding-left: $cms-slider-padding;
+  padding-right: $cms-slider-padding;
 }
