@@ -14,6 +14,16 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
         collapseColumnContentSelector: '.js-column-content'
     });
 
+    init() {
+        this._columns = this.el.querySelectorAll(this.options.collapseColumnSelector);
+        this._registerEvents();
+
+        document.$emitter.subscribe('openMenu', (event) => {
+            this._columns = document.querySelectorAll(this.options.collapseColumnSelector);
+            this._registerEvents();
+        })
+    }
+
     _isInAllowedViewports() {
         return true;
     }

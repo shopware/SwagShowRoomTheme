@@ -1,26 +1,26 @@
-.language-currency {
-    .top-bar-nav-item {
-        .currency-form,
-        .language-form {
-            width: 100%;
-        }
+.top-bar-list-label {
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+}
 
-        &.top-bar-language {
-            margin-right: 0;
-        }
+.top-bar-list {
+    padding: 12px 0 12px 0;
+}
+
+.top-bar-list-icon {
+    height: 10px;
+    border: unset;
+}
+
+.top-bar-nav-item {
+    .currency-form,
+    .language-form {
+        width: 100%;
     }
 
-    .top-bar-list {
-        padding: 12px 0 12px 0;
-    }
-
-    .top-bar-list-label {
-        padding: 3px 0;
-    }
-
-    .top-bar-list-icon {
-        height: 10px;
-        border: unset;
+    &.top-bar-language {
+        margin-right: 0;
     }
 }
 

@@ -51,6 +51,7 @@ $navigation-offcanvas-image-height: 307px;
         padding: $navigation-offcanvas-padding 0px;
         margin: 0px $navigation-offcanvas-padding 0px;
         border-bottom: 1px solid $border-color;
+        align-items: flex-start;
 
         .top-bar-nav-item {
             flex: 1;
