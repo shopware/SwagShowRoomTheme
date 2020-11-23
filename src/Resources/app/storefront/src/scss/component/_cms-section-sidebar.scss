@@ -31,16 +31,11 @@
             }
 
             .filter-panel-item-dropdown {
-                display: none;
                 max-width: unset;
                 width: unset;
                 border-radius: unset;
                 border: unset;
-                background: $white;
-
-                &.show {
-                    display: block;
-                }
+                background-color: $white;
             }
         }
     }
