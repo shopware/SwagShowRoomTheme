@@ -14,8 +14,7 @@
 
 {% block page_checkout_confirm_payment_modal_toggle %}
     <div class="card-actions">
-        <a type="button"
-           data-toggle="modal"
+        <a data-toggle="modal"
            data-backdrop="static"
             {% if page.paymentChangeable is not null and page.paymentChangeable == false %}
                 disabled="disabled"
