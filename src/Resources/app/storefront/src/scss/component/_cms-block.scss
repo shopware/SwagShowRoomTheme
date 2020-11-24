@@ -29,6 +29,10 @@
         }
     }
 
+    .sw-cms-form-cover-image {
+        object-fit: cover;
+    }
+
     @include media-breakpoint-up(md) {
         &.cms-block-text-two-column {
             .cms-element-form {
@@ -43,9 +47,6 @@
 
         .sw-cms-form-cover-image {
             min-height: $cms-form-cover-image-height;
-            object-fit: cover;
-            height: 100%;
-            width: fit-content;
         }
     }
 
@@ -62,9 +63,7 @@
         }
 
         .sw-cms-form-cover-image {
-            min-height: $cms-form-cover-image-height-sm;
-            object-fit: unset;
-            height: auto;
+            max-height: $cms-form-cover-image-height;
         }
     }
 
@@ -72,6 +71,10 @@
         &.cms-block-image-text .cms-row > :first-child,
         &.cms-block-image-text-cover .cms-row > :first-child {
             margin-bottom: 0;
+        }
+
+        .sw-cms-form-cover-image {
+            max-height: $cms-form-cover-image-height-sm;
         }
     }
 }
