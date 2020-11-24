@@ -126,10 +126,15 @@
             }
 
             .filter-panel-item-dropdown {
-                width: calc(100% - 50px);
-                max-width: 100%;
+                transform: none !important;
+                min-width: 100%;
                 background-color: $gray-100;
                 border-color: $gray-100;
+            }
+
+            &.show,
+            .filter-panel-item-dropdown {
+                position: static !important;
             }
 
             &.show {
