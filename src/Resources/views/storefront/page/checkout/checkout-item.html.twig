@@ -62,7 +62,7 @@
 {% endblock %}
 
 {% block page_checkout_item_quantity %}
-    <div class="col-6 col-lg-auto cart-item-quantity">
+    <div class="col-6 col-lg-1 cart-item-quantity">
         <div class="row cart-item-quantity-row">
 
             {% block page_checkout_item_quantity_label %}
@@ -81,6 +81,12 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block page_checkout_item_quantity_number %}
+    <div class="d-flex justify-content-start cart-item-quantity">
+        {{ lineItem.quantity }}
+    </div>
 {% endblock %}
 
 {% block page_checkout_item_remove %}
