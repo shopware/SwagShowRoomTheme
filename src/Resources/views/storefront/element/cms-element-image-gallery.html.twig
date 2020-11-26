@@ -1,38 +1,83 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-image-gallery.html.twig' %}
 
+{% block element_image_gallery_inner_control_prev_icon %}
+    {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+{% endblock %}
+
+{% block element_image_gallery_inner_control_next_icon %}
+    {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+{% endblock %}
+
+{# unset the default gallery slider on product detail so the below arrow navigation can work #}
 {% block element_image_gallery_inner_controls %}
+    {% if activeRoute == "frontend.navigation.page" %}
+        {{ parent() }}
+    {% endif %}
 {% endblock %}
 
-{% block element_image_gallery_slider_dots %}
-{% endblock %}
+{% block element_image_gallery_inner_thumbnails_col %}
+    {% if imageCount > 1 %}
+        <div class="gallery-slider-thumbnails-col{% if galleryPosition == "left" %} col-0 col-md-auto order-2 order-md-1 is-left{% elseif galleryPosition == "underneath" %} col-12 order-2 is-underneath{% endif %}">
+            <div class="gallery-slider-thumbnails-container{% if imageCount > maxItemsToShowNav and galleryPosition == "underneath" %} hide-thumbs{% endif %}">
 
-{% block element_image_gallery_inner_thumbnails %}
-    {{ parent() }}
-
-    {% block element_image_gallery_controls %}
-        <div class="gallery-slider-controls"
-             data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
-            {% block element_image_gallery_inner_control_items %}
-                {% block element_image_gallery_inner_control_prev %}
-                    <button
-                        class="base-slider-controls-prev gallery-slider-controls-prev{% if navigationArrows == "outside" %} is-nav-prev-outside{% elseif navigationArrows == "inside" %} is-nav-prev-inside{% endif %}"
-                        aria-label="{{ 'general.previous'|trans|striptags }}">
-                        {% block element_image_gallery_inner_control_prev_icon %}
-                            {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
-                        {% endblock %}
-                    </button>
+                {% block element_image_gallery_inner_thumbnails %}
+                    {{ parent() }}
                 {% endblock %}
 
-                {% block element_image_gallery_inner_control_next %}
-                    <button
-                        class="base-slider-controls-next gallery-slider-controls-next{% if navigationArrows == "outside" %} is-nav-next-outside{% elseif navigationArrows == "inside" %} is-nav-next-inside{% endif %}"
-                        aria-label="{{ 'general.next'|trans|striptags }}">
-                        {% block element_image_gallery_inner_control_next_icon %}
-                            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
-                        {% endblock %}
-                    </button>
+                {% block element_image_gallery_inner_thumbnails_controls %}
+                    {% if galleryPosition == "left" %}
+                        <div data-thumbnail-slider-controls="true" class="gallery-slider-thumbnails-controls">
+                            <button class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev">
+                                {% sw_icon 'arrow-head-up' style { 'pack': 'showroom' } %}
+                            </button>
+                            <button class="base-slider-controls-next gallery-slider-thumbnails-controls-next">
+                                {% sw_icon 'arrow-head-down' style { 'pack': 'showroom' } %}
+                            </button>
+                        </div>
+                    {% endif %}
                 {% endblock %}
-            {% endblock %}
+
+                {# move the gallery slider navigation into the gallery thumbnails section #}
+                {% block element_image_gallery_controls_underneath %}
+                    {% if activeRoute == "frontend.detail.page" %}
+                        <div class="underneath-gallery-slider-controls"
+                             data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
+
+                            {% block element_image_underneath_gallery_inner_control_items %}
+                                {% block element_image_underneath_gallery_inner_control_prev %}
+                                    <button
+                                        class="base-slider-controls-prev gallery-slider-controls-prev{% if galleryPosition == "underneath" %} is-nav-underneath{% endif%}"
+                                        aria-label="{{ 'general.previous'|trans|striptags }}">
+                                        {% block element_image_underneath_gallery_inner_control_prev_icon %}
+                                            {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+                                        {% endblock %}
+                                    </button>
+                                {% endblock %}
+
+                                {% block element_image_gallery_inner_control_next_underneath %}
+                                    <button
+                                        class="base-slider-controls-next gallery-slider-controls-next{% if galleryPosition == "underneath" %} is-nav-underneath{% endif%}"
+                                        aria-label="{{ 'general.next'|trans|striptags }}">
+                                        {% block element_image_underneath_gallery_inner_control_next_icon %}
+                                            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+                                        {% endblock %}
+                                    </button>
+                                {% endblock %}
+                            {% endblock %}
+
+                        </div>
+                    {% endif %}
+                {% endblock %}
+
+            </div>
         </div>
-    {% endblock %}
+    {% endif %}
+{% endblock %}
+
+{% block element_image_gallery_inner_zoom_modal_slider_control_prev_icon %}
+    {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+{% endblock %}
+
+{% block element_image_gallery_inner_zoom_modal_slider_control_next_icon %}
+    {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
 {% endblock %}
