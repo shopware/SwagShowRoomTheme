@@ -5,6 +5,9 @@ Contains variable overrides for bootstrap variables located under
 shopRoot/src/vendor/shopware/storefront/Resources/app/storefront/vendor/bootstrap/scss/_variables.scss
 */
 
+// Bundles url to fix the domain with subfolder
+$show-room-bundle-path: '../../../bundles/swagshowroomtheme';
+
 // Options
 $enable-responsive-font-sizes: false !default;
 $font-size-base: 0.875rem !default;
