@@ -4,6 +4,9 @@ Custom variables
 contains new variables specific to the theme.
 */
 
+// Bundles url to fix the domain with subfolder
+$show-room-bundle-path: '../../..//bundles/swagshowroomtheme/';
+
 // Footer
 $footer-bg-color: $sw-footer-bg-color !default;
 $footer-color: $sw-footer-text-color !default;
@@ -27,8 +30,8 @@ $alert-color-warning: #f8e7d7 !default;
 $shopware-color-brand: #189eff !default;
 
 // Icon
-$icon-chevron-right: url(/bundles/swagshowroomtheme/assets/icon/chevron-right-xs.svg) !default;
-$custom-select-indicator-gray: url(/bundles/swagshowroomtheme/assets/icon/chevron-down-gray.svg);
+$icon-chevron-right: url($show-room-bundle-path + '/assets/icon/chevron-right-xs.svg') !default;
+$custom-select-indicator-gray: url($show-room-bundle-path + 'assets/icon/chevron-down-gray.svg');
 
 // Font
 $showroom-font-size-base: 11px;
