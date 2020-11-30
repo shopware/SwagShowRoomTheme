@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/app-system/0.1.0/src/Core/Content/App/Manifest/Schema/manifest-1.0.xsd">
+    <meta>
+        <name>SwagShowRoomTheme</name>
+        <label>Showroom Theme</label>
+        <label lang="de-DE">Showroom Theme</label>
+        <description>Das Showroom Theme von Shopware hat ein cleanes und leichtes Design für eine perfekte Produktplatzierung. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
+        <description lang="de-DE">The Shopware Showroom Theme has a clean and light design for perfect product placement. It can be used in any branch, offers additional functions and can be extended by apps.</description>
+        <author>shopware AG</author>
+        <copyright>(c) by shopware AG</copyright>
+        <version>1.0.0</version>
+        <license>MIT</license>
+    </meta>
+</manifest>
