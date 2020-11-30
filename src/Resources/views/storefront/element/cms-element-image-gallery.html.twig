@@ -39,7 +39,7 @@
 
                 {# move the gallery slider navigation into the gallery thumbnails section #}
                 {% block element_image_gallery_controls_underneath %}
-                    {% if activeRoute == "frontend.detail.page" %}
+                    {% if activeRoute == "frontend.detail.page" or cmsQuickView == true %}
                         <div class="underneath-gallery-slider-controls"
                              data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
 

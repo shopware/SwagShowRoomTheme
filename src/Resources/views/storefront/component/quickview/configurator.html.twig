@@ -1,0 +1,73 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+
+{% block page_product_detail_configurator_groups %}
+    <div data-showroom-collapse="true" class="row mx-lg-0 product-detail-configurator-container">
+        {% for group in page.configuratorSettings %}
+
+            {% set activeOption = group.options|filter(option => option.id in page.product.optionIds)|first %}
+            {% set withoutActiveOptions = group.options|filter(option => option.id not in page.product.optionIds) %}
+
+            {% block page_product_detail_configurator_group %}
+                <div class="col-12 col-md col-lg-12 px-lg-0 product-detail-configurator-group">
+                    <div class="row">
+                        <div class="col-4 col-md-12 col-lg-4">
+                            {% block page_product_detail_configurator_group_title %}
+                                {{ parent() }}
+                            {% endblock %}
+                        </div>
+                        {% block page_product_detail_configurator_options %}
+                            <div class="col-8 col-md-12 col-lg-8">
+                                <div class="product-detail-configurator-collapse-wrapper js-collapse-column">
+                                    <div class="product-detail-configurator-collapse"
+                                         data-idx="{{ loop.length - loop.index }}">
+                                        <div class="product-detail-configurator-active-option global-collapse-headline">
+                                            <div class="js-collapse-column-trigger product-detail-configurator-option-label">
+                                                {{ activeOption.translated.name }}
+                                            </div>
+                                            <div class="global-collapse-column-toggle">
+                                                <span class="global-collapse-plus-icon">
+                                                    {% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}
+                                                </span>
+                                                <span class="global-collapse-minus-icon">
+                                                    {% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="product-detail-configurator-options collapse js-column-content">
+                                            {% for option in withoutActiveOptions %}
+
+                                                {% set optionIdentifier = [group.id, option.id]|join('-') %}
+                                                {% set isActive = false %}
+
+                                                {% if option.id in page.product.optionIds %}
+                                                    {% set isActive = true %}
+                                                {% endif %}
+
+                                                {% if option.configuratorSetting.media %}
+                                                    {% set displayType = 'media' %}
+                                                    {% set media = option.configuratorSetting.media %}
+                                                {% else %}
+                                                    {% set displayType = group.displayType %}
+                                                    {% if option.media %}
+                                                        {% set media = option.media %}
+                                                    {% else %}
+                                                        {% set media = false %}
+                                                    {% endif %}
+                                                {% endif %}
+
+                                                {% block page_product_detail_configurator_option %}
+                                                    {{ parent() }}
+                                                {% endblock %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+        {% endfor %}
+    </div>
+{% endblock %}

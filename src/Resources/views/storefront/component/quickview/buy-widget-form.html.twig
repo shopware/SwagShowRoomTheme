@@ -1,0 +1,66 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_container %}
+    {% if buyable %}
+        <div class="form-row buy-widget-container">
+            {% block page_product_detail_buy_quantity_container %}
+                <div class="row">
+                    <div class="col-4 col-md-12 col-lg-4">
+                        <div class="product-detail-configurator-group-title">
+                            {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+                        </div>
+                    </div>
+                    <div class="col-8 col-md-12 col-lg-8">
+                        {% block page_product_detail_buy_quantity %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            <div class="row no-gutters product-detail-button-container">
+                {% block page_product_detail_price_container %}
+                    <div class="col-12 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-4{% endif %}">
+                        <div class="product-detail-price-container">
+                            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+                            {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
+                        </div>
+                    </div>
+                {% endblock %}
+
+                <div class="col-12 offset-md-1 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-7{% endif %}">
+                    {% block page_product_detail_buy_redirect_input %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block page_product_detail_buy_product_buy_info %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block page_product_detail_product_buy_meta %}
+                        {{ parent() }}
+                    {% endblock %}
+
+                    {% block page_product_detail_buy_button_container %}
+                        {% block page_product_detail_buy_button %}
+                            {{ parent() }}
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block page_product_detail_buy_form_inner %}
+    <div class="swag-cms-extensions-quickview-product-buy-form container-fluid pt-0">
+        {{ parent() }}
+        {% block swag_cms_extensions_detail_buy_form_detail_button %}
+            <a class="swag-cms-extensions-quickview-detail-page-button btn btn-outline-secondary btn-lg btn-block"
+               title="{{ product.translated.name }}"
+               href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}">
+                {{ "swagCmsExtensions.quickview.detailPageLinkText"|trans }}
+            </a>
+        {% endblock %}
+    </div>
+{% endblock %}
