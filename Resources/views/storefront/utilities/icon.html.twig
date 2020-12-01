@@ -4,7 +4,7 @@
     {% set styles = [ size, color, rotation, flip, class ] %}
     {% if pack == 'showroom' %}
         <span class="icon icon-showroom icon-showroom-{{ name }}{% for entry in styles %}{% if entry != "" %} icon-{{ entry }}{% endif %}{% endfor %}">
-            {{ source('@SwagShowroomTheme/../public/assets/icon/showroom/'~ name ~'.svg', ignore_missing = true) }}
+            {{ source('@SwagShowRoomTheme/../public/assets/icon/showroom/'~ name ~'.svg', ignore_missing = true) }}
         </span>
     {% else %}
         {{ parent() }}
