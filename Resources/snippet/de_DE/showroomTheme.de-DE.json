@@ -18,7 +18,8 @@
             "boxAddProduct": "Add to cart"
         },
         "detail": {
-            "quantity": "Menge"
+            "quantity": "Menge",
+            "finishConfigCustomizedProduct": "Sie haben Ihr Produkt konfiguriert. Sie können es jetzt in Ihren Warenkorb legen oder Ihre Konfiguration ändern."
         },
         "checkout": {
             "finishButtonBackToShop": "Zur Startseite",

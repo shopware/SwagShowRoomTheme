@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/component/customized-products/option-type/fileupload/fileupload.html.twig' %}
+
+{% block swag_customized_products_option_type_template_fileupload_dropzone_icon %}
+    <div class="customized-products-upload-dropzone-icon">
+
+        {% block swag_customized_products_option_type_template_fileupload_dropzone_icon_content %}
+            {% sw_icon 'cloud-upload' style { 'size': 'lg' }%}
+        {% endblock %}
+    </div>
+{% endblock %}
