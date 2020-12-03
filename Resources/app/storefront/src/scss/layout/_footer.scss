@@ -45,7 +45,7 @@
     }
 
     .footer-logo {
-        margin-right: 0;
+        margin-right: $spacer-sm;
         margin-bottom: 0;
 
         img {
@@ -167,6 +167,13 @@
         .footer-vat {
             text-align: right;
         }
+
+        div[data-swag-paypal-installment-banner="true"] {
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-bottom: $spacer;
+        }
+
     }
 
     @include media-breakpoint-down(md) {
