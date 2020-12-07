@@ -1,5 +1,7 @@
 .custom-switch {
     .custom-control-label {
+        line-height: $font-size-base * $line-height-base;
+
         &::before {
             border-radius: 1px;
             background-color: $gray-300;

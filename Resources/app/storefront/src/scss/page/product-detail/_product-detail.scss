@@ -100,6 +100,16 @@
             font-size: $product-detail-price-lg;
         }
     }
+
+    @include media-breakpoint-only(md) {
+        .product-detail-form-container {
+            margin-top: 0;
+        }
+
+        .product-detail-configurator-container {
+            margin-bottom: $configurator-padding-sm;
+        }
+    }
 }
 
 // Tablet stripped for graduated price
