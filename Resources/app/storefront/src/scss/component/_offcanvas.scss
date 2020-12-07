@@ -23,6 +23,16 @@ $offcanvas-content-width-lg: 800px;
         }
     }
 
+    &.is-left {
+        .offcanvas-close {
+            justify-content: flex-start;
+
+            .icon {
+                margin-left: $spacer-sm;
+            }
+        }
+    }
+
     &.cart-offcanvas {
         .offcanvas-content-container {
             padding-top: 40px;
