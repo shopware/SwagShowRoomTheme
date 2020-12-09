@@ -30,6 +30,16 @@ $logo-height-lg: 60px;
         margin: 0 auto;
     }
 
+    &-btn-close {
+        flex-shrink: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        &-btn-close {
+            padding-right: 0;
+        }
+    }
+
     @include media-breakpoint-up(md) {
         .header-search-form {
             margin: 55px auto;
@@ -93,6 +103,10 @@ $logo-height-lg: 60px;
 
     .header-cart-total {
         font-weight: 500;
+    }
+
+    .btn.header-cart-btn {
+        padding-right: 0;
     }
 }
 

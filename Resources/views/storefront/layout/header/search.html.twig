@@ -3,36 +3,50 @@
 {% block layout_header_search %}
     <div class="collapse header-search"
          id="searchCollapse">
-        <form action="{{ path('frontend.search.page') }}"
-              method="get"
-              data-search-form="true"
-              data-url="{{ path('frontend.search.suggest') }}?search="
-              class="header-search-form">
-            {% block layout_header_search_input_group %}
-                <div class="input-group">
-                    <input type="search"
-                           name="search"
-                           class="form-control header-search-input"
-                           autocomplete="off"
-                           autocapitalize="off"
-                           placeholder="{{ "header.searchPlaceholder"|trans|striptags }}"
-                           aria-label="{{ "header.searchPlaceholder"|trans|striptags }}"
-                           value="{{ page.searchTerm }}"
-                    >
+        <div class="container">
+            <div class="d-flex align-items-baseline">
+                <form action="{{ path('frontend.search.page') }}"
+                      method="get"
+                      data-search-form="true"
+                      data-url="{{ path('frontend.search.suggest') }}?search="
+                      class="header-search-form">
+                    {% block layout_header_search_input_group %}
+                        <div class="input-group">
+                            <input type="search"
+                                   name="search"
+                                   class="form-control header-search-input"
+                                   autocomplete="off"
+                                   autocapitalize="off"
+                                   placeholder="{{ "header.searchPlaceholder"|trans|striptags }}"
+                                   aria-label="{{ "header.searchPlaceholder"|trans|striptags }}"
+                                   value="{{ page.searchTerm }}"
+                            >
 
-                    {% block layout_header_search_button %}
-                        <div class="input-group-append">
-                            <button type="submit"
-                                    class="btn header-search-btn"
-                                    aria-label="{{ "header.searchButton"|trans|striptags }}">
+                            {% block layout_header_search_button %}
+                                <div class="input-group-append">
+                                    <button type="submit"
+                                            class="btn header-search-btn"
+                                            aria-label="{{ "header.searchButton"|trans|striptags }}">
                                     <span class="header-search-icon">
                                         {% sw_icon 'search' %}
                                     </span>
-                            </button>
+                                    </button>
+                                </div>
+                            {% endblock %}
                         </div>
                     {% endblock %}
-                </div>
-            {% endblock %}
-        </form>
+                </form>
+
+                <button class="btn js-search-toggle-btn header-search-btn-close"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#searchCollapse"
+                        aria-expanded="false"
+                        aria-controls="searchCollapse"
+                        aria-label="{{ "header.searchButton"|trans|striptags }}">
+                    {% sw_icon 'x' style { 'size': 'md' } %}
+                </button>
+            </div>
+        </div>
     </div>
 {% endblock %}
