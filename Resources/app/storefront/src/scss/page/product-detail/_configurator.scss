@@ -125,6 +125,15 @@ $configurator-padding: 40px;
     }
 }
 
+.product-detail-configurator-option-label.show + .global-collapse-column-toggle {
+    .global-collapse-minus-icon {
+        display: block;
+    }
+    .global-collapse-plus-icon {
+        display: none;
+    }
+}
+
 .product-detail-button-container,
 .product-detail-wrapper {
     padding-top: $configurator-padding-sm;

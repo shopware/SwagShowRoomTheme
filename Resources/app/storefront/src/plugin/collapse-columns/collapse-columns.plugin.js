@@ -31,11 +31,9 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
     _onClickCollapseTrigger(event) {
         const trigger = event.target;
         const collapse = trigger.parentNode.parentNode.querySelector(this.options.collapseColumnContentSelector);
-        const collapseColumn = trigger.parentNode
 
         const $collapse = $(collapse);
         const collapseShowClass = this.options.collapseShowClass;
-        const groupIdx = +(collapseColumn.dataset.idx || 0) + 1;
 
         $collapse.collapse('toggle');
 
@@ -50,7 +48,5 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
         });
 
         this.$emitter.publish('onClickCollapseTrigger');
-
-        collapseColumn.style.zIndex = groupIdx;
     }
 }
