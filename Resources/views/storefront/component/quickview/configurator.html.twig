@@ -18,8 +18,7 @@
                         {% block page_product_detail_configurator_options %}
                             <div class="col-8 col-md-12 col-lg-8">
                                 <div class="product-detail-configurator-collapse-wrapper js-collapse-column">
-                                    <div class="product-detail-configurator-collapse"
-                                         data-idx="{{ loop.length - loop.index }}">
+                                    <div class="product-detail-configurator-collapse" style="z-index: {{ loop.length - loop.index + 1 }}">
                                         <div class="product-detail-configurator-active-option global-collapse-headline">
                                             <div class="js-collapse-column-trigger product-detail-configurator-option-label">
                                                 {{ activeOption.translated.name }}
