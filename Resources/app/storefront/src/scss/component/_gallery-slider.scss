@@ -146,6 +146,21 @@ $gallery-image-height-lg: 800px;
 
 // settings for product detail only
 .is-ctl-product {
+
+    .gallery-slider-thumbnails-container {
+        &.hide-thumbs {
+            display: block;
+
+            .gallery-slider-thumbnails {
+                display: none;
+            }
+
+            .underneath-gallery-slider-controls {
+                padding-top: $spacer-xl;
+            }
+        }
+    }
+
     .gallery-slider-controls-prev {
         left: 50%;
         transform: translate(calc(-50% - #{$gallery-prev-outside-height}), 0%);
