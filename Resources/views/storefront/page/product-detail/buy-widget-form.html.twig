@@ -52,6 +52,10 @@
                     </div>
                 </div>
             </div>
+
+            {% block page_product_detail_buy_container_paypal %}
+                {{ parent() }}
+            {% endblock %}
         {% endif %}
     {% endif %}
 {% endblock %}

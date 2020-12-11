@@ -7,30 +7,10 @@
     </button>
 {% endblock %}
 
-{% block component_product_box_action_inner %}
-    {% set id = product.id %}
-
-    {% if shopware.config.core.listing.allowBuyInListing %}
-        <div class="product-action">
-            {% block component_product_box_action_detail %}
-                <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
-                   class="btn btn-md btn-outline-primary"
-                   title="{{ "listing.boxProductDetails"|trans|striptags }}">
-                    {{ "listing.boxProductDetails"|trans|sw_sanitize }}
-                </a>
-            {% endblock %}
-
-            {% set isAvailable = not product.isCloseout or (product.availableStock >= product.minPurchase) %}
-
-            {% if isAvailable and not product.isGrouped and product.childCount <= 0 and product.calculatedPrices.count <= 1 %}
-                {% block component_product_box_action_buy %}
-                    {{ parent() }}
-                {% endblock %}
-            {% endif %}
-        </div>
-    {% endif %}
-
-    {% block component_product_box_action_meta %}
-        {{ parent() }}
-    {% endblock %}
-{% endblock %}
+ {% block component_product_box_action_detail %}
+     <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+        class="btn btn-md btn-outline-primary"
+        title="{{ "listing.boxProductDetails"|trans|striptags }}">
+         {{ "listing.boxProductDetails"|trans|sw_sanitize }}
+     </a>
+ {% endblock %}

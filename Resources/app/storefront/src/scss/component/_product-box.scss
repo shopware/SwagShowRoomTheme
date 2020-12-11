@@ -68,6 +68,7 @@ $custom-box-standard-height-img: 220px;
 
 .product-action {
     display: flex;
+    align-items: flex-start;
     width: 100%;
 
     > * {

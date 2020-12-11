@@ -112,6 +112,14 @@
     }
 }
 
+.product-detail-form-container {
+    div[data-swag-paypal-installment-banner='true'],
+    div[data-swag-paypal-express-button='true'] {
+        @extend .col-7;
+        padding-left: 0;
+    }
+}
+
 // Tablet stripped for graduated price
 .product-block-prices-table {
     thead th {
