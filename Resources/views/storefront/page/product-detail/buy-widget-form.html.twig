@@ -20,7 +20,6 @@
                         </div>
                     </div>
                 {% endblock %}
-
                 <div class="row no-gutters product-detail-button-container">
                     {% block page_product_detail_price_container %}
                         <div class="col-12 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-4{% endif %}">
@@ -52,6 +51,10 @@
                     </div>
                 </div>
             </div>
+
+            {% block page_product_detail_buy_container_paypal %}
+                {{ parent() }}
+            {% endblock %}
         {% endif %}
     {% endif %}
 {% endblock %}

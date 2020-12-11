@@ -82,7 +82,9 @@ $cart-item-img-width: 80px;
         color: $gray-900;
     }
 
-    .btn-proceed-to-cart {
+    .btn.btn-link {
+        @extend .btn-outline-primary;
+
         letter-spacing: $letter-spacing-base;
         text-transform: uppercase;
     }
