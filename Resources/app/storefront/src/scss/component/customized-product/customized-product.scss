@@ -54,6 +54,12 @@
         .custom-control-input:checked ~ .custom-control-label::before {
             border-width: 1px;
         }
+
+        .custom-checkbox {
+            .custom-control-label::before {
+                background: none;
+            }
+        }
     }
 
     .swag-customized-products__type-fileupload {
