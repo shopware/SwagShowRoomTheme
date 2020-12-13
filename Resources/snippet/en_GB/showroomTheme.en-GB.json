@@ -30,7 +30,6 @@
             "confirmPaymentShipping": "Payment & Shipping",
             "confirmChangeShipping": "Edit Shipping",
             "confirmChangePayment": "Edit Payment",
-            "confirmSubmit": "Send Order",
             "finishCartHeader": "Your Order",
             "addressLoginToggle": "If you already have an account.",
             "registerHeader": "Register"
