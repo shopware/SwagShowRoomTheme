@@ -1,0 +1,47 @@
+.swag-customized-products-cart {
+    &__title-toggle {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    &__configuration {
+        order: 4;
+        padding: 11px 20px;
+        line-height: 28px;
+        background-color: $gray-100;
+    }
+
+    &__item-title {
+        text-transform: uppercase;
+    }
+
+    &__items {
+        margin: 11px 0 0;
+        border-top: 1px solid $border-color;
+    }
+
+    &__item,
+    &__item-content {
+        font-size: 8px;
+    }
+
+    &__title-toggle,
+    &__name {
+        font-weight: $font-weight-bold;
+    }
+
+    &__title-toggle {
+        margin-bottom: 0;
+        color: $gray-900;
+    }
+
+    &__list {
+        margin-bottom: 10px;
+    }
+
+    &__title-toggle-icon--isMainCart,
+    &__title-toggle-icon {
+        text-align: right;
+        padding-right: 0;
+    }
+}

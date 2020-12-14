@@ -28,7 +28,11 @@ $checkout-aside-spacing: 50px;
         .checkout-aside-container {
             top: 20px;
         }
-    }
+   }
+}
+
+.cart-item-row {
+    align-items: baseline;
 }
 
 .checkout-container {

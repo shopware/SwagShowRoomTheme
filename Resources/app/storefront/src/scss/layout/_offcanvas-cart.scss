@@ -19,6 +19,10 @@ $cart-item-img-width: 80px;
         @extend .pt-0;
     }
 
+    .cart-item-remove {
+        position: static;
+    }
+
     .cart-item-row {
         align-items: center;
     }
