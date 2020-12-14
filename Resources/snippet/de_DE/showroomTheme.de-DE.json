@@ -30,7 +30,6 @@
             "confirmPaymentShipping": "Bezahlung & Versand",
             "confirmChangeShipping": "Versand bearbeiten",
             "confirmChangePayment": "Zahlung bearbeiten",
-            "confirmSubmit": "Bestellung absenden",
             "finishCartHeader": "Ihre Bestellung",
             "addressLoginToggle": "Wenn Sie bereits ein Konto haben.",
             "registerHeader": "Registrieren"

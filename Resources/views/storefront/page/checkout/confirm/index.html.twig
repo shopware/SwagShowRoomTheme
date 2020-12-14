@@ -26,7 +26,6 @@
         {{ parent() }}
     {% endblock %}
 
-
     {% block page_checkout_confirm_payment_shipping %}
         <h2 class="confirm-main-sub">{{ "showroom.checkout.confirmPaymentShipping"|trans|sw_sanitize }}</h2>
         {{ parent() }}
@@ -35,18 +34,6 @@
     {% block page_checkout_confirm_hidden_line_items_information %}
         {{ parent() }}
     {% endblock %}
-{% endblock %}
-
-{% block page_checkout_confirm_form_submit %}
-    <button id="confirmFormSubmit"
-            class="btn btn-primary btn-block btn-lg"
-            form="confirmOrderForm"
-        {% if page.cart.errors.blockOrder %}
-            disabled
-        {% endif %}
-            type="submit">
-        {{ "showroom.checkout.confirmSubmit"|trans|sw_sanitize }}
-    </button>
 {% endblock %}
 
 {% block page_checkout_confirm_tos_header %}
