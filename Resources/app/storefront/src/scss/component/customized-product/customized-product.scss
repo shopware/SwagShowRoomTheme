@@ -62,13 +62,15 @@
         }
     }
 
-    .swag-customized-products__type-fileupload {
+    .swag-customized-products__type-fileupload,
+    .swag-customized-products__type-imageupload {
         .customized-products-upload-files-element-container {
             background-color: $gray-800;
             color: $white;
             font-size: $font-size-base;
             border-radius: 1px;
             border: none;
+            padding: $spacer-sm $spacer-md;
 
             .customized-products-upload-files-element-container-icon .icon {
                 color: $white;
@@ -82,9 +84,24 @@
 
     .customized-products-upload-dropzone {
         background-color: $white;
+        padding: $spacer-md $spacer-sm;
 
         .customized-products-upload-dropzone-text-restrictions {
             color: $gray-500;
+        }
+
+        .customized-products-upload-dropzone-col,
+        .customized-products-upload-dropzone-button {
+            display: flex;
+            align-items: center;
+        }
+
+        @include media-breakpoint-up(md) {
+            .customized-products-upload-dropzone-button {
+                .btn-outline-secondary {
+                    white-space: unset;
+                }
+            }
         }
     }
 
