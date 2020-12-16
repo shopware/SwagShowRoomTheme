@@ -22,11 +22,11 @@ $carousel-control-icon-width-sm: 16px;
 }
 
 .swag-cms-extensions-quickview-container {
-
     .product-detail-configurator-collapse {
         padding: 5px 20px;
         border-radius: 12px;
     }
+
     .product-detail-quantity-select {
         height: 40px;
         border-radius: 12px;
@@ -40,6 +40,13 @@ $carousel-control-icon-width-sm: 16px;
     .product-detail-configurator-group-title {
         padding: 10px 0;
     }
+
+    @include media-breakpoint-up(lg) {
+        .btn-buy {
+            padding: 5px 40px;
+        }
+    }
+
 }
 
 #swag-cms-extensions-quickview-carousel {

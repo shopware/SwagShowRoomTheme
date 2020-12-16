@@ -20,7 +20,7 @@
 
             <div class="row no-gutters product-detail-button-container">
                 {% block page_product_detail_price_container %}
-                    <div class="col-12 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-4{% endif %}">
+                    <div class="col-12 col-lg-12 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-4{% endif %}">
                         <div class="product-detail-price-container">
                             {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
                             {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
@@ -28,7 +28,7 @@
                     </div>
                 {% endblock %}
 
-                <div class="col-12 offset-md-1 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-7{% endif %}">
+                <div class="col-12 col-lg-12 offset-md-1 {% if page.product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-7{% endif %}">
                     {% block page_product_detail_buy_redirect_input %}
                         {{ parent() }}
                     {% endblock %}
