@@ -6,6 +6,7 @@
         "@Plugins",
         "@SwagShowRoomTheme"
     ],
+    "previewMedia": "public/assets/images/showroomPreview.png",
     "style": [
         "app/storefront/src/scss/overrides.scss",
         "@Storefront",
