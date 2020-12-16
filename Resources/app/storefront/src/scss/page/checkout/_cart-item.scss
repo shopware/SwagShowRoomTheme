@@ -42,6 +42,8 @@ $cart-img-container-width: 100px;
     }
 
     &-remove {
+        flex-basis: 50%;
+        padding-right: 0;
         order: 4;
         justify-content: flex-end;
     }
@@ -104,10 +106,6 @@ $cart-img-container-width: 100px;
     }
 
     @include media-breakpoint-up(md) {
-        &-details-container {
-            padding-left: 0;
-        }
-
         &-total-price,
         &-unit-price {
             order: 2;
@@ -115,10 +113,6 @@ $cart-img-container-width: 100px;
 
         &-quantity {
             order: 3;
-        }
-
-        &-remove {
-            order: 4;
         }
     }
 
@@ -171,6 +165,10 @@ $cart-img-container-width: 100px;
 
         &-quantity-container {
             width: 70px;
+        }
+
+        &-remove {
+            flex-basis: 8.33%;
         }
     }
 }

@@ -1,67 +1,84 @@
 {% sw_extends '@Storefront/storefront/component/checkout/offcanvas-item.html.twig' %}
 
 {% block component_offcanvas_cart_item_container %}
-    <div class="cart-item cart-item-{{ type }}{% if isDiscount %} is-discount{% endif %}{% if isNested %} is-nested{% endif %}{% if isChild %} is-child{% endif %} js-cart-item">
-        <div class="row cart-item-row">
-            {% block component_offcanvas_product_image %}
-                <div class="col-3 col-lg-2">
-                    {% block component_offcanvas_product_image_inner %}
+    {% if isCustomizedProduct %}
+        {% set isNested = false %}
+        {% set configurationItems = [] %}
+
+        {% for child in lineItem.children %}
+            {% if child.type == 'product' %}
+                {% set label = child.label %}
+                {% set referencedId = child.referencedId %}
+
+                {% if child.cover.url %}
+                    {% set cover = child.cover %}
+                {% endif %}
+            {% else %}
+                {% set configurationItems = configurationItems|merge([child]) %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if not isChildOfCustomizedProduct %}
+        <div
+            class="cart-item cart-item-{{ type }}{% if isDiscount %} is-discount{% endif %}{% if isNested %} is-nested{% endif %}{% if isChild %} is-child{% endif %} js-cart-item">
+            <div class="row cart-item-row">
+                {% block component_offcanvas_product_image %}
+                    <div class="col-3 col-lg-2">
+                        {% block component_offcanvas_product_image_inner %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block component_offcanvas_product_details %}
+                    <div class="col-6 col-lg-5 cart-item-details">
+                        {% block component_offcanvas_product_details_inner %}
+                            <div class="cart-item-details-container">
+                                {% block component_offcanvas_product_label %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block page_checkout_item_info_ordernumber %}
+                                    {% if lineItem.payload.productNumber %}
+                                        <div class="cart-item-ordernumber d-none d-lg-block">
+                                            {{ "checkout.cartItemInfoId"|trans|sw_sanitize }} {{ lineItem.payload.productNumber }}
+                                        </div>
+                                    {% endif %}
+                                {% endblock %}
+
+                                {% block cart_item_variant_characteristics %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block component_offcanvas_product_details_features %}
+                                    {{ parent() }}
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block component_offcanvas_product_total_price %}
+                    <div class="col-3 col-lg-2 cart-price">
                         {{ parent() }}
-                    {% endblock %}
-                </div>
-            {% endblock %}
+                    </div>
+                {% endblock %}
 
-            {% block component_offcanvas_product_details %}
-                <div class="col-6 col-lg-5 cart-item-details">
-                    {% block component_offcanvas_product_details_inner %}
-                        <div class="cart-item-details-container">
-                            {% block component_offcanvas_product_label %}
-                                {{ parent() }}
-                            {% endblock %}
+                {% block component_offcanvas_product_quantity_price %}
+                    <div class="col-6 col-lg-2 cart-quantity-price">
+                        {% block component_offcanvas_product_quantity %}
+                            {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
 
-                            {% block page_checkout_item_info_ordernumber %}
-                                {% if lineItem.payload.productNumber %}
-                                    <div class="cart-item-ordernumber d-none d-lg-block">
-                                        {{ "checkout.cartItemInfoId"|trans|sw_sanitize }} {{ lineItem.payload.productNumber }}
-                                    </div>
-                                {% endif %}
-                            {% endblock %}
-
-                            {% block cart_item_variant_characteristics %}
-                                {{ parent() }}
-                            {% endblock %}
-
-                            {% block component_offcanvas_product_details_features %}
-                                {{ parent() }}
-                            {% endblock %}
-                        </div>
-                    {% endblock %}
-                </div>
-            {% endblock %}
-
-            {% block component_offcanvas_product_total_price %}
-                <div class="col-3 col-lg-2 cart-price">
+                {% block component_offcanvas_product_remove %}
                     {{ parent() }}
-                </div>
-            {% endblock %}
-
-            {% block component_offcanvas_product_quantity_price %}
-                <div class="col-6 col-lg-2 cart-quantity-price">
-                    {% block component_offcanvas_product_quantity %}
-                        {{ parent() }}
-                    {% endblock %}
-                </div>
-            {% endblock %}
-
-            {% block component_offcanvas_product_remove %}
-                <div class="col-6 col-lg-1 cart-item-remove">
-                    {% block component_offcanvas_product_remove_form %}
-                        {{ parent() }}
-                    {% endblock %}
-                </div>
-            {% endblock %}
+                {% endblock %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}
 
 {% block component_offcanvas_product_remove_submit %}
