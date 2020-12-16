@@ -4,24 +4,26 @@
     {% if product %}
         <div class="product-overlay shadow rounded">
             <div class="product-overlay__content">
-                {% block component_product_box_rating %}
-                    {{ parent() }}
-                {% endblock %}
+                <div class="product-overview">
+                    {% block component_product_box_rating %}
+                        {{ parent() }}
+                    {% endblock %}
 
-                {% block component_product_box_name %}
-                    {{ parent() }}
-                {% endblock %}
+                    {% block component_product_box_name %}
+                        {{ parent() }}
+                    {% endblock %}
 
-                <div class="product-variant-characteristics">
-                    {% for variation in product.variation %}
-                        <span class="product-variant-characteristics-group">{{ variation.group }}:</span>
-                        <span class="product-variant-characteristics-option">
+                    <div class="product-variant-characteristics">
+                        {% for variation in product.variation %}
+                            <span class="product-variant-characteristics-group">{{ variation.group }}:</span>
+                            <span class="product-variant-characteristics-option">
                             {{ variation.option }}
                         </span>
-                        {% if product.variation|last != variation %}
-                            |
-                        {% endif %}
-                    {% endfor %}
+                            {% if product.variation|last != variation %}
+                                |
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
 
                 {% block component_product_box_price %}
