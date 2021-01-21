@@ -28,6 +28,20 @@
             font-weight: normal;
             min-height: 100px;
 
+            &.document-item {
+                background: none;
+                padding: 5px 0;
+                min-height: unset;
+
+                a {
+                    text-decoration: none!important;
+                }
+
+                &:last-child {
+                    margin-bottom: 36px;
+                }
+            }
+
             .order-item-total {
                 justify-content: flex-end;
                 padding-left: 0;
@@ -212,5 +226,19 @@
             margin-left: 20px;
             padding-bottom: 30px;
         }
+    }
+}
+
+.order-status-badge {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 1px;
+    color: $sw-color-info;
+    background-color: $alert-color-info;
+    align-self: center;
+    margin-left: 20px;
+
+    @include media-breakpoint-down(md) {
+        margin-left: 0px;
     }
 }

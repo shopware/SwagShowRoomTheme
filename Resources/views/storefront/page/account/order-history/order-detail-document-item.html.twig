@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/page/account/order-history/order-detail-document-item.html.twig' %}
+
+{% block page_account_order_document_item_detail %}
+    <div class="row order-detail-content-row document-item">
+        {% block page_account_order_document_item_detail_file_name %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block page_account_order_document_item_detail_date %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block page_account_order_document_item_detail_view_file_btn %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
