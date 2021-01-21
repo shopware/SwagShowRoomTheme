@@ -1,15 +1,16 @@
 {% sw_extends '@Storefront/storefront/page/account/order-history/order-item.html.twig' %}
 
 {% block page_account_order_item_heading %}
-    <h3 class="col order-table-header-heading">
+    <h3 class="order-table-header-heading">
         {{ "account.orderHeadline"|trans|sw_sanitize }} {{ order.orderDateTime|format_date('short', locale=app.request.locale) }}
-        {{ "showroom.account.orderStatus"|trans|sw_sanitize }}
+    </h3>
+    <span class="badge badge-primary order-status-badge">
         {% if order.transactions.last.stateMachineState.technicalName == 'failed' or order.transactions.last.stateMachineState.technicalName == 'reminded' %}
             {{ "account.orderStatusActionRequired"|trans|sw_sanitize }}
         {% else %}
             {{ order.stateMachineState.translated.name }}
         {% endif %}
-    </h3>
+    </span>
 {% endblock %}
 
 {% block page_account_order_item_status_col %}{% endblock %}
