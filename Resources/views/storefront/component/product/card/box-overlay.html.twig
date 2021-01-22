@@ -27,7 +27,7 @@
                 </div>
 
                 {% block component_product_box_price %}
-                    {% sw_include '@Storefront/storefront/component/product/card/box-price.html.twig' %}
+                    {{ parent() }}
                 {% endblock %}
             </div>
 
