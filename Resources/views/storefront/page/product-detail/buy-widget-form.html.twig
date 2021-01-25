@@ -46,7 +46,15 @@
 
                         {% block page_product_detail_buy_button_container %}
                             {% block page_product_detail_buy_button %}
-                                {{ parent() }}
+                                {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
+                                    <div class="form-row justify-content-end">
+                                        <div class="col-12 col-md-8">
+                                            {{ parent() }}
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    {{ parent() }}
+                                {% endif %}
                             {% endblock %}
                         {% endblock %}
                     </div>
@@ -88,8 +96,8 @@
     <div class="swag-customized-products__item">
         <div class="swag-customized-products__introduction">
             <input type="hidden"
-                    name="{{ constant('Swag\\CustomizedProducts\\Storefront\\Controller\\CustomizedProductsCartController::CUSTOMIZED_PRODUCTS_TEMPLATE_REQUEST_PARAMETER') }}[id]"
-                    value="{{ customizedProductsTemplate.id }}">
+                   name="{{ constant('Swag\\CustomizedProducts\\Storefront\\Controller\\CustomizedProductsCartController::CUSTOMIZED_PRODUCTS_TEMPLATE_REQUEST_PARAMETER') }}[id]"
+                   value="{{ customizedProductsTemplate.id }}">
 
             {% block swag_customized_products_description %}
                 {% block swag_customized_products_description_image %}
