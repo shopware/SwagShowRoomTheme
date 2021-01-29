@@ -1,3 +1,9 @@
+$header-height: 69px;
+$footer-height: 69px;
+
+@mixin contain-height() {
+    height: calc(100vh - #{$header-height} -  #{$footer-height});
+}
 
 .is-ctl-maintenance {
     .header-logo-main {
@@ -12,24 +18,37 @@
 }
 
 .container-maintenance {
-    min-height: 65vh;
+    margin-bottom: $footer-height;
+    height: 100%;
+
+    img {
+        max-height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .maintenance-image-wrap {
+        @include contain-height()
+    }
 }
 
 @include media-breakpoint-between(sm, md) {
     .container-maintenance {
-        min-height: 70vh;
+        @include contain-height()
     }
 }
 
 @include media-breakpoint-down(sm) {
     .container-maintenance {
-        min-height: 60vh;
+        @include contain-height()
     }
 }
 
 .footer-simple {
     padding: 20px 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 
     img {
