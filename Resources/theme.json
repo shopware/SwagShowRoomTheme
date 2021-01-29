@@ -9,7 +9,7 @@
         "@SwagShowRoomTheme",
         "@Plugins"
     ],
-    "previewMedia": "public/assets/images/showroomPreview.png",
+    "previewMedia": "app/storefront/src/assets/images/showroomPreview.png",
     "style": [
         "app/storefront/src/scss/overrides.scss",
         "@Storefront",
@@ -79,15 +79,15 @@
             },
             "sw-logo-desktop": {
                 "type": "media",
-                "value": "public/assets/logo/showroom-logo-desktop.svg"
+                "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
             },
             "sw-logo-tablet": {
                 "type": "media",
-                "value": "public/assets/logo/showroom-logo-desktop.svg"
+                "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
             },
             "sw-logo-mobile": {
                 "type": "media",
-                "value": "public/assets/logo/showroom-logo-mobile.svg"
+                "value": "app/storefront/src/assets/logo/showroom-logo-mobile.svg"
             },
             "sw-footer-bg-color": {
                 "label": {
@@ -117,7 +117,7 @@
                     "de-DE": "Footer Logo"
                 },
                 "type": "media",
-                "value": "public/assets/logo/showroom-logo-footer-desktop.svg",
+                "value": "app/storefront/src/assets/logo/showroom-logo-footer-desktop.svg",
                 "editable": true,
                 "block": "media",
                 "order": 300
@@ -128,7 +128,7 @@
                     "de-DE": "Footer mobile Logo"
                 },
                 "type": "media",
-                "value": "public/assets/logo/showroom-logo-footer-mobile.svg",
+                "value": "app/storefront/src/assets/logo/showroom-logo-footer-mobile.svg",
                 "editable": true,
                 "block": "media",
                 "order": 400
@@ -139,7 +139,7 @@
                     "de-DE": "Hintergrund der Kontoanmeldung"
                 },
                 "type": "media",
-                "value": "public/assets/images/dillon-mangum-9489sFfgk4c-unsplash.jpg",
+                "value": "app/storefront/src/assets/images/dillon-mangum-9489sFfgk4c-unsplash.jpg",
                 "editable": true,
                 "block": "media",
                 "order": 500
@@ -150,7 +150,7 @@
                     "de-DE": "Kontaktformular Bild"
                 },
                 "type": "media",
-                "value": "public/assets/images/contact-form.png",
+                "value": "app/storefront/src/assets/images/contact-form.png",
                 "editable": true,
                 "block": "media"
             },
@@ -160,7 +160,7 @@
                     "de-DE": "Newsletter Formular Bild"
                 },
                 "type": "media",
-                "value": "public/assets/images/newsletter-form.png",
+                "value": "app/storefront/src/assets/images/newsletter-form.png",
                 "editable": true,
                 "block": "media"
             }
