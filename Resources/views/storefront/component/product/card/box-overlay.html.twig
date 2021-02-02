@@ -29,6 +29,44 @@
                 {% block component_product_box_price %}
                     {{ parent() }}
                 {% endblock %}
+
+                {% if shopware.config.core.cart.wishlistEnabled %}
+                    {% if wishListPage %}
+                        <div class="product-wishlist product-wishlist-remove">
+                                {% set size = size ?? 'md' %}
+                                <form action="{{ path('frontend.wishlist.product.delete', {'id': id}) }}"
+                                      method="post"
+                                      class="product-wishlist-form">
+
+                                    {% block component_product_box_wishlist_remove_csrf %}
+                                        {{ sw_csrf('frontend.wishlist.product.delete') }}
+                                    {% endblock %}
+
+                                    {% block component_product_wishlist_remove_redirect %}
+                                        <input type="hidden"
+                                               name="redirectTo"
+                                               value="frontend.wishlist.page"/>
+                                    {% endblock %}
+
+                                    {% block component_product_wishlist_remove_submit %}
+                                        <button type="submit" class="btn product-wishlist-btn product-wishlist-btn-remove">
+
+                                            {% sw_icon 'heart-fill' style { 'class': 'wishlist icon-wishlist-added', 'size': size } %}
+                                        </button>
+                                    {% endblock %}
+                                </form>
+                            </div>
+                    {% else %}
+                        <div class="product-wishlist-button">
+                            {% block component_product_box_wishlist_action %}
+                                {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                                    appearance: 'circle',
+                                    productId: id
+                                } %}
+                            {% endblock %}
+                        </div>
+                    {% endif %}
+                {% endif %}
             </div>
 
             <div class="product-overlay__action">

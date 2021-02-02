@@ -1,0 +1,41 @@
+.wishlist-page {
+    text-align: center;
+
+    .wishlist-listing-empty-icon {
+        display: inline-block;
+
+        .icon {
+            width: 46px;
+            height: 46px;
+
+            svg path {
+                fill: $gray-400;
+            }
+        }
+    }
+
+    .wishlist-listing-header {
+        margin-top: 25px;
+    }
+}
+
+.wishlist-page {
+    .cms-element-product-listing-actions {
+        padding-bottom: 20px;
+
+        .pagination-nav {
+            border-top: 1px solid $gray-300;
+            padding-top: 20px;
+            width: 100%;
+        }
+    }
+}
+
+.is-ctl-wishlist {
+    @include media-breakpoint-up(lg) {
+        .container-main {
+            min-height: unset;
+        }
+    }
+}
+

@@ -1,0 +1,21 @@
+{% sw_extends '@Storefront/storefront/component/product/listing.html.twig' %}
+
+{% block element_product_listing_col_empty %}
+    <div class="cms-listing-col wishlist-listing-col col-12 text-center">
+        {% block element_product_listing_col_empty_wishlist %}
+            <div class="wishlist-listing-empty-icon">
+                {% sw_icon 'heart' style { 'size': 'lg' } %}
+            </div>
+            <h1 class="wishlist-listing-header">{{ "wishlist.wishlistEmptyHeader"|trans }}</h1>
+            <p class="wishlist-listing-description">{{ "wishlist.wishlistEmptyDescription"|trans }}</p>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block element_product_listing_pagination_nav_actions %}
+    <div class="cms-element-product-listing-actions row justify-content-center">
+        {% block element_product_listing_pagination_nav_top %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
