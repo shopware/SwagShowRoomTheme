@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box_content %}
+    {{ parent() }}
+
+    {% block component_product_box_description %}{% endblock %}
+
+    {% block component_product_box_action %}{% endblock %}
+
+    {% block component_product_overlay %}
+        {% sw_include '@Storefront/storefront/component/product/card/box-overlay.html.twig' with { 'wishListPage': true } %}
+    {% endblock %}
+{% endblock %}

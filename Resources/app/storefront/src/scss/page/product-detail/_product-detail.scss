@@ -172,3 +172,25 @@
         background-color: transparent;
     }
 }
+
+.product-detail-wrapper {
+    .product-wishlist {
+        text-align: center;
+
+        &-action {
+            border-bottom: 1px solid $gray-900;
+            display: inline-flex;
+        }
+
+        &-btn-content {
+            font-size: $btn-font-size;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .icon-wishlist {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}

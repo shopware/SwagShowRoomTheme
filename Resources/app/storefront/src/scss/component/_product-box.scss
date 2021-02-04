@@ -111,6 +111,25 @@ $custom-box-standard-height-img: 220px;
     }
 }
 
+.product-wishlist {
+    &-added,
+    &-not-added,
+    &-btn-remove {
+        border-radius: 0;
+    }
+
+    &-remove {
+        position: absolute;
+        left: calc(100% + 29px);
+        bottom: 70px;
+    }
+
+    &-button {
+        position: absolute;
+        left: calc(100% + 20px);
+    }
+}
+
 .product-overlay {
     position: absolute;
     top: 0;
@@ -131,6 +150,7 @@ $custom-box-standard-height-img: 220px;
     &__content {
         margin-top: auto;
         margin-bottom: auto;
+        position: relative;
     }
 }
 

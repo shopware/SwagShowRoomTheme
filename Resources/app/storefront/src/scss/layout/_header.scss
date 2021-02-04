@@ -108,6 +108,19 @@ $logo-height-lg: 60px;
     .btn.header-cart-btn {
         padding-right: 0;
     }
+
+}
+
+.header-wishlist {
+    &-btn {
+        position: relative;
+    }
+
+    .header-wishlist-badge {
+        background: none;
+        right: 8px;
+        top: 12px;
+    }
 }
 
 @include media-breakpoint-up(sm) {

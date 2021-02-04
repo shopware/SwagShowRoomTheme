@@ -54,6 +54,12 @@
                             </div>
                         {% endblock %}
 
+                        {% if shopware.config.core.cart.wishlistEnabled %}
+                            {% block layout_header_actions_wishlist %}
+                                {{ parent() }}
+                            {% endblock %}
+                        {% endif %}
+
                         {% block layout_header_actions_account %}
                             {{ parent() }}
                         {% endblock %}
