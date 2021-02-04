@@ -27,11 +27,11 @@ $alert-color-warning: #f8e7d7 !default;
 $shopware-color-brand: #189eff !default;
 
 // Icon
-$icon-chevron-right: url(/bundles/swagshowroomtheme/assets/icon/chevron-right-xs.svg) !default;
-$custom-select-indicator-gray: url(/bundles/swagshowroomtheme/assets/icon/chevron-down-gray.svg);
+$icon-chevron-right: url('#{$asset-path}/icon/chevron-right-xs.svg') !default;
+$custom-select-indicator-gray: url('#{$asset-path}/icon/chevron-down-gray.svg');
 
-$carousel-control-prev-icon-bg: url(/bundles/swagshowroomtheme/assets/icon/showroom/arrow-head-left.svg);
-$carousel-control-next-icon-bg: url(/bundles/swagshowroomtheme/assets/icon/showroom/arrow-head-right.svg);
+$carousel-control-prev-icon-bg: url('#{$asset-path}/icon/showroom/arrow-head-left.svg');
+$carousel-control-next-icon-bg: url('#{$asset-path}/icon/showroom/arrow-head-right.svg');
 
 // Font
 $showroom-font-size-base: 11px;
