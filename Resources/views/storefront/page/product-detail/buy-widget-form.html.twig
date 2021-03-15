@@ -74,9 +74,9 @@
         <div class="swag-customized-products__item">
             <div class="swag-customized-products__finish">
 
-                {% block swag_customized_products_step_by_step_finish_title %}
-                    {{ parent() }}
-                {% endblock %}
+                {% if block("swag_customized_products_step_by_step_finish_title") is defined %}
+                    {{ block('swag_customized_products_step_by_step_finish_title') }}
+                {% endif %}
 
                 {% block swag_customized_products_step_by_step_finish_description %}
                     <div class="mb-3">
@@ -84,9 +84,9 @@
                     </div>
                 {% endblock %}
 
-                {% block swag_customized_products_step_by_step_finish_configure_product %}
-                    {{ parent() }}
-                {% endblock %}
+                {% if block("swag_customized_products_step_by_step_finish_configure_product") is defined %}
+                    {{ block('swag_customized_products_step_by_step_finish_configure_product') }}
+                {% endif %}
             </div>
         </div>
     {% endif %}
@@ -100,22 +100,23 @@
                    value="{{ customizedProductsTemplate.id }}">
 
             {% block swag_customized_products_description %}
-                {% block swag_customized_products_description_image %}
-                    {{ parent() }}
-                {% endblock %}
 
-                {% block swag_customized_products_title %}
-                    {{ parent() }}
-                {% endblock %}
+                {% if block("swag_customized_products_description_image") is defined %}
+                    {{ block('swag_customized_products_description_image') }}
+                {% endif %}
 
-                {% block swag_customized_products_description_text %}
-                    {{ parent() }}
-                {% endblock %}
+                {% if block("swag_customized_products_title") is defined %}
+                    {{ block('swag_customized_products_title') }}
+                {% endif %}
+
+                {% if block("swag_customized_products_description_text") is defined %}
+                    {{ block('swag_customized_products_description_text') }}
+                {% endif %}
             {% endblock %}
 
-            {% block swag_customized_products_step_by_step_start_wizard %}
-                {{ parent() }}
-            {% endblock %}
+            {% if block("swag_customized_products_step_by_step_start_wizard") is defined %}
+                {{ block('swag_customized_products_step_by_step_start_wizard') }}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
