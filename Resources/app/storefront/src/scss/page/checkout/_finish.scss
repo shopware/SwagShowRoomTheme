@@ -65,8 +65,9 @@ $finish-content-spacer-lg: 70px;
 
     @include media-breakpoint-up(lg) {
         .cart-item-quantity {
-            @extend .col-lg-auto;
-
+            flex: 0 0 auto;
+            width: auto;
+            max-width: 100%;
             order: 0;
         }
     }
