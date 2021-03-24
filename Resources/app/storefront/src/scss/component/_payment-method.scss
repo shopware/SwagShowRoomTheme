@@ -1,12 +1,9 @@
 .payment-methods {
-    @extend .row;
-
     padding-bottom: 10px;
     margin-right: 0;
 }
 
 .payment-method {
-    @extend .col-md-4;
 
     border-bottom: unset;
     padding-left: 0;
@@ -42,11 +39,14 @@
         height: 100%;
     }
 
-    .payment-method-label {
-        border: 1px solid $border-color;
-        padding: 30px 30px 0 30px;
-        width: 100%;
-        height: 100%;
+    .payment-method-label {        
+        .payment-method-description {
+            width: 100%;
+            p { 
+                color: $gray-700;
+                white-space: break-spaces;
+            }
+        }
     }
 
     .custom-control-input:checked+label {
