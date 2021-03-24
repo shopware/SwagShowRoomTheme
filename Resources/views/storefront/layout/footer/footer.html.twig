@@ -86,13 +86,15 @@
             {% endblock %}
         </div>
     </div>
-
-    {% block layout_footer_service_menu %}
-        {{ parent() }}
-    {% endblock %}
 {% endblock %}
 
 {% block layout_footer_bottom %}
+    {% block layout_footer_service_menu %}
+        {% block layout_footer_service_menu_content %}
+            {{ parent() }}
+        {% endblock %}
+    {% endblock %}
+
     <div class="footer-bottom d-none d-md-block">
         <div class="container">
             <div class="row">
