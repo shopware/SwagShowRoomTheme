@@ -121,7 +121,7 @@ $custom-box-standard-height-img: 220px;
     &-remove {
         position: absolute;
         left: calc(100% + 29px);
-        bottom: 70px;
+        bottom: 105px;
     }
 
     &-button {
@@ -151,6 +151,10 @@ $custom-box-standard-height-img: 220px;
         margin-top: auto;
         margin-bottom: auto;
         position: relative;
+
+        .product-wishlist-button {
+            bottom: 24px;
+        }
     }
 }
 
