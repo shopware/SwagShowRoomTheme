@@ -2,7 +2,7 @@
 
 {% block component_address_personal_fields %}
     {% block component_address_personal_account_type %}
-        {% if shopware.config.core.loginRegistration.showAccountTypeSelection and not hideCustomerTypeSelect %}
+        {% if config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect %}
             <div class="form-row">
                 <div class="form-group col-12 contact-type">
                     {% block component_address_personal_account_type_label %}
@@ -42,7 +42,7 @@
             {% endblock %}
 
             {% block component_address_personal_fields_title %}
-                {% if shopware.config.core.loginRegistration.showTitleField %}
+                {% if config('core.loginRegistration.showTitleField') %}
                     <div class="form-group col-12">
                         {% block component_address_personal_fields_title_label %}
                             {{ parent() }}

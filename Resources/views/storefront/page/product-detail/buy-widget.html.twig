@@ -67,7 +67,7 @@
                         {{ parent() }}
                     {% endblock %}
 
-                    {% if shopware.config.core.cart.wishlistEnabled %}
+                    {% if config('core.cart.wishlistEnabled') %}
                         {% block page_product_detail_wishlist %}
                             {{ parent() }}
                         {% endblock %}

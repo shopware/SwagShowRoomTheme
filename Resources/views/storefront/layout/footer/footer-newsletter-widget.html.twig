@@ -9,7 +9,7 @@
                         <span class="footer-newsletter-header-headline d-none d-md-block d-lg-none">{{ 'footer.newsletterHeadline'|trans|sw_sanitize }}</span>
                         <span class="footer-newsletter-info">
                             {{ 'footer.newsletterInfo'|trans({
-                                '%shopname%': shopware.config.core.basicInformation.shopName
+                                '%shopname%': config('core.basicInformation.shopName')
                             })|sw_sanitize }}
                         </span>
                     {% endblock %}

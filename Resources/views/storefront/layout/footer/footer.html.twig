@@ -22,7 +22,7 @@
                             </div>
                             <div class="footer-contact-form">
                                 {{ 'footer.serviceContactLink'|trans({
-                                    '%url%': path('frontend.cms.page', { id: shopware.config.core.basicInformation.contactPage })
+                                    '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
                                 })|raw }}
                             </div>
                         </div>
@@ -102,8 +102,8 @@
                            href="{{ path('frontend.home.page') }}"
                            title="{{ "header.logoLink"|trans|striptags }}">
                             {% block layout_header_footer_image %}
-                                {% if shopware.theme['sw-footer-logo'] %}
-                                    <img src="{{ shopware.theme['sw-footer-logo'] |sw_encode_url }}"
+                                {% if theme_config('sw-footer-logo') %}
+                                    <img src="{{ theme_config('sw-footer-logo') |sw_encode_url }}"
                                          alt="{{ "header.logoLink"|trans|striptags }}"
                                          class="img-fluid header-logo-main-img"/>
                                 {% endif %}
@@ -117,13 +117,13 @@
                         {% if context.taxState == "gross" %}
                             <span>
                                 {{ "footer.includeVat"|trans({
-                                    '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
                                 })|raw }}
                             </span>
                         {% else %}
                             <span>
                                 {{ "footer.excludeVat"|trans({
-                                    '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                    '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
                                 })|raw }}
                             </span>
                         {% endif %}
@@ -148,8 +148,8 @@
                        href="{{ path('frontend.home.page') }}"
                        title="{{ "header.logoLink"|trans|striptags }}">
                         {% block layout_footer_mobile__image %}
-                            {% if shopware.theme['sw-footer-logo-mobile'] %}
-                                <img src="{{ shopware.theme['sw-footer-logo-mobile'] |sw_encode_url }}"
+                            {% if theme_config('sw-footer-logo-mobile') %}
+                                <img src="{{ theme_config('sw-footer-logo-mobile')|sw_encode_url }}"
                                      alt="{{ "header.logoLink"|trans|striptags }}"
                                      class="img-fluid header-logo-main-img"/>
                             {% endif %}
@@ -164,13 +164,13 @@
                         {% if context.taxState == "gross" %}
                             <span>
                             {{ "footer.includeVat"|trans({
-                                '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
                             })|raw }}
                         </span>
                         {% else %}
                             <span>
                             {{ "footer.excludeVat"|trans({
-                                '%url%': path('frontend.cms.page',{ id: shopware.config.core.basicInformation.shippingPaymentInfoPage })
+                                '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
                             })|raw }}
                         </span>
                         {% endif %}

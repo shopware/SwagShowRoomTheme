@@ -32,8 +32,8 @@
 
                                     {% block page_account_register_advantages %}
                                         <div class="login-advantages">
-                                            {% if shopware.theme['sw-account-login-background'] %}
-                                                <img src="{{ shopware.theme['sw-account-login-background'] |sw_encode_url }}"
+                                            {% if theme_config('sw-account-login-background') %}
+                                                <img src="{{ theme_config('sw-account-login-background') |sw_encode_url }}"
                                                      alt=""
                                                      class="login-advantages-background"/>
                                             {% endif %}

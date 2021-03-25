@@ -30,7 +30,7 @@
                     {{ parent() }}
                 {% endblock %}
 
-                {% if shopware.config.core.cart.wishlistEnabled %}
+                {% if config('core.cart.wishlistEnabled') %}
                     {% if wishListPage %}
                         <div class="product-wishlist product-wishlist-remove">
                                 {% set size = size ?? 'md' %}
