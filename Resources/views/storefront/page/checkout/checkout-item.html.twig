@@ -52,6 +52,12 @@
                                 {% block page_checkout_item_delivery_date %}
                                     {{ parent() }}
                                 {% endblock %}
+
+                                {% if config('core.cart.wishlistEnabled') and lineItem.type == 'product' %}
+                                    {% block page_checkout_item_wishlist %}
+                                        {{ parent() }}
+                                    {% endblock %}
+                                {% endif %}
                             </div>
                         {% endblock %}
                     </div>
