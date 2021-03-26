@@ -1,100 +1,103 @@
-const SwagCustomizedProductsStepByStepWizard = window.PluginManager.getPluginList().SwagCustomizedProductsStepByStepWizard.get('class');
 import DomAccess from 'src/helper/dom-access.helper';
 
-export default class CustomizedProductsStepByStepWizard extends SwagCustomizedProductsStepByStepWizard {
+function wrapper() {
+    try {
+        const SwagCustomizedProductsStepByStepWizard = window.PluginManager.getPlugin('SwagCustomizedProductsStepByStepWizard').get('class');
 
-    /**
-     * Plugin init
-     * @type {{containerSelector: string, pageSelector: string, startStepByStepSelector: string, pagerSelector: string}}
-     */
-    init() {
-        this.translations = {
-            btnPrev: DomAccess.getDataAttribute(
-                this.el,
-                'swag-customized-product-step-by-step-translation-btnprev'
-            ),
-            btnNext: DomAccess.getDataAttribute(
-                this.el,
-                'swag-customized-product-step-by-step-translation-btnnext'
-            ),
-            btnFinish: DomAccess.getDataAttribute(
-                this.el,
-                'swag-customized-product-step-by-step-translation-btnfinish'
-            ),
-            required: DomAccess.getDataAttribute(
-                this.el,
-                'swag-customized-product-step-by-step-translation-required'
-            )
-        };
+        class CustomizedProductsStepByStepWizard extends SwagCustomizedProductsStepByStepWizard {
 
-        this.containerEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.containerSelector);
-        this.buyButton = DomAccess.querySelector(document, SwagCustomizedProductsStepByStepWizard.options.buyButtonSelector);
+            /**
+             * Plugin init
+             * @type {{containerSelector: string, pageSelector: string, startStepByStepSelector: string, pagerSelector: string}}
+             */
+            init() {
+                this.translations = {
+                    btnPrev: DomAccess.getDataAttribute(
+                        this.el,
+                        'swag-customized-product-step-by-step-translation-btnprev'
+                    ),
+                    btnNext: DomAccess.getDataAttribute(
+                        this.el,
+                        'swag-customized-product-step-by-step-translation-btnnext'
+                    ),
+                    btnFinish: DomAccess.getDataAttribute(
+                        this.el,
+                        'swag-customized-product-step-by-step-translation-btnfinish'
+                    ),
+                    required: DomAccess.getDataAttribute(
+                        this.el,
+                        'swag-customized-product-step-by-step-translation-required'
+                    )
+                };
 
-        // Setup pages (and associated variables)
-        this.pages = DomAccess.querySelectorAll(this.el, SwagCustomizedProductsStepByStepWizard.options.pageSelector);
-        this.pages = this.collectPages(this.pages);
+                this.containerEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.containerSelector);
+                this.buyButton = DomAccess.querySelector(document, SwagCustomizedProductsStepByStepWizard.options.buyButtonSelector);
 
-        this.pagesCount = this.pages.length;
-        this.currentPage = 1;
+                // Setup pages (and associated variables)
+                this.pages = DomAccess.querySelectorAll(this.el, SwagCustomizedProductsStepByStepWizard.options.pageSelector);
+                this.pages = this.collectPages(this.pages);
 
-        // Resize current page to the content height of the page
-        this.setPageHeight(this.currentPage);
+                this.pagesCount = this.pages.length;
+                this.currentPage = 1;
 
-        // Get the configure elements and add an event listener
-        this.configureElements = DomAccess.querySelectorAll(this.el, SwagCustomizedProductsStepByStepWizard.options.configureStepByStepSelector);
+                // Resize current page to the content height of the page
+                this.setPageHeight(this.currentPage);
 
-        // Set up navigation element
-        this.navigationEntries = this.collectNavigationEntries(this.pages);
-        this.navigationEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.navigationSelector);
-        this.navigationEl.innerHTML = this.renderNavigationSelection();
+                // Get the configure elements and add an event listener
+                this.configureElements = DomAccess.querySelectorAll(this.el, SwagCustomizedProductsStepByStepWizard.options.configureStepByStepSelector);
 
-        // Setup pager element after setup navigationEntries
-        this.pagerEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.pagerSelector);
-        this.pagerEl.innerHTML = this.renderPager();
+                // Set up navigation element
+                this.navigationEntries = this.collectNavigationEntries(this.pages);
+                this.navigationEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.navigationSelector);
+                this.navigationEl.innerHTML = this.renderNavigationSelection();
 
-        // History management
-        if (SwagCustomizedProductsStepByStepWizard.options.history.enabled) {
-            this.parseLocationHashOnAndJumpToPage();
-            this.updateHistory();
-        }
+                // Setup pager element after setup navigationEntries
+                this.pagerEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.pagerSelector);
+                this.pagerEl.innerHTML = this.renderPager();
 
-        super._registerEvents();
-    }
+                // History management
+                if (SwagCustomizedProductsStepByStepWizard.options.history.enabled) {
+                    this.parseLocationHashOnAndJumpToPage();
+                    this.updateHistory();
+                }
 
-    /**
-     * Returns the template string of the pager, including navigation buttons
-     *
-     * @returns {String}
-     */
-    renderPager() {
-        const showPager = () => {
-            return this.currentPage <= 1 || this.currentPage >= this.pagesCount;
-        };
-
-        /** Returns the disable attribute for the prev button */
-        const disableBtnPrev = () => {
-            return this.currentPage <= 1 ? ' disabled="true"' : '';
-        };
-
-        /** Returns the disable attribute for the next button */
-        const disableBtnNext = () => {
-            if ((this.currentPage - 1) >= (this.pagesCount - 2) && !this.isValidConfiguration()) {
-                return ' disabled="true"';
+                super._registerEvents();
             }
-            return this.currentPage >= this.pagesCount ? ' disabled="true"' : '';
-        };
 
-        /** Returns the button text for the next button */
-        const btnNextText = () => {
-            if ((this.currentPage - 1) >= (this.pagesCount - 2)) {
-                return this.translations.btnFinish;
-            }
-            return this.translations.btnNext;
-        };
+            /**
+             * Returns the template string of the pager, including navigation buttons
+             *
+             * @returns {String}
+             */
+            renderPager() {
+                const showPager = () => {
+                    return this.currentPage <= 1 || this.currentPage >= this.pagesCount;
+                };
 
-        const renderPageButton = (entry) => {
-            if (entry.pageNum < (this.currentPage - 1)) {
-                return `
+                /** Returns the disable attribute for the prev button */
+                const disableBtnPrev = () => {
+                    return this.currentPage <= 1 ? ' disabled="true"' : '';
+                };
+
+                /** Returns the disable attribute for the next button */
+                const disableBtnNext = () => {
+                    if ((this.currentPage - 1) >= (this.pagesCount - 2) && !this.isValidConfiguration()) {
+                        return ' disabled="true"';
+                    }
+                    return this.currentPage >= this.pagesCount ? ' disabled="true"' : '';
+                };
+
+                /** Returns the button text for the next button */
+                const btnNextText = () => {
+                    if ((this.currentPage - 1) >= (this.pagesCount - 2)) {
+                        return this.translations.btnFinish;
+                    }
+                    return this.translations.btnNext;
+                };
+
+                const renderPageButton = (entry) => {
+                    if (entry.pageNum < (this.currentPage - 1)) {
+                        return `
                     <span class="swag-customized-products-pager prev-page d-flex justify-content-center align-items-center">
                         <svg value="${entry.pageNum}"
                             xmlns="http://www.w3.org/2000/svg"
@@ -106,21 +109,21 @@ export default class CustomizedProductsStepByStepWizard extends SwagCustomizedPr
                         </svg>
                     </span>
                 `;
-            } else if (entry.pageNum === (this.currentPage - 1)) {
-                return `
+                    } else if (entry.pageNum === (this.currentPage - 1)) {
+                        return `
                 <span class="swag-customized-products-pager current-page d-flex justify-content-center align-items-center">
                     ${entry.pageNum}
                 </span>
             `;
-            }
-            return `
+                    }
+                    return `
                 <span class="swag-customized-products-pager next-page d-flex justify-content-center align-items-center">
                     ${entry.pageNum}
                 </span>
             `;
-        };
+                };
 
-        return `
+                return `
             <div class="swag-customized-products-pager${showPager() ? ' d-none' : ''}">
                 <div class="swag-customized-products-pager__page-number d-flex mr-2">
                     ${this.navigationEntries.map(renderPageButton)}
@@ -137,5 +140,11 @@ export default class CustomizedProductsStepByStepWizard extends SwagCustomizedPr
                 </button>
             </div>
         `;
-    }
+            }
+        }
+
+        return CustomizedProductsStepByStepWizard
+    } catch (e) {}
 }
+
+export default wrapper()
