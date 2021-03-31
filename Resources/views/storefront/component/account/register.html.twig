@@ -36,6 +36,10 @@
                             {{ parent() }}
                         {% endblock %}
 
+                        {% block component_account_register_company_fields %}
+                            {{ parent() }}
+                        {% endblock %}
+
                         {% set formGroupMail %}
                             {% block component_account_register_personal_mail %}
                                 {{ parent() }}
