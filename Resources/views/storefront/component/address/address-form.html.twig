@@ -234,23 +234,25 @@
 {% endblock %}
 
 {% block component_address_form_company_vatId %}
-    <div class="form-group col-md-6 pl-md-0">
-        {% if formViolations.getViolations("/vatId") is not empty %}
-            {% set violationPath = "/vatId" %}
-        {% elseif formViolations.getViolations("/#{prefix}/vatId") is not empty %}
-            {% set violationPath = "/#{prefix}/vatId" %}
-        {% endif %}
+    {% if showVatIdField %}
+        <div class="form-group col-md-6 pl-md-0">
+            {% if formViolations.getViolations("/vatId") is not empty %}
+                {% set violationPath = "/vatId" %}
+            {% elseif formViolations.getViolations("/#{prefix}/vatId") is not empty %}
+                {% set violationPath = "/#{prefix}/vatId" %}
+            {% endif %}
 
-        {% block component_address_form_company_vatId_label %}
-            {{ parent() }}
-        {% endblock %}
+            {% block component_address_form_company_vatId_label %}
+                {{ parent() }}
+            {% endblock %}
 
-        {% block component_address_form_company_vatId_input %}
-            {{ parent() }}
-        {% endblock %}
+            {% block component_address_form_company_vatId_input %}
+                {{ parent() }}
+            {% endblock %}
 
-        {% block component_address_form_company_vatId_input_error %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
+            {% block component_address_form_company_vatId_input_error %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endif %}
 {% endblock %}
