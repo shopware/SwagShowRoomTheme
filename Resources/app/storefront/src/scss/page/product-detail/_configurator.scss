@@ -70,6 +70,8 @@ $configurator-padding: 40px;
     }
 
     &-option-input + &-option-label {
+        opacity: 1;
+
         &.is-display-text {
             border: none;
             padding-left: 0;
