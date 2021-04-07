@@ -54,6 +54,16 @@ $confirm-product-spacer-lg: 50px;
         margin-bottom: 0;
     }
 
+    .shipping-method-label {
+        .shipping-method-description {
+            width: 100%;
+
+            > p {
+                color: $gray-700;
+            }
+        }
+    }
+
     .confirm-payment-shipping {
         margin-bottom: 0;
     }
