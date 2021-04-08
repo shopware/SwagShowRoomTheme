@@ -10,9 +10,9 @@
                 {% if not app.request.xmlHttpRequest %}
                     <div class="col-12 col-lg-6 mb-5 mb-lg-0">
                         {% block element_form_contact_form_image %}
-                            {% if shopware.theme['sw-contact-form'] %}
+                            {% if theme_config('sw-contact-form') %}
                                 <picture>
-                                    <img src="{{ shopware.theme['sw-contact-form'] |sw_encode_url }}"
+                                    <img src="{{ theme_config('sw-contact-form')|sw_encode_url }}"
                                          alt="{{ "contact.headline"|trans|striptags }}"
                                          class="sw-cms-form-cover-image h-100 w-100"/>
                                 </picture>
@@ -35,9 +35,9 @@
                 {% if not app.request.xmlHttpRequest %}
                     <div class="col-12 col-lg-6 mb-5 mb-lg-0">
                         {% block element_form_newsletter_form_image %}
-                            {% if shopware.theme['sw-newsletter-form'] %}
+                            {% if theme_config('sw-newsletter-form') %}
                                 <picture>
-                                    <img src="{{ shopware.theme['sw-newsletter-form'] |sw_encode_url }}"
+                                    <img src="{{ theme_config('sw-newsletter-form')|sw_encode_url }}"
                                          alt="{{ "newsletter.headline"|trans|striptags }}"
                                          class="sw-cms-form-cover-image h-100 w-100"/>
                                 </picture>
