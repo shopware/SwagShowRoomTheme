@@ -31,10 +31,6 @@ $checkout-aside-spacing: 50px;
    }
 }
 
-.cart-item-row {
-    align-items: baseline;
-}
-
 .checkout-container {
     .flashbags {
         .alert {
@@ -106,5 +102,23 @@ $checkout-aside-spacing: 50px;
 
     .cart-header-total-price {
         padding-right: 1.5rem;
+    }
+}
+
+.cart-header-unit-price {
+    text-align: left;
+}
+
+@include media-breakpoint-up(lg) {
+    .cart-header-row .cart-header-unit-price {
+        padding-left: 25px;
+    }
+
+    .cart-item-row .cart-item-unit-price {
+        padding-left: 30px;
+    }
+
+    .cart-item-row .cart-item-unit-price {
+        justify-content: flex-start;
     }
 }

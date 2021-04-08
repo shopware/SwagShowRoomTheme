@@ -1,11 +1,11 @@
 {% sw_extends '@Storefront/storefront/page/checkout/checkout-item.html.twig' %}
 
 {% block page_checkout_item_info %}
-    <div class="col-12 col-md cart-item-info">
+    <div class="col-12 col-lg-5 cart-item-info">
         {% block page_checkout_item_info_inner %}
             <div class="row cart-item-row">
                 {% block page_checkout_item_info_image %}
-                    <div class="col-4 col-lg-auto cart-item-info-img">
+                    <div class="col-4 cart-item-info-img">
                         {% block page_checkout_item_info_image_container %}
                             {{ parent() }}
                         {% endblock %}
@@ -13,7 +13,7 @@
                 {% endblock %}
 
                 {% block page_checkout_item_info_details %}
-                    <div class="col-8 col-lg cart-item-details">
+                    <div class="col-8 cart-item-details">
                         {% block page_checkout_item_info_details_inner %}
                             <div class="cart-item-details-container">
                                 {% block page_checkout_item_info_label %}
@@ -68,7 +68,7 @@
 {% endblock %}
 
 {% block page_checkout_item_quantity %}
-    <div class="col-6 col-lg-1 cart-item-quantity">
+    <div class="col-6 col-lg-2 cart-item-quantity">
         <div class="row cart-item-quantity-row">
 
             {% block page_checkout_item_quantity_label %}
