@@ -22,15 +22,15 @@ $footer-height: 69px;
     height: 100%;
 
     img {
-        max-height: 100%;
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        height: 100%;
     }
 }
 
 @include media-breakpoint-up(lg) {
     .maintenance-image-wrap {
-        @include contain-height()
+        @include contain-height();
     }
 }
 
