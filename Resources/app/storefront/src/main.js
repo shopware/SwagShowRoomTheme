@@ -9,6 +9,11 @@ const PluginManager = window.PluginManager;
 PluginManager.register('LanguageCurrency', LanguageCurrency, '[data-language-currency]');
 PluginManager.register('ShowroomCollapseColumn', ShowroomCollapseColumn, '[data-showroom-collapse]');
 PluginManager.override('OffcanvasMenu', ShowroomOffcanvasMenuPlugin, '[data-offcanvas-menu]');
-PluginManager.override('SwagCustomizedProductsStepByStepWizard', CustomizedProductsStepByStepWizard, '*[data-swag-customized-product-step-by-step="true"]');
-PluginManager.override('SwagCmsExtensionsQuickview', CmsExtensionsQuickviewOptions, '[data-swag-cms-extensions-quickview="true"]');
-PluginManager.override('WishlistWidgetPlugin', WishlistPlugin, '[data-wishlist-widget]');
+PluginManager.register('ShowroomCustomizedProductsStepByStepWizard', CustomizedProductsStepByStepWizard, '*[data-swag-customized-product-step-by-step="true"]');
+PluginManager.register('ShowroomCmsExtensionsQuickview', CmsExtensionsQuickviewOptions, '[data-swag-cms-extensions-quickview="true"]');
+
+if (window.wishlistEnabled) {
+    PluginManager.override('WishlistWidget', WishlistPlugin, '[data-wishlist-widget]');
+} else {
+    PluginManager.register('WishlistWidget', WishlistPlugin, '[data-wishlist-widget]');
+}
