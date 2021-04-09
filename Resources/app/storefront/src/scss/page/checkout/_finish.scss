@@ -70,6 +70,16 @@ $finish-content-spacer-lg: 70px;
             max-width: 100%;
             order: 0;
         }
+
+        .content-main {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container,
+        .container-main {
+            height: 100%;
+        }
     }
 }
 
