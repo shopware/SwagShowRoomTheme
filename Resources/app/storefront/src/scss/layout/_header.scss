@@ -86,9 +86,7 @@ $logo-height-lg: 60px;
 
 .header-logo-col-fixed {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
+    left: 73px;
     right: 0;
     z-index: 1;
     max-width: $logo-width-sm;
@@ -136,6 +134,14 @@ $logo-height-lg: 60px;
         img {
             max-height: $logo-height-md;
         }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .header-logo-col-fixed {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
     }
 }
 
