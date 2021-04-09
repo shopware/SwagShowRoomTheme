@@ -2,6 +2,8 @@
 
 {% block page_account_order_document_item_detail %}
     <div class="row order-detail-content-row document-item">
+        {% set documentLink = path('frontend.account.order.single.document', {'documentId': document.id, 'deepLinkCode': document.deepLinkCode}) %}
+
         {% block page_account_order_document_item_detail_file_name %}
             {{ parent() }}
         {% endblock %}
