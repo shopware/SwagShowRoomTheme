@@ -183,6 +183,7 @@
         }
 
         &-btn-content {
+            font-weight: $font-weight-bold;
             font-size: $btn-font-size;
             text-decoration: none;
             text-transform: uppercase;
@@ -194,3 +195,4 @@
         }
     }
 }
+

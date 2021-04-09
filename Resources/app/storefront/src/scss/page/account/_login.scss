@@ -97,6 +97,16 @@
 }
 
 @include media-breakpoint-down(md) {
+    .account-register {
+        .global-collapse-headline {
+            border-bottom: unset;
+            padding: $grid-gutter-width / 2;
+            font-size: $h6-font-size;
+            font-weight: 500;
+            background: $white;
+        }
+    }
+
     .is-act-loginpage {
         .account-register-container {
             padding-bottom: 50px;
@@ -104,14 +114,6 @@
 
         .content-main {
             background: $gray-100;
-        }
-
-        .global-collapse-headline {
-            border-bottom: unset;
-            padding: $grid-gutter-width / 2;
-            font-size: $h6-font-size;
-            font-weight: 500;
-            background: $white;
         }
 
         .account-register-login-headline {
