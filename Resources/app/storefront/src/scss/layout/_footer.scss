@@ -58,6 +58,10 @@
         img {
             max-height: $logo-max-height;
         }
+
+        &.is-payment {
+            margin-right: 24px;
+        }
     }
 
     .footer-service-menu-item {
