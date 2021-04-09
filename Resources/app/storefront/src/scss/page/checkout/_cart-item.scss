@@ -52,6 +52,10 @@ $cart-img-container-width: 100px;
         display: flex;
         padding: 9px;
         border-color: $primary;
+
+        .icon > svg {
+            top: 0;
+        }
     }
 
     &-info {
@@ -190,5 +194,16 @@ $cart-img-container-width: 100px;
     @include media-breakpoint-up(lg) {
         display: block;
         font-size: $table-head-font-size;
+    }
+}
+
+.cart-item-ordernumber {
+    word-break: break-word;
+}
+
+@include media-breakpoint-up(md) {
+    .cart-item-details-container {
+        padding-left: 0;
+        padding-right: 20px;
     }
 }

@@ -17,6 +17,18 @@
     }
 }
 
+.is-right .offcanvas-close {
+    .icon svg {
+        top: 0.25rem;
+    }
+}
+
+.is-left .offcanvas-close {
+    .icon svg {
+        top: 0;
+    }
+}
+
 .icon-showroom {
   .icon {
     > svg {
