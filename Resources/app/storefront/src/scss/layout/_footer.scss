@@ -268,3 +268,10 @@
         font-size: $showroom-font-size-base;
     }
 }
+
+.footer-bottom {
+     > .container {
+         @include make-container();
+         @include make-container-max-widths();
+     }
+}
