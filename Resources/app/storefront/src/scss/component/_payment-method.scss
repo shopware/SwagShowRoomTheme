@@ -39,12 +39,13 @@
         height: 100%;
     }
 
-    .payment-method-label {        
+    .payment-method-label {
         .payment-method-description {
             width: 100%;
-            p { 
+            p {
                 color: $gray-700;
                 white-space: break-spaces;
+                margin-bottom: 0;
             }
         }
     }
@@ -61,10 +62,6 @@
                     line-height: 19px;
                 }
             }
-        }
-
-        .payment-method-label {
-            padding: 20px 20px 0 20px;
         }
     }
 }
