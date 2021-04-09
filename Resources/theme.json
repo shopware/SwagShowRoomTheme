@@ -6,8 +6,8 @@
         "@SwagCustomizedProducts",
         "@SwagPayPal",
         "@SwagCmsExtensions",
-        "@SwagShowRoomTheme",
-        "@Plugins"
+        "@Plugins",
+        "@SwagShowRoomTheme"
     ],
     "previewMedia": "app/storefront/src/assets/images/showroomPreview.png",
     "style": [

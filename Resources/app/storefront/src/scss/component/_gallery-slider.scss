@@ -10,6 +10,7 @@ $gallery-nav-button-background: rgba(255, 255, 255, 0.8);
 $gallery-image-height-sm: 250px;
 $gallery-image-height-md: 500px;
 $gallery-image-height-lg: 800px;
+
 .gallery-slider-row {
     margin-bottom: 40px;
 }
@@ -70,15 +71,32 @@ $gallery-image-height-lg: 800px;
 .gallery-slider-thumbnails-container {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+
+    &.is-underneath {
+        .tns-outer {
+            flex: 1;
+            margin-left: 0;
+            margin-right: 120px;
+        }
+    }
 
     .gallery-slider-controls {
         padding-top: 20px;
+    }
+
+    .tns-inner {
+        justify-content: flex-start;
     }
 }
 
 .gallery-slider-thumbnails-col {
     &.is-left {
         padding: ($gallery-thumbnail-item-height + $gallery-thumbnail-item-gutter) 0  ($gallery-thumbnail-item-height + $gallery-thumbnail-item-gutter) 0;
+
+        .underneath-gallery-slider-controls {
+            display: none;
+        }
 
         .gallery-slider-thumbnails-controls-prev,
         .gallery-slider-thumbnails-controls-next {
@@ -106,6 +124,21 @@ $gallery-image-height-lg: 800px;
     }
 }
 
+.gallery-slider-thumbnails {
+    &.is-underneath {
+        .gallery-slider-thumbnails-item {
+            margin-right: 1rem;
+            max-width: 46px;
+        }
+    }
+
+    .gallery-slider-thumbnails-item {
+        @extend .p-0;
+
+        max-height: 46px;
+    }
+}
+
 @include media-breakpoint-down(md) {
     .gallery-slider-row {
         &.is-loading {
@@ -128,15 +161,15 @@ $gallery-image-height-lg: 800px;
                 // need to use !important here to overwrite core settings which is using !important
                 margin-bottom: $gallery-thumbnail-item-gutter !important;
             }
+
+            .underneath-gallery-slider-controls {
+                display: initial;
+            }
         }
     }
 }
 
 @include media-breakpoint-up(lg) {
-    .gallery-slider-item {
-        height: $gallery-image-height-lg;
-    }
-
     .gallery-slider-row {
         &.is-loading {
             height: $gallery-image-height-lg;
@@ -158,6 +191,10 @@ $gallery-image-height-lg: 800px;
             .underneath-gallery-slider-controls {
                 padding-top: $spacer-xl;
             }
+        }
+
+        .tns-controls {
+            display: none;
         }
     }
 

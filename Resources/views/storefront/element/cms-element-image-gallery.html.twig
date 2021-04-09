@@ -17,8 +17,10 @@
 
 {% block element_image_gallery_inner_thumbnails_col %}
     {% if imageCount > 1 %}
-        <div class="gallery-slider-thumbnails-col{% if galleryPosition == "left" %} col-0 col-md-auto order-2 order-md-1 is-left{% elseif galleryPosition == "underneath" %} col-12 order-2 is-underneath{% endif %}">
-            <div class="gallery-slider-thumbnails-container{% if imageCount > maxItemsToShowNav and galleryPosition == "underneath" %} hide-thumbs{% endif %}">
+        <div
+            class="gallery-slider-thumbnails-col{% if galleryPosition == "left" %} col-0 col-md-auto order-2 order-md-1 is-left{% elseif galleryPosition == "underneath" %} col-12 order-2 is-underneath{% endif %}">
+            <div
+                class="gallery-slider-thumbnails-container{% if galleryPosition == "underneath" %} is-underneath{% endif %}">
 
                 {% block element_image_gallery_inner_thumbnails %}
                     {{ parent() }}
@@ -26,11 +28,17 @@
 
                 {% block element_image_gallery_inner_thumbnails_controls %}
                     {% if galleryPosition == "left" %}
-                        <div data-thumbnail-slider-controls="true" class="gallery-slider-thumbnails-controls">
-                            <button class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev">
+                        <div class="underneath-gallery-slider-controls"
+                             data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
+                            <button
+                                class="base-slider-controls-prev gallery-slider-thumbnails-controls-prev"
+                                aria-label="{{ 'general.previous'|trans|striptags }}">
                                 {% sw_icon 'arrow-head-up' style { 'pack': 'showroom' } %}
                             </button>
-                            <button class="base-slider-controls-next gallery-slider-thumbnails-controls-next">
+
+                            <button
+                                class="base-slider-controls-next gallery-slider-thumbnails-controls-next"
+                                aria-label="{{ 'general.next'|trans|striptags }}">
                                 {% sw_icon 'arrow-head-down' style { 'pack': 'showroom' } %}
                             </button>
                         </div>
@@ -38,37 +46,37 @@
                 {% endblock %}
 
                 {# move the gallery slider navigation into the gallery thumbnails section #}
-                {% block element_image_gallery_controls_underneath %}
-                    {% if activeRoute == "frontend.detail.page" or cmsQuickView == true %}
-                        <div class="underneath-gallery-slider-controls"
-                             data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
+                {% if galleryPosition == 'underneath' %}
+                    {% block element_image_gallery_controls_underneath %}
+                        {% if activeRoute == "frontend.detail.page" or cmsQuickView == true %}
+                            <div class="underneath-gallery-slider-controls"
+                                 data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
 
-                            {% block element_image_underneath_gallery_inner_control_items %}
-                                {% block element_image_underneath_gallery_inner_control_prev %}
-                                    <button
-                                        class="base-slider-controls-prev gallery-slider-controls-prev{% if galleryPosition == "underneath" %} is-nav-underneath{% endif%}"
-                                        aria-label="{{ 'general.previous'|trans|striptags }}">
-                                        {% block element_image_underneath_gallery_inner_control_prev_icon %}
-                                            {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
-                                        {% endblock %}
-                                    </button>
+                                {% block element_image_underneath_gallery_inner_control_items %}
+                                    {% block element_image_underneath_gallery_inner_control_prev %}
+                                        <button
+                                            class="base-slider-controls-prev gallery-slider-controls-prev{% if galleryPosition == "underneath" %} is-nav-underneath{% endif %}"
+                                            aria-label="{{ 'general.previous'|trans|striptags }}">
+                                            {% block element_image_underneath_gallery_inner_control_prev_icon %}
+                                                {% sw_icon 'arrow-head-left' style { 'pack': 'showroom' } %}
+                                            {% endblock %}
+                                        </button>
+                                    {% endblock %}
+
+                                    {% block element_image_gallery_inner_control_next_underneath %}
+                                        <button
+                                            class="base-slider-controls-next gallery-slider-controls-next{% if galleryPosition == "underneath" %} is-nav-underneath{% endif %}"
+                                            aria-label="{{ 'general.next'|trans|striptags }}">
+                                            {% block element_image_underneath_gallery_inner_control_next_icon %}
+                                                {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+                                            {% endblock %}
+                                        </button>
+                                    {% endblock %}
                                 {% endblock %}
-
-                                {% block element_image_gallery_inner_control_next_underneath %}
-                                    <button
-                                        class="base-slider-controls-next gallery-slider-controls-next{% if galleryPosition == "underneath" %} is-nav-underneath{% endif%}"
-                                        aria-label="{{ 'general.next'|trans|striptags }}">
-                                        {% block element_image_underneath_gallery_inner_control_next_icon %}
-                                            {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
-                                        {% endblock %}
-                                    </button>
-                                {% endblock %}
-                            {% endblock %}
-
-                        </div>
-                    {% endif %}
-                {% endblock %}
-
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                {% endif %}
             </div>
         </div>
     {% endif %}

@@ -6,11 +6,3 @@
         {{ "showroom.listing.boxAddProduct"|trans|sw_sanitize }}
     </button>
 {% endblock %}
-
- {% block component_product_box_action_detail %}
-     <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
-        class="btn btn-md btn-outline-primary"
-        title="{{ "listing.boxProductDetails"|trans|striptags }}">
-         {{ "listing.boxProductDetails"|trans|sw_sanitize }}
-     </a>
- {% endblock %}

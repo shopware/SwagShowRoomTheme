@@ -93,6 +93,15 @@ $custom-box-standard-height-img: 220px;
     .btn-buy {
         width: 100%;
     }
+
+    .btn.btn-light {
+        @extend .btn-outline-primary;
+        background-color: transparent;
+
+        &:hover {
+            background-color: $sw-color-brand-primary;
+        }
+    }
 }
 
 .product-badges {
