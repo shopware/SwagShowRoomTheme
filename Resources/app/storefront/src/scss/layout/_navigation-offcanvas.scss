@@ -42,6 +42,10 @@ $navigation-offcanvas-image-height: 307px;
             margin-bottom: $navigation-offcanvas-spacing;
         }
 
+        &.is-home-link {
+            margin-bottom: $navigation-offcanvas-spacing;
+        }
+
         &.is-back-link {
             border-top: 0;
         }
@@ -113,6 +117,7 @@ $navigation-offcanvas-image-height: 307px;
             display: none;
         }
 
+        &-headline,
         &-link {
             background-color: transparent;
             color: $gray-700;
@@ -121,6 +126,10 @@ $navigation-offcanvas-image-height: 307px;
             margin-right: 150px;
             padding-left: 0;
             padding-right: 10px;
+
+            &.is-home-link {
+                border: none;
+            }
 
             &.is-back-link {
                 font-size: $font-size-base;
@@ -145,24 +154,6 @@ $navigation-offcanvas-image-height: 307px;
                 .icon {
                     opacity: 1;
                 }
-            }
-        }
-
-        &-back-link {
-            display: flex;
-            justify-content: space-between;
-
-            .navigation-offcanvas-link {
-                padding: 0;
-                margin-bottom: 18px;
-            }
-
-            .navigation-offcanvas-headline {
-                font-size: $font-size-base;
-                font-weight: $font-weight-bold;
-                line-height: 28px;
-                margin-left: 0;
-                border-bottom: 0;
             }
         }
 
