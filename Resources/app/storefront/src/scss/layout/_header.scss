@@ -116,8 +116,12 @@ $logo-height-lg: 60px;
 
     .header-wishlist-badge {
         background: none;
-        right: 8px;
-        top: 12px;
+        right: 2px;
+        top: 3px;
+
+        svg {
+            width: 11px;
+        }
     }
 }
 
@@ -196,6 +200,18 @@ $logo-height-lg: 60px;
 
         img {
             max-height: $logo-height-lg;
+        }
+    }
+
+    .header-wishlist {
+        .header-wishlist-badge {
+            background: none;
+            right: 9px;
+            top: 12px;
+
+            svg {
+                width: 18px;
+            }
         }
     }
 }
