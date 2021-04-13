@@ -1,0 +1,18 @@
+{% sw_extends '@Storefront/storefront/component/quickview/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_container %}
+    {% if buyable %}
+        <div class="form-row buy-widget-container">
+            <div class="col-4 col-md-12 col-lg-4">
+                <div class="product-detail-configurator-group-title">
+                    {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+                </div>
+            </div>
+            <div class="col-8 col-md-12 col-lg-8">
+                {% block page_product_detail_buy_quantity %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

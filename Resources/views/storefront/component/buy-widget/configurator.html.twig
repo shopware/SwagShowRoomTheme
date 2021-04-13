@@ -1,23 +1,23 @@
-{% sw_extends '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+{% sw_extends '@Storefront/storefront/component/buy-widget/configurator.html.twig' %}
 
-{% block page_product_detail_configurator_groups %}
+{% block buy_widget_configurator_groups %}
     <div data-showroom-collapse="true" class="row mx-lg-0 product-detail-configurator-container">
-        {% for group in page.configuratorSettings %}
+        {% for group in configuratorSettings %}
+            {% set activeOption = group.options|filter(option => option.id in product.optionIds)|first %}
+            {% set withoutActiveOptions = group.options|filter(option => option.id not in product.optionIds) %}
 
-            {% set activeOption = group.options|filter(option => option.id in page.product.optionIds)|first %}
-            {% set withoutActiveOptions = group.options|filter(option => option.id not in page.product.optionIds) %}
-
-            {% block page_product_detail_configurator_group %}
+            {% block buy_widget_configurator_group %}
                 <div class="col-12 col-md col-lg-12 px-lg-0 product-detail-configurator-group">
                     <div class="row">
                         <div class="col-4 col-md-12 col-lg-4">
-                            {% block page_product_detail_configurator_group_title %}
+                            {% block buy_widget_configurator_group_title %}
                                 {{ parent() }}
                             {% endblock %}
                         </div>
-                        {% block page_product_detail_configurator_options %}
+                        {% block buy_widget_configurator_options %}
                             <div class="col-8 col-md-12 col-lg-8">
-                                <div class="product-detail-configurator-collapse-wrapper js-collapse-column">
+                                <div
+                                    class="product-detail-configurator-options product-detail-configurator-collapse-wrapper js-collapse-column">
                                     <div class="product-detail-configurator-collapse"
                                          style="z-index: {{ loop.length - loop.index + 1 }}">
                                         <div
@@ -38,11 +38,21 @@
                                             class="product-detail-configurator-options collapse js-column-content">
                                             {% for option in withoutActiveOptions %}
 
-                                                {% set optionIdentifier = [group.id, option.id]|join('-') %}
-                                                {% set isActive = false %}
+                                                {% if elementId is defined and elementId is not null %}
+                                                    {% set optionIdentifier = [group.id, option.id, elementId]|join('-') %}
+                                                {% else %}
+                                                    {% set optionIdentifier = [group.id, option.id]|join('-') %}
+                                                {% endif %}
 
-                                                {% if option.id in page.product.optionIds %}
+                                                {% set isActive = false %}
+                                                {% set isCombinableCls = 'is-combinable' %}
+
+                                                {% if option.id in product.optionIds %}
                                                     {% set isActive = true %}
+                                                {% endif %}
+
+                                                {% if not option.combinable %}
+                                                    {% set isCombinableCls = false %}
                                                 {% endif %}
 
                                                 {% if option.configuratorSetting.media %}
@@ -57,7 +67,7 @@
                                                     {% endif %}
                                                 {% endif %}
 
-                                                {% block page_product_detail_configurator_option %}
+                                                {% block buy_widget_configurator_option %}
                                                     {{ parent() }}
                                                 {% endblock %}
                                             {% endfor %}
@@ -69,6 +79,7 @@
                     </div>
                 </div>
             {% endblock %}
+
         {% endfor %}
     </div>
 {% endblock %}

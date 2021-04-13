@@ -33,6 +33,14 @@
         object-fit: cover;
     }
 
+    &-product-heading .cms-block-container:first-child {
+        @extend .p-0;
+    }
+
+    &-gallery-buybox .cms-block-container:first-child {
+        @extend .p-0;
+    }
+
     @include media-breakpoint-up(md) {
         &.cms-block-text-two-column {
             .cms-element-form {

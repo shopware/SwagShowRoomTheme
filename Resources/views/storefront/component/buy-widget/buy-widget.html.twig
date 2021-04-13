@@ -1,0 +1,22 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget %}
+    <div class="product-detail-buy{% if elementId %}-{{ elementId }}{% endif %} js-magnifier-zoom-image-container">
+        {{ block('buy_widget_ordernumber_container') }}
+
+        {{ block('buy_widget_rich_snippets') }}
+
+        {{ block('buy_widget_not_available') }}
+
+        {{ block('buy_widget_buy_container') }}
+    </div>
+{% endblock %}
+
+{% block buy_widget_price %}{% endblock %}
+{% block buy_widget_tax %}{% endblock %}
+
+{% block buy_widget_configurator_include %}
+    <div class="product-detail-wrapper">
+        {{ parent() }}
+    </div>
+{% endblock %}

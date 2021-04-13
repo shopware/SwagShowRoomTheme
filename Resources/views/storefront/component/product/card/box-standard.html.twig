@@ -16,24 +16,11 @@
 
         {% block component_product_box_info %}
             <div class="product-info">
-                {% block component_product_box_rating %}
-                    {% if config('core.listing.showReview') %}
-                        <div class="product-rating">
-                            {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
-                                points: product.ratingAverage,
-                                style: 'text-primary'
-                            } %}
-                        </div>
-                    {% endif %}
-                {% endblock %}
+                {{ block('component_product_box_rating') }}
 
-                {% block component_product_box_name %}
-                    {{ parent() }}
-                {% endblock %}
+                {{ block('component_product_box_name') }}
 
-                {% block component_product_box_price %}
-                    {{ parent() }}
-                {% endblock %}
+                {{ block('component_product_box_price') }}
             </div>
         {% endblock %}
     </div>
