@@ -1,8 +1,13 @@
 .product-detail-wrapper {
     .buy-widget-container {
+        .btn-buy-wrapper {
+            @extend .col-8, .offset-4;
+            padding: 0;
+        }
+
         .btn-buy {
             max-height: 60px;
-            margin: 20px 0px 0px 0px;
+            margin: 20px 0 0 0;
         }
     }
 }
@@ -184,7 +189,7 @@
                 &.prev-page {
                     background-color: $sw-color-success;
                 }
-            
+
                 &.next-page {
                     background-color: $gray-200;
                     color: $sw-color-brand-primary;
