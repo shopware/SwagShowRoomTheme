@@ -1,8 +1,8 @@
 {% sw_extends '@Storefront/storefront/layout/header/actions/cart-widget.html.twig' %}
 
 {% block layout_header_actions_cart_widget %}
-    <span class="d-none d-lg-inline">{{ 'checkout.cartTitle'|trans|striptags }}</span>
-    <span class="header-cart-icon d-lg-none">
+    <span class="d-none d-xl-inline">{{ 'checkout.cartTitle'|trans|striptags }}</span>
+    <span class="header-cart-icon d-xl-none">
         {% sw_icon 'bag' %}
     </span>
     {% if page.cart.lineItems|length > 0 %}
