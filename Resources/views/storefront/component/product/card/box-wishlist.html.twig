@@ -1,13 +1,38 @@
-{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+{% sw_extends '@Storefront/storefront/component/product/card/box-wishlist.html.twig' %}
 
 {% block component_product_box_content %}
-    {{ parent() }}
+    <div class="card-body card-body-wishlist">
+        {% block component_product_box_image %}
+            <div class="product-box-image-container">
+                {{ parent() }}
+                {{ block('component_product_box_wishlist') }}
+            </div>
+        {% endblock %}
 
-    {% block component_product_box_description %}{% endblock %}
+        {% block component_product_box_info %}
+            {{ parent() }}
+        {% endblock %}
 
-    {% block component_product_box_action %}{% endblock %}
+        {% block component_product_overlay %}
+            {% sw_include '@Storefront/storefront/component/product/card/box-overlay.html.twig' with { 'wishListPage': true } %}
+        {% endblock %}
+    </div>
+{% endblock %}
 
-    {% block component_product_overlay %}
-        {% sw_include '@Storefront/storefront/component/product/card/box-overlay.html.twig' with { 'wishListPage': true } %}
-    {% endblock %}
+{% block component_product_box_rating %}{% endblock %}
+
+{% block component_product_box_variant_characteristics %}{% endblock %}
+
+{% block component_product_box_manufacturer %}{% endblock %}
+
+{% block component_product_box_delivery_time %}{% endblock %}
+
+{% block component_product_box_currently_not_available %}{% endblock %}
+
+{% block component_product_box_action %}{% endblock %}
+
+{% block component_product_wishlist_remove_submit %}
+    <button type="submit" class="btn product-wishlist-btn product-wishlist-btn-remove">
+        {% sw_icon 'heart-fill' style { 'class': 'wishlist icon-wishlist-added'} %}
+    </button>
 {% endblock %}

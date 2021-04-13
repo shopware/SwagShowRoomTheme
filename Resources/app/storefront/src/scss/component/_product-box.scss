@@ -125,6 +125,7 @@ $custom-box-standard-height-img: 220px;
     &-not-added,
     &-btn-remove {
         border-radius: 0;
+        z-index: 3;
     }
 
     &-remove {
