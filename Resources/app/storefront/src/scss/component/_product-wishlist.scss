@@ -1,6 +1,16 @@
 .wishlist-page {
     text-align: center;
 
+    .product-box-image-container {
+        position: relative;
+        margin-bottom: 20px;
+
+        .product-wishlist-btn-remove {
+            right: 35px;
+            top: 50px;
+        }
+    }
+
     .wishlist-listing-empty-icon {
         display: inline-block;
 
