@@ -41,6 +41,29 @@ $carousel-control-icon-width-sm: 16px;
         padding: 10px 0;
     }
 
+    .swag-cms-extensions-quickview-product-buy-container {
+        display: none;
+    }
+
+    .swag-cms-extensions-quickview-content {
+        .swag-customized-products {
+            margin-top: 24px;
+        }
+
+        .buy-widget-container {
+            @extend .justify-content-end;
+
+            .btn-buy-wrapper {
+                @extend .col-12;
+                padding: 0 $grid-gutter-width / 2;
+            }
+
+            .buy-widget-btn {
+                @extend .col-12, .px-0;
+            }
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .btn-buy {
             padding: 5px 40px;
