@@ -15,6 +15,12 @@
             border-bottom: unset;
         }
     }
+
+    .cms-listing-col {
+        &:last-child {
+            padding-bottom: 40px;
+        }
+    }
 }
 
 .cms-listing-col {

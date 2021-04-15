@@ -125,7 +125,7 @@ $custom-box-standard-height-img: 220px;
     &-not-added,
     &-btn-remove {
         border-radius: 0;
-        z-index: 3;
+        z-index: 4;
     }
 
     &-remove {
@@ -168,8 +168,17 @@ $custom-box-standard-height-img: 220px;
     }
 }
 
-.product-box:hover .product-overlay {
-    opacity: 1;
+.product-box:hover {
+    .product-badges {
+        z-index: 4;
+    }
+
+    .product-overlay {
+        opacity: 1;
+        bottom: unset;
+        min-height: 100%;
+        z-index: 3;
+    }
 }
 
 .product-unit-label,
