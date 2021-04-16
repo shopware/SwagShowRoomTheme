@@ -9,6 +9,10 @@
         {{ block('buy_widget_not_available') }}
 
         {{ block('buy_widget_buy_container') }}
+
+        {% if config('core.cart.wishlistEnabled') %}
+            {{ block('buy_widget_wishlist') }}
+        {% endif %}
     </div>
 {% endblock %}
 
@@ -20,3 +24,4 @@
         {{ parent() }}
     </div>
 {% endblock %}
+
