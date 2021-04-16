@@ -36,7 +36,7 @@
                                         </div>
                                         <div
                                             class="product-detail-configurator-options collapse js-column-content">
-                                            {% for option in withoutActiveOptions %}
+                                            {% for option in group.options %}
 
                                                 {% set optionIdentifier = [group.id, option.id]|join('-') %}
                                                 {% set isActive = false %}

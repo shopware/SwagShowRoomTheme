@@ -71,9 +71,10 @@ $configurator-padding: 40px;
 
     &-option-input + &-option-label {
         opacity: 1;
+        display: block;
 
         &.is-display-text {
-            border: none;
+            border: none !important;
             padding-left: 0;
             padding-right: 0;
             justify-content: flex-start;
@@ -81,6 +82,8 @@ $configurator-padding: 40px;
     }
 
     &-option-input:checked + &-option-label {
+        font-weight: bold;
+
         &.is-display-text {
             background-color: transparent;
             color: initial;
