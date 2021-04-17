@@ -1,1 +1,47 @@
-{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
+
+{% block buy_widget_buy_quantity_container %}
+    <div class="col-4 col-md-12 col-lg-4">
+        <div class="product-detail-configurator-group-title">
+            {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+        </div>
+    </div>
+
+    <div class="col-8 col-md-12 col-lg-8">
+        {% block buy_widget_buy_quantity %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block buy_widget_buy_button_container %}
+    <div class="col-12">
+        <div class="row justify-content-end product-detail-button-container">
+            {% set isPricingTable = product.calculatedPrices|length > 1 %}
+            {% block page_product_detail_price_container %}
+                <div
+                    class="col-12 {% if isPricingTable %}col-md-12{% else %}col-md-4{% endif %} buy-widget__price">
+                    <div class="product-detail-price-container">
+                        {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            <div class="col-12 col-md-8 buy-widget__button">
+                {% block buy_widget_buy_button %}
+                     {{ parent() }}
+                {% endblock %}
+
+                {% if config('core.cart.wishlistEnabled') %}
+                    {% block page_product_detail_wishlist %}
+                        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                            showText: true,
+                            size: 'md',
+                            productId: product.id
+                        } %}
+                    {% endblock %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
