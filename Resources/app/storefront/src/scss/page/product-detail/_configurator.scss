@@ -139,7 +139,6 @@ $configurator-padding: 40px;
     }
 }
 
-.product-detail-button-container,
 .product-detail-wrapper {
     padding-top: $configurator-padding-sm;
     border-top: 1px solid $border-color;
@@ -150,11 +149,12 @@ $configurator-padding: 40px;
 }
 
 .product-detail-button-container {
-    width: 100%;
+    padding-top: $configurator-padding-sm;
     margin-top: $configurator-padding-sm;
-    justify-content: flex-end;
+    border-top: 1px solid $border-color;
 
     @include media-breakpoint-up(lg) {
+        padding-top: $configurator-padding;
         margin-top: $configurator-padding;
     }
 }

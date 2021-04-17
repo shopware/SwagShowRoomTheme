@@ -45,6 +45,10 @@
         font-size: $font-size-xs;
     }
 
+    &-tax {
+        text-align: right;
+    }
+
     &-description-title {
         font-weight: $font-weight-semibold;
     }
@@ -139,9 +143,22 @@
         @extend .col-12;
 
         @include media-breakpoint-up(md) {
-            @include make-col(7);
-            padding-left: 0;
+            @include make-col(8);
         }
+    }
+}
+
+.swag-cms-extensions-quickview-product-buy-form {
+    div[data-swag-paypal-installment-banner='true'],
+    div[data-swag-paypal-express-button='true'] {
+        @include media-breakpoint-up(md) {
+            @include make-col(12);
+        }
+    }
+
+    .buy-widget__price,
+    .buy-widget__button {
+        @include make-col(12);
     }
 }
 
