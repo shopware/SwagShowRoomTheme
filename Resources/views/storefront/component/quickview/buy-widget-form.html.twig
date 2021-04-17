@@ -14,38 +14,13 @@
                 {% endblock %}
             </div>
         </div>
+        <div class="product-detail-button-container">
+            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+        </div>
         {{ parent() }}
     {% else %}
-        <div class="buy-widget-container">
-            <div class="row no-gutters">
-                {% block page_unbuyable_product_detail_price_container %}
-                    <div class="col-12">
-                        <div class="product-detail-price-container">
-                            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
-                            {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
-                        </div>
-                    </div>
-                {% endblock %}
-            </div>
-            <div class="row no-gutters justify-content-center">
-                {% if config('core.cart.wishlistEnabled') %}
-                    {% block page_product_detail_unbuyable_wishlist %}
-                        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
-                            showText: true,
-                            size: 'md',
-                            productId: page.product.id
-                        } %}
-                    {% endblock %}
-                {% endif %}
-            </div>
-        </div>
+        {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
     {% endif %}
 {% endblock %}
 
 {% block page_product_detail_buy_quantity_container %}{% endblock %}
-
-{% block page_product_detail_buy_button_container %}
-    {% block page_product_detail_buy_button %}
-        {{ parent() }}
-    {% endblock %}
-{% endblock %}

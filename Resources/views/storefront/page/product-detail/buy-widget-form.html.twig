@@ -2,107 +2,54 @@
 
 {% block page_product_detail_buy_container %}
     {% if buyable %}
-        {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
-            <div class="buy-widget-container">
-                <div class="row no-gutters">
-                    {% block page_unbuyable_custom_product_detail_price_container %}
-                        <div class="col-12">
-                            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
-                            {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
-                        </div>
-                    {% endblock %}
-                </div>
-                {{ parent() }}
-            </div>
-        {% else %}
-            <div class="buy-widget-container">
-                {% block page_product_detail_buy_quantity_container %}
-                    <div class="row">
-                        <div class="col-4 col-md-12 col-lg-4">
-                            <div class="product-detail-configurator-group-title">
-                                {{ "showroom.detail.quantity"|trans|sw_sanitize }}
-                            </div>
-                        </div>
-                        <div class="col-8 col-md-12 col-lg-8">
-                            {% block page_product_detail_buy_quantity %}
-                                {{ parent() }}
-                            {% endblock %}
-                        </div>
-                    </div>
-                {% endblock %}
-
-                <div class="product-detail-button-container">
-                    <div class="row justify-content-end">
-                        {% set isPricingTable = page.product.calculatedPrices|length > 1 %}
-
-                        {% block page_product_detail_price_container %}
-                            <div
-                                class="col-12 {% if isPricingTable %}col-md-12{% else %}col-md-4{% endif %} buy-widget__price">
-                                <div class="product-detail-price-container">
-                                    {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
-                                    {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
-                                </div>
-                            </div>
-                        {% endblock %}
-
-                        <div class="col-12 col-md-8 buy-widget__button">
-                            {% block page_product_detail_buy_redirect_input %}
-                                {{ parent() }}
-                            {% endblock %}
-
-                            {% block page_product_detail_buy_product_buy_info %}
-                                {{ parent() }}
-                            {% endblock %}
-
-                            {% block page_product_detail_product_buy_meta %}
-                                {{ parent() }}
-                            {% endblock %}
-
-                            {% block page_product_detail_buy_button_container %}
-                                {% block page_product_detail_buy_button %}
-                                    {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
-                                        <div class="btn-buy-wrapper">
-                                            {{ parent() }}
-                                        </div>
-                                    {% else %}
-                                        {{ parent() }}
-                                    {% endif %}
-                                {% endblock %}
-                                {% if config('core.cart.wishlistEnabled') %}
-                                    {% block page_product_detail_wishlist %}
-                                        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
-                                            showText: true,
-                                            size: 'md',
-                                            productId: page.product.id
-                                        } %}
-                                    {% endblock %}
-                                {% endif %}
-                            {% endblock %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {% if block("page_product_detail_buy_container_paypal") is defined %}
-                {{ block('page_product_detail_buy_container_paypal') }}
-            {% endif %}
-
-        {% endif %}
+        {{ parent() }}
     {% else %}
-        <div class="buy-widget-container">
-            <div class="row no-gutters">
-                {% block page_unbuyable_product_detail_price_container %}
-                    <div class="col-12">
-                        <div class="product-detail-price-container">
-                            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
-                            {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
-                        </div>
+        <div class="product-detail-price-container">
+            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block page_product_detail_buy_quantity_container %}
+    <div class="col-4 col-md-12 col-lg-4">
+        <div class="product-detail-configurator-group-title">
+            {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+        </div>
+    </div>
+
+    <div class="col-8 col-md-12 col-lg-8">
+        {% block page_product_detail_buy_quantity %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_product_detail_buy_button_container %}
+    <div class="col-12">
+        <div class="row product-detail-button-container justify-content-end">
+            {% set isPricingTable = page.product.calculatedPrices|length > 1 %}
+            {% block page_product_detail_price_container %}
+                <div
+                    class="col-12 {% if isPricingTable %}col-md-12{% else %}col-md-4{% endif %} buy-widget__price">
+                    <div class="product-detail-price-container">
+                        {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
                     </div>
+                </div>
+            {% endblock %}
+
+            <div class="col-12 col-md-8 buy-widget__button">
+                {% block page_product_detail_buy_button %}
+                    {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
+                        <div class="btn-buy-wrapper">
+                            {{ parent() }}
+                        </div>
+                    {% else %}
+                        {{ parent() }}
+                    {% endif %}
                 {% endblock %}
-            </div>
-            <div class="row no-gutters justify-content-end">
+
                 {% if config('core.cart.wishlistEnabled') %}
-                    {% block page_product_detail_unbuyable_wishlist %}
+                    {% block page_product_detail_wishlist %}
                         {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
                             showText: true,
                             size: 'md',
@@ -112,7 +59,7 @@
                 {% endif %}
             </div>
         </div>
-    {% endif %}
+    </div>
 {% endblock %}
 
 {% block swag_customized_products_step_by_step_finish_page %}

@@ -1,30 +1,11 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
 
-{% block page_product_detail_price_block_table %}
-    <table class="table table-sm product-block-prices-table">
-        {% block page_product_detail_price_block_table_head %}
-            {{ parent() }}
-        {% endblock %}
-
-        {% block page_product_detail_price_block_table_body %}
-            {{ parent() }}
-        {% endblock %}
-    </table>
-{% endblock %}
-
 {% block page_product_detail_was_price_badge %}{% endblock %}
 
-{% block page_product_detail_price_content %}
-    {% set listPrice = page.product.priceRange ? null : price.listPrice %}
+{% block page_product_detail_price_inner %}
+    {{ parent() }}
 
-    <p class="product-detail-price{% if listPrice.percentage > 0 %} with-list-price{% endif %}">
-        {{ price.unitPrice|currency }}{{ "general.star"|trans|sw_sanitize }}
-    </p>
-
-    {% if listPrice.percentage > 0 %}
-        {% block page_product_detail_was_price %}
-            {{ parent() }}
-        {% endblock %}
-    {% endif %}
-
+    <div class="product-detail-tax-container">
+         {% sw_include '@Storefront/storefront/page/product-detail/tax.html.twig' %}
+    </div>
 {% endblock %}

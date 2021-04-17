@@ -96,11 +96,6 @@
     }
 
     .buy-widget-container {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-
         &-block {
             flex-wrap: wrap;
         }
@@ -148,6 +143,10 @@
     }
 }
 
+.product-block-prices-grid {
+    margin-bottom: 0;
+}
+
 .swag-cms-extensions-quickview-product-buy-form {
     div[data-swag-paypal-installment-banner='true'],
     div[data-swag-paypal-express-button='true'] {
@@ -159,6 +158,19 @@
     .buy-widget__price,
     .buy-widget__button {
         @include make-col(12);
+    }
+
+    .swag-cms-extensions-quickview-content--buy-button {
+        @include make-col(12);
+    }
+
+    .product-detail-price {
+        text-align: right;
+    }
+
+    .product-block-prices,
+    .product-detail-price {
+        margin-top: $spacer-lg;
     }
 }
 
@@ -209,4 +221,9 @@
         width: 12px;
         height: 12px;
     }
+}
+
+.product-detail-buy,
+.cms-element-buy-box {
+    overflow: hidden;
 }
