@@ -1,1 +1,115 @@
-{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
+
+{% if context.taxState == "gross" %}
+    {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+{% else %}
+    {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+{% endif %}
+
+{% block buy_widget_buy_container %}
+    {% if buyable %}
+        {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
+            <div class="buy-widget-container">
+                <div class="row no-gutters">
+                    <div class="col-12 {% if product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-4{% endif %}">
+                        {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+                        <div class="product-detail-tax-container">
+                            <a class="product-detail-tax-link"
+                               href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                               title="{{ taxText }}"
+                               data-toggle="modal"
+                               data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                                {{ taxText }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{ parent() }}
+            </div>
+        {% else %}
+            <div class="buy-widget-container">
+                {% block buy_widget_buy_quantity_container %}
+                    <div class="row">
+                        <div class="col-4 col-md-12 col-lg-4">
+                            <div class="product-detail-configurator-group-title">
+                                {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-12 col-lg-8">
+                            {% block buy_widget_buy_quantity %}
+                                {{ parent() }}
+                            {% endblock %}
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+
+            <div class="row no-gutters product-detail-button-container">
+                <div class="col-12 {% if product.calculatedPrices|length > 1 %}col-md-12{% else %}col-md-4{% endif %}">
+                    {% block page_product_detail_price_container %}
+                        {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+                        <div class="product-detail-tax-container">
+                            <a class="product-detail-tax-link"
+                               href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                               title="{{ taxText }}"
+                               data-toggle="modal"
+                               data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                                {{ taxText }}
+                            </a>
+                        </div>
+                    {% endblock %}
+                </div>
+
+                <div class="col-12 col-md-7 offset-md-1 {% if product.calculatedPrices|length > 1 %}buy-widget-btn{% endif %}">
+                    {{ block('buy_widget_buy_redirect_input') }}
+
+                    {{ block('buy_widget_buy_product_buy_info') }}
+
+                    {{ block('buy_widget_product_buy_meta') }}
+
+                    {% block buy_widget_buy_button_container %}
+                        {% block buy_widget_buy_button %}
+                            {% if customizedProductsTemplate and customizedProductsTemplate.active and customizedProductsTemplate.options|length %}
+                                <div class="btn-buy-wrapper">
+                                    {{ parent() }}
+                                </div>
+                            {% else %}
+                                {{ parent() }}
+                            {% endif %}
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            {% if block("page_product_detail_buy_container_paypal") is defined %}
+                {{ block('page_product_detail_buy_container_paypal') }}
+            {% endif %}
+        {% endif %}
+    {% else %}
+        <div class="buy-widget-container">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    {% block buy_widget_un_buy_price %}
+                        {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+                    {% endblock %}
+
+                    {% block buy_widget_un_buy_tax %}
+                        <div class="product-detail-tax-container">
+                            <p class="product-detail-tax">
+                                {% block buy_widget_un_buy_tax_link %}
+                                    <a class="product-detail-tax-link"
+                                       href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                                       title="{{ taxText }}"
+                                       data-toggle="modal"
+                                       data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                                        {{ taxText }}
+                                    </a>
+                                {% endblock %}
+                            </p>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
