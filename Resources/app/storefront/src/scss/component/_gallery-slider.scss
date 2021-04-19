@@ -1,5 +1,5 @@
 $gallery-thumbnail-item-width: 46px;
-$gallery-thumbnail-item-height: auto;
+$gallery-thumbnail-item-height: 46px;
 $gallery-thumbnail-item-gutter: 10px;
 
 $gallery-prev-outside-height-sm: 10px;
@@ -26,7 +26,7 @@ $gallery-image-height-lg: 800px;
 
     .gallery-slider-thumbnails-image {
         max-width: $gallery-thumbnail-item-width;
-        height: $gallery-thumbnail-item-height;
+        height: auto;
         object-fit: cover;
         font-family: 'object-fit: cover;'; // IE polyfill
     }
