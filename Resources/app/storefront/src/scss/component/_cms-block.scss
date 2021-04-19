@@ -41,25 +41,6 @@
         @extend .p-0;
     }
 
-    .product-detail-price {
-        text-align: right;
-    }
-
-    .product-block-prices {
-        & ~.product-detail-tax-container {
-            @extend .mb-4;
-            text-align: right;
-        }
-    }
-
-    .buy-widget-container {
-        display: initial;
-
-        .btn-buy-wrapper {
-            @extend .mt-4;
-        }
-    }
-
     @include media-breakpoint-up(md) {
         &.cms-block-text-two-column {
             .cms-element-form {
