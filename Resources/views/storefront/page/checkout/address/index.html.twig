@@ -44,6 +44,35 @@
         </div>
     {% endblock %}
 
+    {% if block('page_checkout_address_login_swag_amazon_pay_card') is defined %}
+        {% block page_checkout_address_login_swag_amazon_pay_card %}
+            {% set amazonPayButton = page.extensions.SwagAmazonPayButton %}
+            {% if amazonPayButton and not amazonPayButton.hideButton %}
+                <div class="card swag-amazon-pay-card">
+                    <div class="card-body">
+                        {% block page_checkout_address_login_swag_amazon_pay_card_body %}
+                            <div class="row align-items-center">
+                                {% block component_account_login_swag_amazon_pay_description %}
+                                    <div class="swag-amazon-pay-card__description col-12 col-md-8">
+                                        <div
+                                            class="card-title">{{ "SwagAmazonPay.register.headline"|trans|striptags }}</div>
+                                        <p class="card-text sm:mb-1">{{ "SwagAmazonPay.register.text"|trans|striptags }}</p>
+                                    </div>
+                                {% endblock %}
+
+                                {% block component_account_login_swag_amazon_pay_button %}
+                                    <div class="col-12 col-md-4">
+                                        {{ parent() }}
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endif %}
+
     {% block page_checkout_address_register %}
         {{ parent() }}
     {% endblock %}

@@ -141,6 +141,14 @@
             @include make-col(8);
         }
     }
+
+    div[data-amazon-pay-button-product-detail='true'] {
+        @include media-breakpoint-down(sm) {
+            > .col-8 {
+                @include make-col(12)
+            }
+        }
+    }
 }
 
 .product-block-prices-grid {
