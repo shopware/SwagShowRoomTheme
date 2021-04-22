@@ -38,10 +38,15 @@ $register-form-control-height: 28px;
         @extend .w-100;
     }
 
-    .register-card {
+    :is(.register-card, .swag-amazon-pay-card) {
         background-color: $white;
         padding: 30px 24px;
         margin-bottom: $spacer;
+    }
+
+    .swag-amazon-pay-wrapper.account-login {
+        margin-bottom: 0;
+        width: initial;
     }
 
     .global-collapse-headline {

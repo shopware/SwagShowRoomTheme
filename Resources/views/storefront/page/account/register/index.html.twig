@@ -6,86 +6,95 @@
             <h1 class="col-12">{{ "showroom.account.loginOrRegisterHeadline"|trans|sw_sanitize }}</h1>
         </div>
 
-        {% block page_account_register_inner %}
-            <div class="row">
-                {% block page_account_register_login_container %}
-                    <div class="col-lg-4 account-register-login-container">
-                        <div data-showroom-collapse="true">
-                            <div class="js-collapse-column">
-                                <div class="global-collapse-headline js-collapse-column-trigger"
-                                     id="collapseRegisterLogin"
-                                     data-target="#collapseRegisterLogin"
-                                     aria-expanded="true"
-                                     aria-controls="collapseRegisterLogin">
-                                    {{ "showroom.account.loginHeader"|trans|sw_sanitize }}
-                                    <div class="global-collapse-column-toggle">
-                                        <span class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
-                                        <span class="global-collapse-minus-icon">{% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}</span>
-                                    </div>
-                                </div>
-                                <div id="collapseRegisterLogin"
-                                     class="global-collapse-content collapse js-column-content"
-                                     aria-labelledby="collapseRegisterLogin">
-                                    {% sw_include '@Storefront/storefront/component/account/login.html.twig' with {
-                                        'cardTitle': "showroom.account.loginHeader"|trans|sw_sanitize
-                                    } %}
+        {{ parent() }}
+    </div>
+{% endblock %}
 
-                                    {% block page_account_register_advantages %}
-                                        <div class="login-advantages">
-                                            {% if theme_config('sw-account-login-background') %}
-                                                <img src="{{ theme_config('sw-account-login-background') |sw_encode_url }}"
-                                                     alt=""
-                                                     class="login-advantages-background"/>
-                                            {% endif %}
-
-                                            <div class="login-advantages-content">
-                                                {% block page_account_register_advantages_title %}
-                                                    <div class="h4 login-advantages-header">
-                                                        {{ "account.registerAdvantagesHeader"|trans|sw_sanitize }}
-                                                    </div>
-                                                {% endblock %}
-
-                                                {% block page_account_register_advantages_list %}
-                                                    {{ parent() }}
-                                                {% endblock %}
-                                            </div>
-                                        </div>
-                                    {% endblock %}
-                                </div>
-                            </div>
-                        </div>
+{% block page_account_register_login_container %}
+        <div class="col-lg-4 account-register-login-container">
+        <div data-showroom-collapse="true">
+            <div class="js-collapse-column">
+                <div class="global-collapse-headline js-collapse-column-trigger"
+                     id="collapseRegisterLogin"
+                     data-target="#collapseRegisterLogin"
+                     aria-expanded="true"
+                     aria-controls="collapseRegisterLogin">
+                    {{ "showroom.account.loginHeader"|trans|sw_sanitize }}
+                    <div class="global-collapse-column-toggle">
+                        <span
+                            class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
+                        <span
+                            class="global-collapse-minus-icon">{% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}</span>
                     </div>
-                {% endblock %}
+                </div>
+                <div id="collapseRegisterLogin"
+                     class="global-collapse-content collapse js-column-content"
+                     aria-labelledby="collapseRegisterLogin">
 
-                {% block page_account_register_container %}
-                    <div class="col-12 col-md account-register-container">
-                        <div data-showroom-collapse="true">
-                            <div class="js-collapse-column">
-                                <div class="global-collapse-headline js-collapse-column-trigger"
-                                     id="collapseRegister"
-                                     data-target="#collapseRegister"
-                                     aria-expanded="true"
-                                     aria-controls="collapseRegister">
-                                    {{ "account.registerPersonalHeader"|trans|sw_sanitize }}
-                                    <div class="global-collapse-column-toggle">
-                                        <span class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
-                                        <span class="global-collapse-minus-icon">{% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}</span>
-                                    </div>
-                                </div>
-                                <div id="collapseRegister"
-                                     class="global-collapse-content collapse js-column-content"
-                                     aria-labelledby="collapseRegister">
-                                    {% sw_include '@Storefront/storefront/component/account/register.html.twig' with {
-                                        'cardTitle': "account.registerPersonalHeader"|trans|sw_sanitize
-                                    } %}
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endblock %}
+                    {% sw_include '@Storefront/storefront/component/account/login.html.twig' with {
+                        'cardTitle': "showroom.account.loginHeader"|trans|sw_sanitize
+                    } %}
+                </div>
             </div>
+        </div>
+        {% block page_account_register_advantages %}
+            {{ parent() }}
         {% endblock %}
     </div>
 {% endblock %}
 
+{% block page_checkout_address_login_swag_amazon_pay_card_body %}
+    <div class="row align-items-center">
+        <div class="swag-amazon-pay-card__description col-12 col-md-8 col-lg-12">
+            <div class="card-title">{{ "SwagAmazonPay.register.headline"|trans|striptags }}</div>
+            <p class="card-text">{{ "SwagAmazonPay.register.text"|trans|striptags }}</p>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-12">
+            {% block component_account_login_swag_amazon_pay_button %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_register_advantages_title %}
+    {% if theme_config('sw-account-login-background') %}
+        <img src="{{ theme_config('sw-account-login-background') |sw_encode_url }}"
+             alt=""
+             class="login-advantages-background"/>
+    {% endif %}
+
+    <div class="h4 login-advantages-header">
+        {{ "account.registerAdvantagesHeader"|trans|sw_sanitize }}
+    </div>
+{% endblock %}
+
+{% block page_account_register_container %}
+    <div class="col-12 col-md account-register-container">
+        <div data-showroom-collapse="true">
+            <div class="js-collapse-column">
+                <div class="global-collapse-headline js-collapse-column-trigger"
+                     id="collapseRegister"
+                     data-target="#collapseRegister"
+                     aria-expanded="true"
+                     aria-controls="collapseRegister">
+                    {{ "account.registerPersonalHeader"|trans|sw_sanitize }}
+                    <div class="global-collapse-column-toggle">
+                                <span
+                                    class="global-collapse-plus-icon">{% sw_icon 'plus' style { 'size': 'md', 'color':'primary' } %}</span>
+                        <span
+                            class="global-collapse-minus-icon">{% sw_icon 'minus' style { 'size': 'md', 'color':'primary' } %}</span>
+                    </div>
+                </div>
+                <div id="collapseRegister"
+                     class="global-collapse-content collapse js-column-content"
+                     aria-labelledby="collapseRegister">
+                    {% sw_include '@Storefront/storefront/component/account/register.html.twig' with {
+                        'cardTitle': "account.registerPersonalHeader"|trans|sw_sanitize
+                    } %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

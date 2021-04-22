@@ -26,7 +26,16 @@
         overflow: hidden;
         position: relative;
         z-index: 1;
-        padding: 0;
+
+        > ul {
+            padding-bottom: 34px;
+            padding-left: 65px;
+        }
+
+        &-header {
+            margin-top: 34px;
+            padding-left: 50px;
+        }
     }
 
     .login-advantages-background {
@@ -60,7 +69,7 @@
     }
 
     .login-password-recover {
-        padding-top: 30px;
+        padding-top: 20px;
         margin-bottom: 0;
 
         a {
@@ -80,10 +89,13 @@
             max-width: 400px;
         }
 
-        .login-card,
-        .register-card {
+        :is(.login-card, .register-card, .swag-amazon-pay-card) {
             padding-right: 50px;
             padding-left: 50px;
+        }
+
+        .swag-amazon-pay-card__description {
+            margin-bottom: $spacer;
         }
 
         .global-collapse-headline {
@@ -105,6 +117,26 @@
             font-weight: 500;
             background: $white;
         }
+
+        .login-advantages {
+            display: none;
+        }
+    }
+
+    .swag-amazon-pay-card {
+        padding: 1.5rem;
+        background-color: $white;
+        margin-top: $spacer;
+
+        &__description {
+            margin-bottom: $spacer;
+        }
+    }
+
+    .swag-amazon-pay-wrapper.account-login {
+        margin-bottom: 0;
+        height: auto;
+        width: initial;
     }
 
     .is-act-loginpage {
