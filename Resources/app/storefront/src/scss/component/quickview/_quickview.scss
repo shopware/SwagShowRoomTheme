@@ -73,13 +73,6 @@ $carousel-control-icon-width-sm: 16px;
     .product-detail-button-container {
         @extend .p-0;
     }
-
-    @include media-breakpoint-up(lg) {
-        .btn-buy {
-            padding: 5px 40px;
-        }
-    }
-
 }
 
 #swag-cms-extensions-quickview-carousel {
