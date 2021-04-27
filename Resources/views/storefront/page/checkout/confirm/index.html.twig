@@ -32,6 +32,15 @@
     {% block page_checkout_confirm_hidden_line_items_information %}
         {{ parent() }}
     {% endblock %}
+
+    {% block page_checkout_confirm_customer_comment_header %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block page_checkout_confirm_customer_comment_control %}
+        {{ parent() }}
+    {% endblock %}
+
 {% endblock %}
 
 {% block page_checkout_confirm_tos_header %}
@@ -69,3 +78,5 @@
         </div>
     </div>
 {% endblock %}
+
+{% block page_checkout_additional %}{% endblock %}
