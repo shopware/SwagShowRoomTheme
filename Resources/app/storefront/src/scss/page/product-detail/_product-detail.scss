@@ -133,6 +133,8 @@
 }
 
 .product-detail-form-container {
+    overflow: hidden;
+
     div[data-swag-paypal-installment-banner='true'],
     div[data-swag-paypal-express-button='true'] {
         @extend .col-12;
@@ -148,6 +150,11 @@
                 @include make-col(12)
             }
         }
+    }
+
+    .paypal-buttons-context-iframe > iframe.component-frame {
+        // fix product variants dropdown display below Paypal button on product detail page
+        z-index: 0 !important;
     }
 }
 
@@ -233,9 +240,4 @@
         width: 12px;
         height: 12px;
     }
-}
-
-.product-detail-buy,
-.cms-element-buy-box {
-    overflow: hidden;
 }

@@ -13,6 +13,10 @@
         }
     }
 
+    &.cms-block-gallery-buybox {
+        overflow: visible;
+    }
+
     &.cms-block-sidebar-filter {
         &::after {
             content: "";
