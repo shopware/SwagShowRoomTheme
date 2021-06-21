@@ -87,22 +87,26 @@
         }
     }
 
-    .customized-products-upload-dropzone {
+    .customized-products-upload__dropzone {
         background-color: $white;
         padding: $spacer-md $spacer-sm;
 
-        .customized-products-upload-dropzone-text-restrictions {
+        .customized-products-upload__dropzone-text-restrictions {
             color: $gray-500;
         }
 
-        .customized-products-upload-dropzone-col,
-        .customized-products-upload-dropzone-button {
+        .customized-products-upload__dropzone-col,
+        .customized-products-upload__dropzone-button {
             display: flex;
             align-items: center;
         }
 
+        .customized-products-upload__dropzone-text {
+            margin-left: $spacer-sm;
+        }
+
         @include media-breakpoint-up(md) {
-            .customized-products-upload-dropzone-button {
+            .customized-products-upload__dropzone-button {
                 .btn-outline-secondary {
                     white-space: unset;
                 }
