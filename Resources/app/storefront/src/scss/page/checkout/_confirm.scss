@@ -12,7 +12,12 @@ $confirm-product-spacer-lg: 50px;
                 @extend .col-md-5;
                 @extend .col-lg-4;
                 @include make-col-offset(0);
+
                 background-color: $white;
+
+                .checkout-card {
+                    width: 100%;
+                }
             }
 
             .checkout-aside {
@@ -64,6 +69,12 @@ $confirm-product-spacer-lg: 50px;
 
     .confirm-payment-shipping {
         margin-bottom: 0;
+    }
+
+    .confirm-checkout-collapse-trigger {
+        > .icon {
+            height: 12px;
+        }
     }
 
     @include media-breakpoint-up(lg) {

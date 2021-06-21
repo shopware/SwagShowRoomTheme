@@ -31,10 +31,8 @@ $finish-content-spacer-lg: 70px;
     }
 
     .cart-item-quantity {
-        @extend .col-12;
-
+        @include make-col(12);
         order: 1;
-        margin-left: auto;
     }
 
     .cart-item-quantity-row {
@@ -46,18 +44,14 @@ $finish-content-spacer-lg: 70px;
 
     .cart-item-quantity-label,
     .cart-item-quantity-label + div {
+        @include make-col(6);
+
         text-transform: none;
         letter-spacing: normal;
-
-        @extend .col-6;
     }
 
     .cart-item-quantity-label + div {
         text-align: right;
-    }
-
-    .cart-header-info {
-        @extend .col-6
     }
 
     .checkout-aside-summary {
@@ -66,10 +60,12 @@ $finish-content-spacer-lg: 70px;
 
     @include media-breakpoint-up(lg) {
         .cart-item-quantity {
-            flex: 0 0 auto;
-            width: auto;
-            max-width: 100%;
+            @include make-col(2);
             order: 0;
+        }
+
+        .cart-item-quantity-row {
+            justify-content: flex-start;
         }
 
         .content-main {
