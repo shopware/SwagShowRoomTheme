@@ -80,6 +80,10 @@ $finish-content-spacer-lg: 70px;
         .container,
         .container-main {
             height: 100%;
+
+            &.cart-item-collapse-container {
+                height: auto;
+            }
         }
     }
 }

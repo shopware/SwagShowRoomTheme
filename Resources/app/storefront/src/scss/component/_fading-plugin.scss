@@ -1,0 +1,7 @@
+.swag-fade-container {
+    line-height: 18px;
+
+    @include media-breakpoint-up(lg) {
+        line-height: 20px;
+    }
+}

@@ -69,6 +69,7 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'component/customized-product/customized-product';
 @import 'component/product-wishlist';
 @import 'component/basic-captcha';
+@import 'component/fading-plugin';
 /*
  * Layout-related sections
  * ----------------------- */
@@ -105,3 +106,4 @@ https://sass-guidelin.es/#the-7-1-pattern
 @import 'page/checkout/register';
 @import 'page/checkout/edit';
 @import 'page/checkout/customized-product-cart';
+@import 'page/checkout/cart-item-children';
