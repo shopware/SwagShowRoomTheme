@@ -136,6 +136,10 @@
 
 .account-item-children {
     padding: 16px 20px;
+
+    &-element-divider {
+        @extend .d-none;
+    }
 }
 
 @include media-breakpoint-up(xl) {

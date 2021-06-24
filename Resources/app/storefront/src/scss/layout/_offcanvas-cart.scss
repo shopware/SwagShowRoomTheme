@@ -3,10 +3,15 @@ $cart-item-img-width: 80px;
 .offcanvas-cart {
     .cart-item {
         border-bottom: 1px solid $border-color;
+        border-left: none;
         margin-bottom: 0;
 
         &:first-child {
             border-top: 1px solid $border-color;
+        }
+
+        &-customized-products {
+            @extend .pl-0
         }
     }
 
