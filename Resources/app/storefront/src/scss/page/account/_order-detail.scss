@@ -229,6 +229,14 @@
     }
 }
 
+.order-detail-item-customized-products {
+    &:last-child {
+        .order-item-detail-list-item-divider {
+            display: none;
+        }
+    }
+}
+
 .order-status-badge {
     font-size: 14px;
     padding: 5px 10px;
