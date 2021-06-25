@@ -1,8 +1,9 @@
 {% sw_extends '@Storefront/storefront/component/checkout/offcanvas-item.html.twig' %}
 
 {% block component_offcanvas_cart_item_container %}
+    {% set isNested = lineItem.children.count > 0 %}
+
     {% if isCustomizedProduct %}
-        {% set isNested = false %}
         {% set configurationItems = [] %}
 
         {% for child in lineItem.children %}
@@ -75,6 +76,15 @@
 
                 {% block component_offcanvas_product_remove %}
                     {{ parent() }}
+                {% endblock %}
+
+                {% block component_offcanvas_children %}
+                    {% if isNested %}
+                        {# @deprecated tag:v6.5.0 - block will be removed, use `component_offcanvas_item_children` in `@Storefront/storefront/component/checkout/offcanvas-item-children.html.twig` instead #}
+                        {% block component_offcanvas_cart_item_children %}
+                            {% sw_include childrenTemplate %}
+                        {% endblock %}
+                    {% endif %}
                 {% endblock %}
             </div>
         </div>

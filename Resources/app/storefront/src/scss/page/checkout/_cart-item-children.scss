@@ -28,6 +28,7 @@
         .cart-item-children {
             margin-right: 0;
             margin-left: 94px;
+            @include make-col-offset(2);
         }
 
         .cart-item-img-container {
