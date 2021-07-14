@@ -241,3 +241,7 @@
         height: 12px;
     }
 }
+
+.product-slider-container {
+    @extend .pb-4;
+}
