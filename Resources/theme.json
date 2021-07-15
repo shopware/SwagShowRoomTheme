@@ -165,5 +165,8 @@
                 "block": "media"
             }
         }
+    },
+    "iconSets": {
+        "showroom": "app/storefront/src/assets/icon-pack/showroom"
     }
 }
