@@ -15,4 +15,21 @@
 
 require('@shopware-ag/e2e-testsuite-platform/cypress/support');
 require('@percy/cypress');
+
 require('./commands');
+
+beforeEach(() => {
+    return cy.log('Cleaning, please wait a little bit.')
+        .then(() => {
+            return cy.cleanUpPreviousState();
+        })
+        // .then(() => {
+        //     return cy.exec(`${Cypress.env('projectRoot')}/bin/console app:install --activate SwagShowRoomTheme`)
+        // })
+        // .then(() => {
+        //     return cy.exec(`${Cypress.env('projectRoot')}/bin/console theme:change --all SwagShowRoomTheme`)
+        // })
+        .then(() => {
+            return cy.clearCacheAdminApi('DELETE', `api/_action/cache`);
+        })
+});
