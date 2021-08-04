@@ -56,9 +56,9 @@ default:
         - php bin/console app:install --activate $THEME_NAME
         - ./psh.phar storefront:init --APP_ENV="prod"
         - ./psh.phar administration:init --APP_ENV="prod"
-        - ./psh.phar init-test-databases --APP_ENV="prod"
-        - ./psh.phar e2e:dump-db --DB_NAME="shopware" --APP_ENV="prod"
-        - bin/console theme:change SwagShowRoomTheme --all
+        - php bin/console theme:change SwagShowRoomTheme --all
+        - ./psh.phar cache --APP_ENV="prod"
+        - echo "SET unique_checks=0;SET foreign_key_checks=0;" | mysqldump -u 'root' -p'app' -h 'mysql' --port='3306' -q --opt 'shopware' --no-autocommit --ignore-table 'shopware.enqueue' --ignore-table 'shopware.message_queue_stats' | gzip -9 > /tmp/shopware_e2e_dump.sql.gz
         - chown -R 1000:1000 .
         - E2E_BASE_PATH=custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e
         - PROJECT_ROOT=$CI_PROJECT_DIR/development node $E2E_BASE_PATH/routes/cypress.js 2>&1 &

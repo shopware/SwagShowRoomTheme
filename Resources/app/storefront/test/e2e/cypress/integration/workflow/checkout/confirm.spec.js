@@ -1,10 +1,13 @@
-import CheckoutPageObject from "../../../support/pages/checkout.page-object";
+import CheckoutPageObject from '../../../support/pages/checkout.page-object';
 
 let product = {};
 
-describe('Checkout: Payment and Shipping methods selection', {tags: ['@workflow', '@checkout']}, () => {
+describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow', '@checkout'] }, () => {
     beforeEach(() => {
-        return cy.createProductFixture()
+        return cy.setToInitialState()
+            .then(() => {
+                cy.createProductFixture();
+            })
             .then((result) => {
                 product = result;
                 return cy.createCustomerFixtureStorefront();
@@ -26,7 +29,7 @@ describe('Checkout: Payment and Shipping methods selection', {tags: ['@workflow'
         const page = new CheckoutPageObject();
 
         // add product to cart
-        cy.get('.search-toggle-btn').click()
+        cy.get('.search-toggle-btn').click();
 
         cy.get('.header-search-input')
             .should('be.visible')
@@ -56,18 +59,18 @@ describe('Checkout: Payment and Shipping methods selection', {tags: ['@workflow'
     });
 
     it('@workflow @checkout @confirm: should have working collapse on multiple methods', () => {
-        cy.createPaymentMethodFixture({name: 'Test Method #1'})
+        cy.createPaymentMethodFixture({ name: 'Test Method #1' })
             .then(() => {
-                return cy.createPaymentMethodFixture({name: 'Test Method #2'});
+                return cy.createPaymentMethodFixture({ name: 'Test Method #2' });
             })
             .then(() => {
-                return cy.createPaymentMethodFixture({name: 'Test Method #3'});
+                return cy.createPaymentMethodFixture({ name: 'Test Method #3' });
             })
             .then(() => {
                 const page = new CheckoutPageObject();
 
                 // add product to cart
-                cy.get('.search-toggle-btn').click()
+                cy.get('.search-toggle-btn').click();
 
                 cy.get('.header-search-input')
                     .should('be.visible')
@@ -110,7 +113,7 @@ describe('Checkout: Payment and Shipping methods selection', {tags: ['@workflow'
         const page = new CheckoutPageObject();
 
         // add product to cart
-        cy.get('.search-toggle-btn').click()
+        cy.get('.search-toggle-btn').click();
 
         cy.get('.header-search-input')
             .should('be.visible')
@@ -134,7 +137,7 @@ describe('Checkout: Payment and Shipping methods selection', {tags: ['@workflow'
         cy.get(`${page.elements.paymentMethodsContainer} > :nth-child(3) .payment-method-label`).click(1, 1);
 
         cy.get(`${page.elements.shippingMethodsContainer} .shipping-method-label`)
-            .contains('Express').click(1, 1)
+            .contains('Express').click(1, 1);
 
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();

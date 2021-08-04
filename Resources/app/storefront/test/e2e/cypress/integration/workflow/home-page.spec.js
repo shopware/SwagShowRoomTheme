@@ -1,4 +1,4 @@
-describe('Home page', {tags: ['@workflow', '@home']}, () => {
+describe('Home page', { tags: ['@workflow', '@home'] }, () => {
     it('should be able to open up the home page', () => {
         cy.visit('/');
 

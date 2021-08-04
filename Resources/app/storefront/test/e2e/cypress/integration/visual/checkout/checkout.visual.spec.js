@@ -1,11 +1,11 @@
-import CheckoutPageObject from "../../../support/pages/checkout.page-object";
-import AccountPageObject from "../../../support/pages/account.page-object";
+import CheckoutPageObject from '../../../support/pages/checkout.page-object';
+import AccountPageObject from '../../../support/pages/account.page-object';
 
 let product = {};
 
 describe('Checkout: Visual tests', () => {
     beforeEach(() => {
-        cy.createProductFixture()
+        return cy.createProductFixture()
             .then(() => {
                 return cy.fixture('product');
             })
@@ -27,7 +27,7 @@ describe('Checkout: Visual tests', () => {
         //     {widths: [375, 1920]});
 
         // Product detail
-        cy.get('.search-toggle-btn').click()
+        cy.get('.search-toggle-btn').click();
 
         cy.get('.header-search-input')
             .type(product.name);
