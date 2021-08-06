@@ -67,7 +67,8 @@ $input-bg: transparent !default;
 $input-color: $sw-color-brand-primary !default;
 $input-border-color: $gray-300 !default;
 $input-placeholder-color: $gray-500 !default;
-$form-feedback-invalid-color: $sw-color-danger;
+$form-feedback-invalid-color: $sw-color-danger !default;
+$form-feedback-valid-color: $gray-900 !default;
 
 $input-padding-x: 0 !default;
 $input-font-size: 0.875rem !default;

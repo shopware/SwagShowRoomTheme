@@ -151,3 +151,13 @@
         }
     }
 }
+
+.register-guest-control {
+    .custom-control-input:valid + .custom-control-label {
+        color: $gray-900;
+
+        &:before {
+            border-color: $gray-900;
+        }
+    }
+}

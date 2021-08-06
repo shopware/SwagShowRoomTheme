@@ -34,7 +34,7 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
         cy.get('.header-search-input')
             .should('be.visible')
             .type(product.name);
-        cy.contains('.search-suggest-product-name', product.name).click();
+        cy.get('.search-suggest-product-name').contains(product.name).click();
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas

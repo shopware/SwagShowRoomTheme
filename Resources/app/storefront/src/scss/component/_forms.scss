@@ -21,6 +21,12 @@
         color: $gray-600;
     }
 
+    .was-validated &:invalid {
+        &::placeholder {
+            color: $form-feedback-invalid-color;
+        }
+    }
+
     &::placeholder {
         color: $input-placeholder-color;
     }

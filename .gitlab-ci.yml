@@ -56,7 +56,7 @@ default:
         - php bin/console app:install --activate $THEME_NAME
         - ./psh.phar storefront:init --APP_ENV="prod"
         - ./psh.phar administration:init --APP_ENV="prod"
-        - php bin/console theme:change SwagShowRoomTheme --all
+        - php bin/console theme:change $THEME_NAME --all
         - ./psh.phar cache --APP_ENV="prod"
         - echo "SET unique_checks=0;SET foreign_key_checks=0;" | mysqldump -u 'root' -p'app' -h 'mysql' --port='3306' -q --opt 'shopware' --no-autocommit --ignore-table 'shopware.enqueue' --ignore-table 'shopware.message_queue_stats' | gzip -9 > /tmp/shopware_e2e_dump.sql.gz
         - chown -R 1000:1000 .
