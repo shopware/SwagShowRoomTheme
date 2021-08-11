@@ -2,12 +2,17 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 describe('Account: Visual tests login as customer', () => {
     beforeEach(() => {
-        return cy.createCustomerFixtureStorefront()
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createCustomerFixtureStorefront()
+            })
+            .then(() => {
+                cy.visit('/');
+            })
     });
 
     it('@visual: check appearance of login with wrong credentials', () => {
         const page = new AccountPageObject();
-        cy.visit('/');
 
         cy.get('.account-menu [type="button"]').click();
         cy.get('.account-menu-dropdown').should('be.visible');
