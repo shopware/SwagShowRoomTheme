@@ -1,14 +1,19 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-describe('Account: Overview page', () => {
+describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
     beforeEach(() => {
-        return cy.createCustomerFixtureStorefront();
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createCustomerFixtureStorefront()
+            })
+            .then(() => {
+                cy.visit('/account/login');
+            })
     });
 
-    it('@base @overview: Overview page', () => {
+    it('@workflow @account: account overview workflow', () => {
         const page = new AccountPageObject();
 
-        cy.visit('/account/login');
         cy.get(page.elements.loginCard).should('be.visible');
 
         cy.get('#loginMail').typeAndCheckStorefront('test@example.com');

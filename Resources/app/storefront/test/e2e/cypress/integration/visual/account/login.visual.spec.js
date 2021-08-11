@@ -2,7 +2,16 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 describe('Account: Visual tests login as customer', () => {
     beforeEach(() => {
-        return cy.createCustomerFixtureStorefront()
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                cy.visit('/');
+            }).then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+            });
     });
 
     it('@visual: check appearance of login with wrong credentials', () => {

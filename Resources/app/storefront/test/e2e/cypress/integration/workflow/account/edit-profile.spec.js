@@ -1,11 +1,17 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-describe('Account: Edit profile', () => {
+describe('Account: Edit profile', { tags: ['@workflow', '@profile'] }, () => {
     beforeEach(() => {
-        return cy.createCustomerFixtureStorefront();
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createCustomerFixtureStorefront()
+            })
+            .then(() => {
+                cy.visit('/');
+            })
     });
 
-    it('@base @customer: Update profile', () => {
+    it('@workflow @profile: update profile', () => {
         const page = new AccountPageObject();
 
         cy.authenticate().then((result) => {

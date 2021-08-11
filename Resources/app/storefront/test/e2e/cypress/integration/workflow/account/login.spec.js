@@ -1,6 +1,6 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-describe('Account: Visual tests login as customer', () => {
+describe('Account: Visual tests login as customer', { tags: ['@workflow', '@login'] }, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
@@ -11,7 +11,7 @@ describe('Account: Visual tests login as customer', () => {
             })
     });
 
-    it('@visual: check appearance of login with wrong credentials', () => {
+    it('@workflow @login: check appearance of login with wrong credentials', () => {
         const page = new AccountPageObject();
 
         cy.get('.account-menu [type="button"]').click();

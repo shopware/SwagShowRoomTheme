@@ -2,10 +2,19 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 describe('Account: Overview page', () => {
     beforeEach(() => {
-        return cy.createCustomerFixtureStorefront();
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                cy.visit('/');
+            }).then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+            });
     });
 
-    it('@base @overview: Overview page', () => {
+    it('@visual: Overview page', () => {
         const page = new AccountPageObject();
 
         cy.visit('/account/login');

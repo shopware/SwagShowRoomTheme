@@ -1,7 +1,7 @@
 import AccountPageObject from '../../../support/pages/account.page-object';
 
-describe('Account: Register via account menu', () => {
-    it('@visual @register: Trigger validation error', () => {
+describe('Account: Register via account menu', { tags: ['@workflow', '@register'] }, () => {
+    it('@visual @register: trigger validation error', () => {
         const page = new AccountPageObject();
         cy.visit('/');
         cy.get('.account-menu [type="button"]').click();
@@ -14,7 +14,7 @@ describe('Account: Register via account menu', () => {
         cy.get(`${page.elements.registerSubmit} [type="submit"]`).click();
     });
 
-    it('@visual @register: Fill registration form and submit', () => {
+    it('@visual @register: fill registration form and submit', () => {
         const page = new AccountPageObject();
         cy.visit('/account/login');
         cy.get(page.elements.registerCard).should('be.visible');
@@ -45,7 +45,7 @@ describe('Account: Register via account menu', () => {
         });
     });
 
-    it('@visual @register: Fill registration form and submit with full config enable', () => {
+    it('@visual @register: fill registration form and submit with full config enable', () => {
         cy.authenticate().then((result) => {
             const requestConfig = {
                 headers: {

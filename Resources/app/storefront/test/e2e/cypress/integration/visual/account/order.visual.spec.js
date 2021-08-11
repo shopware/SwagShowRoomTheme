@@ -1,24 +1,43 @@
+let product = {};
+
 describe('Account: Order page', () => {
     beforeEach(() => {
-        return cy.createProductFixture().then(() => {
-            return cy.createCustomerFixtureStorefront()
-        }).then(() => {
-            return cy.searchViaAdminApi({
-                endpoint: 'product',
-                data: {
-                    field: 'name',
-                    value: 'Product name'
-                }
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createProductFixture();
+            })
+            .then(() => {
+                return cy.fixture('product');
+            })
+            .then((result) => {
+                product = result;
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                return cy.searchViaAdminApi({
+                    endpoint: 'product',
+                    data: {
+                        field: 'name',
+                        value: 'Product name'
+                    }
+                });
+            })
+            .then((result) => {
+                return cy.createOrder(result.id, {
+                    username: 'test@example.com',
+                    password: 'shopware'
+                });
+            })
+            .then(() => {
+                cy.visit('/');
+            })
+            .then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
             });
-        }).then((result) => {
-            return cy.createOrder(result.id, {
-                username: 'test@example.com',
-                password: 'shopware'
-            });
-        })
     });
 
-    it('@customer: reorder order', () => {
+    it('@visual: reorder order', () => {
         // Login
         cy.visit('/account/order');
         cy.get('.login-card').should('be.visible');
@@ -59,7 +78,7 @@ describe('Account: Order page', () => {
         cy.takeSnapshot('[Order] Re-order - Confirm finish page', {widths: [375, 768, 1920]});
     });
 
-    it('@base @customer: cancel order', () => {
+    it('@visual: cancel order', () => {
         // Enable refunds
         cy.loginViaApi().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
@@ -88,7 +107,7 @@ describe('Account: Order page', () => {
         cy.takeSnapshot('[Order] Order Cancelled', {widths: [375, 768, 1920]});
     });
 
-    it('@base @customer: change payment', () => {
+    it('@visual: change payment', () => {
         // Login
         cy.visit('/account/order');
         cy.get('.login-card').should('be.visible');

@@ -1,24 +1,39 @@
-describe('Account: Order page', () => {
+let product = {};
+
+describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
     beforeEach(() => {
-        return cy.createProductFixture().then(() => {
-            return cy.createCustomerFixtureStorefront()
-        }).then(() => {
-            return cy.searchViaAdminApi({
-                endpoint: 'product',
-                data: {
-                    field: 'name',
-                    value: 'Product name'
-                }
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createProductFixture();
+            })
+            .then(() => {
+                return cy.fixture('product');
+            })
+            .then((result) => {
+                product = result;
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                return cy.searchViaAdminApi({
+                    endpoint: 'product',
+                    data: {
+                        field: 'name',
+                        value: 'Product name'
+                    }
+                });
+            })
+            .then((result) => {
+                return cy.createOrder(result.id, {
+                    username: 'test@example.com',
+                    password: 'shopware'
+                });
+            })
+            .then(() => {
+                cy.visit('/');
             });
-        }).then((result) => {
-            return cy.createOrder(result.id, {
-                username: 'test@example.com',
-                password: 'shopware'
-            });
-        })
     });
 
-    it('@customer: reorder order', () => {
+    it('@workflow @order: reorder order', () => {
         // Login
         cy.visit('/account/order');
         cy.get('.login-card').should('be.visible');
@@ -53,7 +68,7 @@ describe('Account: Order page', () => {
         cy.get('.finish-ordernumber').contains('Your order number: #10001');
     });
 
-    it('@base @customer: cancel order', () => {
+    it('@workflow @order: cancel order', () => {
         // Enable refunds
         cy.loginViaApi().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
@@ -79,7 +94,7 @@ describe('Account: Order page', () => {
         cy.get('.order-status-badge').contains('Cancelled');
     });
 
-    it('@base @customer: change payment', () => {
+    it('@workflow @order: change payment', () => {
         // Login
         cy.visit('/account/order');
         cy.get('.login-card').should('be.visible');

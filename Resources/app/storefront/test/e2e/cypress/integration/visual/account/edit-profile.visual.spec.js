@@ -2,10 +2,19 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 describe('Account: Edit profile', () => {
     beforeEach(() => {
-        return cy.createCustomerFixtureStorefront();
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createCustomerFixtureStorefront();
+            })
+            .then(() => {
+                cy.visit('/');
+            }).then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+            });
     });
 
-    it('@base @customer: Update profile', () => {
+    it('@visual: Update profile', () => {
         const page = new AccountPageObject();
 
         cy.authenticate().then((result) => {
