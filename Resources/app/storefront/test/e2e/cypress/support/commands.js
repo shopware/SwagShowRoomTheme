@@ -8,6 +8,12 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
+Cypress.Commands.add('typeAndSelect', {
+    prevSubject: 'element'
+}, (subject, value) => {
+    cy.wrap(subject).select(value);
+});
+
 /**
  * Takes a snapshot for percy visual testing
  * @memberOf Cypress.Chainable#
