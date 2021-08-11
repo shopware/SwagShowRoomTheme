@@ -145,6 +145,12 @@
         }
     }
 
+    .data-protection-information {
+        a {
+            text-decoration: underline;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .account-register-login-headline {
             display: none;
