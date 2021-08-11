@@ -1,0 +1,15 @@
+.scroll-navigation-sidebar-mobile {
+    @include media-breakpoint-down(lg) {
+        &-menu {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    &-button {
+        display: inline-flex;
+        align-items: center;
+    }
+    &-button-icon {
+        position: static;
+    }
+}

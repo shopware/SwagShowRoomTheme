@@ -8,8 +8,17 @@ $carousel-control-icon-width: 32px;
 $carousel-control-icon-width-sm: 16px;
 
 .swag-cms-extensions-quickview-modal {
+    padding: 0 15px !important;
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 104px !important;
+    }
+
     .modal-dialog {
         max-width: 1000px;
+        margin: 0 auto;
+        top: 0;
+        min-height: 100%;
     }
 
     .swag-cms-extensions-quickview-close-button {
@@ -35,6 +44,12 @@ $carousel-control-icon-width-sm: 16px;
 
     .product-detail-button-container {
         margin-top: 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .product-detail-configurator-group {
+            margin-bottom: 0;
+        }
     }
 
     .product-detail-configurator-group-title {
@@ -79,13 +94,31 @@ $carousel-control-icon-width-sm: 16px;
     .carousel-control {
         &-next, &-prev {
             background: none;
-            height: 33%;
-            top: 33%;
+            transform: translateY(-50%);
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+
+            @include media-breakpoint-up(lg) {
+                width: 60px;
+                height: 60px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 80px;
+                height: 80px;
+            }
 
             .icon {
                 display: inline-block;
                 background: no-repeat 50% / 100% 100%;
                 background-color: $white;
+
+                &.icon {
+                    width: inherit;
+                    height: inherit;
+                }
 
                 &-arrow-head-left {
                     background-image: $carousel-control-prev-icon-bg;
@@ -98,6 +131,30 @@ $carousel-control-icon-width-sm: 16px;
                 svg {
                     display: none;
                 }
+            }
+        }
+
+        &-prev {
+            left: -50px;
+
+            @include media-breakpoint-up(lg) {
+                left: -130px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                left: -104px;
+            }
+        }
+
+        &-next {
+            right: -50px;
+
+            @include media-breakpoint-up(lg) {
+                right: -130px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                right: -104px;
             }
         }
     }
