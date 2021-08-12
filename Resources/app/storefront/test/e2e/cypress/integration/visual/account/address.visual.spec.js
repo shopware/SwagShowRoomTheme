@@ -14,7 +14,7 @@ describe('Account: Address page', () => {
             });
     });
 
-    it('@visual: Update address page', () => {
+    it('@visual: update address page', () => {
         const page = new AccountPageObject();
 
         cy.visit('/account/login');

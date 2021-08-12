@@ -14,7 +14,7 @@ describe('Account: Edit profile', () => {
             });
     });
 
-    it('@visual: Update profile', () => {
+    it('@visual: update profile', () => {
         const page = new AccountPageObject();
 
         cy.authenticate().then((result) => {
