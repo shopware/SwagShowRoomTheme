@@ -21,7 +21,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
             });
     });
 
-    it('@workflow @checkout: basic checkout workflow', () => {
+    it('@workflow @checkout: basic checkout workflow', { retries: 2 }, () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 

@@ -1,6 +1,9 @@
 describe('Shop page: CMS service page', () => {
     beforeEach(() => {
-        cy.loginViaApi()
+        cy.setToInitialState()
+            .then(() => {
+                cy.loginViaApi()
+            })
             .then(() => {
                 cy.createDefaultFixture('category',{}, 'footer-category-first');
             })

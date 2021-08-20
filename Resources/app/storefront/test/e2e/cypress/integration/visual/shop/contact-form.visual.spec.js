@@ -16,11 +16,14 @@ const selector = {
 
 describe('Contact: Visual tests', () => {
     beforeEach(() => {
-        return cy.createProductFixture()
-            .then(() => {
-                cy.loginViaApi();
-                cy.createCmsFixture();
-            })
+        cy.setToInitialState()
+        .then(() => {
+            cy.createProductFixture();
+        })
+        .then(() => {
+            cy.loginViaApi();
+            cy.createCmsFixture();
+        })
     });
 
     function fillOutContactForm(el) {
@@ -96,7 +99,7 @@ describe('Contact: Visual tests', () => {
 
         fillOutContactForm(selector.formContactModal);
 
-        cy.takeSnapshot('[Contact] Fill in information to contact form modal', '.modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Contact] Fill in information to contact form modal', '.modal');
 
         cy.get(selector.formContactModal).within(() => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
@@ -111,7 +114,7 @@ describe('Contact: Visual tests', () => {
 
         });
 
-        cy.takeSnapshot('[Contact] Contact form modal submit', '.modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Contact] Contact form modal submit', '.modal');
     });
 
     it('@visual: assign contact form to homepage', () => {

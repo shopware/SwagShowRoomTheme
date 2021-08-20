@@ -23,7 +23,7 @@ Cypress.Commands.add('typeAndSelect', {
  * @param {Object} [width = null] - Screen width used for snapshot
  * @function
  */
-Cypress.Commands.add('takeSnapshot', (title, selectorToCheck = null, width = null) => {
+Cypress.Commands.add('takeSnapshot', (title, selectorToCheck = null, width = { widths: [375, 768, 1920] }) => {
     if (!Cypress.env('usePercy')) {
         return;
     }

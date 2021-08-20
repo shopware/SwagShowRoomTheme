@@ -17,6 +17,6 @@ describe('Error: 404 page visual testing', () => {
         cy.get('.header-main').should('be.visible');
         cy.get('.footer-main').should('be.visible');
 
-        cy.takeSnapshot('[Shop] 404 page', '.container-404', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Shop] 404 page', '.container-404');
     });
 });

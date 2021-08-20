@@ -16,11 +16,14 @@ const selector = {
 
 describe('Contact: Basic', { tags: ['@workflow'] }, () => {
     beforeEach(() => {
-        return cy.createProductFixture()
+        cy.setToInitialState()
+            .then(() => {
+                return cy.createProductFixture();
+            })
             .then(() => {
                 cy.loginViaApi();
                 cy.createCmsFixture();
-            })
+            });
     });
 
     function fillOutContactForm(el) {
