@@ -1,33 +1,32 @@
 variables:
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: 'tcp://docker:2375'
-  DEV_IMAGE: shopware/development:8.0-composer-2
-  MYSQL_ROOT_PASSWORD: app
-  WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/development/public
-  DEVELOPMENT_BRANCH: "v6.4.3.0"
-  PLATFORM_BRANCH: "6.4.3.0"
-  THEME_NAME: "SwagShowRoomTheme"
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: 'tcp://docker:2375'
+    DEV_IMAGE: shopware/development:7.4-composer-2
+    MYSQL_ROOT_PASSWORD: app
+    WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/development/public
+    DEVELOPMENT_BRANCH: "v6.4.3.0"
+    PLATFORM_BRANCH: "6.4.3.0"
+    THEME_NAME: "SwagShowRoomTheme"
 
 stages:
-  - Static analyze
-  - E2E
-  - Visual Testing
+    - Static analyze
+    - E2E
+    - Visual Testing
 
 default:
-  image: $DEV_IMAGE
-  services:
-    - name: mariadb:10.3.28
-      alias: mysql
-  before_script:
-    - zip -rq custom-theme.zip .
-    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/development.git --branch $DEVELOPMENT_BRANCH
-    - rm -rf development/platform
-    - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git development/platform --branch $PLATFORM_BRANCH
-    - unzip -q custom-theme.zip -d development/custom/apps/$THEME_NAME
-    - cd development
-    - cp -v dev-ops/gitlab/.psh.yaml.override .
-    - touch .env && echo APP_ENV=prod >> .env
-    - /entrypoint supervisord > /dev/null 2>&1 &
+    image: $DEV_IMAGE
+    services:
+        -   name: mariadb:10.3.28
+            alias: mysql
+    before_script:
+        - zip -rq custom-theme.zip .
+        - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/development.git --branch $DEVELOPMENT_BRANCH
+        - rm -rf development/platform
+        - git clone http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.shopware.com/shopware/6/product/platform.git development/platform --branch $PLATFORM_BRANCH
+        - unzip -q custom-theme.zip -d development/custom/apps/$THEME_NAME
+        - cd development
+        - cp -v custom/apps/$THEME_NAME/.psh.yaml.override .
+        - /entrypoint supervisord > /dev/null 2>&1 &
 
 .generate_mochawesome_reports:
     after_script: &mochawesome_report_definition
@@ -41,7 +40,7 @@ default:
     services:
         -   name: docker:18.09.7-dind
             alias: docker
-        -   name: mariadb:10.3
+        -   name: mariadb:10.3.28
             alias: mysql
     artifacts:
         when: always
@@ -70,8 +69,11 @@ Storefront Cypress E2E:
     extends: .E2E
     dependencies: []
     variables:
-        BROWSER: 'chrome'
         CYPRESS_VERSION: '7.6.0'
+        BROWSER: 'chrome'
+        APP_ENV: e2e
+        CYPRESS_localUsage: 1
+        SHOPWARE_HTTP_CACHE_ENABLED: 0
 
 Storefront Percy.io:
     stage: Visual Testing
@@ -79,7 +81,7 @@ Storefront Percy.io:
     services:
         -   name: docker:18.09.7-dind
             alias: docker
-        -   name: mariadb:10.3
+        -   name: mariadb:10.3.28
             alias: mysql
     variables:
         PERCY_TARGET_BRANCH: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
@@ -110,21 +112,22 @@ Storefront Percy.io:
             --spec "cypress/**/*.visual.spec.js"
 
 Check built JS files:
-  stage: Static analyze
-  allow_failure: true
-  script:
-    - ./psh.phar storefront:install-dependencies
-    - ./psh.phar storefront:build
-    - cd $CI_PROJECT_DIR/development/custom/apps/$THEME_NAME
-    - >
-      if ! git diff --quiet --ignore-submodules HEAD --; then
-          echo "Built Javascript files differ. Update the dependencies and execute 'administration:build' and 'storefront:build' again";
-          git status;
-          exit 1;
-      else
-          echo "Everything ok"
-          exit 0;
-      fi
+    stage: Static analyze
+    allow_failure: true
+    script:
+        - ./psh.phar init
+        - ./psh.phar storefront:install-dependencies
+        - ./psh.phar storefront:build
+        - cd $CI_PROJECT_DIR/development/custom/apps/$THEME_NAME
+        - >
+            if ! git diff --quiet --ignore-submodules HEAD --; then
+                echo "Built Javascript files differ. Update the dependencies and execute 'administration:build' and 'storefront:build' again";
+                git status;
+                exit 1;
+            else
+                echo "Everything ok"
+                exit 0;
+            fi
 
 
 Validate snippets:
