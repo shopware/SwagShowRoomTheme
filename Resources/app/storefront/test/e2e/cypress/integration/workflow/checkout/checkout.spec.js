@@ -3,7 +3,7 @@ import AccountPageObject from '../../../support/pages/account.page-object';
 
 let product = {};
 
-describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
+describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
     beforeEach(() => {
         return cy.setToInitialState()
             .then(() => {
@@ -36,7 +36,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
 
         cy.get('.product-detail-buy .btn-buy').click();
 
-        // Off canvas
+        // Offcanvas
         cy.get('.offcanvas').should('be.visible');
         cy.get('.cart-item-price').contains('64');
         cy.contains('Continue shopping').should('be.visible');

@@ -59,4 +59,22 @@ export default class AccountPageObject {
             overViewShippingAddress: '.overview-shipping-address'
         };
     }
+
+    getEmail() {
+        return cy.get('#loginMail')
+    }
+
+    getPassword() {
+        return cy.get('#loginPassword')
+    }
+
+    getSubmitButton() {
+        return cy.get(`${this.elements.loginSubmit} [type="submit"]`)
+    }
+
+    login(email = 'test@example.com', pw = 'shopware') {
+        this.getEmail().type(email)
+        this.getPassword().type(pw)
+        this.getSubmitButton().click()
+    }
 }

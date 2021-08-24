@@ -97,3 +97,15 @@ Cypress.Commands.overwrite('cleanUpPreviousState', (orig) => {
 
     return orig();
 });
+
+Cypress.Commands.add('initializePluginConfig', (config = 'paypal-config.json') => {
+    return cy.fixture(config).then((data) => {
+        return cy.requestAdminApi(
+            'POST',
+            `/api/_action/system-config/batch`,
+            {
+                data
+            }
+        )
+    });
+});

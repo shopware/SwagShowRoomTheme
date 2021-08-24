@@ -33,6 +33,7 @@
     &-price {
         font-size: $product-detail-price;
         font-weight: $font-weight-semibold;
+        line-height: 1;
     }
 
     &-tax-link {
@@ -48,6 +49,7 @@
 
     &-tax {
         text-align: right;
+        line-height: 1;
     }
 
     &-description-title {

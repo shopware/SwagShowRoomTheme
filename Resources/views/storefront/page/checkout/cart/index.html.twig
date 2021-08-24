@@ -25,15 +25,7 @@
 {% endblock %}
 
 {% block page_checkout_aside_actions %}
-    <div class="checkout-aside-action checkout-aside-action-code">
-        {% block page_checkout_cart_add_promotion %}
-            {{ parent() }}
-        {% endblock %}
-    </div>
-
-    {% block page_checkout_cart_action_proceed %}
-        {{ parent() }}
-    {% endblock %}
+    {{ parent() }}
 
     {% block page_checkout_cart_shipping_costs %}
         <div class="mt-3 cart-shipping-costs-container">
@@ -65,5 +57,3 @@
         </div>
     {% endblock %}
 {% endblock %}
-
-

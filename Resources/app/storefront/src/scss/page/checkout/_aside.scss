@@ -55,17 +55,12 @@ $checkout-aside-spacing: 20px;
     }
 }
 
-.checkout-aside-action-code {
-    padding: 30px 0;
+.checkout-aside-add-code {
+    margin-top: 0;
 
     @include media-breakpoint-up(lg) {
         padding: 50px 0;
     }
-}
-
-.checkout-aside-action-code,
-.checkout-aside-add-code {
-    margin-top: 0;
 }
 
 #addPromotion,

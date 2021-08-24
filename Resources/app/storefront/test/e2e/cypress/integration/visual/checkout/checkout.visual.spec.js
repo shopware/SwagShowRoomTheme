@@ -24,9 +24,14 @@ describe('Checkout: Visual tests', () => {
             })
     });
 
-    it('@visual @checkout: check appearance of basic checkout workflow', { retries: 2 }, () => {
+    it('@visual @checkout: check appearance of basic checkout workflow', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
+
+        cy.intercept({
+            path: '/widgets/checkout/info',
+            method: 'get'
+        }).as('cartInfo');
 
         // Product detail
         cy.get('.search-toggle-btn').click();
@@ -35,17 +40,16 @@ describe('Checkout: Visual tests', () => {
             .type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
 
-        cy.takeSnapshot('[Checkout] Search product result',
-            '.header-search',
-            {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Search product result', '.header-search');
 
         cy.get('.search-suggest-product-name').click();
 
-        cy.takeSnapshot('[Checkout] See product',
-            '.product-detail',
-            {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] See product', '.product-detail');
 
         cy.get('.product-detail-buy .btn-buy').click();
+        cy.wait('@cartInfo').then((xhr) => {
+            expect(xhr.response).to.have.property('statusCode', 200)
+        });
 
         // Off canvas
         cy.get('.offcanvas').should('be.visible');
@@ -54,13 +58,13 @@ describe('Checkout: Visual tests', () => {
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
         cy.get('.header-cart-total').click();
+
+        cy.wait('@cartInfo').then((xhr) => {
+            expect(xhr.response).to.have.property('statusCode', 200)
+        });
+
         cy.get('.offcanvas').should('be.visible');
-
-        // Take snapshot for visual testing on desktop
-        cy.takeSnapshot('[Checkout] Offcanvas',
-            `${page.elements.offCanvasCart}.is-open`,
-            {widths: [375, 768, 1920]});
-
+        cy.takeSnapshot('[Checkout] Offcanvas', `${page.elements.offCanvasCart}.is-open`);
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
@@ -72,10 +76,7 @@ describe('Checkout: Visual tests', () => {
 
         // Take snapshot for visual testing on desktop
         cy.takeSnapshot('[Checkout] Login', accountPage.elements.loginCard);
-
-        cy.get('#loginMail').type('test@example.com');
-        cy.get('#loginPassword').type('shopware');
-        cy.get(`${accountPage.elements.loginSubmit} [type="submit"]`).click();
+        accountPage.login();
 
         // Confirm
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
@@ -101,9 +102,7 @@ describe('Checkout: Visual tests', () => {
     it('@visual @checkout: checkout empty cart', () => {
         cy.visit('/checkout/cart');
 
-        cy.takeSnapshot('[Checkout] Empty cart',
-            '.is-act-cartpage',
-            {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Empty cart', '.is-act-cartpage');
     })
 
     it('@visual @checkout: checkout cart', () => {
