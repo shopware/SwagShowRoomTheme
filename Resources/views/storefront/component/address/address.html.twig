@@ -2,14 +2,14 @@
 
 {% block component_address %}
     <div class="address">
-        {% if address.company %}
+        {% if address.company or address.vatId %}
             <p>
                 <strong>{{ address.company }}{% if address.department %} - {{ address.department }}{% endif %}</strong>
             </p>
         {% endif %}
         <p>
             <strong>
-                {% if address.salutation.salutationKey != 'not_specified' %}
+                {% if address.salutation and address.salutation.salutationKey != 'not_specified' %}
                     {{ address.salutation.translated.displayName }}
                 {% endif %}
                 {% if address.title %}
