@@ -96,7 +96,7 @@ describe('Contact: Visual tests', () => {
 
         fillOutContactForm(selector.formContactModal);
 
-        cy.takeSnapshot('[Contact] Fill in information to contact form modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Contact] Fill in information to contact form modal', '.modal', {widths: [375, 768, 1920]});
 
         cy.get(selector.formContactModal).within(() => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
@@ -111,7 +111,7 @@ describe('Contact: Visual tests', () => {
 
         });
 
-        cy.takeSnapshot('[Contact] Contact form modal submit', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Contact] Contact form modal submit', '.modal', {widths: [375, 768, 1920]});
     });
 
     it('@visual: assign contact form to homepage', () => {
@@ -129,7 +129,7 @@ describe('Contact: Visual tests', () => {
 
         fillOutContactForm(selector.formContact);
 
-        cy.takeSnapshot('[Contact] Fill in information to contact form page', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Contact] Fill in information to contact form page', '.cms-page', {widths: [375, 768, 1920]});
 
         cy.get(selector.formContact).within(() => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
@@ -144,6 +144,6 @@ describe('Contact: Visual tests', () => {
 
         });
 
-        cy.takeSnapshot('[Contact] Contact form page submit', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Contact] Contact form page submit', '.cms-page', {widths: [375, 768, 1920]});
     });
 });
