@@ -1,6 +1,9 @@
 describe('Error: maintenance page', { tags: ['@workflow'] }, () => {
     beforeEach(() => {
-        cy.loginViaApi()
+        return cy.setToInitialState()
+            .then(() => {
+                cy.loginViaApi()
+            })
             .then(() => {
                 cy.searchViaAdminApi({
                     endpoint: 'sales-channel',

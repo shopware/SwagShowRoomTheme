@@ -1,10 +1,16 @@
 describe('Error: 404 page visual testing', () => {
+    beforeEach(() => {
+        return cy.setToInitialState()
+            .then(() => {
+                // Check 404 default site
+                // We want to visit 404 page, so we need to accept that status code
+                cy.visit('/non-existent/', {
+                    failOnStatusCode: false
+                });
+            });
+    });
+
     it('@visual: should navigate to 404 page with full layout', () => {
-        // Check 404 default site
-        // We want to visit 404 page, so we need to accept that status code
-        cy.visit('/non-existent/', {
-            failOnStatusCode: false
-        });
         cy.get('.container-404 p')
             .contains('We are sorry, the page you\'re looking for could not be found.');
         cy.get('.container-main img')
