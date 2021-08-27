@@ -53,7 +53,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('.offcanvas').should('be.visible');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
-        cy.get('.header-cart-total').click();
+        cy.get('.header-cart-total', { timeout: 20000 }).click();
         cy.get('.offcanvas').should('be.visible');
 
         // Take snapshot for visual testing on desktop

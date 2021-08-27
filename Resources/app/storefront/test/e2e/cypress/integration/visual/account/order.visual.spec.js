@@ -119,10 +119,10 @@ describe('Account: Order page', () => {
         cy.get('.order-table').should('be.visible');
         cy.get('.order-table-header-order-table-body > :nth-child(3)').contains('Invoice');
         cy.get('.order-table-header-context-menu').click();
-        cy.get('a.order-table-header-context-menu-content-link').click();
         cy.takeSnapshot('[Order] Order actions', '.account', {widths: [375, 768, 1920]});
 
         // change payment
+        cy.get('a.order-table-header-context-menu-content-link').click();
         cy.get('.payment-methods').should('be.visible');
         cy.get('.payment-methods > :nth-child(3)').click();
         cy.get('#confirmOrderForm > .btn').scrollIntoView();
