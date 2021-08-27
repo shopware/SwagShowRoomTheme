@@ -119,13 +119,10 @@ describe('Wishlist: Check appearance of wishlist', () => {
         cy.title().should('eq', 'Your wishlist');
 
         cy.wait('@guestPagelet').then(xhr => {
-            expect(xhr).to.have.property('state', 'Complete');
+            expect(xhr.response).to.have.property('statusCode', 200);
 
             cy.get('.cms-listing-col').eq(0).contains('Test product 2');
             cy.get('.cms-listing-col').eq(1).contains(product.name);
         });
     });
 })
-
-
-

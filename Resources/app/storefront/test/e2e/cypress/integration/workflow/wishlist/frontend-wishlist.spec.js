@@ -45,10 +45,7 @@ describe('Wishlist: for wishlist page', () => {
                 return cy.request(requestConfig);
             });
 
-            return cy.createCustomerFixtureStorefront()
-                .then(() => {
-                    return cy.createProductFixture(product)
-                })
+            return cy.createProductFixture(product)
         })
     });
 
@@ -67,14 +64,14 @@ describe('Wishlist: for wishlist page', () => {
             cy.title().should('eq', 'Your wishlist');
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr).to.have.property('state', 'Complete');
+                expect(xhr.response).to.have.property('statusCode', 200);
             });
 
             cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
             cy.get('.product-wishlist-form [type="submit"]').click();
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr).to.have.property('state', 'Complete');
+                expect(xhr.response).to.have.property('statusCode', 200);
                 expect(win.localStorage.getItem('wishlist-' + win.salesChannelId)).to.equal(null)
             });
 
@@ -109,17 +106,17 @@ describe('Wishlist: for wishlist page', () => {
             cy.title().should('eq', 'Your wishlist')
 
             cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr).to.have.property('state', 'Complete');
+                expect(xhr.response).to.have.property('statusCode', 200);
                 cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').should('exist');
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').click();
 
                 cy.wait('@add-to-cart').then(xhr => {
-                    expect(xhr).to.have.property('state', 'Complete');
+                    expect(xhr.response).to.have.property('statusCode', 302);
                 });
 
                 cy.wait('@offcanvas').then(xhr => {
-                    expect(xhr).to.have.property('state', 'Complete');
+                    expect(xhr.response).to.have.property('statusCode', 200);
                     cy.get('.offcanvas.is-open.cart-offcanvas').should('exist');
                     cy.get('.offcanvas.is-open.cart-offcanvas').find('.cart-item-label').contains(product.name);
 
@@ -131,6 +128,7 @@ describe('Wishlist: for wishlist page', () => {
     });
 
     it('@workflow @wishlist: remove product', () => {
+        cy.createCustomerFixtureStorefront();
         cy.visit('/account/login');
 
         cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
