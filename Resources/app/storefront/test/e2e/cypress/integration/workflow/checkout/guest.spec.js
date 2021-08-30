@@ -1,17 +1,22 @@
 import CheckoutPageObject from "../../../support/pages/checkout.page-object";
 import AccountPageObject from "../../../support/pages/account.page-object";
+
 let product = {};
 
 describe(`Checkout as Guest`, () => {
     beforeEach(() => {
-        return cy.createProductFixture().then(() => {
-            return cy.createDefaultFixture('category')
-        }).then(() => {
-            return cy.fixture('product');
-        }).then((result) => {
-            product = result;
-            cy.visit('/account/login');
-        });
+        return cy.setToInitialState()
+            .then(() => {
+                return cy.createProductFixture()
+                    .then(() => {
+                        return cy.createDefaultFixture('category')
+                    }).then(() => {
+                        return cy.fixture('product');
+                    }).then((result) => {
+                        product = result;
+                        cy.visit('/account/login');
+                    });
+            })
     });
 
     it('@workflow @checkout: Run checkout', () => {

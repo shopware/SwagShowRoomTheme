@@ -5,20 +5,23 @@ let product = {};
 
 describe('Checkout: Visual tests', () => {
     beforeEach(() => {
-        return cy.createProductFixture()
+        return cy.setToInitialState()
             .then(() => {
-                return cy.fixture('product');
+                return cy.createProductFixture()
+                    .then(() => {
+                        return cy.fixture('product');
+                    })
+                    .then((result) => {
+                        product = result;
+                        return cy.createCustomerFixtureStorefront();
+                    })
+                    .then(() => {
+                        cy.visit('/');
+                    }).then(() => {
+                        cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                        cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                    });
             })
-            .then((result) => {
-                product = result;
-                return cy.createCustomerFixtureStorefront();
-            })
-            .then(() => {
-                cy.visit('/');
-            }).then(() => {
-                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
-            });
     });
 
     it('@visual: check appearance of basic checkout workflow', () => {
@@ -50,7 +53,6 @@ describe('Checkout: Visual tests', () => {
         cy.get('.offcanvas').should('be.visible');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
-        cy.get('.header-cart-total').contains('64');
         cy.get('.header-cart-total').click();
         cy.get('.offcanvas').should('be.visible');
 
