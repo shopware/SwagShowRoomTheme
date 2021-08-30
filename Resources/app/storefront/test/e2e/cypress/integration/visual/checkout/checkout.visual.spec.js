@@ -24,7 +24,7 @@ describe('Checkout: Visual tests', () => {
             })
     });
 
-    it('@visual: check appearance of basic checkout workflow', () => {
+    it('@visual @checkout: check appearance of basic checkout workflow', () => {
         const page = new CheckoutPageObject();
         const accountPage = new AccountPageObject();
 
@@ -53,7 +53,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('.offcanvas').should('be.visible');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
-        cy.get('.header-cart-total').click();
+        cy.get('.header-cart-total', { timeout: 20000 }).click();
         cy.get('.offcanvas').should('be.visible');
 
         // Take snapshot for visual testing on desktop
@@ -98,7 +98,7 @@ describe('Checkout: Visual tests', () => {
         cy.takeSnapshot('[Checkout] Finish', '.finish-header', {widths: [375, 768, 1920]});
     });
 
-    it('@visual: checkout empty cart', () => {
+    it('@visual @checkout: checkout empty cart', () => {
         cy.visit('/checkout/cart');
 
         cy.takeSnapshot('[Checkout] Empty cart',
@@ -106,7 +106,7 @@ describe('Checkout: Visual tests', () => {
             {widths: [375, 768, 1920]});
     })
 
-    it('@visual: checkout cart', () => {
+    it('@visual @checkout: checkout cart', () => {
         cy.get('.btn-buy').click();
 
         // Checkout

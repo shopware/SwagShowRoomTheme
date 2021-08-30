@@ -41,7 +41,7 @@ describe('Checkout: Basic', { tags: ['@workflow', '@checkout'] }, () => {
         cy.get('.cart-item-price').contains('64');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
-        cy.get('.header-cart-total').contains('64');
+        cy.get('.header-cart-total').contains('64', { timeout: 20000 });
         cy.get('.header-cart-total').click();
         cy.get('.offcanvas').should('be.visible');
 
