@@ -34,7 +34,7 @@ describe('Error: Maintenance visual testing page', () => {
         cy.get('.header-main').should('be.visible');
         cy.get('.footer-simple').should('be.visible');
 
-        cy.takeSnapshot('[Shop] Maintenance page', '.container-maintenance', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Shop] Maintenance page', '.container-maintenance');
 
         cy.loginViaApi()
             .then(() => {

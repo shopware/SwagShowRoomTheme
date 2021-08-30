@@ -71,7 +71,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('#loginCollapse').click();
 
         // Take snapshot for visual testing on desktop
-        cy.takeSnapshot('[Checkout] Login', accountPage.elements.loginCard, {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Login', accountPage.elements.loginCard);
 
         cy.get('#loginMail').type('test@example.com');
         cy.get('#loginPassword').type('shopware');
@@ -81,7 +81,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
 
         // Take snapshot for visual testing on desktop
-        cy.takeSnapshot('[Checkout] Confirm', '.confirm-tos', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Confirm', '.confirm-tos');
 
         cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
@@ -95,7 +95,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('#confirmFormSubmit').click();
 
         // Take snapshot for visual testing on desktop
-        cy.takeSnapshot('[Checkout] Finish', '.finish-header', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Finish', '.finish-header');
     });
 
     it('@visual @checkout: checkout empty cart', () => {
@@ -112,17 +112,17 @@ describe('Checkout: Visual tests', () => {
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-link').click();
 
-        cy.takeSnapshot('[Checkout] Cart page', '.is-act-cartpage', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Cart page', '.is-act-cartpage');
 
         cy.get('.cart-shipping-costs-container .cart-shipping-costs-btn').click();
-        cy.takeSnapshot('[Checkout] Cart shipping cost', '.is-act-cartpage', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Cart shipping cost', '.is-act-cartpage');
 
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
 
         cy.get('.register-submit button[type="submit"]').click();
-        cy.takeSnapshot('[Checkout] Required fields', '.is-act-checkoutregisterpage', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Required fields', '.is-act-checkoutregisterpage');
 
         cy.get('.register-footer .data-protection-information a').click();
-        cy.takeSnapshot('[Checkout] Privacy', '.is-act-checkoutregisterpage', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Checkout] Privacy', '.is-act-checkoutregisterpage');
     })
 });

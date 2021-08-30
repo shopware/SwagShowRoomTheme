@@ -1,6 +1,9 @@
 describe('Shop page: CMS service page', () => {
     beforeEach(() => {
-        cy.loginViaApi()
+        cy.setToInitialState()
+            .then(() => {
+                cy.loginViaApi()
+            })
             .then(() => {
                 cy.createDefaultFixture('category',{}, 'footer-category-first');
             })
@@ -87,7 +90,7 @@ describe('Shop page: CMS service page', () => {
         cy.get('a.footer-link').should('have.attr', 'href') // yields the "href" attribute
             .and('include', '/Information/Shipping-and-payment');
 
-        cy.takeSnapshot('[CMS] Footer link should be visible', '.footer-main', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[CMS] Footer link should be visible', '.footer-main');
 
         cy.get('.footer-link').contains('Shipping and payment').click();
 
@@ -96,6 +99,6 @@ describe('Shop page: CMS service page', () => {
         cy.get('.breadcrumb-link.is-active').should('have.attr', 'href') // yields the "href" attribute
             .and('include', '/Information/Shipping-and-payment');
 
-        cy.takeSnapshot('[CMS] Service and information page', '.cms-page', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[CMS] Service and information page', '.cms-page');
     });
 });
