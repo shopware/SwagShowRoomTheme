@@ -62,8 +62,21 @@ describe('Account: Edit profile', { tags: ['@workflow', '@profile'] }, () => {
         cy.get('#profile-email-form').should('have.class', 'show');
         cy.get('#profile-password-form').should('not.have.class', 'show');
 
+        cy.get('#personalMail').type('test2@example.com');
+        cy.get('#personalMailConfirmation').type('test2@example.com');
+        cy.get('#personalMailPasswordCurrent').type('shopware');
+
+        cy.get('#profileMailForm').find('.profile-form-submit').click();
+        cy.get('.alert-success .alert-content').contains('Your email address has been updated.');
+
         cy.get('.account-profile-change [href="#profile-password-form"]').click();
         cy.get('#profile-password-form').should('have.class', 'show');
         cy.get('#profile-email-form').should('not.have.class', 'show');
+        cy.get('#newPassword').type('shopware1');
+        cy.get('#passwordConfirmation').type('shopware1');
+        cy.get('#password').type('shopware');
+
+        cy.get('#profilePasswordForm').find('.profile-form-submit').click();
+        cy.get('.alert-success .alert-content').contains('Your password has been updated.');
     });
 });

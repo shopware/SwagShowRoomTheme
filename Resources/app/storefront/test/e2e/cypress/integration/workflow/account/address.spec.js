@@ -45,7 +45,6 @@ describe('Account: Address page', { tags: ['@workflow', '@address'] }, () => {
 
         cy.get('.address-card .address-action-set-default').contains('Set as default shipping').click();
         cy.get('.alert-success .alert-content').contains('Default address has been changed.');
-        cy.takeSnapshot('[Address] Address - Set default shipping address', {widths: [375, 768, 1920]});
 
         cy.get('.address-card .address-action-set-default').contains('Set as default billing').click();
         cy.get('.alert-success .alert-content').contains('Default address has been changed.');

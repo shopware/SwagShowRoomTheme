@@ -44,11 +44,11 @@ describe('Account: Edit profile', () => {
             expect(element).to.contain('Overview');
         });
 
-        cy.takeSnapshot('[Account] Login Success', '.account', {widths: [375, 1920]});
+        cy.takeSnapshot('[Account] Login Success', '.account', {widths: [375, 768, 1920]});
 
         cy.get('.card-actions [href="/account/profile"]').click();
 
-        cy.takeSnapshot('[Account] Profile page', '.account-profile', {widths: [375, 1920]});
+        cy.takeSnapshot('[Account] Profile page', '.account-profile', {widths: [375, 768, 1920]});
 
         const accountTypeSelector = 'select[name="accountType"]';
         const companySelector = 'input[name="company"]';
@@ -62,24 +62,36 @@ describe('Account: Edit profile', () => {
         cy.get(companySelector).should('be.visible');
         cy.get(companySelector).type('Company Testing');
 
-        cy.takeSnapshot('[Account] Edit profile form', '.account-profile', {widths: [375, 1920]});
+        cy.takeSnapshot('[Account] Edit profile form', '.account-profile', {widths: [375, 768, 1920]});
 
         cy.get('#profilePersonalForm button[type="submit"]').click();
         cy.get('.alert-success .alert-content').contains('Profile has been updated.');
 
-        cy.takeSnapshot('[Account] Profile updated', '.account-profile', {widths: [375, 1920]});
+        cy.takeSnapshot('[Account] Profile updated', '.account-profile', {widths: [375, 768, 1920]});
 
         cy.get('.account-profile-change [href="#profile-email-form"]').click();
         cy.get('#profile-email-form').should('have.class', 'show');
         cy.get('#profile-password-form').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Account] Profile - Change Email form', '.account-profile',  {widths: [375, 1920]});
+        cy.get('#personalMail').type('test2@example.com');
+        cy.get('#personalMailConfirmation').type('test2@example.com');
+        cy.get('#personalMailPasswordCurrent').type('shopware');
+        cy.takeSnapshot('[Account] Profile - Fill change Email form', '.account-profile',  {widths: [375, 768, 1920]});
+
+        cy.get('#profileMailForm').find('.profile-form-submit').click();
+        cy.get('.alert-success .alert-content').contains('Your email address has been updated.');
+        cy.takeSnapshot('[Account] Profile - Change Email form success', '.account-profile',  {widths: [375, 768, 1920]});
 
         cy.get('.account-profile-change [href="#profile-password-form"]').click();
         cy.get('#profile-password-form').should('have.class', 'show');
         cy.get('#profile-email-form').should('not.have.class', 'show');
+        cy.get('#newPassword').type('shopware1');
+        cy.get('#passwordConfirmation').type('shopware1');
+        cy.get('#password').type('shopware');
+        cy.takeSnapshot('[Account] Profile - Fill change password form', '.account-profile',  {widths: [375, 768, 1920]});
 
-        cy.takeSnapshot('[Account] Profile - Change password form', '.account-profile',  {widths: [375, 1920]});
-
+        cy.get('#profilePasswordForm').find('.profile-form-submit').click();
+        cy.get('.alert-success .alert-content').contains('Your password has been updated.');
+        cy.takeSnapshot('[Account] Profile - Change password form', '.account-profile',  {widths: [375, 768, 1920]});
     });
 });

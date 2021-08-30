@@ -44,5 +44,16 @@ describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
         cy.get('.address-editor-create').click();
         cy.get('#address-create-new').should('have.class', 'show');
         cy.get('#address-create-edit').should('not.have.class', 'show');
+        cy.get('.address-editor-modal').find('.modal-close').click();
+        cy.get('.overview-shipping-address [data-address-editor="true"]').click();
+        cy.get('.address-editor-modal').should('be.visible');
+
+        cy.get('.address-editor-edit').click();
+        cy.get('#address-create-edit').should('have.class', 'show');
+        cy.get('#address-create-new').should('not.have.class', 'show');
+
+        cy.get('.address-editor-create').click();
+        cy.get('#address-create-new').should('have.class', 'show');
+        cy.get('#address-create-edit').should('not.have.class', 'show');
     });
 });

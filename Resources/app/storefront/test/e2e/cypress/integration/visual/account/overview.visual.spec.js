@@ -45,18 +45,37 @@ describe('Account: Overview page', () => {
         cy.get('.overview-billing-address [data-address-editor="true"]').click();
         cy.get('.address-editor-modal').should('be.visible');
 
-        cy.takeSnapshot('[Overview] Address Editor Modal', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Billing Address Editor Modal', '.address-editor-modal', {widths: [375, 768, 1920]});
 
         cy.get('.address-editor-edit').click();
         cy.get('#address-create-edit').should('have.class', 'show');
         cy.get('#address-create-new').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Overview] Change address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Change billing address form', '.address-editor-modal', {widths: [375, 768, 1920]});
 
         cy.get('.address-editor-create').click();
         cy.get('#address-create-new').should('have.class', 'show');
         cy.get('#address-create-edit').should('not.have.class', 'show');
 
-        cy.takeSnapshot('[Overview] Create a new address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Overview] Create a new billing address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+
+        cy.get('.address-editor-modal').find('.modal-close').click();
+
+        cy.get('.overview-shipping-address [data-address-editor="true"]').click();
+        cy.get('.address-editor-modal').should('be.visible');
+
+        cy.takeSnapshot('[Overview] Shipping Address Editor Modal', '.address-editor-modal', {widths: [375, 768, 1920]});
+
+        cy.get('.address-editor-edit').click();
+        cy.get('#address-create-edit').should('have.class', 'show');
+        cy.get('#address-create-new').should('not.have.class', 'show');
+
+        cy.takeSnapshot('[Overview] Change shipping address form', '.address-editor-modal', {widths: [375, 768, 1920]});
+
+        cy.get('.address-editor-create').click();
+        cy.get('#address-create-new').should('have.class', 'show');
+        cy.get('#address-create-edit').should('not.have.class', 'show');
+
+        cy.takeSnapshot('[Overview] Create a new shipping address form', '.address-editor-modal', {widths: [375, 768, 1920]});
     });
 });
