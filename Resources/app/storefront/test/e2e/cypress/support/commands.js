@@ -98,14 +98,34 @@ Cypress.Commands.overwrite('cleanUpPreviousState', (orig) => {
     return orig();
 });
 
-Cypress.Commands.add('initializePluginConfig', (config = 'paypal-config.json') => {
+Cypress.Commands.add('initializePluginConfig', (config, endpoint) => {
     return cy.fixture(config).then((data) => {
         return cy.requestAdminApi(
             'POST',
-            `/api/_action/system-config/batch`,
+            endpoint,
             {
                 data
             }
         )
     });
+});
+
+Cypress.Commands.add('patchViaAdminApi', ({ endpoint, data }) => {
+    return cy.requestAdminApi(
+        'PATCH',
+        `/api/${endpoint}?response=true`,
+        data
+    );
+});
+
+Cypress.Commands.add('updatePluginConfig', (data, salesChannelId) => {
+    return cy.requestAdminApi(
+        'POST',
+        `/api/_action/system-config?salesChannelId=${salesChannelId}`,
+        {
+            data: {
+                [`SwagAmazonPay.settings.${data.key}`]: data.value
+            }
+        }
+    );
 });
