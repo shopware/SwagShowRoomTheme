@@ -13,6 +13,8 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+import 'cypress-file-upload';
+
 require('@shopware-ag/e2e-testsuite-platform/cypress/support');
 require('@percy/cypress');
 

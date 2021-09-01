@@ -68,15 +68,6 @@
         }
     }
 
-    .login-password-recover {
-        padding-top: 20px;
-        margin-bottom: 0;
-
-        a {
-            text-decoration: underline;
-        }
-    }
-
     @include media-breakpoint-up(lg) {
         .account-register-login-headline {
             padding-top: 70px;
@@ -105,6 +96,15 @@
         .global-collapse-content {
             display: block;
         }
+    }
+}
+
+.login-password-recover {
+    padding-top: 20px;
+    margin-bottom: 0;
+
+    a {
+        text-decoration: underline;
     }
 }
 

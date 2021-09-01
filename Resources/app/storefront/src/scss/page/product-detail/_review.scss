@@ -1,0 +1,114 @@
+.offcanvas {
+    .review-offcanvas-close {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .offcanvas-content-container {
+        .product-detail-review {
+            &.tab-pane-container {
+                padding: 20px;
+            }
+        }
+
+        .product-detail-review-sortby-label {
+            display: none;
+        }
+    }
+}
+
+.product-detail-review-teaser-btn {
+    display: block;
+    width: 100%;
+}
+
+.product-review-point span.icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.product-detail-review-item-points span.icon {
+    width: 12px;
+    height: 12px;
+}
+
+.product-detail-review {
+    &.tab-pane-container {
+        background-color: $gray-100;
+    }
+}
+
+.product-detail-review-main {
+    .product-detail-review-form-footer {
+        display: block;
+    }
+}
+
+.product-detail-review-form-content {
+    > label {
+        @extend .form-label;
+    }
+}
+
+.product-detail-review-sortby-form {
+    align-items: baseline;
+}
+
+.product-detail-review-list-content {
+    .product-detail-review-item {
+        background-color: $white;
+        padding: 20px;
+        border-bottom: 0;
+        border-radius: 2px;
+    }
+}
+
+#review-tab-pane {
+    background-color: $gray-100;
+    padding: 30px 30px 50px 30px;
+}
+
+#showForeignReviews + label {
+    text-transform: unset;
+}
+
+@include media-breakpoint-up(lg) {
+    .product-review-point span.icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .product-detail-review-item-points span.icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .product-detail-review-language-form {
+        small {
+            font-size: 14px;
+        }
+    }
+
+    #review-tab-pane {
+        background-color: $gray-100;
+        padding: 50px 50px 100px 50px;
+    }
+
+    #reviewsSortby {
+        font-size: 14px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .product-detail-review-language-form {
+        .custom-switch {
+            small {
+                display: flex;
+                align-items: center;
+                line-height: 1.5;
+            }
+        }
+    }
+}

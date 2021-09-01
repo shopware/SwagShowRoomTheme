@@ -44,7 +44,9 @@
     border-bottom: $custom-select-border-width solid $custom-select-border-color;
 
     &:invalid {
-        color: $gray-600;
+        &::placeholder {
+            color: $gray-600;
+        }
     }
 
     &:valid {
@@ -60,7 +62,10 @@
     .custom-select {
         &:invalid {
             opacity: 1;
-            color: $form-feedback-invalid-color;
+
+            &::placeholder {
+                color: $form-feedback-invalid-color;
+            }
         }
     }
 }

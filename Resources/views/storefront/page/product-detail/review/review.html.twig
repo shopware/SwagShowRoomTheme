@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/review/review.html.twig' %}
+
+{% block utilities_offcanvas_close %}
+    <button class="btn btn-light btn-block offcanvas-close review-offcanvas-close js-offcanvas-close sticky-top">
+        {{ block('utilities_offcanvas_close_icon') }}
+
+        {{ block('utilities_offcanvas_close_text') }}
+    </button>
+{% endblock %}
