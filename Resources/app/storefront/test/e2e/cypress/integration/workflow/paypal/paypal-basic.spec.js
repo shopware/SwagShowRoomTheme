@@ -75,7 +75,7 @@ describe('Paypal: Checkout', () => {
         cy.get('.offcanvas-cart div[data-swag-paypal-installment-banner="true"]').should('be.visible');
     });
 
-    it('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
+    it.only('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
         cy.get('.search-toggle-btn').click();
 
         cy.get('.header-search-input')
@@ -92,9 +92,8 @@ describe('Paypal: Checkout', () => {
         cy.get('#loginCollapse').should('be.visible').click();
 
         // Paypal Express checkout
-        // TODO: need to fix the codebase in order to pass this test
-        // cy.get('div[data-swag-paypal-express-button="true"]').scrollIntoView().should('be.visible');
-        // cy.get('.offcanvas-cart div[data-swag-paypal-installment-banner="true"]').should('be.visible');
+        cy.get('div[data-swag-paypal-express-button="true"]').scrollIntoView().should('be.visible');
+        cy.get('div[data-swag-paypal-installment-banner="true"]').should('be.visible');
     });
 
     it('@workflow @paypal: should have Paypal checkout in checkout cart page', () => {

@@ -14,6 +14,14 @@
     {% endblock %}
 
     {% block page_checkout_address_login_toggle %}
+        {# @var \Swag\PayPal\Checkout\ExpressCheckout\ExpressCheckoutButtonData expressSettings #}
+        {% set expressSettings = page.extensions[constant('Swag\\PayPal\\Checkout\\ExpressCheckout\\ExpressCheckoutSubscriber::PAYPAL_EXPRESS_CHECKOUT_BUTTON_DATA_EXTENSION_ID')] %}
+        {% set expressEnabled = expressSettings.loginEnabled %}
+
+        {# @var \Swag\PayPal\Installment\Banner\BannerData installmentBanner #}
+        {% set installmentBanner = page.extensions[constant('Swag\\PayPal\\Installment\\Banner\\InstallmentBannerSubscriber::PAYPAL_INSTALLMENT_BANNER_DATA_EXTENSION_ID')] %}
+        {% set installmentBannerEnabled = installmentBanner is not null %}
+
         <div class="register-card" data-showroom-collapse="true">
             <div class="js-collapse-column">
                 <div class="card-title global-collapse-headline js-collapse-column-trigger"
@@ -42,6 +50,21 @@
                 {% endblock %}
             </div>
         </div>
+
+        {% if expressEnabled or installmentBannerEnabled %}
+            <div class="swag-paypal-card">
+                {% if expressEnabled %}
+                    {% sw_include'@SwagPayPal/storefront/component/ecs-spb-checkout/ecs-button.html.twig' ignore missing with {button_class: 'col-sm-5 col-12 pl-0 py-1'} %}
+                {% endif %}
+
+                {% if installmentBannerEnabled %}
+                    <div class="col-sm-7 col-12 p-0"
+                         data-swag-paypal-installment-banner="true"
+                         data-swag-pay-pal-installment-banner-options="{{ installmentBanner|json_encode }}">
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
     {% endblock %}
 
     {% if block('page_checkout_address_login_swag_amazon_pay_card') is defined %}
