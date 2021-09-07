@@ -21,7 +21,7 @@ describe('Checkout: Visual tests', () => {
                 beforeOpenStorefront();
             })
             .then(() => {
-                cy.visit('/');
+                cy.visit('/', { failOnStatusCode: false });
             })
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
@@ -41,8 +41,6 @@ describe('Checkout: Visual tests', () => {
             .get('.sw-theme-list-item__title')
             .contains('Showroom Theme')
             .click();
-
-        cy.get('.sw-theme-manager-detail__area');
 
         cy.get('.sw-colorpicker .sw-colorpicker__input').first().clear().typeAndCheck('#FFBD5D');
 
@@ -67,25 +65,25 @@ describe('Checkout: Visual tests', () => {
         });
     }
 
-    it('@visual: check change primary color ', () => {
+    it('@visual @themeColor: check change primary color ', () => {
         cy.get('.icon').should('have.css', 'color', 'rgb(255, 189, 93)');
         cy.get('.footer-headline').should('have.css', 'color', 'rgb(255, 189, 93)');
         cy.get('.footer-bottom').should('have.css', 'color', 'rgb(253, 253, 253)');
-        cy.takeSnapshot('[Theme Color] Home Page with Primary Yellow Color and Footer Red color', '.is-act-home', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Home Page with Primary Yellow Color and Footer Red color', '.is-act-home');
 
         cy.get('.account-menu-btn').click();
         cy.get('.account-menu-dropdown').should('be.visible');
-        cy.takeSnapshot('Account Menu Dropdown', '.account-menu-dropdown', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Account Menu Dropdown', '.account-menu-dropdown');
 
         cy.get('.account-menu-login-button').click();
         cy.get('.account-register').should('be.visible');
         cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
         cy.get('#loginPassword').typeAndCheckStorefront('shopware');
-        cy.takeSnapshot('Account Register page', '.account-register', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Account Register page', '.account-register');
 
         cy.get('.login-submit button').click();
         cy.get('.account-content').should('be.visible');
-        cy.takeSnapshot('Account Overview page', '.account', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Account Overview page', '.account');
 
         cy.get('.header-logo-main-link').click();
         cy.get('.cms-listing-col').should('be.visible');
@@ -97,18 +95,18 @@ describe('Checkout: Visual tests', () => {
         cy.get('.product-detail-name').should('have.css', 'color', 'rgb(255, 189, 93)');
         cy.get('.product-detail-manufacturer a').should('have.css', 'color', 'rgb(255, 189, 93)');
         cy.get('.product-detail-tax-link').should('have.css', 'color', 'rgb(255, 189, 93)');
-        cy.takeSnapshot('[Product Detail Page] Buy button with red color', '.product-detail-content', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.product-detail-content', {widths: [375, 768, 1920]});
 
-        cy.get('.btn-buy').click();
+        cy.get('.product-detail-buy .btn-buy').click();
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', 'rgb(255, 189, 93)');
         cy.get('.offcanvas-cart-actions .btn-link').should('have.css', 'border-color', 'rgb(255, 189, 93)');
         cy.get('.offcanvas-cart-actions .btn-link').should('have.css', 'color', 'rgb(255, 189, 93)');
-        cy.takeSnapshot('Cart Off-canvas', '.cart-offcanvas', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Cart Off-canvas', '.cart-offcanvas');
 
         cy.get('.offcanvas-cart-actions .btn-link').click();
         cy.get('.cart-table-header').should('have.css', 'color', 'rgb(255, 189, 93)');
-        cy.takeSnapshot('Shopping cart', '.checkout', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Shopping cart', '.checkout');
 
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
 
@@ -119,13 +117,13 @@ describe('Checkout: Visual tests', () => {
         cy.get('.checkout-confirm-tos-checkbox').should('not.be.visible')
             .check({ force: true })
             .should('be.checked');
-        cy.takeSnapshot('Checkout - Complete order', '.checkout', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Checkout - Complete order', '.checkout');
 
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
 
         cy.get('.finish-back-to-shop-button a').should('have.css', 'background-color', 'rgb(255, 189, 93)');
         cy.get('.finish-back-to-shop-button a').should('have.css', 'border-color', 'rgb(255, 189, 93)');
-        cy.takeSnapshot('Checkout - Thank you page', '.checkout', {widths: [375, 768, 1920]});
+        cy.takeSnapshot('[Theme Color] Checkout - Thank you page', '.checkout');
     });
 });

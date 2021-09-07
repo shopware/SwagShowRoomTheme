@@ -92,7 +92,9 @@ Cypress.Commands.add('takeSnapshot', (title, selectorToCheck = null, width = {wi
 Cypress.Commands.overwrite('cleanUpPreviousState', (orig) => {
     if (Cypress.env('localUsage')) {
         return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console e2e:restore-db`)
-            .its('code').should('eq', 0);
+            .its('code').should('eq', 0).then(() => {
+                return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console cache:clear`)
+            });
     }
 
     return orig();
