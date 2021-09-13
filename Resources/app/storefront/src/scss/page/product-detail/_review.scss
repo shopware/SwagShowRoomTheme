@@ -29,14 +29,18 @@
     height: 1rem;
 }
 
-.product-detail-review-item-points span.icon {
-    width: 12px;
-    height: 12px;
+.product-detail-review-item-points {
+    line-height: 28px;
+    span.icon {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 .product-detail-review {
     &.tab-pane-container {
         background-color: $gray-100;
+        padding: 50px;
     }
 }
 
@@ -67,7 +71,7 @@
 
 #review-tab-pane {
     background-color: $gray-100;
-    padding: 30px 30px 50px 30px;
+    padding: 0;
 }
 
 #showForeignReviews + label {
@@ -80,9 +84,11 @@
         height: 24px;
     }
 
-    .product-detail-review-item-points span.icon {
-        width: 1rem;
-        height: 1rem;
+    .product-detail-review-item-points {
+        span.icon {
+            width: 1rem;
+            height: 1rem;
+        }
     }
 
     .product-detail-review-language-form {
@@ -91,24 +97,33 @@
         }
     }
 
-    #review-tab-pane {
-        background-color: $gray-100;
-        padding: 50px 50px 100px 50px;
-    }
-
     #reviewsSortby {
         font-size: 14px;
     }
 }
 
-@include media-breakpoint-down(md) {
-    .product-detail-review-language-form {
-        .custom-switch {
-            small {
-                display: flex;
-                align-items: center;
-                line-height: 1.5;
-            }
+.product-detail-review-language-form {
+    .custom-switch {
+        small {
+            display: flex;
+            align-items: center;
+            line-height: 1.5;
         }
     }
+}
+
+.product-review-rating {
+    margin-right: 0;
+}
+
+.product-detail-review-item-title {
+    padding-left: 24px;
+}
+
+.product-detail-review-info .product-review-rating {
+    padding-right: 24px;
+}
+
+.product-detail-review-progressbar-container {
+    margin-top: 8px;
 }
