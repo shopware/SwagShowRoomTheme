@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/review/review-widget.html.twig' %}
+
+{% block page_product_detail_review_filter_progressbar %}
+    <div class="col d-none d-lg-block col-lg-4 product-detail-review-progressbar-col">
+        <div class="progress product-detail-review-progressbar-container">
+            <div class="progress-bar product-detail-review-progressbar-bar"
+                 role="progressbar"
+                 style="width: {{ matrix.percent }}%;"
+                 aria-valuenow="{{ matrix.percent }}"
+                 aria-valuemin="0"
+                 aria-valuemax="100"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_product_detail_review_filter_share %}
+    <div class="col-12 col-md-4 col-lg-3 product-detail-review-share">
+        <p><small>{{ matrix.percent|round }}%</small></p>
+    </div>
+{% endblock %}

@@ -17,6 +17,8 @@ describe('Product Detail: Check appearance of product property', () => {
 
     it('@visual @detail: verify product properties', () => {
         cy.visit('/ProductProperties/TEST');
+        cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
+        cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.get('.product-detail-properties-table').should('be.visible');
         cy.get('.product-detail-properties-table').contains('Height')

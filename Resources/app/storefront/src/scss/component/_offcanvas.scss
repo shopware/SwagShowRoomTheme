@@ -20,6 +20,18 @@ $offcanvas-content-width-lg: 800px;
         .offcanvas-close {
             background-color: $gray-100;
             letter-spacing: 0;
+            align-items: center;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            gap: 10px;
+
+            .icon {
+                margin-left: 4px;
+                svg {
+                    top: 0;
+                }
+            }
         }
     }
 
@@ -34,6 +46,10 @@ $offcanvas-content-width-lg: 800px;
     }
 
     &.cart-offcanvas {
+        .offcanvas-close {
+            flex-direction: row;
+        }
+
         .offcanvas-content-container {
             padding-top: 40px;
         }

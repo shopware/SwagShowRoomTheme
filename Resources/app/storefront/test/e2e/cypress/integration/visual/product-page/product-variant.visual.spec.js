@@ -46,6 +46,9 @@ describe('Product Detail: Check appearance of product variants', () => {
 
         // Verify in storefront
         cy.visit('/');
+        cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
+        cy.get('.offcanvas .btn-primary').contains('Save').click();
+
         cy.get('.search-toggle-btn').click();
         cy.get('input[name=search]').type('Variant product name');
         cy.get('.search-suggest-container').should('be.visible');

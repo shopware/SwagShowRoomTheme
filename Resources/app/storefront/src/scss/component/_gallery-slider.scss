@@ -129,8 +129,9 @@ $gallery-image-height-lg: 800px;
 @include media-breakpoint-down(md) {
     .gallery-slider-row {
         &.is-loading {
-            height: $gallery-image-height-sm;
+            min-height: $gallery-image-height-sm;
             overflow: unset;
+            height: auto;
         }
     }
 }
@@ -152,14 +153,6 @@ $gallery-image-height-lg: 800px;
             .underneath-gallery-slider-controls {
                 display: initial;
             }
-        }
-    }
-}
-
-@include media-breakpoint-up(lg) {
-    .gallery-slider-row {
-        &.is-loading {
-            height: $gallery-image-height-lg;
         }
     }
 }
