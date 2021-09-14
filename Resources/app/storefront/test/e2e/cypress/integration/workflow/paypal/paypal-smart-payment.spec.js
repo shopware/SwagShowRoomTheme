@@ -21,7 +21,7 @@ describe('Paypal: Checkout', () => {
             .then((salesChannelData) => {
                 // Preserve salesChannelId for later use
                 salesChannelId = salesChannelData.id;
-                return cy.initializePluginConfig('paypal-config.json')
+                return cy.initializePluginConfig('paypal-config.json', '/api/_action/system-config/batch')
             })
             .then(() => {
                 return cy.requestAdminApi(
