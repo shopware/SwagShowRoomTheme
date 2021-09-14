@@ -28,9 +28,10 @@
         font-size: $showroom-font-size-base;
     }
 
-    .account-email {
+    .account-email,
+    .account-password {
         .card-actions {
-            padding-bottom: 30px;
+            padding-bottom: 50px;
         }
     }
 

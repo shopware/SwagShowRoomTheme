@@ -4,7 +4,6 @@
 }
 
 .payment-method {
-
     border-bottom: unset;
     padding-left: 0;
     padding-right: 0;
@@ -42,6 +41,7 @@
     .payment-method-label {
         .payment-method-description {
             width: 100%;
+
             p {
                 color: $gray-700;
                 white-space: break-spaces;
@@ -62,6 +62,78 @@
                     line-height: 19px;
                 }
             }
+        }
+    }
+}
+
+.account-payment-card {
+    .payment-methods {
+        @extend .row;
+
+        margin-right: -7px;
+        margin-left: -7px;
+    }
+
+    .payment-method {
+        @extend .col-md-4;
+
+        padding-left: 7px;
+        padding-right: 7px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    .payment-form-group {
+        margin-bottom: 10px;
+    }
+
+    .payment-method-label {
+        border: 1px solid $border-color;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+
+        > p {
+            color: $sw-text-color;
+        }
+    }
+
+    .payment-method-radio {
+        padding-left: 0;
+
+        &.custom-radio .custom-control-label {
+            &:before,
+            &:after {
+                content: unset;
+            }
+        }
+    }
+}
+
+.is-ctl-accountpayment {
+    .account-content .account-payment .card-title {
+        margin-bottom: 30px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .account-payment-card {
+        .payment-method {
+            padding-bottom: 14px;
+        }
+
+        .payment-methods {
+            padding-bottom: 16px;
+        }
+
+        .payment-form-group {
+            margin-bottom: 0;
+        }
+
+        .payment-method-radio {
+            height: 100%;
         }
     }
 }
