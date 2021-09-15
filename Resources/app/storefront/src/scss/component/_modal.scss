@@ -1,4 +1,4 @@
-$modal-padding: 50px;
+$modal-padding: 30px;
 $modal-padding-mobile: 20px;
 $modal-title-font-size: 18px;
 
@@ -28,7 +28,24 @@ $modal-title-font-size: 18px;
 
         .close {
             padding: 0;
+            margin-bottom: -70px;
+            margin-right: $modal-padding;
+            z-index: 1;
+            margin-top: 0;
         }
+    }
+
+    .modal-header.only-close {
+        padding: 20px;
+    }
+
+    .cms-block-container {
+        padding: 0 20px !important;
+    }
+
+    .cms-section .boxed {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     &-close {
@@ -64,6 +81,12 @@ $modal-title-font-size: 18px;
     @include media-breakpoint-down(sm) {
         &-body {
             padding: 0 $modal-padding-mobile $modal-padding-mobile;
+        }
+
+        &-header {
+            .close {
+                margin-right: $modal-padding-mobile;
+            }
         }
     }
 }
