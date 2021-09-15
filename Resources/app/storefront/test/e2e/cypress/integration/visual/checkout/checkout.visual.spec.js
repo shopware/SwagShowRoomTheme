@@ -40,10 +40,12 @@ describe('Checkout: Visual tests', () => {
             .type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
 
+        cy.screenshot('[Checkout] Search product result');
         cy.takeSnapshot('[Checkout] Search product result', '.header-search');
 
         cy.get('.search-suggest-product-name').click();
 
+        cy.screenshot('[Checkout] See product');
         cy.takeSnapshot('[Checkout] See product', '.product-detail');
 
         cy.get('.product-detail-buy .btn-buy').click();
@@ -64,6 +66,7 @@ describe('Checkout: Visual tests', () => {
         });
 
         cy.get('.offcanvas').should('be.visible');
+        cy.screenshot('[Checkout] Offcanvas');
         cy.takeSnapshot('[Checkout] Offcanvas', `${page.elements.offCanvasCart}.is-open`);
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
@@ -75,6 +78,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('#loginCollapse').click();
 
         // Take snapshot for visual testing on desktop
+        cy.screenshot('[Checkout] Login');
         cy.takeSnapshot('[Checkout] Login', accountPage.elements.loginCard);
         accountPage.login();
 
@@ -82,6 +86,7 @@ describe('Checkout: Visual tests', () => {
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
 
         // Take snapshot for visual testing on desktop
+        cy.screenshot('[Checkout] Confirm');
         cy.takeSnapshot('[Checkout] Confirm', '.confirm-tos');
 
         cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
@@ -96,12 +101,13 @@ describe('Checkout: Visual tests', () => {
         cy.get('#confirmFormSubmit').click();
 
         // Take snapshot for visual testing on desktop
+        cy.screenshot('[Checkout] Finish');
         cy.takeSnapshot('[Checkout] Finish', '.finish-header');
     });
 
     it('@visual @checkout: checkout empty cart', () => {
         cy.visit('/checkout/cart');
-
+        cy.screenshot('[Checkout] Empty cart');
         cy.takeSnapshot('[Checkout] Empty cart', '.is-act-cartpage');
     })
 
@@ -111,17 +117,21 @@ describe('Checkout: Visual tests', () => {
         // Checkout
         cy.get('.offcanvas-cart-actions .btn-link').click();
 
+        cy.screenshot('[Checkout] Cart page');
         cy.takeSnapshot('[Checkout] Cart page', '.is-act-cartpage');
 
         cy.get('.cart-shipping-costs-container .cart-shipping-costs-btn').click();
+        cy.screenshot('[Checkout] Cart shipping cost');
         cy.takeSnapshot('[Checkout] Cart shipping cost', '.is-act-cartpage');
 
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
 
         cy.get('.register-submit button[type="submit"]').click();
+        cy.screenshot('[Checkout] Required fields');
         cy.takeSnapshot('[Checkout] Required fields', '.is-act-checkoutregisterpage');
 
         cy.get('.register-footer .data-protection-information a').click();
+        cy.screenshot('[Checkout] Privacy');
         cy.takeSnapshot('[Checkout] Privacy', '.is-act-checkoutregisterpage');
     })
 });
