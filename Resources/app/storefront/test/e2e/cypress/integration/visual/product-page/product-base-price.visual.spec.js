@@ -5,18 +5,10 @@ import ProductPageObject from '../../../support/pages/sw-product.page-object';
 describe('Product: Base price', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => {
-                cy.loginViaApi();
-            })
-            .then(() => {
-                return cy.createProductFixture();
-            })
-            .then(() => {
-                return cy.createDefaultFixture('unit');
-            })
-            .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
-            });
+            .then(() => cy.loginViaApi())
+            .then(() => cy.createProductFixture())
+            .then(() => cy.createDefaultFixture('unit'))
+            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@visual @detail: Editing product with base price', () => {
@@ -62,11 +54,7 @@ describe('Product: Base price', () => {
         cy.get('.product-overlay .product-name').click();
         cy.get('.product-detail-price-unit').contains('Content: 50 Gramm (€128.00* / 100 Gramm)');
         cy.get('.product-detail-price').contains('64.00');
-        cy.takeSnapshot('[Product Detail] Base price', '.product-detail');
 
-        cy.get('.btn-buy').click();
-        cy.get('.cart-item-price').contains('€64.00*');
-        cy.get('.cart-item-reference-price').contains('€128.00* / 100 Gramm');
-        cy.takeSnapshot('[Product Detail] Base price offcanvas cart', '.cart-offcanvas');
+        cy.takeSnapshot('[Product Detail] Base price', '.product-detail');
     });
 });

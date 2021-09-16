@@ -3,19 +3,18 @@ import ProductPageObject from "../../../support/pages/sw-product.page-object";
 describe('Product Detail: Check appearance of product variants', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => {
-                cy.loginViaApi();
-            })
-            .then(() => {
-                cy.createProductVariantFixture();
-            })
-            .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
-            });
+            .then(() => cy.loginViaApi())
+            .then(() => cy.createProductVariantFixture())
+            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@visual @variants: add multidimensional variant to product', () => {
         const page = new ProductPageObject();
+
+        cy.intercept({
+            path: `/detail/**/switch?options=*`,
+            method: 'get'
+        }).as('changeVariant');
 
         // Navigate to variant generator listing and start
         cy.clickContextMenuItem(
@@ -57,8 +56,45 @@ describe('Product Detail: Check appearance of product variants', () => {
             .click();
 
         cy.get('.product-detail-name').contains('Variant product name');
-        cy.get('.product-detail-configurator-option-label').contains('Red')
-        cy.get('.product-detail-configurator-option-label').contains('S')
+        cy.get('.product-detail-configurator-option-label').contains('Red');
+        cy.get('.product-detail-configurator-option-label').contains('S');
+
+        // Ensure that variant "Green" is checked at the moment the test runs
+        cy.get(':nth-child(1) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click()
+        cy.get('.product-detail-configurator-option-label[title="Green"]').then(($btn) => {
+            const inputId = $btn.attr('for');
+
+            cy.get(`#${inputId}`).then(($input) => {
+                if (!$input.attr('checked')) {
+                    cy.contains('Green').click();
+
+                    cy.wait('@changeVariant').then((xhr) => {
+                        expect(xhr.response).to.have.property('statusCode', 200);
+                    });
+                } else {
+                    // collapse dropdown
+                    cy.get(':nth-child(1) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse > .js-collapse-column-trigger').click();
+                    cy.get('.product-detail-price').contains('64.00');
+                }
+            });
+        });
+
+        // Ensure that variant "Green" is checked at the moment the test runs
+        cy.get(':nth-child(2) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click()
+        cy.get('.product-detail-configurator-option-label[title="M"]').then(($btn) => {
+            const inputId = $btn.attr('for');
+
+            cy.get(`#${inputId}`).then(($input) => {
+                if (!$input.attr('checked')) {
+                    cy.get('.product-detail-configurator-option-label[title="M"]').click();
+
+                    cy.wait('@changeVariant').then((xhr) => {
+                        expect(xhr.response).to.have.property('statusCode', 200);
+                    });
+                }
+                cy.get('.product-detail-price').contains('64.00');
+            });
+        });
 
         cy.takeSnapshot('[Product Detail] Product variants', '.product-detail');
     });

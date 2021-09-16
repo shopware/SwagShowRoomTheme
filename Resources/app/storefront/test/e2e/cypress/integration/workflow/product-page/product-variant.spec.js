@@ -3,15 +3,9 @@ import ProductPageObject from "../../../support/pages/sw-product.page-object";
 describe('Product Detail: Product variants', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => {
-                cy.loginViaApi();
-            })
-            .then(() => {
-                cy.createProductVariantFixture();
-            })
-            .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
-            });
+            .then(() => cy.loginViaApi())
+            .then(() => cy.createProductVariantFixture())
+            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@workflow @variants: add variant with surcharge to product', () => {
@@ -116,11 +110,21 @@ describe('Product Detail: Product variants', () => {
 
         // Ensure that variant "Green" is checked at the moment the test runs
         cy.get('.product-detail-configurator-collapse').click()
-        cy.contains('Green').click()
+        cy.get('.product-detail-configurator-option-label[title="Green"]').then(($btn) => {
+            const inputId = $btn.attr('for');
 
-        cy.wait('@changeVariant').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
-            cy.get('.product-detail-price').contains('100.00');
+            cy.get(`#${inputId}`).then(($input) => {
+                if (!$input.attr('checked')) {
+                    cy.contains('Green').click();
+
+                    cy.wait('@changeVariant').then((xhr) => {
+                        expect(xhr.response).to.have.property('statusCode', 200);
+                        cy.get('.product-detail-price').contains('100.00');
+                    });
+                } else {
+                    cy.get('.product-detail-price').contains('100.00');
+                }
+            });
         });
 
         // Check usual price in "Red"
@@ -133,4 +137,3 @@ describe('Product Detail: Product variants', () => {
         });
     });
 });
-

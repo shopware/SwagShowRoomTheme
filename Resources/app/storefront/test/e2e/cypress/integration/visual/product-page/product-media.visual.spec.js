@@ -3,19 +3,13 @@ import ProductPageObject from "../../../support/pages/sw-product.page-object";
 describe('Product Detail: Product media', () => {
     before(() => {
         cy.setToInitialState()
-            .then(() => {
-                cy.loginViaApi();
-            })
-            .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/media/index`);
-            });
+            .then(() => cy.loginViaApi())
+            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/media/index`));
     });
 
     beforeEach(() => {
         return cy.createProductFixture()
-            .then(() => {
-                return cy.fixture('product');
-            })
+            .then(() => cy.fixture('product'))
     });
 
     it('@visual @detail: check appearance of basic product media workflow', () => {
@@ -67,6 +61,6 @@ describe('Product Detail: Product media', () => {
             .and('match', /sw-product-preview/);
 
         // Take snapshot for visual testing
-        cy.takeSnapshot('[Product Detail] Product image', '.gallery-slider-single-image > .img-fluid' );
+        cy.takeSnapshot('[Product Detail] Product image', '.gallery-slider-single-image > .img-fluid');
     });
 });

@@ -2,19 +2,13 @@ describe('Product Detail: Check appearance of product review', () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {
-                return cy.createProductFixture();
+                const now = new Date(2020, 1,1).getTime();
+                return cy.clock(now);
             })
-            .then(() => {
-                return cy.createCustomerFixtureStorefront();
-            })
-            .then(() => {
-                cy.visit('/Product-name/RS-333');
-
-                cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
-                cy.get('.offcanvas .btn-primary').contains('Save').click();
-
-                cy.get('#review-tab').click();
-            })
+            .then(() => cy.createProductFixture())
+            .then(() => cy.createCustomerFixtureStorefront())
+            .then(() => cy.visit('/Product-name/RS-333'))
+            .then(() => cy.get('#review-tab').click())
     });
 
     it('@visual, @review: show review tab', () => {
@@ -37,12 +31,15 @@ describe('Product Detail: Check appearance of product review', () => {
         cy.get('#review-tab').click();
         cy.get('.product-detail-review-teaser-btn').click();
 
-        cy.takeSnapshot('[Product Detail] Review after login', '.product-detail-information');
-
         cy.get('#reviewTitle').type('Review title '.repeat(4));
         cy.get('#reviewContent').type('Review content '.repeat(10));
         cy.get('.product-detail-review-form-actions button').click();
         cy.get('.product-detail-review-list-content').should('be.visible');
+
+        cy.changeElementStyling('.product-detail-review-item-date', 'visibility:hidden');
+        cy.get('.product-detail-review-item-date')
+            .should('have.css', 'visibility', 'hidden');
+
         cy.takeSnapshot('[Product Detail] Review post', '.product-detail-information');
     });
 });

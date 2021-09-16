@@ -1,18 +1,10 @@
 describe('Product Detail: Check appearance of product property', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => {
-                return cy.fixture('product-properties.json')
-            })
-            .then((productProperties) => {
-                cy.createProductFixture(productProperties)
-                    .then(() => {
-                        return cy.createDefaultFixture('category');
-                    })
-                    .then(() => {
-                        cy.visit('/');
-                    });
-            });
+            .then(() => cy.fixture('product-properties.json'))
+            .then((productProperties) => cy.createProductFixture(productProperties))
+            .then(() => cy.createDefaultFixture('category'))
+            .then(() => cy.visit('/'));
     });
 
     it('@visual @detail: verify product properties', () => {
@@ -25,6 +17,6 @@ describe('Product Detail: Check appearance of product property', () => {
         cy.get('.product-detail-properties-table').contains('Textile:')
         cy.get('.product-detail-properties-table').contains('Color')
 
-        cy.percySnapshot('[Product Detail] Properties', '.product-detail');
+        cy.takeSnapshot('[Product Detail] Properties', '.product-detail');
     });
 });

@@ -5,15 +5,11 @@ let product = {};
 describe('Scroll Navigation: Test if it works correctly', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => {
-                cy.loginViaApi();
-            })
-            .then(() => {
-                cy.createProductFixture();
-            })
+            .then(() => cy.loginViaApi())
+            .then(() => cy.createProductFixture())
             .then((result) => {
                 product = result;
-                cy.createCmsFixture();
+                cy.createCmsFixture()
             })
     });
 
@@ -157,6 +153,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.get('.scroll-navigation-sidebar-entry').last().click().should('have.class', 'scroll-navigation-sidebar-entry--active');
         cy.get('.scroll-navigation-sidebar-entry-label').should('not.be.visible').contains('Lorem ipsum Test');
 
+        cy.wait(1000);
         cy.takeSnapshot('[Scroll Navigation] Display in Desktop',
             '.scroll-navigation-sidebar',
             {widths: [1920]});

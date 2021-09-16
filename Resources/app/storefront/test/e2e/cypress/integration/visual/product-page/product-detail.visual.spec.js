@@ -3,25 +3,13 @@ import ProductStreamObject from '../../../support/pages/sw-product-stream.page-o
 describe('Product Detail: Product', () => {
     beforeEach(() => {
         cy.setToInitialState()
+            .then(() => cy.createProductFixture())
+            .then(() => cy.createDefaultFixture('product-stream', {}, 'product-stream-active'))
             .then(() => {
-                return cy.createProductFixture();
+                return cy.createPropertyFixture({options: [{name: 'Red'}]});
             })
-            .then(() => {
-                return cy.createDefaultFixture('product-stream', {}, 'product-stream-active');
-            })
-            .then(() => {
-                return cy.createPropertyFixture({
-                    options: [{
-                        name: 'Red'
-                    }]
-                });
-            })
-            .then(() => {
-                cy.loginViaApi();
-            })
-            .then(() => {
-                cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`);
-            });
+            .then(() => cy.loginViaApi())
+            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@visual @detail: check appearance of product cross selling workflow', () => {
@@ -32,6 +20,7 @@ describe('Product Detail: Product', () => {
             path: `${Cypress.env('apiPath')}/_action/sync`,
             method: 'post'
         }).as('saveData');
+
         cy.intercept({
             path: `${Cypress.env('apiPath')}/search/product-stream`,
             method: 'post'
@@ -41,26 +30,27 @@ describe('Product Detail: Product', () => {
             name: 'Original product',
             productNumber: 'RS-11111',
             description: 'Pudding wafer apple pie fruitcake cupcake.'
-        }).then(() => {
-            cy.createProductFixture({
-                name: 'Second product',
-                productNumber: 'RS-22222',
-                description: 'Jelly beans jelly-o toffee I love jelly pie tart cupcake topping.'
+        })
+            .then(() => {
+                return cy.createProductFixture({
+                    name: 'Second product',
+                    productNumber: 'RS-22222',
+                    description: 'Jelly beans jelly-o toffee I love jelly pie tart cupcake topping.'
+                });
+            })
+            .then(() => {
+                return cy.createProductFixture({
+                    name: 'Third product',
+                    productNumber: 'RS-33333',
+                    description: 'Cookie bonbon tootsie roll lemon drops soufflé powder gummies bonbon.'
+                });
             });
-        }).then(() => {
-            cy.createProductFixture({
-                name: 'Third product',
-                productNumber: 'RS-33333',
-                description: 'Cookie bonbon tootsie roll lemon drops soufflé powder gummies bonbon.'
-            });
-        });
 
         // Open product and add cross selling
         cy.visit(`${Cypress.env('admin')}#/sw/product/index`);
         cy.get('.sw-product-list-grid').should('be.visible');
 
         cy.contains('Original product').click();
-
         cy.get('.sw-product-detail__tab-cross-selling').click();
         cy.get(page.elements.loader).should('not.exist');
 
