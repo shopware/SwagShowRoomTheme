@@ -9,6 +9,10 @@ describe('Product Detail: Check appearance of product review', () => {
             })
             .then(() => {
                 cy.visit('/Product-name/RS-333');
+
+                cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
+                cy.get('.offcanvas .btn-primary').contains('Save').click();
+
                 cy.get('#review-tab').click();
             })
     });

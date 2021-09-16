@@ -111,6 +111,8 @@ describe('Wishlist: Check appearance of wishlist', () => {
 
     it('@visual @wishlist: Heart icon badge display in product detail', () => {
         cy.visit('/');
+        cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
+        cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.window().then((win) => {
             cy.get('.product-box').trigger('hover');

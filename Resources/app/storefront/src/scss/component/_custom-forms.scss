@@ -1,6 +1,16 @@
 .custom-switch {
+    min-height: 0;
+    line-height: 1;
+
     .custom-control-label {
         line-height: $font-size-base * $line-height-base;
+        height: auto;
+
+        &::before,
+        &::after {
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
         &::before {
             border-radius: 1px;
@@ -15,6 +25,7 @@
 
     .custom-control-input:checked ~ .custom-control-label::after {
         background-color: $white;
+        transform: translate(0.75rem, -50%);
     }
 }
 
