@@ -61,9 +61,9 @@ describe('Wishlist: Check appearance of wishlist', () => {
         cy.visit('/');
 
         cy.window().then((win) => {
-            cy.expect(win.salesChannelId).to.not.empty;
-            cy.expect(win.customerLoggedInState).to.equal(0);
-            cy.expect(win.wishlistEnabled).to.equal(1);
+            expect(win.salesChannelId).to.not.empty;
+            expect(win.customerLoggedInState).to.equal(0);
+            expect(win.wishlistEnabled).to.equal(1);
 
             cy.visit('/account/login');
 
@@ -74,7 +74,7 @@ describe('Wishlist: Check appearance of wishlist', () => {
             cy.get('.login-submit [type="submit"]').click();
 
             cy.window().then((win) => {
-                cy.expect(win.customerLoggedInState).to.equal(1);
+                expect(win.customerLoggedInState).to.equal(1);
             });
         })
         cy.visit('/');
