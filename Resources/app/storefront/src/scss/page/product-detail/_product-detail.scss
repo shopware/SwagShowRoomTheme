@@ -7,11 +7,6 @@
         margin-bottom: 0;
     }
 
-    &-name-container,
-    &-manufacturer {
-        padding-left: 0;
-    }
-
     &-manufacturer,
     &-manufacturer-logo {
         max-width: 100px;
@@ -134,6 +129,12 @@
 
         .product-detail-configurator-container {
             margin-bottom: $configurator-padding-sm;
+        }
+    }
+
+    &-tab-navigation-link.active {
+        .card-tabs & {
+            background-color: transparent;
         }
     }
 }

@@ -56,9 +56,8 @@
         }
 
         .account-welcome {
-            padding-top: 75px;
+            padding: 75px 0 40px;
             border-bottom: 1px solid $border-color;
-            padding-bottom: 40px;
         }
 
         @include media-breakpoint-up(lg) {

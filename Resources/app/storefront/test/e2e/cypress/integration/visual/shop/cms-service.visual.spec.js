@@ -43,7 +43,7 @@ describe('Shop page: CMS service page', () => {
             method: 'patch'
         }).as('saveCategory');
 
-        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').get('.sw-tree-item__toggle').click();
+        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Home').get('.sw-tree-item__toggle').click();
         cy.get('a[href="#/sw/category/index/24c3c853a8354db89d04ce3a06dc5bbc"]').contains('Information').parents('.sw-tree-item__children').find('.sw-tree-item__toggle').click();
         cy.get('a[href="#/sw/category/index/8c287c93aae24001976d8aef2ade2f65"]').contains('Shipping and payment').click();
         cy.get('.sw-category-detail__tab-cms').click();

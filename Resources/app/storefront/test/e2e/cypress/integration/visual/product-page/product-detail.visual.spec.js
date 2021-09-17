@@ -55,7 +55,7 @@ describe('Product Detail: Product', () => {
         cy.get(page.elements.loader).should('not.exist');
 
         cy.contains(
-            `.sw-product-detail-cross-selling__empty-state ${page.elements.ghostButton}`,
+            `${page.elements.ghostButton}`,
             'Add new Cross Selling'
         ).should('be.visible').click();
         cy.get('.product-detail-cross-selling-form').should('be.visible');
