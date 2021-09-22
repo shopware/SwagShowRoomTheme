@@ -5,7 +5,7 @@ variables:
     WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/platform/public
     PROJECT_ROOT: $CI_PROJECT_DIR/platform
     LOG_STDOUT: $CI_PROJECT_DIR/stdout.log
-    PLATFORM_BRANCH: "6.4.3.0"
+    PLATFORM_BRANCH: "6.4.5.0"
     CMS_EXTENSIONS_BRANCH: "master"
     PAYPAL_PLUGIN_BRANCH: "master"
     AMAZON_PAY_BRANCH: "master"
@@ -128,7 +128,4 @@ Storefront Percy.io:
         - composer run e2e:prepare
         - cd custom/apps/$THEME_NAME/Resources/app/storefront/test/e2e/
         - npm clean-install
-        - ./node_modules/.bin/percy exec -- ./node_modules/.bin/cypress run
-            --browser chrome
-            --spec "cypress/**/*.visual.spec.js"
-            --headless
+        - ./node_modules/.bin/percy exec -- ./node_modules/.bin/cypress run --browser chrome --spec "cypress/**/*.visual.spec.js" --headless

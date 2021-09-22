@@ -2,6 +2,11 @@
 
 {% block page_account_overview %}
     <div class="account-overview">
+        {% if feature('FEATURE_NEXT_15707') %}
+            {{ block('page_account_overview_shipping_warning') }}
+            {{ block('page_account_overview_request_group_info') }}
+        {% endif %}
+
         {% block page_account_overview_welcome %}
             {{ parent() }}
         {% endblock %}
