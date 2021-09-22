@@ -5,7 +5,7 @@ variables:
     WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/platform/public
     PROJECT_ROOT: $CI_PROJECT_DIR/platform
     LOG_STDOUT: $CI_PROJECT_DIR/stdout.log
-    PLATFORM_BRANCH: "6.4.3.0"
+    PLATFORM_BRANCH: "trunk"
     CMS_EXTENSIONS_BRANCH: "master"
     PAYPAL_PLUGIN_BRANCH: "master"
     AMAZON_PAY_BRANCH: "master"
