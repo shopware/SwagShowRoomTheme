@@ -7,11 +7,6 @@
         margin-bottom: 0;
     }
 
-    &-name-container,
-    &-manufacturer {
-        padding-left: 0;
-    }
-
     &-manufacturer,
     &-manufacturer-logo {
         max-width: 100px;
@@ -22,6 +17,10 @@
         font-weight: $font-weight-bold;
         font-size: $product-detail-name-sm;
         margin-bottom: 0;
+
+        &-container {
+            @extend .px-0;
+        }
     }
 
     &-price-container {
@@ -136,6 +135,12 @@
             margin-bottom: $configurator-padding-sm;
         }
     }
+
+    &-tab-navigation-link.active {
+        .card-tabs & {
+            background-color: transparent;
+        }
+    }
 }
 
 .product-detail-form-container {
@@ -195,7 +200,7 @@
 
     .product-block-prices,
     .product-detail-price {
-        margin-top: $spacer-lg;
+        margin-top: 0;
     }
 }
 

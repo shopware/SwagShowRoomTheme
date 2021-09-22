@@ -86,7 +86,7 @@ $carousel-control-icon-width-sm: 16px;
 
     .btn-buy-wrapper,
     .product-detail-button-container {
-        @extend .p-0;
+        padding: $spacer-lg 0 0;
     }
 }
 

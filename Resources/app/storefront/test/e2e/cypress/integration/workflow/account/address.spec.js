@@ -52,6 +52,7 @@ describe('Account: Address page', { tags: ['@workflow', '@address'] }, () => {
         cy.get('.address-card:first-child()').contains('Edit').click();
         cy.get('#addresscompany').typeAndCheckStorefront('Company ABD');
         cy.get('#addressdepartment').typeAndCheckStorefront('Department ABF');
+        cy.get('#addressAddressCountry').select('Germany');
         cy.get('.address-form-submit').scrollIntoView();
 
         cy.get('.address-form-submit').click();

@@ -62,6 +62,8 @@ describe('Account: Address page', () => {
         cy.get('.address-card:first-child()').contains('Edit').click();
         cy.get('#addresscompany').typeAndCheckStorefront('Company ABD');
         cy.get('#addressdepartment').typeAndCheckStorefront('Department ABF');
+        cy.get('#addressAddressCountry').select('Germany');
+
         cy.get('.address-form-submit').scrollIntoView();
         cy.takeSnapshot('[Address] Fill in edit address form', '.account-address', {widths: [375, 768, 1920]});
 

@@ -70,7 +70,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
         cy.get('#sw-field--currentBlockCategory').select('Images');
 
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)').scrollIntoView();
-        cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)')
+        cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)').find('.sw-cms-sidebar__block-preview')
             .dragTo('.sw-cms-stage-add-block:last-child');
         cy.get('.sw-cms-block').should('be.visible');
         cy.get('.sw-cms-block__config-overlay').last().invoke('show');
