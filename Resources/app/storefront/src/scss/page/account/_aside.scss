@@ -8,3 +8,14 @@
         font-weight: $font-weight-bolder;
     }
 }
+
+.checkout-aside-item {
+    &-image {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &-data {
+        padding-right: 0;
+    }
+}
