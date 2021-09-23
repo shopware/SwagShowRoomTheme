@@ -2,9 +2,11 @@
 
 {% block buy_widget_buy_quantity_container %}
     <div class="col-4 col-md-12 col-lg-4">
-        <div class="product-detail-configurator-group-title">
-            {{ "showroom.detail.quantity"|trans|sw_sanitize }}
-        </div>
+        {% block buy_widget_configurator_group_title %}
+            <div class="product-detail-configurator-group-title">
+                {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+            </div>
+        {% endblock %}
     </div>
 
     <div class="col-8 col-md-12 col-lg-8">
@@ -18,7 +20,7 @@
     <div class="col-12">
         <div class="row justify-content-end product-detail-button-container">
             {% set isPricingTable = product.calculatedPrices|length > 1 %}
-            {% block page_product_detail_price_container %}
+            {% block buy_widget_price %}
                 <div
                     class="col-12 {% if isPricingTable %}col-md-12{% else %}col-md-4{% endif %} buy-widget__price">
                     <div class="product-detail-price-container">
@@ -29,7 +31,7 @@
 
             <div class="col-12 col-md-8 buy-widget__button">
                 {% block buy_widget_buy_button %}
-                     {{ parent() }}
+                    {{ parent() }}
                 {% endblock %}
 
                 {% if config('core.cart.wishlistEnabled') %}

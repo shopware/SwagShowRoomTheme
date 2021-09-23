@@ -34,43 +34,8 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div
-                                            class="product-detail-configurator-options collapse js-column-content">
-                                            {% for option in group.options %}
-
-                                                {% if elementId is defined and elementId is not null %}
-                                                    {% set optionIdentifier = [group.id, option.id, elementId]|join('-') %}
-                                                {% else %}
-                                                    {% set optionIdentifier = [group.id, option.id]|join('-') %}
-                                                {% endif %}
-
-                                                {% set isActive = false %}
-                                                {% set isCombinableCls = 'is-combinable' %}
-
-                                                {% if option.id in product.optionIds %}
-                                                    {% set isActive = true %}
-                                                {% endif %}
-
-                                                {% if not option.combinable %}
-                                                    {% set isCombinableCls = false %}
-                                                {% endif %}
-
-                                                {% if option.configuratorSetting.media %}
-                                                    {% set displayType = 'media' %}
-                                                    {% set media = option.configuratorSetting.media %}
-                                                {% else %}
-                                                    {% set displayType = group.displayType %}
-                                                    {% if option.media %}
-                                                        {% set media = option.media %}
-                                                    {% else %}
-                                                        {% set media = false %}
-                                                    {% endif %}
-                                                {% endif %}
-
-                                                {% block buy_widget_configurator_option %}
-                                                    {{ parent() }}
-                                                {% endblock %}
-                                            {% endfor %}
+                                        <div class="collapse js-column-content">
+                                            {{ parent() }}
                                         </div>
                                     </div>
                                 </div>

@@ -13,17 +13,9 @@
                         {{ parent() }}
                     {% endblock %}
 
-                    <div class="product-variant-characteristics">
-                        {% for variation in product.variation %}
-                            <span class="product-variant-characteristics-group">{{ variation.group }}:</span>
-                            <span class="product-variant-characteristics-option">
-                            {{ variation.option }}
-                        </span>
-                            {% if product.variation|last != variation %}
-                                |
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    {% block component_product_box_variant_characteristics %}
+                        {{ parent() }}
+                    {% endblock %}
                 </div>
 
                 {% block component_product_box_price %}

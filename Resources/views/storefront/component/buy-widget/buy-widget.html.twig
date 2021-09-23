@@ -6,7 +6,9 @@
 
         {{ block('buy_widget_rich_snippets') }}
 
-        {{ block('buy_widget_not_available') }}
+        {% if not feature('FEATURE_NEXT_16992') %}
+            {% block buy_widget_not_available %}{% endblock %}
+        {% endif %}
 
         {{ block('buy_widget_buy_container') }}
     </div>
@@ -21,3 +23,5 @@
         {{ parent() }}
     </div>
 {% endblock %}
+
+{# the block buy_widget_wishlist was moved tinto buy-widget-form #}

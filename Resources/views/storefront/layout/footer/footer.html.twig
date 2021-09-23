@@ -1,90 +1,71 @@
 {% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
 
 {% block layout_footer_navigation %}
-    <div class="container">
-        <div id="footerColumns"
-             class="row footer-columns"
-             data-collapse-footer="true">
-            {% block layout_footer_navigation_hotline %}
-                <div class="col-12 col-md-3 footer-column js-footer-column">
-                    {% block layout_footer_navigation_hotline_headline %}
-                        {{ parent() }}
-                    {% endblock %}
+    <div id="footerColumns" class="row footer-columns" data-collapse-footer="true">
+        {% block layout_footer_navigation_hotline %}
+            <div class="col-12 col-md-3 footer-column js-footer-column">
+                {% block layout_footer_navigation_hotline_headline %}
+                    {{ parent() }}
+                {% endblock %}
 
-                    {% block layout_footer_navigation_hotline_content %}
-                        <div id="collapseFooterHotline"
-                             class="footer-column-content collapse js-footer-column-content footer-contact"
-                             aria-labelledby="collapseFooterHotlineTitle">
-                            <div class="footer-column-content-inner">
-                                <div class="footer-contact-hotline">
-                                    {{ 'footer.serviceHotline'|trans|sw_sanitize }}
-                                </div>
-                            </div>
-                            <div class="footer-contact-form">
-                                {{ 'footer.serviceContactLink'|trans({
-                                    '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
-                                })|raw }}
-                            </div>
-                        </div>
-                    {% endblock %}
-                </div>
-            {% endblock %}
+                {% block layout_footer_navigation_hotline_content %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        {% endblock %}
 
-            {% block layout_footer_navigation_columns %}
-                <div class="col-12 col-md">
-                    <div class="row">
-                        {% set orderIndex = 3 %}
-                        {% for root in page.footer.navigation.tree %}
-                            {% block layout_footer_navigation_column %}
-                                <div class="col-12 col-md-auto col-lg-6 footer-column js-footer-column">
-                                    {% block layout_footer_navigation_information_headline %}
-                                        {{ parent() }}
-                                    {% endblock %}
+        {% block layout_footer_navigation_columns %}
+            <div class="col-12 col-md">
+                <div class="row">
+                    {% for root in page.footer.navigation.tree %}
+                        {% block layout_footer_navigation_column %}
+                            <div class="col-12 col-md-auto col-lg-6 footer-column js-footer-column">
+                                {% block layout_footer_navigation_information_headline %}
+                                    {{ parent() }}
+                                {% endblock %}
 
-                                    {% block layout_footer_navigation_information_content %}
-                                        {{ parent() }}
-                                    {% endblock %}
-                                </div>
-                            {% endblock %}
-
-                            {% set orderIndex = orderIndex + 1 %}
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endblock %}
-
-            {% block layout_footer_navigation_newsletter %}
-                <div class="col-12 col-md-4 col-lg-3 footer-column footer-newsletter js-footer-column">
-                    <div class="footer-newsletter-container">
-                        {% block layout_footer_navigation_newsletter_headline %}
-                            <div
-                                class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
-                                id="collapseFooterNewsletterTitle"
-                                data-target="#collapseFooterNewsletter"
-                                aria-expanded="true"
-                                aria-controls="collapseFooterNewsletter">
-                                <span
-                                    class="d-md-none d-lg-block">{{ 'footer.newsletterHeadline'|trans|sw_sanitize }}</span>
-                                {% block layout_footer_navigation_newsletter_icons %}
-                                    <div class="footer-column-toggle">
-                                            <span class="footer-plus-icon">
-                                                {% sw_icon 'plus' %}
-                                            </span>
-                                        <span class="footer-minus-icon">
-                                                {% sw_icon 'minus' %}
-                                            </span>
-                                    </div>
+                                {% block layout_footer_navigation_information_content %}
+                                    {{ parent() }}
                                 {% endblock %}
                             </div>
                         {% endblock %}
-
-                        {% block layout_footer_navigation_newsletter_content %}
-                            {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter-widget.html.twig' %}
-                        {% endblock %}
-                    </div>
+                    {% endfor %}
                 </div>
-            {% endblock %}
-        </div>
+            </div>
+        {% endblock %}
+
+        {% block layout_footer_navigation_newsletter %}
+            <div class="col-12 col-md-4 col-lg-3 footer-column footer-newsletter js-footer-column">
+                <div class="footer-newsletter-container">
+                    {% block layout_footer_navigation_newsletter_headline %}
+                        <div
+                            class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                            id="collapseFooterNewsletterTitle"
+                            data-target="#collapseFooterNewsletter"
+                            aria-expanded="true"
+                            aria-controls="collapseFooterNewsletter">
+                                <span class="d-md-none d-lg-block">
+                                    {{ 'footer.newsletterHeadline'|trans|sw_sanitize }}
+                                </span>
+                            {% block layout_footer_navigation_newsletter_icons %}
+                                <div class="footer-column-toggle">
+                                    <span class="footer-plus-icon">
+                                        {% sw_icon 'plus' %}
+                                    </span>
+                                    <span class="footer-minus-icon">
+                                        {% sw_icon 'minus' %}
+                                    </span>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+
+                    {% block layout_footer_navigation_newsletter_content %}
+                        {% sw_include '@Storefront/storefront/layout/footer/footer-newsletter-widget.html.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
     </div>
 {% endblock %}
 

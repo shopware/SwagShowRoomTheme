@@ -34,33 +34,8 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div
-                                            class="product-detail-configurator-options collapse js-column-content">
-                                            {% for option in group.options %}
-
-                                                {% set optionIdentifier = [group.id, option.id]|join('-') %}
-                                                {% set isActive = false %}
-
-                                                {% if option.id in page.product.optionIds %}
-                                                    {% set isActive = true %}
-                                                {% endif %}
-
-                                                {% if option.configuratorSetting.media %}
-                                                    {% set displayType = 'media' %}
-                                                    {% set media = option.configuratorSetting.media %}
-                                                {% else %}
-                                                    {% set displayType = group.displayType %}
-                                                    {% if option.media %}
-                                                        {% set media = option.media %}
-                                                    {% else %}
-                                                        {% set media = false %}
-                                                    {% endif %}
-                                                {% endif %}
-
-                                                {% block page_product_detail_configurator_option %}
-                                                    {{ parent() }}
-                                                {% endblock %}
-                                            {% endfor %}
+                                        <div class="collapse js-column-content">
+                                            {{ parent() }}
                                         </div>
                                     </div>
                                 </div>
