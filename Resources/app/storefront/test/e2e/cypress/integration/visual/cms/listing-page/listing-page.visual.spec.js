@@ -2,7 +2,7 @@ import CategoryPageObject from '../../../../support/pages/module/sw-category.pag
 
 let product = {};
 
-describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
+describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
     beforeEach(() => {
         // Clean previous state and prepare Administration
         cy.setToInitialState()

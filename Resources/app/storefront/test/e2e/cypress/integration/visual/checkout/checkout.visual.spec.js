@@ -37,7 +37,6 @@ describe('Checkout: Visual tests', () => {
         cy.takeSnapshot('[Checkout] Search product result', '.header-search');
 
         cy.get('.search-suggest-product-name').click();
-
         cy.get('.product-detail-buy .btn-buy').click();
         cy.wait('@cartInfo').then((xhr) => {
             expect(xhr.response).to.have.property('statusCode', 200)
@@ -49,6 +48,8 @@ describe('Checkout: Visual tests', () => {
         cy.get('.offcanvas').should('be.visible');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
+
+        cy.wait(500);
         cy.get('.header-cart-total').click();
 
         cy.wait('@cartInfo').then((xhr) => {

@@ -27,13 +27,10 @@ describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
 
         // Product detail
         cy.get('.search-toggle-btn').click();
-
         cy.get('.header-search-input')
             .type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
-
         cy.get('.search-suggest-product-name').click();
-
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
@@ -41,7 +38,9 @@ describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
         cy.get('.cart-item-price').contains('64');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
-        cy.get('.header-cart-total').contains('64', { timeout: 20000 });
+
+        cy.wait(500);
+        cy.get('.header-cart-total').contains('64');
         cy.get('.header-cart-total').click();
         cy.get('.offcanvas').should('be.visible');
 
