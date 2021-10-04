@@ -203,7 +203,7 @@ describe('Customized Product: Check appearance of customized products', () => {
                 cy.wrap($el).click();
             }
         })
-        cy.takeSnapshot('[Customized Product] Product detail', '.product-detail-information');
+        cy.takeSnapshot('[Customized Product] Product detail', '.product-detail-tabs');
 
         // Add to cart
         cy.get('.product-detail-buy .btn-buy').click();

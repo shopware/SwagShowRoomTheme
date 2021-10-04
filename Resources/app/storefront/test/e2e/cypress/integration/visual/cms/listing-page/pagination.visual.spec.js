@@ -3,7 +3,7 @@ import products from '../../../../fixtures/listing-pagination-products.json';
 const testCases = [ 2, 4, 8];
 const maximumCase = Math.max(...testCases);
 
-describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
+describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
     beforeEach(() => {
         cy.setToInitialState()
             .then(() => {

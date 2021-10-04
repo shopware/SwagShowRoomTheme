@@ -15,13 +15,13 @@ describe('Product Detail: Check appearance of product review', () => {
         cy.get('.product-detail-review-teaser-btn').should('be.visible');
         cy.get('.product-detail-review-list').contains('No reviews found');
 
-        cy.takeSnapshot('[Product Detail] No review', '.product-detail-information',);
+        cy.takeSnapshot('[Product Detail] No review', '.product-detail-tabs',);
     });
 
     it('@visual, @review: should be able to submit review', () => {
         cy.get('.product-detail-review-teaser button').click();
         cy.get('.product-detail-review-login').should('be.visible');
-        cy.takeSnapshot('[Product Detail] Review Login', '.product-detail-information',);
+        cy.takeSnapshot('[Product Detail] Review Login', '.product-detail-tabs',);
 
         cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
         cy.get('#loginPassword').typeAndCheckStorefront('shopware');
@@ -40,6 +40,6 @@ describe('Product Detail: Check appearance of product review', () => {
         cy.get('.product-detail-review-item-date')
             .should('have.css', 'visibility', 'hidden');
 
-        cy.takeSnapshot('[Product Detail] Review post', '.product-detail-information');
+        cy.takeSnapshot('[Product Detail] Review post', '.product-detail-tabs');
     });
 });

@@ -98,7 +98,7 @@ Validate snippets:
         - ./node_modules/.bin/cypress run
           --browser $BROWSER
           --headless
-          --env grepTags=@workflow
+          --spec "cypress/**/workflow/**/*.spec.js"
     after_script: *mochawesome_report_definition
     artifacts:
         when: always

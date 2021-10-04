@@ -2,9 +2,7 @@
 
 {% block base_header_inner %}
     {# move flyouts here from layout_main_navigation_menu_flyout_wrapper because they need to have full width #}
-    <div data-flyout-menu="true">
-        {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
-    </div>
+    {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
 {% endblock %}
 
 {% block base_navigation %}
@@ -12,10 +10,6 @@
     {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
 {% endblock %}
 
-{% block base_footer %}
-    <footer class="footer-main">
-        {% block base_footer_inner %}
-            {% sw_include '@Storefront/storefront/layout/footer/footer.html.twig' %}
-        {% endblock %}
-    </footer>
+{% block base_footer_inner %}
+    {% sw_include '@Storefront/storefront/layout/footer/footer.html.twig' %}
 {% endblock %}

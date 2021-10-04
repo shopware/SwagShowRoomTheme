@@ -9,6 +9,7 @@
         </div>
     </div>
 {% endblock %}
+
 {% block layout_search_suggest_result_total_count %}
     <a href="{{ path('frontend.search.page') }}?search={{ page.searchTerm }}"
        title="{{ "header.searchAllResults"|trans|striptags }}"

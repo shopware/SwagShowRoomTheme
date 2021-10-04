@@ -2,7 +2,7 @@ import MediaPageObject from '../../../../support/pages/module/sw-media.page-obje
 
 let images = ['sw-login-background', 'sw-test-image', 'sw-showroom-landing-page'];
 
-describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
+describe('CMS: Landing Page', { tags: ['@visual', '@cms'] }, () => {
     before(() => {
         let salesChannel;
         cy.setToInitialState()
@@ -41,7 +41,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
             });
     });
 
-    it('@workflow @cms: basic landing page', () => {
+    it('@cms: basic landing page', () => {
         const page = new MediaPageObject();
 
         cy.intercept({

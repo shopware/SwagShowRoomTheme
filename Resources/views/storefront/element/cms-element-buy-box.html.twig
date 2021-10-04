@@ -1,6 +1,10 @@
 {% sw_extends '@Storefront/storefront/element/cms-element-buy-box.html.twig' %}
 
 {% block element_buy_box %}
+    {% set config = element.fieldConfig.elements %}
+
+    {% set buyBoxOptions = { elementId: element.id } %}
+
     {% block page_product_detail_headline %}
         <div class="align-items-center product-detail-headline">
             {% sw_include '@Storefront/storefront/page/product-detail/headline.html.twig' %}
