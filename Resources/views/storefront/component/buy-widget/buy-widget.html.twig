@@ -6,8 +6,8 @@
 
         {{ block('buy_widget_rich_snippets') }}
 
-        {% if not feature('FEATURE_NEXT_16992') %}
-            {% block buy_widget_not_available %}{% endblock %}
+        {% if block('page_product_detail_not_available') is defined %}
+            {{ block('page_product_detail_not_available') }}
         {% endif %}
 
         {{ block('buy_widget_buy_container') }}
