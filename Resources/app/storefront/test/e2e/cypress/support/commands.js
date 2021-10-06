@@ -199,3 +199,15 @@ Cypress.Commands.add('createCustomProductFixture', (userData = {}, templateFixtu
         return fixture.setProductFixture(data, categoryName);
     });
 });
+
+Cypress.Commands.add('openInitialPage', (url) => {
+    // Request we want to wait for later
+    cy.intercept(`${Cypress.env('apiPath')}/_info/me`).as('meCall')
+
+    cy.visit(url);
+    cy.wait('@meCall').then((xhr) => {
+        expect(xhr.response).to.have.property('statusCode', 200);
+    });
+    cy.get('.sw-desktop').should('be.visible');
+});
+

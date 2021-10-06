@@ -145,7 +145,9 @@ describe('Customized Product: Check appearance of customized products', () => {
             .should('be.visible')
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
-        cy.get('.flatpickr-day.today').click();
+        cy.get('.numInputWrapper .cur-year').type('2021');
+        cy.get('.flatpickr-monthDropdown-months').select('October');
+        cy.get('.flatpickr-day').contains('4').first().click();
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
