@@ -75,7 +75,7 @@ describe('Paypal: Checkout', () => {
         cy.get('.offcanvas-cart div[data-swag-paypal-installment-banner="true"]').should('be.visible');
     });
 
-    it.only('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
+    it('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
         cy.get('.search-toggle-btn').click();
 
         cy.get('.header-search-input')
