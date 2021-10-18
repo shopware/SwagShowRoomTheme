@@ -95,3 +95,17 @@
         }
     }
 }
+
+@include media-breakpoint-down(sm) {
+    .account-password,
+    .account-email {
+        .form-row {
+            flex-direction: column;
+
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

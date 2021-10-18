@@ -86,3 +86,12 @@
         font-size: $custom-select-font-size-lg;
     }
 }
+
+@include media-breakpoint-down(lg) {
+    .custom-radio .custom-control-label {
+        &:before,
+        &:after {
+            top: 2px;
+        }
+    }
+}

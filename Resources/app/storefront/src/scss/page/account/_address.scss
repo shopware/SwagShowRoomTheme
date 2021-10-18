@@ -19,6 +19,8 @@
 
     .account-welcome-container {
         border-bottom: 1px solid $border-color;
+        margin-right: 0;
+        margin-left: 0;
     }
 
     .default-address {
@@ -53,11 +55,6 @@
     }
 
     @include media-breakpoint-up(md) {
-        .account-welcome-container {
-            margin-right: 0;
-            margin-left: 0;
-        }
-
         .account-content {
             .account-welcome {
                 border-bottom: unset;
