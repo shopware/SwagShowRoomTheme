@@ -37,12 +37,12 @@ describe('Account: Order page', () => {
 
     it('@visual: reorder order', () => {
         cy.visit('/account/order');
-
         // Login
         cy.get('.login-card').should('be.visible');
         accountPage.login();
 
         cy.changeElementStyling('.order-table-header-heading', 'display : none');
+        cy.changeElementStyling('.order-item-header .col-12.d-sm-none:nth-of-type(3) .order-table-body-value', 'display : none');
         cy.get('.order-table-header-heading')
             .should('have.css', 'display', 'none');
 
@@ -104,6 +104,7 @@ describe('Account: Order page', () => {
         cy.get('.order-status-badge').contains('Cancelled');
 
         cy.changeElementStyling('.order-table-header-heading', 'display: none');
+        cy.changeElementStyling('.order-item-header .col-12.d-sm-none:nth-of-type(3) .order-table-body-value', 'display : none');
         cy.get('.order-table-header-heading')
             .should('have.css', 'display', 'none');
 

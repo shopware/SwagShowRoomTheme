@@ -17,30 +17,14 @@
                         {% block page_checkout_item_info_details_inner %}
                             <div class="cart-item-details-container">
                                 {% block page_checkout_item_info_label %}
-                                    {% if lineItem.type == 'product' %}
-                                        <a href="{{ seoUrl('frontend.detail.page', {'productId': lineItem.referencedId}) }}"
-                                           class="cart-item-label"
-                                           title="{{ lineItem.label }}"
-                                            {% if controllerAction is same as('confirmPage') %}
-                                                data-toggle="modal"
-                                                data-modal-class="quickview-modal"
-                                                data-url="{{ path('widgets.quickview.minimal',{ 'productId': lineItem.referencedId }) }}"
-                                            {% endif %}
-                                        >
-                                            {{ lineItem.label|u.truncate(60, '...') }}
-                                        </a>
-                                    {% else %}
-                                        <div class="cart-item-label">
-                                            {{ lineItem.label|u.truncate(60, '...') }}
-                                        </div>
-                                    {% endif %}
+                                    {{ parent() }}
                                 {% endblock %}
 
                                 {% block page_checkout_item_info_ordernumber %}
                                     {{ parent() }}
                                 {% endblock %}
 
-                                {% if lineItem.type == 'product' and lineItem.price.referencePrice is not null %}
+                                {% if lineItem.type == PRODUCT_LINE_ITEM_TYPE and lineItem.price.referencePrice is not null %}
                                     {% set price = lineItem.price %}
                                     {{ "checkout.priceUnitName"|trans|sw_sanitize }}
                                     <span class="price-unit-reference">
@@ -53,7 +37,7 @@
                                     {{ parent() }}
                                 {% endblock %}
 
-                                {% if config('core.cart.wishlistEnabled') and lineItem.type == 'product' %}
+                                {% if config('core.cart.wishlistEnabled') and line == PRODUCT_LINE_ITEM_TYPE %}
                                     {% block page_checkout_item_wishlist %}
                                         {{ parent() }}
                                     {% endblock %}

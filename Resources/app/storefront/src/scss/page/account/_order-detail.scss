@@ -74,7 +74,8 @@
         }
 
         .order-item-product-image {
-            img {
+            img,
+            .product-image-placeholder {
                 max-width: 90px;
             }
 
