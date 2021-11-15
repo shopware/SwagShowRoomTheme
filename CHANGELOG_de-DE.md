@@ -1,0 +1,86 @@
+# 1.1.6
+- Inkompatibilitätsprobleme mit 6.4.4.0 behoben
+
+# 1.1.5
+- Paypal Checkout erscheint nicht auf der Checkout Register Seite
+- Bild-Slider auf der Produkt-Detailseite defekt
+- Produktdetail UI Verbesserung
+- UI-Verbesserung für die Kontoseite
+
+# 1.1.4
+- Änderungen für Shopware Version v6.4.4.0
+
+# 1.1.3
+- Paypal Express fehlt in Cross Selling
+
+# 1.1.2
+- Newsletter-Anmeldung im Footer ist nicht kompatibel mit Captcha-Integration
+- PHP-Snippet-Dateien entfernen
+
+# 1.1.1
+- Seltsames Verhalten des Bild-Sliders auf einer Produkt-Detailseite
+- Der Produktname wird in der Produktliste abgeschnitten
+- Mehrere Probleme mit der Buybox auf der Listing-Seite
+- Amazon Pay ist nicht mit dem Showroom-Theme kompatibel
+- Benutzerdefiniertes Produkt: Datumsfeld kann auf dem Handy nicht verwendet werden
+- Benutzerdefinierte Produkte: Konfiguration ist kaum lesbar
+- Benutzerdefiniertes Produkt: Schaltfläche zum Hochladen von Dateien überschneidet sich
+- Meine Erweiterungen - Theme App Symbol
+- Service-Menü in der Fußzeile - Elemente werden nicht korrekt umbrochen
+- Das Kommentarfeld in der Kaufabwicklung stört das Design.
+- Update der Schaufensterfunktionen
+- Shopware 6.4.0.0 Themen-Aktualisierungen
+- Entfernen von Legacy-Code im Zusammenhang mit VatId
+- Aktualisierung von Paypal in der Cloud
+- Captcha Lösung
+- Unterstützung verschachtelter LineItems
+
+# 1.1.0
+- CMS: In der Quickview fehlen die Pfeilsymbole in den Navigationsschaltflächen
+- Hinzufügen zur Wunschliste auf der Produkt-Detailseite ist nicht an der richtigen Position
+- Indikator im Wunschzettel-Symbol fehlt, der anzeigt, wie viele Produkte sich derzeit auf dem Wunschzettel befinden
+- Das Registrierungs-/Login-Formular kann beim Auschecken/Registrieren nicht erweitert/zusammengeklappt werden
+- Sprachumschaltung funktioniert nicht mehrTSR-387 - Beim Umschalten auf kommerziell werden die Felder für Unternehmen und Abteilung nicht angezeigt
+- Die Verwendung der mobilen Ansicht unterbricht das Design der Kopfzeile
+- Falsches Wunschlistensymbol in der Wunschlistenübersicht
+- CMS PDP funktioniert nicht mit Showroom
+- Adressänderung während Checkout/Bestätigung nicht möglich
+- Padding links und rechts fehlt im Footer
+- Design-Polishing: Filter-Button auf Mobile braucht Padding
+- falsche Textfarbe in der Varianten-Auswahl
+- Design-Polishing: Falsche Ausrichtung von Icon und Text
+- Möglichkeit, ein Kundenkonto zu löschen, fehlt
+- PayPal iFrame wird im Checkout abgeschnitten
+- Design Polishing: Hintergrundfarbe grau sollte die volle Höhe nutzen
+- Beschreibung der Versandart hat falsche Farbe
+- Kein Platz zwischen Zahlungs-/Versandartenbildern in der Fußzeile
+- Kategorienavigation kann zu einer falschen Kategorie führen
+- CMS-Erweiterung: Schaltfläche "In den Warenkorb" zu klein
+- Dokumente anzeigen funktioniert nicht mit Showroom
+- Sprachumschaltung verschwindet
+- Paypal Express Button befindet sich außerhalb der Produktbox
+- Schaltfläche "In den Warenkorb" wird nicht übersetzt
+- Cloud: Textschnipsel werden nicht korrekt angezeigt
+- Thumbnails im Image Slider sind links abgeschnittenTSR-414 - Der klickbare Bereich der Hover-Box funktioniert nicht richtig
+- Navigationspfeile des Bildsliders sind in der CMS-Quickview falsch positioniert
+- CMS-Erweiterung: Die Schnellansicht kann nicht zweimal geöffnet werden
+- CMS-Erweiterung: Wunschlistensymbol fehlt in der Schnellansicht
+- Benutzerdefinierte Produkte funktionieren nicht mit Showroom und benutzerdefinierter PDP
+- Variantenumschaltung funktioniert nicht
+- Varianten in der Buybox können nur einmal geändert werden
+- Wunschliste und benutzerdefinierte Buybox in der Listing-Seite bricht die Seite
+- Update des Designs auf die neueste Shopware Version
+- Wunschzettel Seite
+- "von" Preise für Variantenprodukte aktualisieren
+- Paypal in der Cloud aktualisieren
+- CMS - Produkt Seiten Layouts Update
+- Zahlungsauswahl / Checkout Update
+- Überarbeitung des Billigstpreiskonzeptes Dev update
+- Service-Navigation vom Header in den Footer verschoben update
+- Anzeige von Varianten als Dropdown Update
+- Warenkorb/Produkt auf Wunschliste speichern Update
+- Produktdetail Breadcrumb
+- JavaScript-Plugin-Probleme beheben
+
+# 1.0.0
+- Erste Version von `SwagShowRoomTheme`
