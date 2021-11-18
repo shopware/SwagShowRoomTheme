@@ -5,12 +5,13 @@ variables:
     WEB_DOCUMENT_ROOT: $CI_PROJECT_DIR/platform/public
     PROJECT_ROOT: $CI_PROJECT_DIR/platform
     LOG_STDOUT: $CI_PROJECT_DIR/stdout.log
-    PLATFORM_BRANCH: "6.4.6.0"
+    PLATFORM_BRANCH: "6.4.7.0"
     CMS_EXTENSIONS_BRANCH: "master"
     PAYPAL_PLUGIN_BRANCH: "master"
     AMAZON_PAY_BRANCH: "master"
     THEME_NAME: "SwagShowRoomTheme"
     CMS_EXTENSIONS_NAME: "SwagCmsExtensions"
+    PAYPAL_NAME: "SwagPayPal"
     AMAZON_PAY_NAME: "SwagAmazonPay"
     APP_ENV: e2e
     CYPRESS_baseUrl: 'http://localhost:8000'
@@ -49,7 +50,7 @@ default:
         - chown -R application:application .
         - bin/console plugin:refresh
         - bin/console plugin:install --activate $CMS_EXTENSIONS_NAME
-        - bin/console plugin:install --activate SwagPayPal
+        - bin/console plugin:install --activate $PAYPAL_NAME
         - bin/console plugin:install --activate $AMAZON_PAY_NAME
         - bin/console plugin:install --activate $CUSTOM_PRODUCT_EXTENSIONS_NAME
         - bin/console cache:clear

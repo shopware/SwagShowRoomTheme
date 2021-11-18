@@ -56,7 +56,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.get('.sw-loader').should('not.exist');
         cy.get('.sw-cms-block-product-listing').should('be.visible');
 
-        // Turn on Scrooll Navigation in default commerce
+        // Turn on Scroll Navigation in default commerce
         cy.get('.sw-cms-section').first()
             .find('.sw-cms-section__action').first().click();
         cy.get('input[name="sw-field--swagCmsExtensionsScrollNavigation-active"]').check();
@@ -67,6 +67,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.get('.sw-cms-stage-section-selection__default')
             .contains('Full width')
             .find('.sw-cms-stage-section-selection__default-preview').click();
+        cy.wait(1000);
         cy.get('.sw-cms-section').last()
             .find('.sw-cms-section__action').first().click();
         cy.get('input[name="sw-field--swagCmsExtensionsScrollNavigation-active"]').check();

@@ -260,3 +260,15 @@
 .list-price-badge {
     margin-bottom: 0;
 }
+
+.is-ctl-product {
+    @include media-breakpoint-up(lg) {
+        nav ~ .product-detail {
+            padding-top: 0;
+        }
+
+        .product-detail {
+            padding-top: 50px;
+        }
+    }
+}
