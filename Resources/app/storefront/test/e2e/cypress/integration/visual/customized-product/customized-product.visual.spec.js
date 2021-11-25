@@ -41,6 +41,12 @@ describe('Customized Product: Check appearance of customized products', () => {
                 })
                 .then(() => cy.createProductFixture(product))
                 .then(() => cy.createCustomerFixtureStorefront())
+                .then(() => cy.visit('/'))
+                .then(() => {
+                    cy.visit('/')
+                    cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                    cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                });
         })
     });
 

@@ -80,7 +80,7 @@ describe('Product Detail: Check appearance of product variants', () => {
         });
 
         // Ensure that variant "Green" is checked at the moment the test runs
-        cy.get(':nth-child(2) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click()
+        cy.get(':nth-child(2) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click({force: true})
         cy.get('.product-detail-configurator-option-label[title="M"]').then(($btn) => {
             const inputId = $btn.attr('for');
 
