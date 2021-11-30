@@ -1,3 +1,7 @@
+# 1.2.0
+- Kompatibilität des Themas mit Shopware 6.4.7.0 prüfen
+- Bilder des Produkts können in der Großansicht geändert werden
+
 # 1.1.6
 - Inkompatibilitätsprobleme mit 6.4.4.0 behoben
 

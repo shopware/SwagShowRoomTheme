@@ -1,3 +1,7 @@
+# 1.2.0
+- Check theme compatibility with Shopware 6.4.7.0
+- Images of the product can be changed in large view
+
 # 1.1.6
 - Fixed incompatibility issues with 6.4.4.0
 
