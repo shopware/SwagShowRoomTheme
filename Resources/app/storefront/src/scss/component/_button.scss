@@ -19,8 +19,16 @@
 }
 
 .btn-buy {
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+
+    @include media-breakpoint-up(lg) {
+        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+    }
+
     &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $black;
         }
     }
@@ -32,7 +40,9 @@
     }
 
     &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $btn-secondary-hover-color;
         }
     }
@@ -42,7 +52,9 @@
     background-color: $gray-200;
 
     &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             background-color: $gray-400;
         }
     }
@@ -54,7 +66,9 @@
     background-color: $white;
 
     &:not(:disabled):not(.disabled) {
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
             color: $btn-secondary-hover-color;
             border: 1px solid $btn-secondary-hover-color;
             background-color: $white;
@@ -77,12 +91,4 @@
 
 .btn-lg {
     letter-spacing: $letter-spacing-base;
-}
-
-.btn-buy {
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
-
-    @include media-breakpoint-up(lg) {
-        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
-    }
 }

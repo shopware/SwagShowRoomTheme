@@ -19,8 +19,9 @@
             padding-left: 0;
         }
 
-        .custom-control-input:checked, .custom-control-label::before,
-        .custom-control-label::before, .custom-control-label::after {
+        .custom-control-input:checked,
+        .custom-control-label::before,
+        .custom-control-label::after {
             display: none;
         }
 
@@ -104,8 +105,8 @@
         padding-left: 0;
 
         &.custom-radio .custom-control-label {
-            &:before,
-            &:after {
+            &::before,
+            &::after {
                 content: unset;
             }
         }

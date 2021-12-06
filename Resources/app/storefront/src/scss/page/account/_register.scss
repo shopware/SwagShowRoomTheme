@@ -25,7 +25,7 @@
         }
 
         .register-group {
-            &:after {
+            &::after {
                 content: '';
                 border-bottom: 1px solid $border-color;
                 width: calc(100% - #{$grid-gutter-width});
@@ -80,6 +80,11 @@
             .address-different-shipping {
                 padding-left: $grid-gutter-width / 2;
                 padding-right: $grid-gutter-width / 2;
+
+                .form-group {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
             }
 
             .register-shipping,
@@ -92,13 +97,6 @@
                 padding: $grid-gutter-width / 2;
             }
 
-            .address-different-shipping {
-                .form-group {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-            }
-
             .address-contact-type-department,
             .address-form-street-front {
                 &.form-group {
@@ -107,7 +105,7 @@
             }
 
             .register-group {
-                &:after {
+                &::after {
                     width: calc(100% - #{$grid-gutter-width} * 2);
                     margin-left: $grid-gutter-width;
                 }
@@ -162,7 +160,7 @@
     .custom-control-input:valid + .custom-control-label {
         color: $gray-900;
 
-        &:before {
+        &::before {
             border-color: $gray-900;
         }
     }

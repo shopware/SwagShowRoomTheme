@@ -57,6 +57,11 @@
     .filter-active {
         border-color: $sw-color-brand-primary;
         border-radius: 17px;
+
+        &:hover,
+        &:active {
+            border-color: $sw-color-brand-secondary;
+        }
     }
 
     .filter-active-preview {
@@ -72,13 +77,6 @@
     .filter-active,
     .btn.filter-reset-all {
         height: 34px;
-    }
-
-    .filter-active {
-        &:hover,
-        &:active {
-            border-color: $sw-color-brand-secondary;
-        }
     }
 
     @include media-breakpoint-down(md) {

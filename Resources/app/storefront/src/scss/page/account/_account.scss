@@ -13,6 +13,13 @@
 
         .account-content-aside {
             @extend .col-xl-4;
+
+            padding: 70px 50px;
+
+            .card-header {
+                padding: 0;
+                font-size: $h2-font-size;
+            }
         }
 
         .card-title {
@@ -20,21 +27,10 @@
             margin-bottom: 20px;
         }
 
-        .account-content-aside {
-            @extend .col-xl-3;
-        }
-
         .account-welcome {
             margin-bottom: 30px;
-        }
-
-        .account-content-aside {
-            padding: 70px 50px;
-
-            .card-header {
-                padding: 0;
-                font-size: $h2-font-size;
-            }
+            padding: 75px 0 40px;
+            border-bottom: 1px solid $border-color;
         }
 
         .account-aside-footer {
@@ -55,11 +51,6 @@
             }
         }
 
-        .account-welcome {
-            padding: 75px 0 40px;
-            border-bottom: 1px solid $border-color;
-        }
-
         @include media-breakpoint-up(lg) {
             .account-content-aside {
                 max-width: 400px;
@@ -72,7 +63,9 @@
     }
 
     @include media-breakpoint-down(md) {
-        h1, h2, .card-title {
+        h1,
+        h2,
+        .card-title {
             color: $sw-color-brand-primary;
         }
 

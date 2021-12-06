@@ -1,5 +1,13 @@
 .account-menu-dropdown {
     @extend .open-in-center;
+
+    .account-aside-footer {
+        padding-top: 40px;
+    }
+
+    .account-guest-abort {
+        padding-top: 0;
+    }
 }
 
 .account-menu-header {
@@ -14,16 +22,6 @@
     border-bottom: unset;
     padding: 40px 0 0;
     margin-bottom: 0;
-}
-
-.account-menu-dropdown {
-    .account-aside-footer {
-        padding-top: 40px;
-    }
-
-    .account-guest-abort {
-        padding-top: 0;
-    }
 }
 
 .account-aside-list-group {

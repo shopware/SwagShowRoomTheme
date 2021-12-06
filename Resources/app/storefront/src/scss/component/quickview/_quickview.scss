@@ -46,12 +46,6 @@ $carousel-control-icon-width-sm: 16px;
         margin-top: 30px;
     }
 
-    @include media-breakpoint-down(sm) {
-        .product-detail-configurator-group {
-            margin-bottom: 0;
-        }
-    }
-
     .product-detail-configurator-group-title {
         padding: 10px 0;
     }
@@ -90,9 +84,16 @@ $carousel-control-icon-width-sm: 16px;
     }
 }
 
+@include media-breakpoint-down(sm) {
+    .swag-cms-extensions-quickview-container .product-detail-configurator-group {
+        margin-bottom: 0;
+    }
+}
+
 #swag-cms-extensions-quickview-carousel {
     .carousel-control {
-        &-next, &-prev {
+        &-next,
+        &-prev {
             background: none;
             transform: translateY(-50%);
             top: 50%;
@@ -184,7 +185,8 @@ $carousel-control-icon-width-sm: 16px;
 @include media-breakpoint-up(md) {
     #swag-cms-extensions-quickview-carousel {
         .carousel-control {
-            &-next, &-prev {
+            &-next,
+            &-prev {
                 .icon {
                     width: $carousel-control-button-width;
                     height: $carousel-control-button-width;
@@ -198,7 +200,8 @@ $carousel-control-icon-width-sm: 16px;
 @include media-breakpoint-down(md) {
     #swag-cms-extensions-quickview-carousel {
         .carousel-control {
-            &-next, &-prev {
+            &-next,
+            &-prev {
                 .icon {
                     width: $carousel-control-button-width-sm;
                     height: $carousel-control-button-width-sm;

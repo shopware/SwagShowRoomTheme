@@ -2,6 +2,8 @@
     &__title-toggle {
         padding-right: 0;
         padding-left: 0;
+        margin-bottom: 0;
+        color: $gray-900;
     }
 
     &__configuration {
@@ -28,11 +30,6 @@
     &__title-toggle,
     &__name {
         font-weight: $font-weight-bold;
-    }
-
-    &__title-toggle {
-        margin-bottom: 0;
-        color: $gray-900;
     }
 
     &__list {

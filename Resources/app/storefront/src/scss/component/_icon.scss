@@ -1,12 +1,12 @@
 @mixin icon-lg() {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
 
 .icon {
-  &.icon-lg {
-    @include icon-lg();
-  }
+    &.icon-lg {
+        @include icon-lg();
+    }
 }
 
 .btn {
@@ -30,9 +30,9 @@
 }
 
 .icon-showroom {
-  .icon {
-    > svg {
-      top: 3px;
+    .icon {
+        > svg {
+            top: 3px;
+        }
     }
-  }
 }

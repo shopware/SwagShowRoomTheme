@@ -95,17 +95,16 @@ $gallery-image-height-lg: 800px;
 
         .gallery-slider-thumbnails-controls-prev,
         .gallery-slider-thumbnails-controls-next {
+            width: $gallery-thumbnail-item-width;
+            height: $gallery-thumbnail-item-height;
+            background: $gallery-nav-button-background;
+            opacity: 1;
 
             &[disabled] {
                 .icon {
                     opacity: 0.2;
                 }
             }
-
-            width: $gallery-thumbnail-item-width;
-            height: $gallery-thumbnail-item-height;
-            background: $gallery-nav-button-background;
-            opacity: 1;
         }
 
         .gallery-slider-thumbnails-controls-prev {
@@ -159,7 +158,6 @@ $gallery-image-height-lg: 800px;
 
 // settings for product detail only
 .is-ctl-product {
-
     .gallery-slider-thumbnails-container {
         &.hide-thumbs {
             display: block;

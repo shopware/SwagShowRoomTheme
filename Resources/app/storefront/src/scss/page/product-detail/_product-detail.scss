@@ -55,8 +55,8 @@
     }
 
     &-ordernumber-container {
-        margin-top: 28px;
         font-size: $font-size-sm;
+        margin-top: 0;
     }
 
     &-reviews,
@@ -92,10 +92,6 @@
         }
     }
 
-    &-ordernumber-container {
-        margin-top: 0;
-    }
-
     .buy-widget-container {
         &-block {
             flex-wrap: wrap;
@@ -116,30 +112,30 @@
         line-height: 28px;
     }
 
-    @include media-breakpoint-up(lg) {
-        &-name {
-            font-size: $product-detail-name;
-        }
-
-        &-price {
-            font-size: $product-detail-price-lg;
-        }
-    }
-
-    @include media-breakpoint-only(md) {
-        .product-detail-form-container {
-            margin-top: 0;
-        }
-
-        .product-detail-configurator-container {
-            margin-bottom: $configurator-padding-sm;
-        }
-    }
-
     &-tab-navigation-link.active {
         .card-tabs & {
             background-color: transparent;
         }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .product-detail-name {
+        font-size: $product-detail-name;
+    }
+
+    .product-detail-price {
+        font-size: $product-detail-price-lg;
+    }
+}
+
+@include media-breakpoint-only(md) {
+    .product-detail .product-detail-form-container {
+        margin-top: 0;
+    }
+
+    .product-detail .product-detail-configurator-container {
+        margin-bottom: $configurator-padding-sm;
     }
 }
 
@@ -158,7 +154,7 @@
     div[data-amazon-pay-button-product-detail='true'] {
         @include media-breakpoint-down(sm) {
             > .col-8 {
-                @include make-col(12)
+                @include make-col(12);
             }
         }
     }
@@ -173,7 +169,7 @@
     margin-bottom: 0;
 
     .product-block-prices-cell {
-        padding: 10px 16px 10px 16px;
+        padding: 10px 16px;
     }
 }
 
@@ -206,6 +202,17 @@
 
 // Tablet stripped for graduated price
 .product-block-prices-table {
+    margin-bottom: 0;
+
+    th,
+    td {
+        border: 0;
+    }
+
+    &-head {
+        background-color: transparent;
+    }
+
     thead th {
         border-right: 1px solid $white;
         border-top: 0;
@@ -214,21 +221,6 @@
 
     th {
         font-weight: $font-weight-base;
-    }
-}
-
-.product-block-prices {
-    &-table {
-        margin-bottom: 0;
-
-        th,
-        td {
-            border: 0;
-        }
-    }
-
-    &-head {
-        background-color: transparent;
     }
 }
 

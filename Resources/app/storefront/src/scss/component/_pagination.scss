@@ -22,7 +22,8 @@
         }
 
         &.disabled {
-            .page-link, .page-link svg {
+            .page-link,
+            .page-link svg {
                 color: $gray-300;
             }
         }
