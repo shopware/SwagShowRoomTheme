@@ -20,7 +20,7 @@
         }
     }
 
-    .order-table-header-context-menu-content-link:before {
+    .order-table-header-context-menu-content-link::before {
         content: '';
         background: $icon-chevron-right;
         padding: 5px 15px 5px 5px;

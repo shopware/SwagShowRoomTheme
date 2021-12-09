@@ -28,7 +28,7 @@ $checkout-aside-spacing: 50px;
         .checkout-aside-container {
             top: 20px;
         }
-   }
+    }
 }
 
 .checkout-container {
@@ -116,9 +116,6 @@ $checkout-aside-spacing: 50px;
 
     .cart-item-row .cart-item-unit-price {
         padding-left: 30px;
-    }
-
-    .cart-item-row .cart-item-unit-price {
         justify-content: flex-start;
     }
 }

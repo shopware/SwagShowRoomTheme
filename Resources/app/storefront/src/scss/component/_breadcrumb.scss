@@ -18,11 +18,13 @@
         }
     }
 
-    @include media-breakpoint-down(md) {
+    &.cms-breadcrumb {
         margin-bottom: 0;
     }
+}
 
-    &.cms-breadcrumb {
-        margin-bottom: 0px;
+@include media-breakpoint-down(md) {
+    .breadcrumb {
+        margin-bottom: 0;
     }
 }

@@ -89,8 +89,8 @@
 
 @include media-breakpoint-down(lg) {
     .custom-radio .custom-control-label {
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             top: 2px;
         }
     }

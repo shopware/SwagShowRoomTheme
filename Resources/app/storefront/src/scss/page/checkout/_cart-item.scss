@@ -39,6 +39,12 @@ $cart-img-container-width: 100px;
     &-tax-price,
     &-unit-price {
         order: 2;
+        justify-content: space-between;
+        display: flex;
+
+        @extend .col-12;
+        @extend .col-md-12;
+        @extend .col-lg-2;
     }
 
     &-remove {
@@ -77,17 +83,6 @@ $cart-img-container-width: 100px;
     &-quantity {
         padding-top: $card-spacer-y;
         text-align: left;
-    }
-
-    &-unit-price,
-    &-total-price,
-    &-tax-price {
-        justify-content: space-between;
-        display: flex;
-
-        @extend .col-12;
-        @extend .col-md-12;
-        @extend .col-lg-2;
     }
 
     &-quantity-label,

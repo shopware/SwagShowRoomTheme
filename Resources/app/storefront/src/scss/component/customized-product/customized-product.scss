@@ -7,7 +7,7 @@
 
         .btn-buy {
             max-height: 60px;
-            margin: 20px 0 0 0;
+            margin: 20px 0 0;
         }
     }
 }
@@ -32,7 +32,7 @@
 
 .swag-customized-products__item {
     &.swag-customized-products-option {
-        margin: 10px 0px;
+        margin: 10px 0;
         background: $gray-100;
     }
 
@@ -41,13 +41,13 @@
     }
 
     .swag-customized-products__title-link-container {
-        padding: 10px 0px;
+        padding: 10px 0;
 
         .swag-customized-products-option__title {
             text-transform: unset;
 
             .swag-customized-products-option-type-select-wrapper {
-                margin: 0px 5px;
+                margin: 0 5px;
             }
         }
     }
@@ -155,7 +155,7 @@
 
 .flatpickr-calendar {
     .flatpickr-day {
-        border-radius: 0px;
+        border-radius: 0;
 
         &.selected {
             background-color: $sw-color-brand-primary;

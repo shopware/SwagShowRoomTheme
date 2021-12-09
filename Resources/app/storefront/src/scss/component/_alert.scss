@@ -71,12 +71,12 @@
 
     &.alert-has-icon {
         .icon {
-            color: $sw-color-warning
+            color: $sw-color-warning;
         }
 
         .alert-content-container {
             &::before {
-                border-left: 1px solid $sw-color-warning
+                border-left: 1px solid $sw-color-warning;
             }
         }
     }

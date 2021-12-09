@@ -99,11 +99,11 @@ $cart-item-img-width: 80px;
 
     @include media-breakpoint-up(lg) {
         .cart-price {
-            order: 2
+            order: 2;
         }
 
         .cart-item-quantity {
-            order: 1
+            order: 1;
         }
 
         .cart-item-remove {

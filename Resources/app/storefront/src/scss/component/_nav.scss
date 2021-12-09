@@ -10,11 +10,8 @@
             &.active {
                 border-bottom: 2px solid $sw-color-brand-primary;
 
-                .nav-link-title {
-
-                    &:hover {
-                        margin: 0 0.3px;
-                    }
+                .nav-link-title:hover {
+                    margin: 0 0.3px;
                 }
             }
 

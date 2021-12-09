@@ -20,7 +20,7 @@ $custom-box-standard-height-img: 220px;
     }
 
     .product-info {
-        padding: 0 30px 30px 30px;
+        padding: 0 30px 30px;
     }
 
     .product-rating {
@@ -164,6 +164,10 @@ $custom-box-standard-height-img: 220px;
         .product-wishlist-button {
             bottom: 24px;
         }
+
+        .product-price-unit {
+            display: none;
+        }
     }
 }
 
@@ -217,7 +221,6 @@ $custom-box-standard-height-img: 220px;
     }
 
     .product-box {
-
         .card-body {
             padding-bottom: $spacer-xl;
         }
@@ -256,12 +259,6 @@ $custom-box-standard-height-img: 220px;
     margin-bottom: 5px;
 }
 
-.product-overlay__content {
-    .product-price-unit {
-        display: none;
-    }
-}
-
-div[data-swag-cms-extensions-quickview-box="true"] {
+div[data-swag-cms-extensions-quickview-box='true'] {
     height: 100%;
 }

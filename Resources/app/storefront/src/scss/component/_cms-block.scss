@@ -19,7 +19,7 @@
 
     &.cms-block-sidebar-filter {
         &::after {
-            content: "";
+            content: '';
             display: block;
             margin: auto 20px;
             max-width: 100%;
@@ -70,7 +70,7 @@
         }
 
         .sw-cms-form-content {
-            padding-top: 0px;
+            padding-top: 0;
             padding-bottom: 50px;
         }
 

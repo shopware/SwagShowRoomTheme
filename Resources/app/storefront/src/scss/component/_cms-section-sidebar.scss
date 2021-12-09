@@ -18,15 +18,15 @@
                 .global-collapse-minus-icon {
                     display: block;
                 }
+            }
 
-                &[aria-expanded="false"] {
-                    .global-collapse-plus-icon {
-                        display: block;
-                    }
+            .filter-panel-item-toggle[aria-expanded='false'] {
+                .global-collapse-plus-icon {
+                    display: block;
+                }
 
-                    .global-collapse-minus-icon {
-                        display: none;
-                    }
+                .global-collapse-minus-icon {
+                    display: none;
                 }
             }
 
