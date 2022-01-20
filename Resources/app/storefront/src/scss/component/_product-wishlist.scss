@@ -39,6 +39,13 @@
     }
 }
 
+.product-wishlist-action-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 5px;
+}
+
 .is-ctl-wishlist {
     @include media-breakpoint-up(lg) {
         .container-main {
