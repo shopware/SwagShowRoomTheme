@@ -37,6 +37,9 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
 
         $collapse.collapse('toggle');
 
+        // product variant dropdown selector
+        $('.product-detail-configurator-collapse .collapse').collapse('hide');
+
         $collapse.on('shown.bs.collapse', () => {
             trigger.classList.add(collapseShowClass);
             this.$emitter.publish('onCollapseShown');
