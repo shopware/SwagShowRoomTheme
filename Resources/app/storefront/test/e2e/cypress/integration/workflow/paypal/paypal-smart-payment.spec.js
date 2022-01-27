@@ -55,10 +55,6 @@ describe('Paypal: Checkout', () => {
             .scrollIntoView()
             .typeSingleSelect('Other merchant location', merchantSelector);
 
-        cy.get(':nth-child(5) > .sw-card__title')
-            .scrollIntoView()
-            .should('be.visible').contains('PayPal Checkout with Smart Payment Buttons')
-        cy.get('.swag-paypal-settings-spb-fields > :nth-child(1) > .sw-field--switch input[type="checkbox"]').check();
         cy.get('.smart-bar__actions > .sw-button').click();
 
         cy.wait('@saveConfig');
