@@ -36,8 +36,24 @@ $configurator-padding: 40px;
         .product-detail-configurator-option-label {
             @include text-truncate();
 
+            display: flex;
+            align-items: center;
             width: calc(100% - 1rem);
         }
+    }
+
+    &-color {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    &-option-image {
+        width: 24px;
+        height: auto;
+        margin-right: 1rem;
     }
 
     &-options,
@@ -52,16 +68,8 @@ $configurator-padding: 40px;
     }
 
     &-option {
-        padding-bottom: 10px;
         margin: 0;
-
-        &:first-child {
-            padding-top: 10px;
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-        }
+        padding-top: 10px;
 
         label {
             margin-bottom: 0;
@@ -71,13 +79,19 @@ $configurator-padding: 40px;
 
     &-option-input + &-option-label {
         opacity: 1;
-        display: block;
+        display: flex;
+        justify-content: flex-start;
+        border: none !important;
+        padding-left: 0;
+        height: unset;
 
         &.is-display-text {
-            border: none !important;
             padding-left: 0;
-            padding-right: 0;
-            justify-content: flex-start;
+        }
+
+        &.is-display-color {
+            box-shadow: none;
+            min-width: unset;
         }
     }
 
