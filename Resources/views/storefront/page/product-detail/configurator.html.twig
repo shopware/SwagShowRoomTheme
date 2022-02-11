@@ -13,6 +13,11 @@
                 {% set media = false %}
             {% endif %}
 
+            {% set isCombinableCls = 'is-combinable' %}
+            {% if not activeOption.combinable %}
+                {% set isCombinableCls = false %}
+            {% endif %}
+
             {% block page_product_detail_configurator_group %}
                 <div class="col-12 col-md col-lg-12 px-lg-0 product-detail-configurator-group">
                     <div class="row">
@@ -27,7 +32,7 @@
                                     <div class="product-detail-configurator-collapse"
                                          style="z-index: {{ loop.length - loop.index + 1 }}">
                                         <div class="js-collapse-column-trigger product-detail-configurator-active-option global-collapse-headline">
-                                            <div class="product-detail-configurator-option-label">
+                                            <div class="product-detail-configurator-option-label{% if isCombinableCls %} {{ isCombinableCls }}{% endif %}">
                                                 {% if group.displayType == 'color' and activeOption.colorHexCode %}
                                                     <span class="product-detail-configurator-color" style="background-color: {{ activeOption.colorHexCode }}"></span>
                                                 {% endif %}
