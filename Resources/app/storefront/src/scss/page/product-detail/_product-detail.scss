@@ -121,6 +121,14 @@
             background-color: transparent;
         }
     }
+
+    &-ordernumber-container {
+        margin-top: 12px;
+
+        @include media-breakpoint-up(md) {
+            @include make-col(4);
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
