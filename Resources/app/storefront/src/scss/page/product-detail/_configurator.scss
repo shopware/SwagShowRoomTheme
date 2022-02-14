@@ -36,9 +36,14 @@ $configurator-padding: 40px;
         .product-detail-configurator-option-label {
             @include text-truncate();
 
+            opacity: 0.35;
             display: flex;
             align-items: center;
             width: calc(100% - 1rem);
+
+            &.is-combinable {
+                opacity: 1;
+            }
         }
     }
 
@@ -78,7 +83,6 @@ $configurator-padding: 40px;
     }
 
     &-option-input + &-option-label {
-        opacity: 1;
         display: flex;
         justify-content: flex-start;
         border: none !important;

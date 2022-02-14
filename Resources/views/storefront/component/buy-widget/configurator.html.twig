@@ -12,6 +12,11 @@
                 {% set media = false %}
             {% endif %}
 
+            {% set isCombinableCls = 'is-combinable' %}
+            {% if not activeOption.combinable %}
+                {% set isCombinableCls = false %}
+            {% endif %}
+
             {% block buy_widget_configurator_group %}
                 <div class="col-12 col-md col-lg-12 px-lg-0 product-detail-configurator-group">
                     <div class="row">
@@ -28,7 +33,7 @@
                                          style="z-index: {{ loop.length - loop.index + 1 }}">
                                         <div
                                             class="js-collapse-column-trigger product-detail-configurator-active-option global-collapse-headline">
-                                            <div class="product-detail-configurator-option-label">
+                                            <div class="product-detail-configurator-option-label{% if isCombinableCls %} {{ isCombinableCls }}{% endif %}">
                                                 {% if group.displayType == 'color' and activeOption.colorHexCode %}
                                                     <span class="product-detail-configurator-color"
                                                           style="background-color: {{ activeOption.colorHexCode }}"></span>
@@ -78,18 +83,20 @@
 
 {% block buy_widget_configurator_option_radio_label %}
     <label class="product-detail-configurator-option-label{% if isCombinableCls %} {{ isCombinableCls }}{% endif %} is-display-{{ displayType }}"
-            {% if displayType == 'color' and option.colorHexCode %}
-                style="background-color: {{ option.colorHexCode }}"
-            {% endif %}
            title="{{ option.translated.name }}"
            for="{{ optionIdentifier }}">
 
+        {% if displayType == 'color' and option.colorHexCode %}
+            <span class="product-detail-configurator-color" style="background-color: {{ option.colorHexCode }}"></span>
+        {% endif %}
+
         {% if displayType == 'media' and media %}
             {{ block('buy_widget_configurator_option_radio_label_media') }}
+            {{ option.translated.name }}
         {% elseif displayType == 'text' or
             displayType == 'select' or
             (displayType == 'media' and not media) or
-            (displayType == 'color' and not option.colorHexCode) %}
+            displayType == 'color' %}
             {{ block('buy_widget_configurator_option_radio_label_text') }}
         {% endif %}
     </label>
