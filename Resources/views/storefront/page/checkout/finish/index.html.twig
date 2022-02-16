@@ -4,6 +4,14 @@
     {% block page_checkout_finish_details %}
         {% sw_include '@Storefront/storefront/page/checkout/finish/finish-details.html.twig' %}
     {% endblock %}
+
+    {% block page_checkout_additional_main %}
+        {% if page.order.customerComment %}
+            {{ block('page_checkout_finish_customer_comment_header') }}
+
+            {{ block('page_checkout_finish_customer_comment_content') }}
+        {% endif %}
+    {% endblock %}
 {% endblock %}
 
 {% block page_checkout_aside_container %}
@@ -26,4 +34,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block page_checkout_additional %}
 {% endblock %}
