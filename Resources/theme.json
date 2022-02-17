@@ -25,70 +25,178 @@
     ],
     "config": {
         "blocks": {
+            "themeColors": {
+                "label": {
+                    "en-GB": "Theme colors",
+                    "de-DE": "Themenfarben"
+                }
+            },
+            "typography": {
+                "label": {
+                    "en-GB": "Typography",
+                    "de-DE": "Typografie"
+                }
+            },
+            "statusColors": {
+                "label": {
+                    "en-GB": "Status messages",
+                    "de-DE": "Status-Meldungen"
+                }
+            },
+            "media": {
+                "label": {
+                    "en-GB": "Media",
+                    "de-DE": "Medien"
+                }
+            },
             "footer": {
                 "label": {
                     "en-GB": "Footer",
-                    "de-DE": "Footer"
+                    "de-DE": "Fußzeile"
                 }
             }
         },
         "fields": {
             "sw-color-brand-primary": {
+                "label": {
+                    "en-GB": "Primary colour",
+                    "de-DE": "Primärfarbe"
+                },
                 "value": "#26262f"
             },
             "sw-color-brand-secondary": {
+                "label": {
+                    "en-GB": "Secondary colour",
+                    "de-DE": "Sekundärfarbe"
+                },
                 "value": "#cab898"
             },
             "sw-border-color": {
+                "label": {
+                    "en-GB": "Border",
+                    "de-DE": "Rahmen"
+                },
                 "value": "#e4e6ea"
             },
             "sw-background-color": {
+                "label": {
+                    "en-GB": "Background",
+                    "de-DE": "Hintergrund"
+                },
                 "value": "#ffffff"
             },
             "sw-color-success": {
+                "label": {
+                    "en-GB": "Success",
+                    "de-DE": "Erfolg"
+                },
                 "value": "#4bc87b"
             },
             "sw-color-info": {
+                "label": {
+                    "en-GB": "Information",
+                    "de-DE": "Information"
+                },
                 "value": "#4babbc"
             },
             "sw-color-warning": {
+                "label": {
+                    "en-GB": "Notice",
+                    "de-DE": "Hinweis"
+                },
                 "value": "#ee994a"
             },
             "sw-color-danger": {
+                "label": {
+                    "en-GB": "Error",
+                    "de-DE": "Fehler"
+                },
                 "value": "#a1090b"
             },
             "sw-font-family-base": {
+                "label": {
+                    "en-GB": "Text font type",
+                    "de-DE": "Schriftart Text"
+                },
                 "value": "'Work Sans', sans-serif"
             },
             "sw-text-color": {
+                "label": {
+                    "en-GB": "Text colour",
+                    "de-DE": "Textfarbe"
+                },
                 "value": "#141719"
             },
             "sw-font-family-headline": {
+                "label": {
+                    "en-GB": "Headline font type",
+                    "de-DE": "Schriftart Überschrift"
+                },
                 "value": "'Work Sans', sans-serif"
             },
             "sw-headline-color": {
+                "label": {
+                    "en-GB": "Headline colour",
+                    "de-DE": "Überschriftfarbe"
+                },
                 "value": "#525a62"
             },
             "sw-color-price": {
+                "label": {
+                    "en-GB": "Price",
+                    "de-DE": "Preis"
+                },
                 "value": "#141719"
             },
             "sw-color-buy-button": {
+                "label": {
+                    "en-GB": "Buy button",
+                    "de-DE": "Kaufen-Button"
+                },
                 "value": "#26262f"
             },
             "sw-color-buy-button-text": {
+                "label": {
+                    "en-GB": "Buy button text",
+                    "de-DE": "Kaufen-Button-Text"
+                },
                 "value": "#fdfdfd"
             },
             "sw-logo-desktop": {
+                "label": {
+                    "en-GB": "Desktop",
+                    "de-DE": "Desktop"
+                },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
             },
             "sw-logo-tablet": {
+                "label": {
+                    "en-GB": "Tablet",
+                    "de-DE": "Tablet"
+                },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/showroom-logo-desktop.svg"
             },
             "sw-logo-mobile": {
+                "label": {
+                    "en-GB": "Mobile",
+                    "de-DE": "Handy"
+                },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/showroom-logo-mobile.svg"
+            },
+            "sw-logo-share": {
+                "label": {
+                    "en-GB": "App & share icon",
+                    "de-DE": "App- & Share-Icon"
+                }
+            },
+            "sw-logo-favicon": {
+                "label": {
+                    "en-GB": "Favicon",
+                    "de-DE": "Favicon"
+                }
             },
             "sw-footer-bg-color": {
                 "label": {
@@ -120,24 +228,24 @@
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/showroom-logo-footer-desktop.svg",
                 "editable": true,
-                "block": "media",
+                "block": "footer",
                 "order": 300
             },
             "sw-footer-logo-mobile": {
                 "label": {
                     "en-GB": "Footer mobile logo",
-                    "de-DE": "Footer mobile Logo"
+                    "de-DE": "Footer-Handy-Logo"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/logo/showroom-logo-footer-mobile.svg",
                 "editable": true,
-                "block": "media",
+                "block": "footer",
                 "order": 400
             },
             "sw-account-login-background": {
                 "label": {
-                    "en-GB": "Background of account login",
-                    "de-DE": "Hintergrund der Kontoanmeldung"
+                    "en-GB": "Account login",
+                    "de-DE": "Kontoanmeldung"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/dillon-mangum-9489sFfgk4c-unsplash.jpg",
@@ -147,8 +255,8 @@
             },
             "sw-contact-form": {
                 "label": {
-                    "en-GB": "Contact form image",
-                    "de-DE": "Kontaktformular Bild"
+                    "en-GB": "Contact form",
+                    "de-DE": "Kontakt Formular"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/contact-form.png",
@@ -157,8 +265,8 @@
             },
             "sw-newsletter-form": {
                 "label": {
-                    "en-GB": "Newsletter form image",
-                    "de-DE": "Newsletter Formular Bild"
+                    "en-GB": "Newsletter form",
+                    "de-DE": "Newsletter-Formular"
                 },
                 "type": "media",
                 "value": "app/storefront/src/assets/images/newsletter-form.png",
