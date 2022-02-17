@@ -1,19 +1,5 @@
 {% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
 
-{% block buy_widget %}
-    <div class="product-detail-buy{% if elementId %}-{{ elementId }}{% endif %} js-magnifier-zoom-image-container">
-        {{ block('buy_widget_ordernumber_container') }}
-
-        {{ block('buy_widget_rich_snippets') }}
-
-        {% if block('page_product_detail_not_available') is defined %}
-            {{ block('page_product_detail_not_available') }}
-        {% endif %}
-
-        {{ block('buy_widget_buy_container') }}
-    </div>
-{% endblock %}
-
 {# buy_widget_price and buy_widget_tax was moved into buy_widget_price #}
 {% block buy_widget_price %}{% endblock %}
 {% block buy_widget_tax %}{% endblock %}
@@ -25,3 +11,5 @@
 {% endblock %}
 
 {# the block buy_widget_wishlist was moved into buy-widget-form #}
+{% block buy_widget_wishlist %}
+{% endblock %}
