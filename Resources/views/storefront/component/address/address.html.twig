@@ -11,38 +11,49 @@
 
         {% if address.company or address.vatId %}
             <p>
-                <strong>{{ address.company }}{% if address.department %} - {{ address.department }}{% endif %}</strong>
+                <strong>{{ block('component_address_company_name') }}</strong>
             </p>
         {% endif %}
+
         <p>
             <strong>
                 {% if address.salutation and address.salutation.salutationKey != 'not_specified' %}
-                    {{ address.salutation.translated.displayName }}
+                    {{ block('component_address_salutation') }}
                 {% endif %}
+
                 {% if address.title %}
-                    {{ address.title }}<br/>
+                    {{ block('component_address_title') }}
                 {% endif %}
-                {{ address.firstName }} {{ address.lastName }}<br/>
+
+                {{ block('component_address_name') }}
             </strong>
-            {{ address.street }}<br/>
+
+            {{  block('component_address_street') }}
+
             {% if address.additionalAddressLine1 %}
-                {{ address.additionalAddressLine1 }}<br/>
+                {{  block('component_address_additional_address_line_1') }}
             {% endif %}
+
             {% if address.additionalAddressLine2 %}
-                {{ address.additionalAddressLine2 }}<br/>
+                {{ block('component_address_additional_address_line_2') }}
             {% endif %}
+
             {% if address.phoneNumber %}
-                {{ address.phoneNumber }}<br/>
+                {{ block('component_address_phone_number') }}
             {% endif %}
+
+            {# Override to change position of zipcode and city#}
             {% if config('core.address.showZipcodeInFrontOfCity') %}
                 {{ address.zipcode }} {{ address.city }}<br/>
             {% else %}
                 {{ address.zipcode }} {{ address.city }}<br/>
             {% endif %}
+
             {% if address.countryState %}
-                {{ address.countryState.translated.name }}<br/>
+                {{ block('component_address_state') }}
             {% endif %}
-            {{ address.country.translated.name }}
+
+            {{ block('component_address_country') }}
         </p>
     </div>
 {% endblock %}

@@ -39,16 +39,15 @@ describe('Shop page: CMS service page', () => {
 
         cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
 
-        cy.server();
-        cy.route({
-            url: `${Cypress.env('apiPath')}/category/*`,
-            method: 'patch'
+        cy.intercept({
+            url: `${Cypress.env('apiPath')}/search/category`,
+            method: 'POST'
         }).as('saveData');
 
         cy.get('.sw-empty-state__title').contains('No category selected');
         cy.get(`${page.elements.categoryTreeItem}__icon`).should('be.visible');
 
-        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').get('.sw-tree-item__toggle').click();
+        cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Footer').click();
         cy.get('a[href="#/sw/category/index/24c3c853a8354db89d04ce3a06dc5bbc"]').contains('Information').parents('.sw-tree-item__children').find('.sw-context-button__button').click();
 
         // Create a category
@@ -78,9 +77,7 @@ describe('Shop page: CMS service page', () => {
         cy.get('.sw-category-detail__save-action').click();
 
         // Wait for category request with correct data to be successful
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr).to.have.property('status', 204);
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 200);
     }
 
     function createServicePage() {
