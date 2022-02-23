@@ -33,13 +33,15 @@
         {{ parent() }}
     {% endblock %}
 
-    {% block page_checkout_confirm_customer_comment_header %}
-        {{ parent() }}
-    {% endblock %}
+    {% if config('core.cart.showCustomerComment') %}
+        {% block page_checkout_confirm_customer_comment_header %}
+            {{ parent() }}
+        {% endblock %}
 
-    {% block page_checkout_confirm_customer_comment_control %}
-        {{ parent() }}
-    {% endblock %}
+        {% block page_checkout_confirm_customer_comment_control %}
+            {{ parent() }}
+        {% endblock %}
+    {% endif %}
 
 {% endblock %}
 
