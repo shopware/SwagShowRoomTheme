@@ -97,7 +97,6 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
                 });
         })
 
-        cy.awaitAndCheckNotification('File has been saved.');
         cy.get('.sw-modal__footer .sw-button--primary').click();
 
         // Save the layout
