@@ -1,3 +1,17 @@
+# 1.3.0
+- Kompatibilität des Themas mit Shopware 6.4.9.0 prüfen
+- Kompatibilität des Themas mit Shopware 6.4.8.0 prüfen
+- Verbesserung des Theme-Managers
+- Behoben: Kommentarfeld ist immer aktiviert
+- Fehlende Erweiterbarkeit im Buy-Widget-Template behoben
+- Behoben: Das Theme gräbt nicht existierende Varianten nicht aus
+- Behoben: Dropdown-Menü-Optionen sind nicht sichtbar
+- Problem mit dem Styling der Checkbox für kostenlosen Versand behoben
+- Behoben: Dropdown-Auswahlen für Varianten funktionieren nicht
+- Behoben: Wunschliste überlappt Produktinformation in Auflistungen
+- Behoben Produktrabatt überschreibt das Inhaltsverzeichnis
+- Plugin-Installationsreihenfolge ändern
+
 # 1.2.0
 - Kompatibilität des Themas mit Shopware 6.4.7.0 prüfen
 - Bilder des Produkts können in der Großansicht geändert werden

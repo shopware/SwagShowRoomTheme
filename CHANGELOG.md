@@ -1,3 +1,17 @@
+# 1.3.0
+- Check theme compatibility with Shopware 6.4.9.0
+- Check theme compatibility with Shopware 6.4.8.0
+- Improve theme manager
+- Fixed comment field is always enabled
+- Fixed missing extendability in buy-widget template
+- Fixed theme does not gray out non-existent variants
+- Fixed dropdown menu options are not visible
+- Fixed free shipping checkbox styling issue
+- Fixed variant dropdown selections are not working
+- Fixed wishlist overlaps product information in listings
+- Fixed product discount overwrites the table of contents
+- Change plugin installing order
+
 # 1.2.0
 - Check theme compatibility with Shopware 6.4.7.0
 - Images of the product can be changed in large view
