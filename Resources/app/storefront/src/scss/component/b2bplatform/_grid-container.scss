@@ -1,0 +1,85 @@
+.b2b--component-pagination {
+    .btn {
+        background: transparent;
+        font-size: $btn-font-size-lg;
+
+        &.btn-light{
+            border: none;
+
+            &:not(:disabled):not(.disabled):hover {
+                background: transparent;
+            }
+        }
+
+        &.btn-primary {
+            color: $primary;
+            border: none;
+            border-bottom: 2px solid $primary;
+            background: transparent;
+        }
+
+        svg {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.b2b-remote-list__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+
+    .action--order-list {
+        margin-right: 20px;
+
+        .b2b--orderlist-dropdown {
+            padding-right: 30px;
+            background: $custom-select-indicator-gray no-repeat right 5px center/1rem;
+        }
+    }
+
+    .action--cart-add {
+        .btn-primary {
+            padding: 0 15px;
+        }
+    }
+}
+
+[name="companyFilterType"] {
+    padding-right: 20px;
+}
+
+.b2b--checkout-offer {
+    .btn {
+        &.component-action-create,
+        &.is--b2b-acl-action-create {
+            @extend .btn-primary;
+        }
+    }
+}
+
+.is--b2b-acl-action-sendOffer {
+    .input-group-append {
+        .btn-primary {
+            color: $primary;
+        }
+    }
+}
+
+[action="/b2bofferthroughcheckout/backToCheckout"] {
+    .btn {
+        @extend .btn-outline-primary;
+
+        svg {
+            top: 2px;
+        }
+    }
+}
+
+.is-ctl-checkout {
+    .b2b-remote-list-orderlist {
+        h4 {
+            display: none;
+        }
+    }
+}

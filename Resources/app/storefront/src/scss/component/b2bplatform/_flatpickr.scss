@@ -1,0 +1,33 @@
+.flatpickr-icon {
+    .input-group-text {
+        padding: 15px;
+        border: none;
+        border-bottom: 1px solid $gray-200;
+        background: $white;
+    }
+}
+
+.flatpickr-input {
+    padding-left: 5px;
+}
+
+.flatpickr-calendar {
+    border-radius: 0;
+
+    span {
+        &.flatpickr-day,
+        &.nextMonthDay,
+        &.prevMonthDay, {
+            border: none;
+        }
+    }
+
+    .flatpickr-months {
+        margin-bottom: 5px;
+    }
+
+    .flatpickr-monthDropdown-months {
+        text-align: end;
+        height: 20px;
+    }
+}

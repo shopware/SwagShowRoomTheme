@@ -46,6 +46,45 @@
 {% endblock %}
 
 {% block page_checkout_confirm_tos_header %}
+    {% if b2bSuite %}
+        {% block b2b_checkout_confirm_additional %}
+            {% set orderReferenceKey = constant('Shopware\\B2B\\Order\\BridgePlatform\\OrderServiceDecorator::ORDER_REFERENCE_KEY') %}
+            {% set deliveryDateKey = constant('Shopware\\B2B\\Order\\BridgePlatform\\OrderServiceDecorator::REQUESTED_DELIVERY_DATE_KEY') %}
+            {% set additionalDataExtensionKey = constant('Shopware\\B2B\\Order\\BridgePlatform\\AdditionalDataExtension::NAME') %}
+
+            {% set orderReference = page.cart.getExtension(additionalDataExtensionKey).getOrderReferenceNumber() %}
+            {% set deliveryDate = page.cart.getExtension(additionalDataExtensionKey).getRequestedDeliveryDate() %}
+
+            <div class="b2b--row b2b--order-reference">
+                <p>
+                    {{ 'b2b.CustomOrderReferenceNumberHelpText'|trans }}:
+                </p>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="{{ orderReferenceKey }}"
+                    form="confirmOrderForm"
+                    placeholder="{{ 'b2b.OrderReferenceNumberLabel'|trans }}"
+                    {% if orderReference != null %}value="{{ orderReference }}"{% endif %}
+                >
+            </div>
+            <br>
+            <div class="b2b--row b2b--delivery-date mb-5">
+                <p>
+                    {{ 'b2b.RequestedDeliveryDateHelpText'|trans }}:
+                </p>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="{{ deliveryDateKey }}"
+                    form="confirmOrderForm"
+                    placeholder="{{ 'b2b.RequestedDeliveryDateLabel'|trans }}"
+                    {% if deliveryDate != null %}value="{{ deliveryDate }}"{% endif %}
+                >
+            </div>
+        {% endblock %}
+    {% endif %}
+
     <div class="card-title confirm-tos-title">
         {{ "checkout.confirmTermsHeader"|trans|sw_sanitize }}
     </div>

@@ -1,0 +1,16 @@
+.b2b--navigation {
+    background: transparent;
+    margin-bottom: 20px;
+
+    &:before,
+    &:after {
+        background: transparent;
+        border-width: 1px;
+    }
+
+    .b2b--navigation-mainmenu {
+        &:after {
+            height: 1px;
+        }
+    }
+}

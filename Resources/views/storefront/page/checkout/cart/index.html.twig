@@ -12,7 +12,11 @@
     </div>
 {% endblock %}
 
-{% block page_checkout_cart_add_product_and_shipping %}{% endblock %}
+{% block page_checkout_cart_add_product_and_shipping %}
+    {% if b2bSuite %}
+        {% sw_include '@SwagB2bPlatform/storefront/_custom/cart/b2b-cart-orderlist.html.twig' ignore missing %}
+    {% endif %}
+{% endblock %}
 
 {% block page_checkout_cart_add_promotion_submit %}
     <div class="input-group-append">

@@ -4,9 +4,18 @@
     <div class="account-menu">
         {% block layout_header_actions_account_widget_dropdown_header %}
             {% if not context.customer.guest %}
-                <div class="dropdown-header account-menu-header">
-                    {{ "account.myAccount"|trans|sw_sanitize }}
-                </div>
+                {% if b2bSuite %}
+                    <div class="dropdown-header account-menu-header">
+                        {% sw_icon 'ic-profile' style {'pack' : 'cinema'} %}
+                        <a class="b2b-myaccount" href="{{ path('frontend.b2b.b2baccount.index') }}">
+                            {{ "account.myAccount"|trans|sw_sanitize }}
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="dropdown-header account-menu-header">
+                        {{ "account.myAccount"|trans|sw_sanitize }}
+                    </div>
+                {% endif %}
             {% endif %}
         {% endblock %}
 

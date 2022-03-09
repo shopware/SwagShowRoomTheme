@@ -21,6 +21,16 @@
             padding-bottom: 40px;
         }
     }
+
+    .border-primary {
+        @extend .mb-n3;
+    }
+
+    &-actions {
+        & & {
+            display: none;
+        }
+    }
 }
 
 .cms-listing-col {
