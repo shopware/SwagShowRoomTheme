@@ -1,0 +1,13 @@
+.is-ctl-b2bsalesrepresentative {
+    .dropdown {
+        .account-menu-dropdown {
+            left: auto!important;
+            right: 0!important;
+            transform: none!important;
+
+            &:after {
+                left: 90%;
+            }
+        }
+    }
+}

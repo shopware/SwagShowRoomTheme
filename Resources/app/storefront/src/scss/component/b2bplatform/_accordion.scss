@@ -1,0 +1,27 @@
+.b2b-accordion {
+    .b2b-accordion__title {
+        .icon svg {
+            top: 2px;
+        }
+    }
+
+    .b2b-accordion__body {
+        transition: none;
+    }
+}
+
+.module-statistic {
+    .b2b-accordion__body {
+        .form-row {
+            margin: 0;
+        }
+    }
+
+    .b2b--chart-filter {
+        .btn-outline-danger,
+        .btn-primary {
+            text-transform: uppercase;
+            font-size: $btn-font-size-lg;
+        }
+    }
+}

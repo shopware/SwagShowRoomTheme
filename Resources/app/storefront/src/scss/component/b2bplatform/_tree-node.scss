@@ -1,0 +1,11 @@
+.node {
+    .node__inner {
+        .node__inner--toggle-children {
+            top: $spacer-sm;
+        }
+    }
+
+    .is--b2b-tree-select {
+        border-left: none;
+    }
+}

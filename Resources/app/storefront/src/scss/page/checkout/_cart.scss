@@ -29,6 +29,12 @@ $checkout-aside-spacing: 50px;
             top: 20px;
         }
     }
+
+    .b2b-remote-list-orderlist {
+        .col-sm-6 {
+            @include make-col(8);
+        }
+    }
 }
 
 .checkout-container {

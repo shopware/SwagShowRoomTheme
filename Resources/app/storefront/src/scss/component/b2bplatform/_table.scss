@@ -1,0 +1,61 @@
+.b2b-table {
+    background: $white;
+
+    thead {
+        th {
+            border-right: none;
+            border-left: none;
+        }
+    }
+
+    tr {
+        td.col-actions {
+            .btn {
+                .icon {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    .product-price-info {
+        margin-top: 0;
+
+        .product-price-wrapper {
+            font-size: $h6-font-size;
+
+            .product-cheapest-price {
+                margin-bottom: 0;
+
+                &:empty {
+                    min-height: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .headline-product {
+        font-size: 18px;
+    }
+}
+
+.module-fastorder {
+    table {
+        tr {
+            th:first-child,
+            td:first-child {
+                border-left: none;
+            }
+
+            th:last-child,
+            td:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+.table-responsive {
+    overflow-x: unset;
+}

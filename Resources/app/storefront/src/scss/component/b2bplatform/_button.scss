@@ -1,0 +1,59 @@
+$b2b-btn-height-lg: 50px;
+
+.is--b2b-acl {
+    .b2b--orderlist-add {
+        .input-group-append {
+            align-items: end;
+
+            .btn {
+                @extend .btn-secondary;
+                background: $white;
+                border: 1px solid $primary;
+                font-size: $btn-font-size-lg;
+                height: $b2b-btn-height-lg;
+                padding: 15px;
+                margin-left: 10px;
+
+                &.btn-outline-secondary {
+                    overflow: unset;
+                    background-color: transparent;
+                    border-color: $primary;
+
+                    &:not(:disabled):not(.disabled):hover {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+
+                &.btn-primary {
+                    @extend .btn-primary;
+
+                    &:not(:disabled):not(.disabled):hover {
+                        background-color: $primary;
+                        border-color: $primary;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.b2b-remote-list__actions {
+    .action--cart-add {
+        .btn {
+            font-size: $btn-font-size-lg;
+
+            &.btn-primary {
+                margin-top: 2px;
+                height: $b2b-btn-height-lg;
+            }
+        }
+    }
+
+    .action--order-list {
+        .b2b--orderlist-dropdown {
+            padding-bottom: 0;
+        }
+    }
+}

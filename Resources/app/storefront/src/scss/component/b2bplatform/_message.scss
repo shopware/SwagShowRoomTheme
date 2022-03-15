@@ -1,0 +1,45 @@
+.b2b--message-container {
+    ul {
+        li {
+            padding: 6px 10px 6px 30px;
+
+            .icon {
+                top: 12px;
+                left: 12px;
+            }
+
+            p:before {
+                content: '';
+                border-left: 1px solid $sw-color-success;
+                padding-left: 14px;
+            }
+        }
+    }
+
+    .b2b--message-success {
+        color: $sw-color-success;
+        background: $alert-color-success;
+
+        .icon {
+            color: $sw-color-success;
+        }
+    }
+
+    .b2b--message-info {
+        color: $sw-color-info;
+        background: $alert-color-info;
+
+        .icon {
+            color: $sw-color-info;
+        }
+    }
+
+    .b2b--message-error {
+        color: $sw-color-danger;
+        background: $alert-color-error;
+
+        .icon {
+            color: $sw-color-danger;
+        }
+    }
+}
