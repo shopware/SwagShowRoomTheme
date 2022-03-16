@@ -11,7 +11,7 @@
 {% block element_image_gallery_inner %}
     {% set showroomGallerySliderOptions = {
         slider: {
-            controls:false
+            controls:true
         },
         thumbnailSlider: {
             items: (galleryPosition == "underneath") ? 8 : 5,
@@ -43,9 +43,6 @@
 
     {{ parent() }}
 {% endblock %}
-
-{# unset the default gallery slider on product detail so the below arrow navigation can work #}
-{% block element_image_gallery_inner_controls %}{% endblock %}
 
 {% block element_image_gallery_inner_thumbnails_controls_prev %}
     <button

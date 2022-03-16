@@ -70,6 +70,10 @@
 
     &-reviews {
         font-size: $font-size-xs;
+
+        &-link {
+            margin-left: 25px;
+        }
     }
 
     &-ordernumber-label {
