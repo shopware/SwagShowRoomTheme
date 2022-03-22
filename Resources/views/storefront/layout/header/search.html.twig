@@ -21,7 +21,8 @@
                         data-target="#searchCollapse"
                         aria-expanded="false"
                         aria-controls="searchCollapse"
-                        aria-label="search collapse">
+                        aria-controls="searchCollapse"
+                        data-search-widget-options='{{ searchWidgetOptions|json_encode }}'>
                     {% sw_icon 'x' style { 'size': 'md' } %}
                 </button>
             </div>
