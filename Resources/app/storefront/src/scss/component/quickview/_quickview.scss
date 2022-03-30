@@ -12,6 +12,10 @@ $carousel-control-icon-width-sm: 16px;
 
     @include media-breakpoint-up(lg) {
         padding: 0 104px !important;
+
+        .product-detail-advanced-list-price-wrapper {
+            padding-left: 0;
+        }
     }
 
     .modal-dialog {
