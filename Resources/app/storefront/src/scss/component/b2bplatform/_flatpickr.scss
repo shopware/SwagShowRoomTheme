@@ -1,9 +1,18 @@
-.flatpickr-icon {
-    .input-group-text {
-        padding: 15px;
-        border: none;
-        border-bottom: 1px solid $gray-200;
-        background: $white;
+.module-statistic {
+    .grid-form {
+        .flatpickr-icon {
+            .input-group-text {
+                padding: 15px;
+                border: none;
+                border-bottom: 1px solid $gray-200;
+                background: $white;
+
+                .icon {
+                    color: $sw-text-color;
+                }
+            }
+        }
+
     }
 }
 

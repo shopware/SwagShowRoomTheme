@@ -63,7 +63,7 @@ describe('Paypal: Checkout', () => {
         cy.visit('/');
 
         // verify on footer
-        cy.get('div[data-swag-paypal-marks="true"] .paypal-logo-card').should('be.visible');
+        cy.get('div[data-swag-paypal-marks="true"] .paypal-logo-paypal').should('be.visible');
     });
 
     it('@workflow @paypal: should be able to checkout using smart payment', () => {
@@ -88,6 +88,6 @@ describe('Paypal: Checkout', () => {
 
         // Confirm: Change payment method to "Paypal"
         cy.get('.paypal-marks').click();
-        cy.get('div[data-swag-paypal-marks="true"] .paypal-logo-card').should('be.visible');
+        cy.get('div[data-swag-paypal-marks="true"] .paypal-logo-paypal').should('be.visible');
     })
 })
