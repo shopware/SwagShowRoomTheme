@@ -1,3 +1,11 @@
+# 1.4.0
+- Anzeige des niedrigsten Preises, wenn z.B. Grundpreise angezeigt werden
+- Qualitätskontrolle für das ShowRoom-Theme
+- Prüfung der Theme-Kompatibilität mit Shopware 6.4.10.0
+- Unterstützung der benutzerdefinierten Produkt-Detailseite im CMS
+- Behebung fehlender Erweiterbarkeit in der Kauf-Widget-Vorlage
+- Unterstützung des B2B-Suite-Plugins
+
 # 1.3.0
 - Kompatibilität des Themas mit Shopware 6.4.9.0 prüfen
 - Kompatibilität des Themas mit Shopware 6.4.8.0 prüfen
