@@ -270,6 +270,12 @@
 }
 
 .is-ctl-product {
+    .content-main {
+        > .container {
+            background: $white;
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         nav ~ .product-detail {
             padding-top: 0;

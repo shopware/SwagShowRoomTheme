@@ -6,11 +6,26 @@
     &:after {
         background: transparent;
         border-width: 1px;
+        width: calc((100vw - 1416px) / 2);
     }
 
     .b2b--navigation-mainmenu {
         &:after {
             height: 1px;
+        }
+    }
+}
+
+.b2b--tab-menu {
+    .tab--navigation {
+        border-width: 1px;
+
+        .ajax-panel-link {
+            margin-bottom: 5px;
+        }
+
+        .tab--link {
+            font-size: $h6-font-size;
         }
     }
 }
