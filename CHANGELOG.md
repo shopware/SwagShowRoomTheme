@@ -1,3 +1,11 @@
+# 1.4.0
+- Display the lowest price where f.e. base prices are displayed
+- Quality check for the ShowRoom theme
+- Check theme compatibility with Shopware 6.4.10.0
+- Support the custom product detail page in the CMS
+- Fixed missing extendability in buy-widget template
+- Support B2B Suite plugin
+
 # 1.3.0
 - Check theme compatibility with Shopware 6.4.9.0
 - Check theme compatibility with Shopware 6.4.8.0
