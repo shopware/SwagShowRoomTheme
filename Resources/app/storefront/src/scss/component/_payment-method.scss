@@ -12,9 +12,22 @@
         margin-bottom: $spacer;
     }
 
-    .payment-control {
-        height: 100%;
+    @if (feature('V6_5_0_0')) {
+        .form-check {
+            padding-left: 0;
+        }
 
+        .form-check-input:checked,
+        .form-check-label::before,
+        .form-check-label::after {
+            display: none;
+        }
+
+        .payment-method-input {
+            display: none;
+        }
+
+    } @else {
         .custom-control {
             padding-left: 0;
         }
@@ -24,14 +37,14 @@
         .custom-control-label::after {
             display: none;
         }
+    }
 
-        .payment-method-description {
-            font-size: $showroom-font-size-base;
+    .payment-method-description {
+        font-size: $showroom-font-size-base;
 
-            strong {
-                font-size: $h6-font-size;
-                line-height: 28px;
-            }
+        strong {
+            font-size: $h6-font-size;
+            line-height: 28px;
         }
     }
 
@@ -51,11 +64,17 @@
         }
     }
 
-    .custom-control-input:checked+label {
-        border-color: $sw-color-brand-primary;
+    @if (feature('V6_5_0_0')) {
+        .form-check-input:checked + label {
+            border-color: $sw-color-brand-primary;
+        }
+    } @else {
+        .custom-control-input:checked + label {
+            border-color: $sw-color-brand-primary;
+        }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         .payment-form-group {
             .payment-method-description {
                 strong {

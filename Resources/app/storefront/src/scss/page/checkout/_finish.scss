@@ -36,8 +36,12 @@ $finish-content-spacer-lg: 70px;
     }
 
     .cart-item-quantity-row {
-        @extend .no-gutters;
         @extend .mb-0;
+        @if (feature('V6_5_0_0')) {
+            @extend .g-0;
+        } @else {
+            @extend .no-gutters;
+        }
 
         width: 100%;
     }

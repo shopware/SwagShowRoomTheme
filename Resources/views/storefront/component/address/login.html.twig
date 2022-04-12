@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/account/login.html.twig' %}
 
 {% block component_account_login_password_recover %}
-    <div class="form-row align-items-end">
+    <div class="{{ formRowClass }} align-items-end">
         {% block component_account_login_form_mail %}
             <div class="form-group col-md-4">
                 {% block component_account_login_form_mail_label %}
@@ -29,7 +29,7 @@
         {% block component_account_address_login_submit %}
             <div class="form-group col-md-4 login-submit">
                 <button type="submit"
-                        class="btn btn-primary btn-block">
+                        class="btn btn-primary {% if not feature('V6_5_0_0') %}btn-block{% endif %}">
                     {{ "account.loginSubmit"|trans|sw_sanitize }}
                 </button>
             </div>
@@ -37,7 +37,7 @@
     </div>
 
     {% block component_address_login_form_fields %}
-        <div class="login-password-recover text-right">
+        <div class="login-password-recover {% if feature('V6_5_0_0') %}text-end{% else %}text-right{% endif %}">
             {% block component_account_login_password_recover_link %}
                 {{ parent() }}
             {% endblock %}

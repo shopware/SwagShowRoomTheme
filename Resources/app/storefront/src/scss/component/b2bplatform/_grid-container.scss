@@ -59,9 +59,15 @@
 }
 
 .is--b2b-acl-action-sendOffer {
-    .input-group-append {
+    @if (feature('V6_5_0_0')) {
         .btn-primary {
             color: $primary;
+        }
+    } @else {
+        .input-group-append {
+            .btn-primary {
+                color: $primary;
+            }
         }
     }
 }

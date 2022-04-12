@@ -168,7 +168,7 @@
     }
 
     div[data-amazon-pay-button-product-detail='true'] {
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
             > .col-8 {
                 @include make-col(12);
             }

@@ -1,4 +1,8 @@
 .breadcrumb {
+    @if (feature('V6_5_0_0')) {
+        margin-top: 1rem;
+    }
+
     a.is-active {
         font-weight: normal;
     }
@@ -23,7 +27,7 @@
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
     .breadcrumb {
         margin-bottom: 0;
     }

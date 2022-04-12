@@ -108,7 +108,7 @@
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
     .account-register {
         .global-collapse-headline {
             border-bottom: unset;
@@ -139,6 +139,21 @@
         width: initial;
     }
 
+    //.account-register-login-container,
+    //.account-register-container {
+    //    @if (feature('V6_5_0_0')) {
+    //        .row {
+    //            margin-right: 0;
+    //            margin-left: 0;
+    //        }
+    //    } @else {
+    //        .form-row {
+    //            margin-right: 0;
+    //            margin-left: 0;
+    //        }
+    //    }
+    //}
+
     .is-act-loginpage {
         .account-register-container {
             padding-bottom: 50px;
@@ -160,17 +175,11 @@
         .login-card {
             background: $white;
             margin-bottom: 0;
-            padding-top: 20px;
-            padding-bottom: $grid-gutter-width / 2;
-
-            .card-title {
-                display: none;
-            }
         }
 
-        .form-row {
-            margin-right: 0;
-            margin-left: 0;
+        .register-card,
+        .login-card {
+            padding: $grid-gutter-width / 2;
         }
 
         .login-submit,
@@ -181,13 +190,15 @@
             }
         }
 
-        .login-password-recover,
-        .login-submit {
-            padding-left: $grid-gutter-width / 2;
-            padding-right: $grid-gutter-width / 2;
-        }
-
         .login-advantages-content {
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    .login-card {
+        .card-title {
             display: none;
         }
     }

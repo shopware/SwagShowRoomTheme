@@ -1,7 +1,7 @@
 .input-group,
 .input-group-lg,
 .input-group-sm {
-    .input-group-append {
+    @if (feature('V6_5_0_0')) {
         .btn {
             padding: 0;
             background-color: transparent;
@@ -10,13 +10,30 @@
             border: none;
             border-bottom: $input-border-width solid $input-border-color;
         }
+    } @else {
+        .input-group-append {
+            .btn {
+                padding: 0;
+                background-color: transparent;
+                line-height: $input-btn-padding-y-sm;
+
+                border: none;
+                border-bottom: $input-border-width solid $input-border-color;
+            }
+        }
     }
 
     .form-control {
         &:focus {
-            + .input-group-append {
-                .btn {
+            @if (feature('V6_5_0_0')) {
+                + .btn {
                     border-color: $input-focus-color;
+                }
+            } @else {
+                + .input-group-append {
+                    .btn {
+                        border-color: $input-focus-color;
+                    }
                 }
             }
         }

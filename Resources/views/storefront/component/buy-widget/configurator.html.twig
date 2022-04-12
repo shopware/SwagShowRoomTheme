@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/buy-widget/configurator.html.twig' %}
 
 {% block buy_widget_configurator_groups %}
-    <div data-showroom-collapse="true" class="row mx-lg-0 product-detail-configurator-container">
+    <div data-showroom-collapse="true" class="{{ formRowClass }} mx-lg-0 product-detail-configurator-container">
         {% for group in configuratorSettings %}
             {% set activeOption = group.options|filter(option => option.id in product.optionIds)|first %}
             {% set withoutActiveOptions = group.options|filter(option => option.id not in product.optionIds) %}
@@ -19,7 +19,7 @@
 
             {% block buy_widget_configurator_group %}
                 <div class="col-12 col-md col-lg-12 px-lg-0 product-detail-configurator-group">
-                    <div class="row">
+                    <div class="{{ formRowClass }}">
                         <div class="col-4 col-md-12 col-lg-4">
                             {% block buy_widget_configurator_group_title %}
                                 {{ parent() }}

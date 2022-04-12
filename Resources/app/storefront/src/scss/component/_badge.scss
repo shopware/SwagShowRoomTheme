@@ -1,0 +1,13 @@
+.badge {
+    @if (feature('V6_5_0_0')) {
+        &.bg-primary {
+            color: $sw-color-info;
+            background-color: $alert-color-info !important;
+        }
+    } @else {
+        &.badge-primary {
+            color: $sw-color-info;
+            background-color: $alert-color-info;
+        }
+    }
+}

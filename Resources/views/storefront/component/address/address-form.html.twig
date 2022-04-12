@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/address/address-form.html.twig' %}
 
 {% block component_address_form_address_fields %}
-    <div class="form-row country-and-state-form-elements" data-country-state-select="true">
+    <div class="{{ formRowClass }} country-and-state-form-elements" data-country-state-select="true">
         {% block component_address_form_country %}
             <div class="form-group col-md-12">
                 {% if formViolations.getViolations("/countryId") is not empty %}
@@ -41,7 +41,7 @@
         {% endblock %}
     </div>
 
-    <div class="form-row">
+    <div class="{{ formRowClass }}">
         {% block component_address_form_street %}
             <div class="form-group col-12">
                 {% if formViolations.getViolations("/street") is not empty %}
@@ -173,7 +173,7 @@
         {% endblock %}
     </div>
 
-    <div class="form-row">
+    <div class="{{ formRowClass }}">
         {% block component_address_form_phone_number %}
             {% if config('core.loginRegistration.showPhoneNumberField') %}
                 <div class="form-group col-md-6">

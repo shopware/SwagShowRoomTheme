@@ -11,19 +11,19 @@
                       data-url="{{ path('frontend.search.suggest') }}?search="
                       class="header-search-form">
                     {% block layout_header_search_input_group %}
-                       {{ parent() }}
+                        {{ parent() }}
                     {% endblock %}
                 </form>
 
                 <button class="btn js-search-toggle-btn header-search-btn-close"
                         type="button"
-                        data-toggle="collapse"
-                        data-target="#searchCollapse"
-                        aria-expanded="false"
-                        aria-controls="searchCollapse"
-                        aria-controls="searchCollapse"
-                        data-search-widget-options='{{ searchWidgetOptions|json_encode }}'>
-                    {% sw_icon 'x' style { 'size': 'md' } %}
+                {{ dataBsToggleAttr }}="collapse"
+                {{ dataBsTargetAttr }}="#searchCollapse"
+                aria-expanded="false"
+                aria-controls="searchCollapse"
+                aria-controls="searchCollapse"
+                data-search-widget-options='{{ searchWidgetOptions|json_encode }}'>
+                {% sw_icon 'x' style { 'size': 'md' } %}
                 </button>
             </div>
         </div>

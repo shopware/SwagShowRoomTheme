@@ -10,7 +10,7 @@
                 <div class="col-2 d-none d-sm-block">
                     <div class="menu-button">
                         {% block layout_header_navigation_toggle_button %}
-                            <button class="btn nav-main-toggle-btn header-actions-btn pl-0"
+                            <button class="btn nav-main-toggle-btn header-actions-btn {% if feature('V6_5_0_0') %}ps-0{% else %}pl-0{% endif %}"
                                     type="button"
                                     data-offcanvas-menu="true"
                                     aria-label="{{ "general.menuLink"|trans|striptags }}">
@@ -27,7 +27,7 @@
 
             {% block layout_header_actions %}
                 <div class="col-12 order-1 col-sm-auto order-sm-2 header-actions-col">
-                    <div class="row no-gutters">
+                    <div class="row {{ gridNoGuttersClass }}">
                         {% block layout_header_navigation_toggle %}
                             {{ parent() }}
                         {% endblock %}
@@ -43,8 +43,8 @@
                                 <div class="search-toggle">
                                     <button class="btn header-actions-btn search-toggle-btn js-search-toggle-btn collapsed"
                                             type="button"
-                                            data-toggle="collapse"
-                                            data-target="#searchCollapse"
+                                            {{ dataBsToggleAttr }}="collapse"
+                                            {{ dataBsTargetAttr }}="#searchCollapse"
                                             aria-expanded="false"
                                             aria-controls="searchCollapse"
                                             aria-label="{{ "header.searchButton"|trans|striptags }}">

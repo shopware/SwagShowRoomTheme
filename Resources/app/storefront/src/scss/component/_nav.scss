@@ -3,6 +3,10 @@
         display: none;
     }
 
+    .product-detail-tab-navigation-link:hover {
+        background-color: transparent;
+    }
+
     @include media-breakpoint-up(sm) {
         .nav-link {
             border-bottom: 0;
@@ -26,7 +30,7 @@
         }
     }
 
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), sm, xs)) {
         .nav-link-title {
             font-size: $modal-title-font-size;
         }

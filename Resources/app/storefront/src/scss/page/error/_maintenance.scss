@@ -40,7 +40,7 @@ $footer-height: 69px;
     }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
     .container-maintenance {
         @include contain-height();
     }

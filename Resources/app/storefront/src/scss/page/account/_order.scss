@@ -38,7 +38,7 @@
 
         .order-table-header-heading {
             font-size: $h4-font-size;
-            max-width: 320px;
+            max-width: max-content;
         }
 
         .order-table-header-context-menu-wrapper,
@@ -53,6 +53,7 @@
 
         .order-table-header-order-table-body {
             border-top: unset;
+            position: relative;
 
             .order-table-header-order-table-body-cell[class*='col-'] {
                 margin-top: 0;
@@ -80,6 +81,7 @@
 
             .order-table-header-label {
                 font-weight: normal;
+                width: unset;
             }
 
             .order-table-header-order-number {
@@ -88,13 +90,13 @@
         }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         .account-orders-main {
             padding-top: 30px;
         }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         .order-item-header {
             padding-top: 15px;
             padding-bottom: 0;

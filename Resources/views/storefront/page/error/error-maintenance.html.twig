@@ -20,7 +20,7 @@
     {% else %}
         {% block error_maintenance_main_fallback %}
             <div class="container container-maintenance align-middle d-flex">
-                <div class="row no-gutters justify-content-center w-100">
+                <div class="row {{ gridNoGuttersClass }} justify-content-center w-100">
                     <div class="col-12 col-lg-6 mb-5 mb-md-0">
                         <div class="maintenance-image-wrap">
                             {% block error_maintenance_main_picture %}
@@ -38,7 +38,7 @@
                             {% endblock %}
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 mr-md-auto col-lg-4 offset-lg-1 align-self-lg-center">
+                    <div class="col-12 col-md-6 {{ marginEndClass }}-md-auto col-lg-4 offset-lg-1 align-self-lg-center">
                         {% block error_maintenance_main_header %}
                             <h2>{{ "general.maintenanceModeHeader"|trans }}</h2>
                         {% endblock %}

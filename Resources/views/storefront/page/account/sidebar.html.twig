@@ -16,7 +16,7 @@
             <div class="card-footer account-aside-footer">
                 {% block page_account_sidebar_logout %}
                     <a href="{{ path('frontend.account.logout.page') }}"
-                       class="btn btn-sm btn-block btn-outline-secondary">
+                       class="btn btn-sm {% if not feature('V6_5_0_0') %}btn-block{% endif%} btn-outline-secondary">
                         {{ "account.logout"|trans|sw_sanitize }}
                     </a>
                 {% endblock %}
@@ -25,7 +25,7 @@
             <div class="card-footer account-aside-footer account-guest-abort">
                 {% block page_account_sidebar_guest_abort %}
                     <a href="{{ path('frontend.account.logout.page') }}"
-                       class="btn btn-sm btn-block btn-outline-secondary">
+                       class="btn btn-sm {% if not feature('V6_5_0_0') %}btn-block{% endif%} btn-outline-secondary">
                         {{ "account.guestAbort"|trans|sw_sanitize }}
                     </a>
                 {% endblock %}
@@ -35,7 +35,7 @@
         <div class="card-footer account-aside-footer account-menu-register">
             <a href="{{ path('frontend.account.login.page') }}"
                title="{{ "account.orRegisterLink"|trans|striptags }}"
-               class="btn btn-sm btn-block btn-outline-secondary">
+               class="btn btn-sm {% if not feature('V6_5_0_0') %}btn-block{% endif%} btn-outline-secondary">
                 {{ "account.orRegister"|trans|sw_sanitize }} {{ "showroom.account.orRegisterLink"|trans|sw_sanitize }}
             </a>
         </div>

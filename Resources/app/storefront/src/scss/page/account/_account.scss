@@ -62,7 +62,7 @@
         }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         h1,
         h2,
         .card-title {
@@ -73,11 +73,6 @@
             > .container {
                 background: $gray-100;
             }
-        }
-
-        .container-main {
-            padding-top: 0;
-            padding-bottom: 0;
         }
 
         .account-information {

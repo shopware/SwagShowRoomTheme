@@ -1,5 +1,7 @@
 import deepmerge from 'deepmerge';
 import CollapseFooterColumnsPlugin from 'src/plugin/collapse/collapse-footer-columns.plugin';
+import Feature from 'src/helper/feature.helper';
+import Iterator from 'src/helper/iterator.helper';
 
 export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
 
@@ -18,6 +20,7 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
         this._columns = this.el.querySelectorAll(this.options.collapseColumnSelector);
         this._registerEvents();
 
+        document.$emitter.reset();
         document.$emitter.subscribe('openMenu', (event) => {
             this._columns = document.querySelectorAll(this.options.collapseColumnSelector);
             this._registerEvents();
@@ -31,25 +34,45 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
     _onClickCollapseTrigger(event) {
         const trigger = event.target;
         const collapse = trigger.parentNode.parentNode.querySelector(this.options.collapseColumnContentSelector);
-
-        const $collapse = $(collapse);
         const collapseShowClass = this.options.collapseShowClass;
 
-        $collapse.collapse('toggle');
+        if (Feature.isActive('V6_5_0_0')) {
 
-        // product variant dropdown selector
-        $('.product-detail-configurator-collapse .collapse').collapse('hide');
+            new bootstrap.Collapse(collapse, { collapse: true });
 
-        $collapse.on('shown.bs.collapse', () => {
-            trigger.classList.add(collapseShowClass);
-            this.$emitter.publish('onCollapseShown');
-        });
+            const collapseList = document.querySelectorAll('.product-detail-configurator-collapse .collapse.show')
+            Iterator.iterate(collapseList, (collapseEl) => {
+                new bootstrap.Collapse(collapseEl).hide()
+            })
 
-        $collapse.on('hidden.bs.collapse', () => {
-            trigger.classList.remove(collapseShowClass);
-            this.$emitter.publish('onCollapseHidden');
-        });
+            collapse.addEventListener('shown.bs.collapse', () => {
+                trigger.classList.add(collapseShowClass);
+                this.$emitter.publish('onCollapseShown');
+            });
 
-        this.$emitter.publish('onClickCollapseTrigger');
+            collapse.addEventListener('hidden.bs.collapse', () => {
+                trigger.classList.remove(collapseShowClass);
+                this.$emitter.publish('onCollapseHidden');
+            });
+        } else {
+            const $collapse = $(collapse);
+
+            $collapse.collapse('toggle');
+
+            // product variant dropdown selector
+            $('.product-detail-configurator-collapse .collapse').collapse('hide');
+
+            $collapse.on('shown.bs.collapse', () => {
+                trigger.classList.add(collapseShowClass);
+                this.$emitter.publish('onCollapseShown');
+            });
+
+            $collapse.on('hidden.bs.collapse', () => {
+                trigger.classList.remove(collapseShowClass);
+                this.$emitter.publish('onCollapseHidden');
+            });
+
+            this.$emitter.publish('onClickCollapseTrigger');
+        }
     }
 }
