@@ -169,4 +169,12 @@
             </div>
         </div>
     </div>
+
+    {% set fundingEligibilityData = page.footer.extensions[constant('Swag\\PayPal\\Storefront\\Data\\FundingSubscriber::FUNDING_ELIGIBILITY_EXTENSION')] %}
+
+    {% if fundingEligibilityData %}
+        <div data-swag-paypal-funding-eligibility="true"
+             data-swag-paypal-funding-eligibility-options="{{ fundingEligibilityData|json_encode }}">
+        </div>
+    {% endif %}
 {% endblock %}

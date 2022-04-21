@@ -2,8 +2,8 @@
 
 {% block component_address_personal_fields %}
     {% block component_address_personal_account_type %}
-        {% if config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect %}
-            <div class="{{ formRowClass }}">
+        {% if onlyCompanyRegistration or (config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect) %}
+            <div class={{ formRowClass }}>
                 <div class="form-group col-12 contact-type">
                     {% block component_address_personal_account_type_label %}
                         {{ parent() }}
@@ -18,7 +18,7 @@
                     {% endblock %}
                 </div>
             </div>
-        {% else %}
+        {% elseif not hideCustomerTypeSelect %}
             <input type="hidden" name="accountType">
         {% endif %}
     {% endblock %}
@@ -59,6 +59,12 @@
         {% block component_address_personal_fields_name %}
             {% block component_address_personal_fields_first_name %}
                 <div class="form-group col-12">
+                    {% if formViolations.getViolations("/firstName") is not empty %}
+                        {% set violationPath = "/firstName" %}
+                    {% else %}
+                        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalFirstNameLabel"|trans|sw_sanitize }) %}
+                    {% endif %}
+
                     {% block component_address_personal_fields_first_name_label %}
                         {{ parent() }}
                     {% endblock %}
@@ -75,6 +81,12 @@
 
             {% block component_address_personal_fields_last_name %}
                 <div class="form-group col-12">
+                    {% if formViolations.getViolations("/lastName") is not empty %}
+                        {% set violationPath = "/lastName" %}
+                    {% else %}
+                        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalLastNameLabel"|trans|sw_sanitize }) %}
+                    {% endif %}
+
                     {% block component_address_personal_fields_last_name_label %}
                         {{ parent() }}
                     {% endblock %}
@@ -102,7 +114,7 @@
 
 {% block component_address_personal_fields_birthday_select_day %}
     <div class="form-group col-4">
-        <select id="{{ prefix }}personalBirthday"
+        <select id="{{ idPrefix ~ prefix }}personalBirthday"
                 name="{% if prefix %}{{ prefix }}[birthdayDay]{% else %}birthdayDay{% endif %}"
                 class="{{ formSelectClass }}{% if formViolations.getViolations('/birthdayDay') is not empty %} is-invalid{% endif %}"
             {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
@@ -142,6 +154,7 @@
                 </option>
             {% endfor %}
         </select>
+
         {{ block('component_address_personal_fields_birthday_select_month_error') }}
     </div>
 
@@ -168,6 +181,7 @@
                 </option>
             {% endfor %}
         </select>
+
         {{ block('component_address_personal_fields_birthday_select_year_error') }}
     </div>
 {% endblock %}

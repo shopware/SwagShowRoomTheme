@@ -86,7 +86,6 @@ describe('Product Detail: Product variants', () => {
         cy.get('.sw-product-detail-base__visibility-structure').scrollIntoView()
 
         cy.get('.sw-category-tree__input-field').focus();
-        cy.get('.sw-category-tree-field__results').should('be.visible');
         cy.get('.sw-tree-item__element').contains('Home').parent().parent()
             .find('.sw-field__checkbox input')
             .click({force: true});
