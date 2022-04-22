@@ -33,7 +33,8 @@ $cart-item-img-width: 80px;
 
     .cart-item-quantity,
     .cart-item-quantity-container,
-    .custom-select {
+    .custom-select,
+    .form-select {
         @extend .w-100;
     }
 
@@ -95,6 +96,10 @@ $cart-item-img-width: 80px;
 
     .shipping-cost strong {
         font-weight: $font-weight-normal;
+    }
+
+    .begin-checkout-btn {
+        margin-bottom: $grid-gutter-width / 2;
     }
 
     @include media-breakpoint-up(lg) {

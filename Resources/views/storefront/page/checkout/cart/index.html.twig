@@ -19,14 +19,24 @@
 {% endblock %}
 
 {% block page_checkout_cart_add_promotion_submit %}
-    <div class="input-group-append">
+    {% if feature('V6_5_0_0') %}
         <button class="btn btn-primary"
                 type="submit"
                 id="addPromotion">
             {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
         </button>
-    </div>
+    {% else %}
+        <div class="input-group-append">
+            <button class="btn btn-primary"
+                    type="submit"
+                    id="addPromotion">
+                {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+            </button>
+        </div>
+    {% endif %}
 {% endblock %}
+
+{% block page_checkout_cart_shipping_costs_trigger_icon %}{% endblock %}
 
 {% block page_checkout_aside_actions %}
     {{ parent() }}
@@ -43,14 +53,13 @@
                 {% endblock %}
 
                 {% block page_checkout_cart_shipping_costs_trigger %}
-                    <a class="btn btn-lg btn-block btn-outline-primary cart-shipping-costs-btn"
-                       data-toggle="collapse"
-                       href="#collapseShippingCost"
-                       role="button"
-                       aria-expanded="false"
-                       aria-controls="collapseExample">
-                        {{ "checkout.shippingCosts"|trans|sw_sanitize }}
-                        {% block page_checkout_cart_shipping_costs_trigger_icon %}{% endblock %}
+                    <a class="btn btn-lg {% if not feature('V6_5_0_0') %}btn-block{% endif %}btn-outline-primary cart-shipping-costs-btn"
+                    {{ dataBsToggleAttr }}="collapse"
+                    href="#collapseShippingCost"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample">
+                    {{ "checkout.shippingCosts"|trans|sw_sanitize }}
                     </a>
                 {% endblock %}
 

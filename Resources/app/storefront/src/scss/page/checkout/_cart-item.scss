@@ -182,7 +182,7 @@ $cart-img-container-width: 100px;
     border: 0;
     color: $sw-color-brand-primary;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         display: none;
     }
 

@@ -14,9 +14,9 @@
 
 {% block page_checkout_confirm_shipping_modal_toggle %}
     <div class="card-actions">
-        <a data-toggle="modal"
+        <a {{ dataBsToggleAttr }}="modal"
            data-backdrop="static"
-           data-target="#confirmShippingModal"
+           {{ dataBsTargetAttr }}="#confirmShippingModal"
            class="confirm-shipping-link"
         >
             {% if shippingMethodInvalid %}

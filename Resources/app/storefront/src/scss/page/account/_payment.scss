@@ -3,14 +3,14 @@
         padding-top: 10px;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         .account-payment-card {
             padding-top: 50px;
             padding-bottom: 70px;
         }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         .account-payment-card {
             padding-top: 30px;
             padding-bottom: 50px;

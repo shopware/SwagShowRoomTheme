@@ -1,3 +1,5 @@
+$page-content-padding: 50px;
+
 .container {
     padding-left: 24px;
     padding-right: 24px;
@@ -15,7 +17,13 @@
 
 .is-ctl-accountprofile {
     .container-main {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: $page-content-padding;
+        padding-bottom: $page-content-padding;
+    }
+}
+
+.is-act-recoveraccountform {
+    .account-recover-password-form {
+        padding: $page-content-padding 0;
     }
 }

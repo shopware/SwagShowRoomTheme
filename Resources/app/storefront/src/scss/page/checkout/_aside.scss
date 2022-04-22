@@ -10,7 +10,11 @@ $checkout-aside-spacing: 20px;
     border-bottom: 1px solid $border-color;
 
     &-list {
-        @extend .no-gutters;
+        @if (feature('V6_5_0_0')) {
+            @extend .g-0;
+        } @else {
+            @extend .no-gutters;
+        }
 
         dd {
             margin-bottom: 0;

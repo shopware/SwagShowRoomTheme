@@ -85,7 +85,7 @@ $confirm-product-spacer-lg: 50px;
         }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         .cart-item-tax-price {
             padding-top: 20px;
         }

@@ -15,7 +15,7 @@
             {{ parent() }}
         {% endblock %}
 
-        <div class="form-row account-profile-personal-action-container">
+        <div class="{{ formRowClass }} account-profile-personal-action-container">
             {% block page_account_profile_personal_required %}
                 <p class="col-12 col-md-8 account-profile-required-info required-fields">
                     {{ "general.requiredFields"|trans|sw_sanitize }}
@@ -23,10 +23,10 @@
             {% endblock %}
 
             {% block page_account_profile_personal_action_buttons %}
-                <div class="col-12 col-md-4 card-actions pl-md-0 d-flex justify-content-end">
+                <div class="col-12 col-md-4 card-actions {% if feature('V6_5_0_0') %}ps-md-0 {% else %}pl-md-0{% endif %} d-flex justify-content-end">
                     {% block page_account_profile_personal_action_button_send %}
                         <button type="submit"
-                                class="profile-form-submit btn btn-outline-primary btn-sm btn-block"
+                                class="profile-form-submit btn btn-outline-primary btn-sm {% if not feature('V6_5_0_0') %}btn-block{% endif %}"
                                 title="{{ "account.profileSaveChanges"|trans|striptags }}">
                             {{ "account.profileSaveChanges"|trans|sw_sanitize }}
                         </button>
@@ -51,7 +51,7 @@
         <div class="col-auto col-md text-md-right account-profile-change">
             {% block page_account_profile_credentials_change_mail %}
                 <a class="{% if not emailFormViolation %} collapsed{% endif %}"
-                   data-toggle="collapse"
+                   {{ dataBsToggleAttr }}="collapse"
                    href="#profile-email-form"
                    role="button"
                    aria-expanded="{% if emailFormViolation %}true{% else %}false{% endif %}"
@@ -62,7 +62,7 @@
 
             {% block page_account_profile_credentials_change_password %}
                 <a class="account-profile-change-password{% if not passwordFormViolation %} collapsed{% endif %}"
-                   data-toggle="collapse"
+                   {{ dataBsToggleAttr }}="collapse"
                    href="#profile-password-form"
                    role="button"
                    aria-expanded="{% if passwordFormViolation %}true{% else %}false{% endif %}"

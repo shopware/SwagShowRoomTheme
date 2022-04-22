@@ -51,7 +51,7 @@
                 @extend .col-auto;
 
                 padding-left: 0;
-                min-width: 90px + $grid-gutter-width/2;
+                min-width: 90px + $grid-gutter-width / 2;
                 align-content: center;
             }
 
@@ -130,6 +130,10 @@
         font-size: $h6-font-size;
     }
 
+    .order-table-header-heading {
+        margin-right: 20px;
+    }
+
     @include media-breakpoint-up(md) {
         .order-item-detail-amount-label,
         .order-item-detail-amount-value {
@@ -151,7 +155,7 @@
         }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         .order-detail-content {
             .order-item {
                 display: flex;
@@ -204,7 +208,7 @@
         }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         .order-detail-content {
             border: unset;
 
@@ -244,19 +248,13 @@
     font-size: 14px;
     padding: 5px 10px;
     border-radius: 1px;
-    color: $sw-color-info;
-    background-color: $alert-color-info;
     align-self: center;
-    margin-left: 20px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
+    width: unset;
 
     @include media-breakpoint-up(md) {
         margin-bottom: 0;
         margin-top: 8px;
-    }
-
-    @include media-breakpoint-down(sm) {
-        margin-left: 0;
     }
 }
 

@@ -33,14 +33,23 @@
                                                        placeholder="{{ 'newsletter.placeholderMail'|trans }}"
                                                        aria-label="{{ 'newsletter.placeholderMail'|trans }}"
                                                        aria-describedby="footerNewsletterBtnAddon">
-                                                <div class="input-group-append">
+                                                {% if feature('V6_5_0_0') %}
                                                     <button class="btn btn-link"
                                                             type="button"
                                                             title="{{ 'newsletter.formSubmit'|trans|striptags }}"
                                                             id="footerNewsletterBtnAddon">
                                                         {% sw_icon 'arrow-simple-long-right' style { 'size': 'lg', 'color': 'primary' } %}
                                                     </button>
-                                                </div>
+                                                {% else %}
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-link"
+                                                                type="button"
+                                                                title="{{ 'newsletter.formSubmit'|trans|striptags }}"
+                                                                id="footerNewsletterBtnAddon">
+                                                            {% sw_icon 'arrow-simple-long-right' style { 'size': 'lg', 'color': 'primary' } %}
+                                                        </button>
+                                                    </div>
+                                                {% endif %}
                                             </div>
                                         {% endblock %}
                                     </div>
@@ -51,8 +60,7 @@
                                     'captchas': config('core.basicInformation.activeCaptchasV2'),
                                     'additionalClass' : 'col-md-4',
                                     'formId': 'newsletter-form'
-                                }
-                                %}
+                                } %}
 
                                 {% block layout_footer_navigation_newsletter_form_hidden_fields %}
                                     <div class="form-hidden-fields">
@@ -60,7 +68,7 @@
                                                value="{{ constant('Shopware\\Storefront\\Controller\\FormController::SUBSCRIBE') }}"
                                                name="option">
                                         {{ sw_csrf('frontend.form.newsletter.register.handle') }}
-                                        <input type="submit" class="submit--hidden d-none" />
+                                        <input type="submit" class="submit--hidden d-none"/>
                                     </div>
                                 {% endblock %}
                             </form>

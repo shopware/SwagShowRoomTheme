@@ -128,7 +128,7 @@ $gallery-image-height-lg: 800px;
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
     .gallery-slider-row {
         &.is-loading {
             min-height: $gallery-image-height-sm;
@@ -207,7 +207,7 @@ $gallery-image-height-lg: 800px;
     }
 
     &image-gallery {
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
             .base-slider-controls-prev,
             .base-slider-controls-next {
                 top: 80%;

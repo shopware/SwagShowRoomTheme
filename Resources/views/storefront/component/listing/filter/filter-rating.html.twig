@@ -1,17 +1,17 @@
 {% sw_extends '@Storefront/storefront/component/listing/filter/filter-rating.html.twig' %}
 
 {% block component_filter_rating_toggle %}
-    <button class="filter-panel-item-toggle btn{% if sidebar %} btn-block{% endif %}"
-            aria-expanded="false"
-            {% if sidebar %}
-            data-toggle="collapse"
-            data-target="#{{ filterItemId }}"
-            {% else %}
-            data-toggle="dropdown"
+    <button class="filter-panel-item-toggle btn {% if sidebar and not feature('V6_5_0_0') %}btn-block{% endif %}"
+        aria-expanded="false"
+        {% if sidebar %}
+            {{ dataBsToggleAttr }}="collapse"
+            {{ dataBsTargetAttr }}="#{{ filterItemId }}"
+        {% else %}
+            {{ dataBsToggleAttr }}="dropdown"
             data-boundary="viewport"
-            data-offset="0"
+            {{ dataBsOffsetAttr }}="0"
             aria-haspopup="true"
-            {% endif %}>
+        {% endif %}>
 
         <span class="filter-rating-name">
             {% block component_filter_rating_display_name %}

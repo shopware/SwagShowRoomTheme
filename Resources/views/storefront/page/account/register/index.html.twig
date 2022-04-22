@@ -16,7 +16,7 @@
             <div class="js-collapse-column">
                 <div class="global-collapse-headline js-collapse-column-trigger"
                      id="collapseRegisterLogin"
-                     data-target="#collapseRegisterLogin"
+                     {{ dataBsTargetAttr }}="#collapseRegisterLogin"
                      aria-expanded="true"
                      aria-controls="collapseRegisterLogin">
                     {{ "showroom.account.loginHeader"|trans|sw_sanitize }}
@@ -76,7 +76,7 @@
             <div class="js-collapse-column">
                 <div class="global-collapse-headline js-collapse-column-trigger"
                      id="collapseRegister"
-                     data-target="#collapseRegister"
+                     {{ dataBsTargetAttr }}="#collapseRegister"
                      aria-expanded="true"
                      aria-controls="collapseRegister">
                     {{ "account.registerPersonalHeader"|trans|sw_sanitize }}

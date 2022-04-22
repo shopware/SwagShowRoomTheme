@@ -18,6 +18,7 @@
 
         .register-footer {
             padding-top: 60px;
+            padding-bottom: $grid-gutter-width / 2;
 
             .privacy-notice {
                 margin-bottom: 0;
@@ -47,23 +48,15 @@
             margin-bottom: $grid-gutter-width;
         }
 
-        .address-form-street-back {
-            padding-left: 0;
-        }
-
         @include media-breakpoint-only(lg) {
             .address-form-street-front,
             .address-form-street-back {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-
-            .address-form-street-back {
-                padding-left: $form-grid-gutter-width / 2;
-            }
         }
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             background: $white;
             padding-top: 20px;
 
@@ -71,19 +64,7 @@
             .register-billing {
                 .card-title {
                     font-size: $h6-font-size;
-                    padding-left: $grid-gutter-width / 2;
-                    padding-right: $grid-gutter-width / 2;
                     margin-bottom: 30px;
-                }
-            }
-
-            .address-different-shipping {
-                padding-left: $grid-gutter-width / 2;
-                padding-right: $grid-gutter-width / 2;
-
-                .form-group {
-                    padding-left: 0;
-                    padding-right: 0;
                 }
             }
 
@@ -91,17 +72,6 @@
             .register-shipping .card-title {
                 padding-left: 0;
                 padding-right: 0;
-            }
-
-            .register-footer {
-                padding: $grid-gutter-width / 2;
-            }
-
-            .address-contact-type-department,
-            .address-form-street-front {
-                &.form-group {
-                    padding-right: $grid-gutter-width / 2;
-                }
             }
 
             .register-group {
@@ -115,19 +85,11 @@
                 margin-bottom: 30px;
                 padding-left: 0;
             }
-
-            .register-personal {
-                padding-right: 0;
-            }
         }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
             .register-address {
                 padding-left: $grid-gutter-width / 2;
-            }
-
-            .register-personal {
-                padding-right: $grid-gutter-width /2;
             }
 
             .address-contact-type-department,
@@ -135,10 +97,6 @@
                 &.form-group {
                     padding-right: 0;
                 }
-            }
-
-            .address-form-street-back {
-                padding-left: $form-grid-gutter-width / 2;
             }
         }
     }
@@ -157,11 +115,21 @@
 }
 
 .register-guest-control {
-    .custom-control-input:valid + .custom-control-label {
-        color: $gray-900;
+    @if (feature('V6_5_0_0')) {
+        .form-check-input:valid + .form-check-label {
+            color: $gray-900;
 
-        &::before {
-            border-color: $gray-900;
+            &::before {
+                border-color: $gray-900;
+            }
+        }
+    } @else {
+        .custom-control-input:valid + .custom-control-label {
+            color: $gray-900;
+
+            &::before {
+                border-color: $gray-900;
+            }
         }
     }
 }

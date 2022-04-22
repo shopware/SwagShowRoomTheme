@@ -5,7 +5,7 @@
         {% block component_product_badges_new %}
             {% if product.isNew %}
                 <div>
-                    <span class="badge badge-primary badge-new">{{ "listing.boxLabelNew"|trans|sw_sanitize }}</span>
+                    <span class="badge {{ bgClass }}-primary badge-new">{{ "listing.boxLabelNew"|trans|sw_sanitize }}</span>
                 </div>
             {% endif %}
         {% endblock %}
@@ -13,7 +13,7 @@
         {% block component_product_badges_topseller %}
             {% if product.markAsTopseller %}
                 <div>
-                    <span class="badge badge-primary badge-topseller">{{ "listing.boxLabelTopseller"|trans|sw_sanitize }}</span>
+                    <span class="badge {{ bgClass }}-primary badge-topseller">{{ "listing.boxLabelTopseller"|trans|sw_sanitize }}</span>
                 </div>
             {% endif %}
         {% endblock %}

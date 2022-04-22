@@ -19,10 +19,21 @@
 }
 
 .btn-buy {
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+    @if (feature('V6_5_0_0')) {
+        @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+        line-height: $btn-line-height;
+        width: 100%;
+    } @else {
+        @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+    }
 
     @include media-breakpoint-up(lg) {
-        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+        @if (feature('V6_5_0_0')) {
+            @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+            line-height: $btn-line-height-lg;
+        } @else {
+            @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+        }
     }
 
     &:not(:disabled):not(.disabled) {

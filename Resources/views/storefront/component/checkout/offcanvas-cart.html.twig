@@ -60,11 +60,19 @@
 {% endblock %}
 
 {% block component_offcanvas_cart_actions_promotion_submit %}
-    <div class="input-group-append">
+    {% if feature('V6_5_0_0') %}
         <button class="btn btn-secondary"
                 type="submit"
                 id="addPromotionOffcanvasCart">
             {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
         </button>
-    </div>
+    {% else %}
+        <div class="input-group-append">
+            <button class="btn btn-secondary"
+                    type="submit"
+                    id="addPromotionOffcanvasCart">
+                {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
+            </button>
+        </div>
+    {% endif %}
 {% endblock %}

@@ -23,7 +23,7 @@
     }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
     .address-editor-modal {
         .modal-header .close {
             margin-right: 0;

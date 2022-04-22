@@ -34,7 +34,7 @@ $logo-height-lg: 60px;
         flex-shrink: 0;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         &-btn-close {
             padding-right: 0;
         }

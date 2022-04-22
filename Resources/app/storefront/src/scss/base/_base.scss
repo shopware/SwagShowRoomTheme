@@ -1,5 +1,5 @@
 body {
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         font-size: $showroom-font-size-base;
         line-height: 19px;
     }

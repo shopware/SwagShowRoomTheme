@@ -1,3 +1,38 @@
+@if (feature('V6_5_0_0')) {
+    .filter-panel-item-toggle {
+        .global-collapse-minus-icon {
+            display: none;
+        }
+
+        &.show {
+            .global-collapse-plus-icon {
+                display: none;
+            }
+
+            .global-collapse-minus-icon {
+                display: block;
+            }
+        }
+    }
+
+} @else {
+    .filter-panel-item {
+        .global-collapse-minus-icon {
+            display: none;
+        }
+
+        &.show {
+            .global-collapse-plus-icon {
+                display: none;
+            }
+
+            .global-collapse-minus-icon {
+                display: block;
+            }
+        }
+    }
+}
+
 .filter-panel {
     .filter-panel-item {
         .filter-panel-item-toggle {
@@ -34,20 +69,6 @@
             pointer-events: none;
         }
 
-        .global-collapse-minus-icon {
-            display: none;
-        }
-
-        &.show {
-            .global-collapse-plus-icon {
-                display: none;
-            }
-
-            .global-collapse-minus-icon {
-                display: block;
-            }
-        }
-
         .filter-multi-select-count {
             margin-left: auto;
             margin-right: 10px;
@@ -79,7 +100,7 @@
         height: 34px;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         .filter-panel-items-container {
             border-top: 1px solid $border-color;
             padding-top: 20px;

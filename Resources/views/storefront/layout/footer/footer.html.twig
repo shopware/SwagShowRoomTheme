@@ -41,7 +41,7 @@
                         <div
                             class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
                             id="collapseFooterNewsletterTitle"
-                            data-target="#collapseFooterNewsletter"
+                            {{ dataBsTargetAttr }}="#collapseFooterNewsletter"
                             aria-expanded="true"
                             aria-controls="collapseFooterNewsletter">
                                 <span class="d-md-none d-lg-block">
@@ -124,7 +124,7 @@
     </div>
 
     <div class="footer-bottom footer-bottom-mobile d-md-none">
-        <div class="container row no-gutters">
+        <div class="container row {{ gridNoGuttersClass }}">
             {% block layout_footer_mobile_logo %}
                 <div class="col footer-logo d-flex align-items-center">
                     <a class="footer-logo-main-link"

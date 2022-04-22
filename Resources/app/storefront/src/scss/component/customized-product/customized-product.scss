@@ -56,13 +56,26 @@
         margin-bottom: 30px;
         padding: 0 10px;
 
-        .custom-control-input:checked ~ .custom-control-label::before {
-            border-width: 1px;
-        }
+        @if (feature('V6_5_0_0')) {
+            .form-check-input:checked ~ .form-check-label::before {
+                border-width: 1px;
+            }
 
-        .custom-checkbox {
-            .custom-control-label::before {
-                background: none;
+            .form-check {
+                .form-check-label::before {
+                    background: none;
+                }
+            }
+
+        } @else {
+            .custom-control-input:checked ~ .custom-control-label::before {
+                border-width: 1px;
+            }
+
+            .custom-checkbox {
+                .custom-control-label::before {
+                    background: none;
+                }
             }
         }
     }

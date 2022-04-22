@@ -16,7 +16,7 @@
     }
 
     &.col-md-12 {
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
             padding-left: 0;
             padding-right: 0;
         }

@@ -1,97 +1,198 @@
-.custom-switch {
-    min-height: 0;
-    line-height: 1;
+@if (feature('V6_5_0_0')) {
+    .form-switch {
+        min-height: 0;
+        line-height: 1;
 
-    .custom-control-label {
-        line-height: $font-size-base * $line-height-base;
-        height: auto;
+        .form-check-label {
+            line-height: $font-size-base * $line-height-base;
+            height: auto;
 
-        &::before,
-        &::after {
-            top: 50%;
-            transform: translateY(-50%);
+            &::before,
+            &::after {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                border-radius: 1px;
+                background-color: $gray-300;
+            }
+
+            &::after {
+                border-radius: 1px;
+                background-color: $white;
+            }
         }
 
-        &::before {
-            border-radius: 1px;
-            background-color: $gray-300;
-        }
-
-        &::after {
-            border-radius: 1px;
+        .form-check-input:checked ~ .form-check-label::after {
             background-color: $white;
+            transform: translate(0.75rem, -50%);
         }
     }
+} @else {
+    .custom-switch {
+        min-height: 0;
+        line-height: 1;
 
-    .custom-control-input:checked ~ .custom-control-label::after {
-        background-color: $white;
-        transform: translate(0.75rem, -50%);
-    }
-}
+        .custom-control-label {
+            line-height: $font-size-base * $line-height-base;
+            height: auto;
 
-.custom-checkbox {
-    .custom-control-label {
-        cursor: pointer;
-        line-height: $font-size-base * $line-height-base;
+            &::before,
+            &::after {
+                top: 50%;
+                transform: translateY(-50%);
+            }
 
-        &::before {
-            border-radius: 0;
-            background: $white;
+            &::before {
+                border-radius: 1px;
+                background-color: $gray-300;
+            }
+
+            &::after {
+                border-radius: 1px;
+                background-color: $white;
+            }
         }
 
-        &::after {
-            top: 8px;
-            left: -22px;
-            width: 12px;
-            height: 12px;
+        .custom-control-input:checked ~ .custom-control-label::after {
+            background-color: $white;
+            transform: translate(0.75rem, -50%);
         }
     }
 }
 
 // Select
-.custom-select {
-    border: none;
-    outline: none;
-    border-bottom: $custom-select-border-width solid $custom-select-border-color;
+@if (feature('V6_5_0_0')) {
+    .form-check {
+        .form-check-label {
+            cursor: pointer;
+            line-height: $font-size-base * $line-height-base;
 
-    &:invalid {
-        &::placeholder {
-            color: $gray-600;
+            &::before {
+                border-radius: 0;
+                background: $white;
+            }
+
+            &::after {
+                top: 8px;
+                left: -22px;
+                width: 12px;
+                height: 12px;
+            }
         }
     }
 
-    &:valid {
-        border-color: $custom-control-active-border-color;
+    .form-select {
+        border: none;
+        outline: none;
+        border-bottom: $form-select-border-width solid $form-select-border-color;
+
+        &:invalid {
+            &::placeholder {
+                color: $gray-600;
+            }
+        }
+
+        &:valid {
+            border-color: $custom-control-active-border-color;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+        }
+    }
+} @else {
+    .custom-checkbox {
+        .custom-control-label {
+            cursor: pointer;
+            line-height: $font-size-base * $line-height-base;
+
+            &::before {
+                border-radius: 0;
+                background: $white;
+            }
+
+            &::after {
+                top: 8px;
+                left: -22px;
+                width: 12px;
+                height: 12px;
+            }
+        }
     }
 
-    &:disabled {
-        opacity: 0.4;
+    .custom-select {
+        border: none;
+        outline: none;
+        border-bottom: $custom-select-border-width solid $custom-select-border-color;
+
+        &:invalid {
+            &::placeholder {
+                color: $gray-600;
+            }
+        }
+
+        &:valid {
+            border-color: $custom-control-active-border-color;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+        }
     }
 }
 
 .was-validated {
-    .custom-select {
-        &:invalid {
-            opacity: 1;
+    @if (feature('V6_5_0_0')) {
+        .form-select {
+            &:invalid {
+                opacity: 1;
 
-            &::placeholder {
-                color: $form-feedback-invalid-color;
+                &::placeholder {
+                    color: $form-feedback-invalid-color;
+                }
+            }
+        }
+    } @else {
+        .custom-select {
+            &:invalid {
+                opacity: 1;
+
+                &::placeholder {
+                    color: $form-feedback-invalid-color;
+                }
             }
         }
     }
 }
 
 @include media-breakpoint-up(lg) {
-    .custom-select {
-        font-size: $custom-select-font-size-lg;
+    @if (feature('V6_5_0_0')) {
+        .form-select {
+            font-size: $form-select-font-size-lg;
+        }
+    } @else {
+        .custom-select {
+            font-size: $custom-select-font-size-lg;
+        }
     }
 }
 
-@include media-breakpoint-down(lg) {
-    .custom-radio .custom-control-label {
-        &::before,
-        &::after {
-            top: 2px;
+@include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+    @if (feature('V6_5_0_0')) {
+        .form-check .form-check-label {
+            &::before,
+            &::after {
+                top: 2px;
+            }
+        }
+    } @else {
+        .custom-radio .custom-control-label {
+            &::before,
+            &::after {
+                top: 2px;
+            }
         }
     }
 }

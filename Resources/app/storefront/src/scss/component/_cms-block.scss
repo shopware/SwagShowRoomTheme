@@ -62,7 +62,7 @@
         }
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
         &.cms-block-text-two-column {
             .cms-element-form {
                 padding-top: 50px;
@@ -79,7 +79,7 @@
         }
     }
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
         &.cms-block-image-text .cms-row > :first-child,
         &.cms-block-image-text-cover .cms-row > :first-child {
             margin-bottom: 0;
