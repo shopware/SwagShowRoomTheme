@@ -50,8 +50,15 @@
     }
 }
 
-.product-detail-review-sortby-form {
-    align-items: baseline;
+.product-detail-review-sortby {
+    &-form {
+        align-items: baseline;
+        display: flex;
+    }
+
+    &-label {
+        flex-shrink: 0;
+    }
 }
 
 .product-detail-review-list-content {
@@ -70,6 +77,11 @@
 
 #showForeignReviews + label {
     text-transform: unset;
+}
+
+#reviewsSortby {
+    flex-shrink: 0;
+    padding-left: 0;
 }
 
 @include media-breakpoint-up(lg) {
@@ -120,4 +132,12 @@
 
 .product-detail-review-progressbar-container {
     margin-top: 8px;
+}
+
+.point-rating {
+    &.point-blank {
+        .icon {
+            color: $gray-300;
+        }
+    }
 }
