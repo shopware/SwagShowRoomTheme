@@ -6,14 +6,6 @@
 
         .form-group {
             @extend .col-md-4;
-
-            &:not(:first-child) {
-                @if (feature('V6_5_0_0')) {
-                    @extend .ps-md-0;
-                } @else {
-                    @extend .pl-md-0;
-                }
-            }
         }
     }
 
