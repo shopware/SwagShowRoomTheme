@@ -68,9 +68,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.sw-cms-detail__save-action').click();
 
         // Verify request is successful and contains listingPage
-        cy.wait('@saveDataCMSPage').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@saveDataCMSPage').its('response.statusCode').should('equal', 204);
 
         cy.visit(`${Cypress.env('admin')}#/sw/category/index`)
 
@@ -89,9 +87,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
             }
         });
 
-        cy.wait('@saveDataCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@saveDataCategory').its('response.statusCode').should('equal', 204);
 
         cy.get('.sw-confirm-field__button-list').then((btn) => {
             if (btn.attr('style').includes('display: none;')) {
@@ -104,9 +100,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.contains('Listing Categorian').click();
 
         // Assign category and set it active
-        cy.wait('@loadCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(200);
-        });
+        cy.wait('@loadCategory').its('response.statusCode').should('equal', 200);
         cy.get('.sw-category-detail-base').should('be.visible');
         cy.get('input[name="categoryActive"]').click();
 
@@ -126,9 +120,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.sw-category-detail__save-action').click();
 
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@editCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@editCategory').its('response.statusCode').should('equal', 204);
 
         // Verify category in ShowRoom Theme
         cy.visit('/');

@@ -47,9 +47,7 @@ describe('Product Detail: Product media', () => {
 
         // Save product
         cy.get(page.elements.productSaveAction).click();
-        cy.wait('@saveProduct').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
-        });
+        cy.wait('@saveProduct').its("response.statusCode").should('equal', 200);
 
         // Verify in storefront
         cy.visit('/');

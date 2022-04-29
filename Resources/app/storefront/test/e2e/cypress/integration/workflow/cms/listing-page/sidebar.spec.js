@@ -134,9 +134,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         cy.get('.sw-category-detail__save-action').click();
 
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@editCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@editCategory').its('response.statusCode').should('equal', 204);
 
         // Verify category in ShowRoom Theme
         cy.visit('/');

@@ -1,11 +1,9 @@
 variables:
     CYPRESS_SPEC: 'cypress/**/workflow/account/login.spec.js'
-    PERCY_SPEC: 'cypress/**/visual/account/login.spec.js'
-    PLATFORM_BRANCH: "6.4.10.0"
-#    PERCY_TARGET_COMMIT: $CI_MERGE_REQUEST_DIFF_BASE_SHA
-    PERCY_BRANCH: ''
-    PERCY_COMMIT: ''
-    BROWSER: 'chrome'
+    PERCY_SPEC: 'cypress/**/visual/**/*.visual.spec.js'
+    PLATFORM_BRANCH: "6.4.11.0"
+    PERCY_TARGET_BRANCH: "master"
+    BROWSER: "chrome"
     PLUGIN_DEPENDENCIES:
         value: >
             [

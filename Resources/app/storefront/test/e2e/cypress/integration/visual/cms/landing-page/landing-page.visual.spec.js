@@ -104,9 +104,7 @@ describe('CMS: Landing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.sw-cms-detail__save-action').click();
 
         // Verify request is successful and contains landingPages
-        cy.wait('@saveData').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 204);
 
         // Verify layout in ShowRoom Theme
         cy.visit('/landingpage');

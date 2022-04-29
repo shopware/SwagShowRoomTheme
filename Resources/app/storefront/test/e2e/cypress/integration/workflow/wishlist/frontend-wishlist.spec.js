@@ -63,9 +63,7 @@ describe('Wishlist: for wishlist page', () => {
 
             cy.title().should('eq', 'Your wishlist');
 
-            cy.wait('@guestPagelet').then(xhr => {
-                expect(xhr.response).to.have.property('statusCode', 200);
-            });
+            cy.wait('@guestPagelet').its('response.statusCode').should('equal', 200);
 
             cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
             cy.get('.product-wishlist-form [type="submit"]').click();
@@ -111,18 +109,14 @@ describe('Wishlist: for wishlist page', () => {
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').should('exist');
                 cy.get('.cms-listing-row .cms-listing-col .product-action .btn-buy').click();
 
-                cy.wait('@add-to-cart').then(xhr => {
-                    expect(xhr.response).to.have.property('statusCode', 302);
-                });
+                cy.wait('@add-to-cart').its('response.statusCode').should('equal', 302);
 
-                cy.wait('@offcanvas').then(xhr => {
-                    expect(xhr.response).to.have.property('statusCode', 200);
-                    cy.get('.offcanvas.is-open.cart-offcanvas').should('exist');
-                    cy.get('.offcanvas.is-open.cart-offcanvas').find('.cart-item-label').contains(product.name);
+                cy.wait('@offcanvas').its('response.statusCode').should('equal', 200);
+                cy.get('.offcanvas.is-open.cart-offcanvas').should('exist');
+                cy.get('.offcanvas.is-open.cart-offcanvas').find('.cart-item-label').contains(product.name);
 
-                    // Wishlist product should still exist
-                    cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
-                });
+                // Wishlist product should still exist
+                cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
             });
         });
     });

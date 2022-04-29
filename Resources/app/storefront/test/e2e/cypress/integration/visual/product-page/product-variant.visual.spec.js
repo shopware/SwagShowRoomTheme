@@ -59,17 +59,14 @@ describe('Product Detail: Check appearance of product variants', () => {
         cy.get('.product-detail-configurator-option-label').contains('S');
 
         // Ensure that variant "Green" is checked at the moment the test runs
-        cy.get(':nth-child(1) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click()
+        cy.get('.product-detail-configurator-collapse').click()
         cy.get('.product-detail-configurator-option-label[title="Green"]').then(($btn) => {
             const inputId = $btn.attr('for');
 
             cy.get(`#${inputId}`).then(($input) => {
                 if (!$input.attr('checked')) {
                     cy.contains('Green').click();
-
-                    cy.wait('@changeVariant').then((xhr) => {
-                        expect(xhr.response).to.have.property('statusCode', 200);
-                    });
+                    cy.wait('@changeVariant').its('response.statusCode').should('equal', 200)
                 } else {
                     // collapse dropdown
                     cy.get(':nth-child(1) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse > .js-collapse-column-trigger').click();
@@ -79,17 +76,14 @@ describe('Product Detail: Check appearance of product variants', () => {
         });
 
         // Ensure that variant "Green" is checked at the moment the test runs
-        cy.get(':nth-child(2) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click({force: true})
+        cy.get('.product-detail-configurator-collapse').click()
         cy.get('.product-detail-configurator-option-label[title="M"]').then(($btn) => {
             const inputId = $btn.attr('for');
 
             cy.get(`#${inputId}`).then(($input) => {
                 if (!$input.attr('checked')) {
                     cy.get('.product-detail-configurator-option-label[title="M"]').click({force: true});
-
-                    cy.wait('@changeVariant').then((xhr) => {
-                        expect(xhr.response).to.have.property('statusCode', 200);
-                    });
+                    cy.wait('@changeVariant').its('response.statusCode').should('equal', 200)
                 }
                 cy.get('.product-detail-price').contains('64.00');
             });

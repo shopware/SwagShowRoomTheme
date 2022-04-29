@@ -38,9 +38,7 @@ describe('Checkout: Visual tests', () => {
 
         cy.get('.search-suggest-product-name').click();
         cy.get('.product-detail-buy .btn-buy').click();
-        cy.wait('@cartInfo').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200)
-        });
+        cy.wait('@cartInfo').its('response.statusCode').should('equal', 200);
 
         // Offcanvas
         cy.get('.offcanvas').should('be.visible');
@@ -52,9 +50,7 @@ describe('Checkout: Visual tests', () => {
         cy.wait(500);
         cy.get('.header-cart-total').click();
 
-        cy.wait('@cartInfo').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200)
-        });
+        cy.wait('@cartInfo').its('response.statusCode').should('equal', 200);
 
         cy.get('.offcanvas').should('be.visible');
         cy.wait(1000);

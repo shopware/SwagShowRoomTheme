@@ -71,9 +71,7 @@ describe('Product Detail: Product', () => {
 
         // Save and verify cross selling stream
         cy.get('.sw-button-process').click();
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 200);
 
         // Verify in storefront
         cy.visit('/');

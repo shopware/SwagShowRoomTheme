@@ -37,10 +37,7 @@ describe('Product: Base price', () => {
         cy.get('.sw-product-packaging-form__reference-unit-field').type('100');
 
         // Save product
-        cy.get(page.elements.productSaveAction).click();
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 200)
 
         // Verify in storefront
         cy.visit('/');

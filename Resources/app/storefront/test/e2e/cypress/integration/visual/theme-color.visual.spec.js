@@ -53,9 +53,7 @@ describe('ThemeColor: Visual tests', () => {
                 cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
                 cy.get('.sw-modal .sw-button--primary').click();
 
-                cy.wait('@saveData').then((xhr) => {
-                    expect(xhr.response).to.have.property('statusCode', 200);
-                });
+                cy.wait('@saveData').its('response.statusCode').should('equal', 200);
             })
     });
 
@@ -100,9 +98,7 @@ describe('ThemeColor: Visual tests', () => {
         cy.get('.smart-bar__actions .sw-button-process.sw-button--primary').click();
         cy.get('.sw-modal .sw-button--primary').click();
 
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 200);
     }
 
     it('@visual @themeColor: check change primary color ', () => {
@@ -137,9 +133,7 @@ describe('ThemeColor: Visual tests', () => {
         cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.product-detail-content');
 
         cy.get('.product-detail-buy .btn-buy').click();
-        cy.wait('@cartInfo').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200)
-        });
+        cy.wait('@cartInfo').its('response.statusCode').should('equal', 200);
         cy.get('.cart-offcanvas').should('be.visible');
         cy.get('.offcanvas-cart-actions .btn-primary').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
         cy.get('.offcanvas-cart-actions .btn-link').should('have.css', 'border-color', hexToRGB(colorScheme.primary));

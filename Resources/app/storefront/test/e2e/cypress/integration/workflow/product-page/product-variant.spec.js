@@ -43,10 +43,9 @@ describe('Product Detail: Product variants', () => {
         cy.get('.sw-loader').should('not.exist');
         cy.get('.sw-simple-search-field--form input').should('be.visible');
 
-        cy.wait('@searchVariantGroup').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
-            cy.get('.sw-simple-search-field--form input').type('Green');
-        });
+        cy.wait('@searchVariantGroup').its('response.statusCode').should('equal', 200);
+        cy.get('.sw-simple-search-field--form input').type('Green');
+
         cy.get('.sw-data-grid-skeleton').should('not.exist');
         cy.get('.sw-data-grid__row--1').should('not.exist');
         cy.get('.sw-data-grid__row--0 .sw-data-grid__cell--name').contains('Green');
@@ -76,10 +75,8 @@ describe('Product Detail: Product variants', () => {
         cy.get('.sw-data-grid__inline-edit-save').click();
 
         // Validate product
-        cy.wait('@saveData').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 204);
-            cy.awaitAndCheckNotification('Product "Green" has been saved.');
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 204);
+        cy.awaitAndCheckNotification('Product "Green" has been saved.');
 
         // Asign product to Home category
         cy.get('.sw-product-detail__tab-general').click();
@@ -116,10 +113,8 @@ describe('Product Detail: Product variants', () => {
                 if (!$input.attr('checked')) {
                     cy.contains('Green').click();
 
-                    cy.wait('@changeVariant').then((xhr) => {
-                        expect(xhr.response).to.have.property('statusCode', 200);
-                        cy.get('.product-detail-price').contains('100.00');
-                    });
+                    cy.wait('@changeVariant').its('response.statusCode').should('equal', 200);
+                    cy.get('.product-detail-price').contains('100.00');
                 } else {
                     cy.get('.product-detail-price').contains('100.00');
                 }
@@ -129,10 +124,8 @@ describe('Product Detail: Product variants', () => {
         // Check usual price in "Red"
         cy.get('.product-detail-configurator-collapse').click()
         cy.contains('Red').click();
-        cy.wait('@changeVariant').then((xhr) => {
-            expect(xhr.response).to.have.property('statusCode', 200);
 
-            cy.get('.product-detail-price').contains('64.00');
-        });
+        cy.wait('@changeVariant').its('response.statusCode').should('equal', 200);
+        cy.get('.product-detail-price').contains('64.00');
     });
 });

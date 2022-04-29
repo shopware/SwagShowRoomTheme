@@ -81,9 +81,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
 
         // Save new page layout
         cy.get('.sw-cms-detail__save-action').click();
-        cy.wait('@saveData').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@saveData').its('response.statusCode').should('equal', 204);
 
         // Assign layout to root category
         cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
@@ -103,9 +101,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
             }
         });
 
-        cy.wait('@saveDataCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@saveDataCategory').its('response.statusCode').should('equal', 204);
 
         cy.get('.sw-confirm-field__button-list').then((btn) => {
             if (btn.attr('style').includes('display: none;')) {
@@ -118,9 +114,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.contains('Scroll Navigation Categorian').click();
 
         // Assign category and set it active
-        cy.wait('@loadCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(200);
-        });
+        cy.wait('@loadCategory').its('response.statusCode').should('equal', 200);
         cy.get('.sw-category-detail-base').should('be.visible');
         cy.get('input[name="categoryActive"]').click();
 
@@ -139,9 +133,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.get('.sw-card.sw-category-layout-card .sw-category-layout-card__desc-headline').contains('Custom Full Scroll Navigation Listing Page');
         cy.get('.sw-category-detail__save-action').click();
 
-        cy.wait('@saveCategory').then(({ request, response }) => {
-            expect(response.statusCode).to.eq(204);
-        });
+        cy.wait('@saveCategory').its('response.statusCode').should('equal', 204);
 
         cy.visit('/');
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
