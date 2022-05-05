@@ -1,3 +1,8 @@
+# 1.5.0
+- Unterstützung von Bootstrap 5
+- Prüfung der Theme-Kompatibilität mit Shopware 6.4.11.0
+- Lighthouse CI hinzufügen
+
 # 1.4.0
 - Anzeige des niedrigsten Preises, wenn z.B. Grundpreise angezeigt werden
 - Qualitätskontrolle für das ShowRoom-Theme

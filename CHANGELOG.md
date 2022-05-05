@@ -1,3 +1,8 @@
+# 1.5.0
+- Support Bootstrap 5
+- Check theme compatibility with Shopware 6.4.11.0
+- Add lighthouse CI
+
 # 1.4.0
 - Display the lowest price where f.e. base prices are displayed
 - Quality check for the ShowRoom theme

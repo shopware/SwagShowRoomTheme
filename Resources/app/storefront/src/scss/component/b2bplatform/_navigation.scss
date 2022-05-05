@@ -2,15 +2,15 @@
     background: transparent;
     margin-bottom: 20px;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         background: transparent;
         border-width: 1px;
         width: calc((100vw - 1416px) / 2);
     }
 
     .b2b--navigation-mainmenu {
-        &:after {
+        &::after {
             height: 1px;
         }
     }
