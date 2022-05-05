@@ -15,6 +15,8 @@ module.exports = {
         'selector-max-id': null,
         'value-keyword-case': null,
         'order/order': null,
+        'no-extra-semicolons': true,
+        'font-family-no-missing-generic-family-keyword': true,
         'selector-no-qualifying-type': [
             true, {
                 ignore: ['attribute', 'class']

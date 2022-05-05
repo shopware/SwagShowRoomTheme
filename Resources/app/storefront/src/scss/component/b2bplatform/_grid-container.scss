@@ -3,7 +3,7 @@
         background: transparent;
         font-size: $btn-font-size-lg;
 
-        &.btn-light{
+        &.btn-light {
             border: none;
 
             &:not(:disabled):not(.disabled):hover {
@@ -45,7 +45,7 @@
     }
 }
 
-[name="companyFilterType"] {
+[name='companyFilterType'] {
     padding-right: 20px;
 }
 
@@ -72,7 +72,7 @@
     }
 }
 
-[action="/b2bofferthroughcheckout/backToCheckout"] {
+[action='/b2bofferthroughcheckout/backToCheckout'] {
     .btn {
         @extend .btn-outline-primary;
 
