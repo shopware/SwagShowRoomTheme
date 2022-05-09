@@ -11,8 +11,13 @@ $gallery-image-height-sm: 250px;
 $gallery-image-height-md: 500px;
 $gallery-image-height-lg: 800px;
 
+.gallery-slider-thumbnails-image,
+.gallery-slider-image {
+    width: 100%;
+}
+
 .gallery-slider-row {
-    margin-bottom: 40px;
+    margin-bottom: 23px;
 }
 
 .gallery-slider-thumbnails-item-inner {
@@ -36,6 +41,10 @@ $gallery-image-height-lg: 800px;
             outline: none;
         }
     }
+}
+
+.gallery-slider-controls {
+    display: none;
 }
 
 .gallery-slider-controls-prev,
@@ -125,42 +134,16 @@ $gallery-image-height-lg: 800px;
             right: 25px;
             left: unset;
         }
-    }
-}
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
-    .gallery-slider-row {
-        &.is-loading {
-            min-height: $gallery-image-height-sm;
-            overflow: unset;
-            height: auto;
-        }
-    }
-}
-
-@include media-breakpoint-up(md) {
-    .gallery-slider-item {
-        min-height: $gallery-image-height-md;
-    }
-
-    .gallery-slider-thumbnails-col {
-        &.is-left {
-            .gallery-slider-thumbnails-item {
-                border: none;
-                outline: none;
-                // need to use !important here to overwrite core settings which is using !important
-                margin-bottom: $gallery-thumbnail-item-gutter !important;
-            }
-
-            .underneath-gallery-slider-controls {
-                display: initial;
-            }
+        .gallery-slider-thumbnails-controls-prev,
+        .gallery-slider-thumbnails-controls-next {
+            height: 70px;
         }
     }
 }
 
 // settings for product detail only
-.is-ctl-product {
+.product-detail-media {
     .gallery-slider-thumbnails-container {
         &.hide-thumbs {
             display: block;
@@ -199,26 +182,113 @@ $gallery-image-height-lg: 800px;
             transform: translate(0, calc(-50% + #{$gallery-prev-outside-height-sm}));
         }
     }
-}
 
-.cms-element- {
-    .gallery-slider-controls {
-        display: none;
+    @include media-breakpoint-up(md) {
+        .gallery-slider-controls-next,
+        .gallery-slider-controls-prev {
+            top: auto;
+            bottom: 0;
+        }
     }
 
-    &image-gallery {
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
-            .base-slider-controls-prev,
-            .base-slider-controls-next {
-                top: 80%;
+}
+
+@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    .gallery-slider-row {
+        &.is-loading {
+            min-height: $gallery-image-height-sm;
+            overflow: unset;
+            height: auto;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .product-detail-media {
+        .gallery-slider-controls {
+            &.hide-nav {
+                display: none;
             }
         }
     }
 }
 
 @include media-breakpoint-up(md) {
-    .gallery-slider-thumbnails-controls,
-    .gallery-slider-controls {
-        display: none;
+    .gallery-slider-row {
+        margin-bottom: 11px;
+    }
+
+    .gallery-slider-item {
+        min-height: $gallery-image-height-md;
+    }
+
+    .gallery-slider-thumbnails-col {
+        &.is-left {
+            padding: 50px 0;
+
+            .gallery-slider-thumbnails-item {
+                border: none;
+                outline: none;
+                // need to use !important here to overwrite core settings which is using !important
+                margin-bottom: $gallery-thumbnail-item-gutter !important;
+            }
+
+            .underneath-gallery-slider-controls {
+                display: initial;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .gallery-slider-row {
+        margin-bottom: 46px;
+    }
+}
+
+@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    .product-detail-media {
+        padding-top: 20px;
+
+        .gallery-slider-container {
+            padding-bottom: 70px;
+        }
+
+        .gallery-slider-controls-next,
+        .gallery-slider-controls-prev {
+            top: auto;
+            bottom: 0;
+        }
+    }
+}
+
+// @deprecated tag:v6.5.0 - Bootstrap v5 uses the breakpoint itself instead of the next breakpoint in `media-breakpoint-down()`, use `sm` instead of `xs`.
+@include media-breakpoint-down(if(feature('v6.5.0.0'), sm, xs)) {
+    // override inline style on mobile devices
+    .gallery-slider-item {
+        &.is-cover,
+        &.is-contain {
+            min-height: $gallery-image-height-sm !important;
+        }
+    }
+}
+
+// @deprecated tag:v6.5.0 - Bootstrap v5 uses the breakpoint itself instead of the next breakpoint in `media-breakpoint-down()`, use `md` instead of `sm`.
+@include media-breakpoint-down(if(feature('v6.5.0.0'), md, sm)) {
+    .gallery-slider-single-image {
+        &.is-cover,
+        &.is-contain {
+            min-height: $gallery-image-height-md !important;
+        }
+    }
+
+    .product-detail-media {
+        .gallery-slider-controls {
+            display: block;
+        }
+
+        .gallery-slider-thumbnails-col {
+            display: none;
+        }
     }
 }
