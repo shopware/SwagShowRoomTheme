@@ -59,7 +59,7 @@ describe('Product Detail: Check appearance of product variants', () => {
         cy.get('.product-detail-configurator-option-label').contains('S');
 
         // Ensure that variant "Green" is checked at the moment the test runs
-        cy.get(':nth-child(1) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click()
+        cy.get('.product-detail-configurator-group:nth-child(1) .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click()
         cy.get('.product-detail-configurator-option-label[title="Green"]').then(($btn) => {
             const inputId = $btn.attr('for');
 
@@ -72,14 +72,14 @@ describe('Product Detail: Check appearance of product variants', () => {
                     });
                 } else {
                     // collapse dropdown
-                    cy.get(':nth-child(1) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse > .js-collapse-column-trigger').click();
+                    cy.get('.product-detail-configurator-group:nth-child(1) .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse > .js-collapse-column-trigger').click();
                     cy.get('.product-detail-price').contains('64.00');
                 }
             });
         });
 
         // Ensure that variant "Green" is checked at the moment the test runs
-        cy.get(':nth-child(2) > .row > .col-8 > .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click({force: true})
+        cy.get('.product-detail-configurator-group:nth-child(2) .product-detail-configurator-collapse-wrapper > .product-detail-configurator-collapse').click({force: true})
         cy.get('.product-detail-configurator-option-label[title="M"]').then(($btn) => {
             const inputId = $btn.attr('for');
 

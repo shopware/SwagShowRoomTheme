@@ -1,5 +1,18 @@
 {% sw_extends '@Storefront/storefront/component/product/card/action.html.twig' %}
 
+{% block component_product_box_action_inner %}
+    {{ parent() }}
+
+    {% if config('core.cart.wishlistEnabled') %}
+        {% block component_product_box_wishlist_action %}
+            {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                appearance: 'circle',
+                productId: id
+            } %}
+        {% endblock %}
+    {% endif %}
+{% endblock %}
+
 {% block page_product_detail_product_buy_button %}
     <button class="btn btn-md btn-buy"
             title="{{ "showroom.listing.boxAddProduct"|trans|striptags }}">

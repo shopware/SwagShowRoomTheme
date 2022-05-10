@@ -1,0 +1,17 @@
+/* mixin for multiline */
+@mixin sr-truncate-multiline($line-height: 18px, $line-count: 2) {
+    overflow: hidden;
+    line-height: $line-height;
+    height: $line-height * $line-count;
+    text-align: center;
+    max-width: 100%;
+    // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. display polyfill will be removed.
+    display: block; // IE11 Fallback to two lines
+    /* stylelint-disable */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-count;
+    /* stylelint-enable */
+    line-clamp: $line-count;
+    text-overflow: ellipsis;
+}

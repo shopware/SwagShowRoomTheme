@@ -23,17 +23,15 @@
         }
     }
 
-    .form-control {
-        &:focus {
-            @if (feature('V6_5_0_0')) {
-                + .btn {
+    .form-control:focus {
+        @if (feature('V6_5_0_0')) {
+            + .btn {
+                border-color: $input-focus-color;
+            }
+        } @else {
+            + .input-group-append {
+                .btn {
                     border-color: $input-focus-color;
-                }
-            } @else {
-                + .input-group-append {
-                    .btn {
-                        border-color: $input-focus-color;
-                    }
                 }
             }
         }

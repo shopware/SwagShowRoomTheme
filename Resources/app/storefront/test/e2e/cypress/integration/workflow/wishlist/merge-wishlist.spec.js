@@ -58,14 +58,15 @@ describe('Wishlist: Merge wishlist', () => {
             method: 'post'
         }).as('wishlistMerge');
 
-        let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
+        let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`);
 
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
         heartIcon.get('.icon-wishlist-not-added').should('be.visible');
         heartIcon.should('not.have.class', 'product-wishlist-added');
 
-        heartIcon.click();
+        cy.get('.product-box').trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).click();
 
         cy.window().then((win) => {
             cy.expect(win.wishlistEnabled).to.equal(1);
@@ -85,7 +86,7 @@ describe('Wishlist: Merge wishlist', () => {
 
         cy.visit('/');
 
-        heartIcon = cy.get(`.product-wishlist-${product.id}`).first()
+        heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`);
 
         heartIcon.should('have.class', 'product-wishlist-added');
         heartIcon.should('not.have.class', 'product-wishlist-not-added');
@@ -113,14 +114,15 @@ describe('Wishlist: Merge wishlist', () => {
 
         cy.visit('/');
 
-        let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
+        let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`);
 
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
         heartIcon.get('.icon-wishlist-not-added').should('be.visible');
         heartIcon.should('not.have.class', 'product-wishlist-added');
 
-        heartIcon.click();
+        cy.get('.product-box').trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).click();
 
         cy.wait('@wishlistAdd').then(() => {
             cy.visit('/account/logout');
@@ -128,9 +130,8 @@ describe('Wishlist: Merge wishlist', () => {
             cy.reload(true);
         });
 
-        heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
-
-        heartIcon.click();
+        cy.get('.product-box').trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).click();
 
         // Login
         cy.visit('/account/login');
@@ -186,23 +187,23 @@ describe('Wishlist: Merge wishlist', () => {
 
         cy.visit('/');
 
-        let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
-
-        heartIcon.should('be.visible');
+        let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`).first();
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        cy.get('.product-box').first().trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
         cy.wait('@wishlistAdd').then(() => {
             cy.visit('/account/logout');
             cy.visit('/');
         });
 
-        heartIcon = cy.get(`.product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).first();
+        heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`).first();
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        cy.get('.product-box').first().trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
         // Login
         cy.visit('/account/login');
@@ -259,11 +260,12 @@ describe('Wishlist: Merge wishlist', () => {
         cy.visit('/');
 
         // add to wishlist with registered users
-        let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
-        heartIcon.should('be.visible');
+        let heartIcon =  cy.get(`.product-image-wrapper .product-wishlist-${product.id}`).first();
+
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        cy.get('.product-box').first().trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
         cy.wait('@wishlistAdd').then(() => {
             cy.visit('/account/logout');
@@ -271,11 +273,12 @@ describe('Wishlist: Merge wishlist', () => {
         });
 
         // add to wishlist with anonymous user
-        heartIcon = cy.get(`.product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).first();
+        heartIcon = cy.get(`.product-image-wrapper .product-wishlist-6dfd9dc216ab4ac99598b837ac600369`);
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        cy.get('.product-box').last().trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).click();
 
         cy.visit('/account/login');
         cy.get('#loginMail').typeAndCheckStorefront('test@example.com');

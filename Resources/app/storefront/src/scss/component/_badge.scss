@@ -1,13 +1,13 @@
-.badge {
-    @if (feature('V6_5_0_0')) {
-        &.bg-primary {
-            color: $sw-color-info;
-            background-color: $alert-color-info !important;
-        }
-    } @else {
-        &.badge-primary {
-            color: $sw-color-info;
-            background-color: $alert-color-info;
+@if (feature('V6_5_0_0')) {
+    @each $color, $value in $theme-colors {
+        .badge-#{$color} {
+            @extend .bg-#{$color};
         }
     }
+}
+
+.badge-topseller,
+.badge-new {
+    color: $white;
+    background-color: $gray-800 !important;
 }
