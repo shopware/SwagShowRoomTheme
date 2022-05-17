@@ -73,3 +73,14 @@
 {% block element_image_gallery_inner_zoom_modal_slider_control_next_icon %}
     {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
 {% endblock %}
+
+{% block element_image_gallery_inner_controls %}
+    {% if navigationArrows %}
+        <div class="gallery-slider-controls{% if imageCount < maxItemsToShowMobileNav + 1 %} hide-nav{% endif %}"
+             data-gallery-slider-controls="{% if navigationArrows %}true{% else %}false{% endif %}">
+            {% block element_image_gallery_inner_control_items %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
