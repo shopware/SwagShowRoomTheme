@@ -58,7 +58,9 @@ describe('Wishlist: Check appearance of wishlist', () => {
             cy.clearCookie('wishlist-enabled');
 
             cy.get('#wishlist-basket').should('not.be.visible');
-            cy.get('.product-box .product-wishlist-action-circle').first().click();
+
+            cy.get('.product-box').first().trigger('hover');
+            cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
             cy.get('.login-card').should('be.visible');
             cy.url().should('include', '/account/login?redirectTo=frontend.wishlist.add.after.login');
@@ -103,17 +105,19 @@ describe('Wishlist: Check appearance of wishlist', () => {
             method: 'post'
         }).as('guestPagelet');
 
-        let heartIcon = cy.get(`.product-wishlist-${product.id}`).first();
+        let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`);
+
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).click();
 
-        heartIcon = cy.get(`.product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).first();
+        heartIcon = cy.get(`.product-image-wrapper .product-wishlist-6dfd9dc216ab4ac99598b837ac600369`);
+
         heartIcon.should('be.visible');
         heartIcon.should('have.class', 'product-wishlist-not-added');
 
-        heartIcon.click();
+        cy.get(`.product-overlay .product-wishlist-6dfd9dc216ab4ac99598b837ac600369`).click();
 
         cy.visit('/wishlist');
         cy.title().should('eq', 'Your wishlist');

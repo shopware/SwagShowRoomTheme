@@ -68,7 +68,7 @@ describe('Wishlist: for wishlist page', () => {
             });
 
             cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
-            cy.get('.product-wishlist-form [type="submit"]').click();
+            cy.get('.product-wishlist-form [type="submit"]').click({force: true});
 
             cy.wait('@guestPagelet').then(xhr => {
                 expect(xhr.response).to.have.property('statusCode', 200);
@@ -136,11 +136,13 @@ describe('Wishlist: for wishlist page', () => {
         cy.get(`${page.elements.loginSubmit} [type="submit"]`).click();
 
         cy.visit('/');
-        cy.get('.product-wishlist-6dfd9dc216ab4ac99598b837ac600368').click()
+
+        cy.get('.product-box').trigger('hover');
+        cy.get('.product-overlay .product-wishlist-6dfd9dc216ab4ac99598b837ac600368').click();
 
         cy.visit('/wishlist');
         cy.get('.cms-listing-row .cms-listing-col').contains(product.name);
-        cy.get('.product-wishlist-form [type="submit"]').click();
+        cy.get('.product-wishlist-form [type="submit"]').click({force: true});
         cy.get('.alert-success').contains('You have successfully removed the product from your wishlist.');
     })
 });

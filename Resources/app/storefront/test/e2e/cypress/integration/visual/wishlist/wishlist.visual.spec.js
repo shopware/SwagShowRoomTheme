@@ -23,31 +23,32 @@ const product = {
 
 describe('Wishlist: Check appearance of wishlist', () => {
     beforeEach(() => {
-        cy.setToInitialState().then(() => {
-            cy.authenticate().then((result) => {
-                const requestConfig = {
-                    headers: {
-                        Authorization: `Bearer ${result.access}`
-                    },
-                    method: 'post',
-                    url: `api/_action/system-config/batch`,
-                    body: {
-                        null: {
-                            'core.cart.wishlistEnabled': true,
-                            'core.listing.productsPerPage': 4
-                        }
-                    }
-                };
-
-                return cy.request(requestConfig);
-            });
-        })
-
-        return cy.createCustomerFixtureStorefront()
+        cy.setToInitialState()
             .then(() => {
-                return cy.createProductFixture(product)
+                cy.authenticate().then((result) => {
+                    const requestConfig = {
+                        headers: {
+                            Authorization: `Bearer ${result.access}`
+                        },
+                        method: 'post',
+                        url: `api/_action/system-config/batch`,
+                        body: {
+                            null: {
+                                'core.cart.wishlistEnabled': true, // enable wishlist
+                                'core.listing.productsPerPage': 4
+                            }
+                        }
+                    };
+
+                    return cy.request(requestConfig);
+                });
+
+                cy.createCustomerFixtureStorefront()
                     .then(() => {
-                        cy.setCookie('wishlist-enabled', '1');
+                        cy.createProductFixture(product)
+                            .then(() => {
+                                cy.setCookie('wishlist-enabled', '1');
+                            });
                     })
             })
     });
@@ -67,7 +68,7 @@ describe('Wishlist: Check appearance of wishlist', () => {
 
             cy.visit('/account/login');
 
-            // Login
+            // // Login
             cy.get('.login-card').should('be.visible');
             cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
             cy.get('#loginPassword').typeAndCheckStorefront('shopware');
@@ -86,21 +87,22 @@ describe('Wishlist: Check appearance of wishlist', () => {
         cy.takeSnapshot('[Wishlist] Home page with wishlist enable', 'body');
     });
 
-    it('@visual @wishlist: Heart icon badge display on product box in product listing', () => {
+    it.only('@visual @wishlist: Heart icon badge display on product box in product listing', () => {
         cy.visit('/');
 
         cy.window().then((win) => {
-            let heartIcon = cy.get('.product-box .product-wishlist-action-circle').first();
+            let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`).first();
 
-            heartIcon.first().should('be.visible');
-            heartIcon.first().should('have.class', 'product-wishlist-not-added');
+            heartIcon.should('be.visible');
+            heartIcon.should('have.class', 'product-wishlist-not-added');
             heartIcon.get('.icon-wishlist-not-added').should('be.visible');
             heartIcon.should('not.have.class', 'product-wishlist-added');
             cy.takeSnapshot('[Wishlist] Product box with inactive wishlist icon', '.product-box');
 
-            cy.get('.product-box .product-wishlist-action-circle').first().click()
+            cy.get('.product-box').first().trigger('hover');
+            cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
-            heartIcon = cy.get('.product-box .product-wishlist-action-circle').first();
+            heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`).first();
 
             heartIcon.should('have.class', 'product-wishlist-added');
             heartIcon.get('.icon-wishlist-added').first().should('be.visible');
@@ -115,8 +117,8 @@ describe('Wishlist: Check appearance of wishlist', () => {
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.window().then((win) => {
-            cy.get('.product-box').trigger('hover');
-            cy.get('.product-overlay .product-name').click();
+            cy.get('.product-box').first().trigger('hover');
+            cy.get('.product-overlay .product-name').first().click();
 
             cy.get('.product-wishlist-action').first().should('be.visible');
 
@@ -136,7 +138,8 @@ describe('Wishlist: Check appearance of wishlist', () => {
     it('@visual @wishlist: Heart icon badge display the check mark', () => {
         cy.visit('/');
 
-        cy.get('.product-box .product-wishlist-action-circle').first().click();
+        cy.get('.product-box').first().trigger('hover');
+        cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
         cy.takeSnapshot('[Wishlist] Check mark', 'body');
     });
 
@@ -146,15 +149,15 @@ describe('Wishlist: Check appearance of wishlist', () => {
         cy.visit('/');
 
         Array.from(products).slice(0, 4).forEach(item => {
-            let heartIcon = cy.get(`.product-wishlist-${item.id}`, {timeout: 10000}).first();
+            let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${product.id}`,{timeout: 10000}).first();
 
             heartIcon.should('have.class', 'product-wishlist-not-added');
             heartIcon.should('not.have.class', 'product-wishlist-added');
 
-            heartIcon.click();
+            cy.get('.product-box').first().trigger('hover');
+            cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
-            heartIcon = cy.get(`.product-wishlist-${item.id}`, {timeout: 10000}).first();
-
+            heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${item.id}`, {timeout: 10000}).first();
             heartIcon.should('have.class', 'product-wishlist-added');
             heartIcon.should('not.have.class', 'product-wishlist-not-added');
         });
@@ -162,14 +165,15 @@ describe('Wishlist: Check appearance of wishlist', () => {
         cy.get('.pagination-nav .page-next').eq(0).click();
 
         Array.from(products).slice(4, 8).forEach(item => {
-            let heartIcon = cy.get(`.product-wishlist-${item.id}`, {timeout: 10000}).first();
+            let heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${item.id}`, {timeout: 10000}).first();
 
             heartIcon.should('have.class', 'product-wishlist-not-added');
             heartIcon.should('not.have.class', 'product-wishlist-added');
 
-            heartIcon.click();
+            cy.get('.product-box').first().trigger('hover');
+            cy.get(`.product-overlay .product-wishlist-${product.id}`).first().click();
 
-            heartIcon = cy.get(`.product-wishlist-${item.id}`, {timeout: 10000}).first();
+            heartIcon = cy.get(`.product-image-wrapper .product-wishlist-${item.id}`, {timeout: 10000}).first();
 
             heartIcon.should('have.class', 'product-wishlist-added');
             heartIcon.should('not.have.class', 'product-wishlist-not-added');

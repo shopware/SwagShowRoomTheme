@@ -21,6 +21,8 @@
     }
 
     .cms-listing-col {
+        margin-bottom: 10px;
+
         &:last-child {
             padding-bottom: 40px;
         }
@@ -47,5 +49,21 @@
 .cms-element-image-slider {
     .tns-outer {
         overflow: hidden;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .cms-element-product-listing {
+        .cms-listing-col {
+            margin-bottom: 22px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .cms-element-product-listing {
+        .cms-listing-col {
+            margin-bottom: 44px;
+        }
     }
 }
