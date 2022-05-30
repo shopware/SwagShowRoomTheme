@@ -12,11 +12,15 @@
         font-size: $h6-font-size;
 
         &::before {
-            top: 25px;
+            top: 18px;
         }
 
         &::after {
-            top: 25px;
+            top: 20px;
         }
+    }
+
+    #shipping-free {
+        margin-top: 19px;
     }
 }

@@ -1,6 +1,6 @@
 import FormScrollToInvalidFieldPlugin from 'src/plugin/forms/form-scroll-to-invalid-field.plugin';
 
-export default class ShowRoomFromScrollToInvalidFieldPlugin extends FormScrollToInvalidFieldPlugin {
+export default class ShowRoomFormScrollToInvalidFieldPlugin extends FormScrollToInvalidFieldPlugin {
     /**
      * gets called all invalid fields if the form got submitted
      *

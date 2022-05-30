@@ -5,7 +5,7 @@ import CustomizedProductsStepByStepWizard from './plugin/customized-product/cust
 import CmsExtensionsQuickviewOptions from './plugin/quick-view/quick-view.plugin';
 import WishlistPlugin from './plugin/wishlist/wishlist.plugin';
 import ShowroomDatePickerPlugin from './plugin/date-picker/date-picker.plugin';
-import ShowRoomFromScrollToInvalidFieldPlugin from './plugin/forms/form-scroll-to-invalid-field.plugin';
+import ShowRoomFormScrollToInvalidFieldPlugin from './plugin/forms/form-scroll-to-invalid-field.plugin';
 
 
 const PluginManager = window.PluginManager;
@@ -15,7 +15,7 @@ PluginManager.override('OffcanvasMenu', ShowroomOffcanvasMenuPlugin, '[data-offc
 PluginManager.register('ShowroomCustomizedProductsStepByStepWizard', CustomizedProductsStepByStepWizard, '*[data-swag-customized-product-step-by-step="true"]');
 PluginManager.register('ShowroomCmsExtensionsQuickview', CmsExtensionsQuickviewOptions, '[data-swag-cms-extensions-quickview="true"]');
 PluginManager.override('DatePicker', ShowroomDatePickerPlugin, '[data-date-picker]');
-PluginManager.override('FormScrollToInvalidField', ShowRoomFromScrollToInvalidFieldPlugin, 'form');
+PluginManager.override('FormScrollToInvalidField', ShowRoomFormScrollToInvalidFieldPlugin, 'form');
 
 if (window.wishlistEnabled) {
     PluginManager.override('WishlistWidget', WishlistPlugin, '[data-wishlist-widget]');

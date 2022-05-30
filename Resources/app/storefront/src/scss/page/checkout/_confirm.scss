@@ -29,6 +29,30 @@ $confirm-product-spacer-lg: 50px;
                 background-color: $gray-100;
             }
         }
+
+        @if (feature('V6_5_0_0')) {
+            .form-check {
+                padding-left: $grid-gutter-width / 2;
+            }
+
+            .form-check-input:checked,
+            .form-check-label::before,
+            .form-check-label::after,
+            .payment-method-input {
+                display: block;
+            }
+
+        } @else {
+            .custom-control {
+                padding-left: $grid-gutter-width / 2;
+            }
+
+            .custom-control-input:checked,
+            .custom-control-label::before,
+            .custom-control-label::after {
+                display: block;
+            }
+        }
     }
 
     .confirm-product,
