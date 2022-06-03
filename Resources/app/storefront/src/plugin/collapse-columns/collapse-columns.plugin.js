@@ -38,6 +38,7 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
 
         if (Feature.isActive('V6_5_0_0')) {
 
+            // eslint-disable-next-line
             new bootstrap.Collapse(collapse, { collapse: true });
 
             const collapseList = document.querySelectorAll('.product-detail-configurator-collapse .collapse.show')
