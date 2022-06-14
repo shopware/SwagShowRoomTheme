@@ -1,3 +1,7 @@
+# 1.6.0
+- Fixed PDP without layout has no image navigation
+- Fixed product slider thumbnails are not on the bottom side
+- Changed hover of product box
 # 1.5.0
 - Support Bootstrap 5
 - Check theme compatibility with Shopware 6.4.11.0

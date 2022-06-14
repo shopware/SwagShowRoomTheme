@@ -1,3 +1,7 @@
+# 1.6.0
+- Behoben PDP ohne Layout hat keine Bildnavigation
+- Behobene Produkt-Slider-Thumbnails sind nicht auf der Unterseite
+- Geänderter hover der Produktbox
 # 1.5.0
 - Unterstützung von Bootstrap 5
 - Prüfung der Theme-Kompatibilität mit Shopware 6.4.11.0
