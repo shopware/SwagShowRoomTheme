@@ -61,14 +61,14 @@
 
 {% block component_offcanvas_cart_actions_promotion_submit %}
     {% if feature('V6_5_0_0') %}
-        <button class="btn btn-secondary"
+        <button class="btn"
                 type="submit"
                 id="addPromotionOffcanvasCart">
             {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}
         </button>
     {% else %}
         <div class="input-group-append">
-            <button class="btn btn-secondary"
+            <button class="btn"
                     type="submit"
                     id="addPromotionOffcanvasCart">
                 {% sw_icon 'arrow-head-right' style { 'pack': 'showroom' } %}

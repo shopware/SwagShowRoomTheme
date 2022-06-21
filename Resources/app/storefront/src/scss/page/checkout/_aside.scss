@@ -74,6 +74,22 @@ $checkout-aside-spacing: 20px;
         color: $sw-color-brand-primary;
         opacity: 0.4;
     }
+
+    &:focus,
+    &:active {
+        outline-color: transparent;
+        background-color: transparent;
+        border-bottom-color: $input-border-color;
+        box-shadow: none;
+    }
+}
+
+#addPromotionOffcanvasCartInput:focus ~ #addPromotionOffcanvasCart,
+#addPromotionOffcanvasCart:hover {
+    .icon {
+        color: $gray-700;
+        opacity: 1;
+    }
 }
 
 #addPromotionInput,
