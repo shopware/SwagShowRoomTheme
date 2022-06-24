@@ -35,6 +35,18 @@ $checkout-aside-spacing: 50px;
             @include make-col(8);
         }
     }
+
+    .cart-header-unit-price,
+    .cart-header-total-price {
+        padding-right: 0;
+        text-align: right;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .line-item-details-container {
+            padding-left: 0;
+        }
+    }
 }
 
 .checkout-container {

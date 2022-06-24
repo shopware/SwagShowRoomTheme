@@ -1,0 +1,298 @@
+$line-item-spacer: 20px;
+
+.line-item-product {
+    background-color: $white;
+    padding: $line-item-spacer;
+    margin-bottom: 15px;
+    border: none;
+
+    .line-item-img-container {
+        width: 70px;
+    }
+
+    .line-item-img {
+        border: none;
+        object-fit: cover;
+        padding: 0;
+    }
+
+    .line-item-tax-price,
+    .line-item-unit-price {
+        padding-top: 15px;
+        border-top: $border-width solid $border-color;
+    }
+
+    .line-item-total-price {
+        order: 4;
+        padding-bottom: 10px;
+        border-bottom: $border-width solid $border-color;
+    }
+
+    .line-item-info {
+        @include make-col(12);
+    }
+
+    .line-item-quantity {
+        order: 5;
+        @include make-col(6);
+        margin-bottom: 0;
+
+        .line-item-quantity-label {
+            text-transform: uppercase;
+            padding-left: 0;
+            padding-top: $line-item-spacer;
+        }
+    }
+
+    .line-item-info-img {
+        @include make-col(3);
+    }
+
+    .line-item-details {
+        @include make-col(9);
+    }
+
+    .line-item-details,
+    .line-item-info-img {
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .line-item-quantity-select-wrapper {
+        padding: 0;
+        width: 100%;
+    }
+
+    .line-item-remove {
+        order: 6;
+        @include make-col(6);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .line-item-remove-button {
+            padding: 6px 9px;
+            border: $border-width solid $sw-color-brand-primary;
+            background-color: transparent;
+
+            .icon svg {
+                top: 4px;
+            }
+        }
+    }
+
+    .product-wishlist {
+        text-align: left;
+    }
+
+    &:first-child {
+        border-top: $border-width solid $border-color;
+    }
+
+    @include media-breakpoint-up(md) {
+        .line-item-tax-price,
+        .line-item-total-price,
+        .line-item-unit-price {
+            @include make-col(12);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .line-item-quantity-label,
+        .line-item-tax-price-label,
+        .line-item-total-price-label {
+            display: block;
+            text-align: left;
+        }
+
+        .line-item-info {
+            padding-bottom: $line-item-spacer;
+        }
+
+        .line-item-img {
+            padding: 0;
+        }
+
+        .line-item-quantity {
+            flex-direction: column;
+            text-align: left;
+
+            .line-item-quantity-container {
+                width: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .line-item-quantity {
+            order: 0;
+        }
+
+        .line-item-info {
+            @include make-col(5);
+            padding-bottom: 0;
+
+            .line-item-info-img {
+                @include make-col(4);
+            }
+
+            .line-item-details {
+                @include make-col(8);
+            }
+        }
+
+        .line-item-img-container {
+            width: 100px;
+        }
+
+        .line-item-quantity {
+            @include make-col(2);
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .line-item-unit-price,
+        .line-item-tax-price {
+            @include make-col(2);
+            border: none;
+            margin: 0;
+        }
+
+        .line-item-total-price {
+            @include make-col(2);
+            border: none;
+        }
+
+        .line-item-remove {
+            @include make-col(1);
+            align-items: center;
+        }
+
+        .line-item-unit-price,
+        .line-item-total-price,
+        .line-item-tax-price {
+            padding: 0;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .line-item-quantity-label,
+        .line-item-tax-price-label,
+        .line-item-total-price-label {
+            display: none;
+        }
+    }
+
+}
+
+.offcanvas-cart {
+    .line-item-product {
+        padding: 15px 0;
+        margin-bottom: 0;
+        border-bottom: $border-width solid $border-color;
+
+        .product-wishlist,
+        .line-item-unit-price,
+        .line-item-ordernumber,
+        .line-item-quantity-label,
+        .line-item-total-price-label {
+            display: none;
+        }
+
+        .line-item-info {
+            @include make-col(9);
+            padding-bottom: 0;
+        }
+
+        .line-item-info-img {
+            @include make-col(3);
+            padding-left: $cart-grid-gutter-width / 2;
+        }
+
+        .line-item-details {
+            @include make-col(9);
+
+            padding-left: 20px;
+        }
+
+        .line-item-remove {
+            align-items: flex-end;
+        }
+
+        .line-item-total-price {
+            @include make-col(3);
+
+            order: 4;
+            text-align: right;
+            border: none;
+            align-items: center;
+
+            .line-item-total-price-value {
+                width: 100%;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            .line-item-info {
+                @include make-col(7);
+                margin-bottom: 0;
+            }
+
+            .line-item-quantity-select-wrapper select {
+                padding: 0;
+            }
+
+            .line-item-quantity,
+            .line-item-total-price {
+                @include make-col(2);
+                display: flex;
+                align-items: center;
+            }
+
+            .line-item-total-price {
+                text-align: left;
+            }
+
+            .line-item-remove {
+                align-items: center;
+            }
+
+            .line-item-quantity {
+                order: 5;
+            }
+        }
+    }
+}
+
+.is-act-finishpage {
+    .line-item-product {
+        @include media-breakpoint-up(md) {
+            .line-item-details-container {
+                padding-left: 0;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            .line-item-info {
+                @include make-col(6);
+            }
+
+            .line-item-info-img {
+                @include make-col(3);
+            }
+
+            .line-item-details-container {
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+.is-act-confirmpage {
+    @include media-breakpoint-up(md) {
+        .line-item-details-container {
+            padding-left: 0;
+        }
+    }
+}

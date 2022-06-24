@@ -109,6 +109,10 @@
             flex-wrap: wrap;
         }
 
+        .product-wishlist {
+            margin-top: 10px;
+        }
+
         @include media-breakpoint-up(lg) {
             justify-content: flex-end;
 

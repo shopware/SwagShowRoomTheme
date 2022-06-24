@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/component/line-item/element/quantity.html.twig' %}
+
+{% block component_line_item_quantity_inner %}
+    {{ block('component_line_item_quantity_label') }}
+
+    {{ block('component_line_item_quantity_select_wrapper') }}
+{% endblock %}
+
+{% block component_line_item_quantity_display %}
+    <div class="d-flex justify-content-start line-item-quantity">
+        {{ lineItem.quantity }}
+    </div>
+{% endblock %}
