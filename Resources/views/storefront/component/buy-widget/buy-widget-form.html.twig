@@ -1,6 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget-form.html.twig' %}
 
 {% block buy_widget_buy_quantity_container %}
+    {% set selectQuantityThreshold = 100 %}
     <div class="col-4 col-md-12 col-lg-4">
         {% block buy_widget_configurator_group_title %}
             <div class="product-detail-configurator-group-title">
