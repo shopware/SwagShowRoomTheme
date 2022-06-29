@@ -208,7 +208,7 @@ $logo-height-lg: 60px;
 
     .header-wishlist {
         .header-wishlist-badge {
-            background: none;
+            background: transparent none !important;
             right: 9px;
             top: 12px;
 
