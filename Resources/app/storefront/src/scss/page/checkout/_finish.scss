@@ -35,6 +35,65 @@ $finish-content-spacer-lg: 70px;
         order: 1;
     }
 
+    .line-item-info {
+        border-bottom: $border-width solid $border-color;
+        margin-bottom: 0;
+        padding-bottom: 15px;
+
+        @include media-breakpoint-up(lg) {
+            border: none;
+            padding-bottom: 0;
+
+            .line-item-ordernumber {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .line-item-quantity {
+        @include make-col(12);
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0 3px 0;
+
+        .line-item-quantity-label {
+            padding-top: 0;
+            text-transform: none;
+            margin-bottom: 0;
+            width: auto;
+        }
+
+        .line-item-quantity-select-wrapper {
+            width: auto;
+
+            .line-item-quantity {
+                padding-right: 0;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            order: 0;
+            flex-direction: row;
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(2);
+            border: none;
+        }
+    }
+
+    .line-item-total-price,
+    .line-item-tax-price {
+        border: none;
+        padding: 0;
+    }
+
+    .line-item-total-price-label {
+        margin-bottom: 0;
+    }
+
     .cart-item-quantity-row {
         @extend .mb-0;
         @if (feature('V6_5_0_0')) {

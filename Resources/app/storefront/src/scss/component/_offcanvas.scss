@@ -10,9 +10,17 @@ $offcanvas-content-width-lg: 800px;
         border: 0;
         font-size: $font-size-xs;
         text-transform: none;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        background-color: $gray-100;
 
         .icon {
             color: $offcanvas-primary-color;
+
+            svg {
+                top: 0;
+            }
         }
     }
 
@@ -23,7 +31,7 @@ $offcanvas-content-width-lg: 800px;
             align-items: center;
             display: flex;
             flex-direction: row-reverse;
-            justify-content: flex-start;
+            justify-content: space-between;
             gap: 10px;
 
             .icon {
@@ -38,7 +46,7 @@ $offcanvas-content-width-lg: 800px;
 
     &.is-left {
         .offcanvas-close {
-            justify-content: flex-start;
+            justify-content: space-between;
 
             .icon {
                 margin-left: $spacer-sm;
@@ -49,16 +57,27 @@ $offcanvas-content-width-lg: 800px;
     &.cart-offcanvas {
         .offcanvas-close {
             flex-direction: row;
+            justify-content: flex-start;
+            gap: 10px;
         }
 
-        .offcanvas-content-container {
-            padding-top: 40px;
-        }
+        @if (feature('V6_5_0_0')) {
+            .offcanvas-body {
+                padding-top: 40px;
 
-        @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(lg) {
+                    width: $offcanvas-content-width-lg;
+                    padding-top: 70px;
+                }
+            }
+        } @else {
             .offcanvas-content-container {
-                width: $offcanvas-content-width-lg;
-                padding-top: 70px;
+                padding-top: 40px;
+
+                @include media-breakpoint-up(lg) {
+                    width: $offcanvas-content-width-lg;
+                    padding-top: 70px;
+                }
             }
         }
     }

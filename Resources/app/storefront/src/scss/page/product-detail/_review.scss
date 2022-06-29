@@ -1,13 +1,27 @@
 .offcanvas {
-    .offcanvas-content-container {
-        .product-detail-review {
-            &.tab-pane-container {
-                padding: 20px;
+    @if (feature('V6_5_0_0')) {
+        .offcanvas-body {
+            .product-detail-review {
+                &.tab-pane-container {
+                    padding: 20px;
+                }
+            }
+
+            .product-detail-review-sortby-label {
+                display: none;
             }
         }
+    } @else {
+        .offcanvas-content-container {
+            .product-detail-review {
+                &.tab-pane-container {
+                    padding: 20px;
+                }
+            }
 
-        .product-detail-review-sortby-label {
-            display: none;
+            .product-detail-review-sortby-label {
+                display: none;
+            }
         }
     }
 }

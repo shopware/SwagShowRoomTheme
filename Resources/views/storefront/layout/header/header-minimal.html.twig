@@ -25,5 +25,9 @@
                 </a>
             </div>
         {% endblock %}
+
+        {% if config('core.cart.wishlistEnabled') %}
+            {{ block('layout_header_minimal_wishlist') }}
+        {% endif %}
     </div>
 {% endblock %}

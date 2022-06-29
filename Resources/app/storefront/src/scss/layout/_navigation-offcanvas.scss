@@ -54,7 +54,6 @@ $navigation-offcanvas-image-height: 307px;
     &-actions {
         padding: $navigation-offcanvas-padding 0;
         margin: 0 $navigation-offcanvas-padding 0;
-        border-bottom: 1px solid $border-color;
         align-items: flex-start;
 
         .top-bar-nav-item {
@@ -186,11 +185,26 @@ $navigation-offcanvas-image-height: 307px;
             width: 100%;
             height: 100%;
         }
+
+        .offcanvas-header .offcanvas-close {
+            justify-content: flex-start;
+
+            .icon {
+                margin-left: 10px;
+            }
+        }
+
     }
 
     .offcanvas {
-        .offcanvas-content-container {
-            width: 100%;
+        @if (feature('V6_5_0_0')) {
+            .offcanvas-body {
+                width: 100%;
+            }
+        } @else {
+            .offcanvas-content-container {
+                width: 100%;
+            }
         }
     }
 }
