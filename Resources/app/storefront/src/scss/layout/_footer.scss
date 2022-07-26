@@ -278,6 +278,13 @@
     }
 }
 
+@if (feature('V6_5_0_0')) {
+    .footer-minimal .footer-bottom-mobile {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
 .footer-bottom {
     > .container {
         @include make-container();

@@ -91,11 +91,8 @@ describe('Checkout: Use different taxes in products while checkout', () => {
 
                 // Login
                 cy.get('.checkout-main').should('be.visible');
-                cy.get('#loginCollapse').click();
-                cy.get(accountPage.elements.loginCard).should('be.visible');
-                cy.get('#loginMail').typeAndCheckStorefront('test@example.com');
-                cy.get('#loginPassword').typeAndCheckStorefront('shopware');
-                cy.get(`${accountPage.elements.loginSubmit} [type="submit"]`).click();
+                accountPage.getLoginCollapse().click();
+                accountPage.login();
 
                 // Confirm
                 cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');

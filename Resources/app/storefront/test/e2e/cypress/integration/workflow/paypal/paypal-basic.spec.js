@@ -89,7 +89,7 @@ describe('Paypal: Checkout', () => {
         cy.get('.offcanvas-cart-actions .begin-checkout-btn').click();
 
         // Checkout register
-        cy.get('#loginCollapse').should('be.visible').click();
+        accountPage.getLoginCollapse().click();
 
         // Paypal Express checkout
         cy.get('div[data-swag-paypal-express-button="true"]').scrollIntoView().should('be.visible');
@@ -128,8 +128,8 @@ describe('Paypal: Checkout', () => {
         cy.get('.offcanvas-cart-actions .begin-checkout-btn').click();
 
         // Login
-        cy.get('#loginCollapse').click();
-        accountPage.login()
+        accountPage.getLoginCollapse().click();
+        accountPage.login();
 
         // Change payment method to "Paypal"
         cy.get('.payment-methods .payment-method-label')

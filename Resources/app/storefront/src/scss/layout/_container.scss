@@ -27,3 +27,9 @@ $page-content-padding: 50px;
         padding: $page-content-padding 0;
     }
 }
+
+.is-act-cartpage {
+    .content-main {
+        display: grid;
+    }
+}

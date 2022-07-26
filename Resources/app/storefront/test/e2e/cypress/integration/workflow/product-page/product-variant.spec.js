@@ -108,13 +108,13 @@ describe('Product Detail: Product variants', () => {
         cy.get('.product-detail-buy').should('be.visible');
 
         // Ensure that variant "Green" is checked at the moment the test runs
-        cy.get('.product-detail-configurator-collapse').click()
+        cy.get('.product-detail-configurator-collapse .js-collapse-column-trigger').click()
         cy.get('.product-detail-configurator-option-label[title="Green"]').then(($btn) => {
             const inputId = $btn.attr('for');
 
             cy.get(`#${inputId}`).then(($input) => {
                 if (!$input.attr('checked')) {
-                    cy.contains('Green').click();
+                    cy.contains('Green').click({ force: true });
 
                     cy.wait('@changeVariant').then((xhr) => {
                         expect(xhr.response).to.have.property('statusCode', 200);
@@ -128,7 +128,7 @@ describe('Product Detail: Product variants', () => {
 
         // Check usual price in "Red"
         cy.get('.product-detail-configurator-collapse').click()
-        cy.contains('Red').click();
+        cy.contains('Red').click({force: true});
         cy.wait('@changeVariant').then((xhr) => {
             expect(xhr.response).to.have.property('statusCode', 200);
 
