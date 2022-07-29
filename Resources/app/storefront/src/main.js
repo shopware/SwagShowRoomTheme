@@ -7,7 +7,6 @@ import WishlistPlugin from './plugin/wishlist/wishlist.plugin';
 import ShowroomDatePickerPlugin from './plugin/date-picker/date-picker.plugin';
 import ShowRoomFormScrollToInvalidFieldPlugin from './plugin/forms/form-scroll-to-invalid-field.plugin';
 
-
 const PluginManager = window.PluginManager;
 PluginManager.register('LanguageCurrency', LanguageCurrency, '[data-language-currency]');
 PluginManager.register('ShowroomCollapseColumn', ShowroomCollapseColumn, '[data-showroom-collapse]');

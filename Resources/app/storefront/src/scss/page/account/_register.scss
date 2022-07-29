@@ -123,6 +123,12 @@
                 border-color: $gray-900;
             }
         }
+        padding-left: 0;
+
+        .custom-control-input {
+            @extend .form-check-input;
+        }
+
     } @else {
         .custom-control-input:valid + .custom-control-label {
             color: $gray-900;

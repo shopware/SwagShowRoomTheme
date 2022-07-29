@@ -1,3 +1,6 @@
+import AccountPageObject from '../../../support/pages/account.page-object';
+const accountPage = new AccountPageObject();
+
 const waitingTimeForNextButton = 400;
 const waitingTimeForFlatpickr = 300;
 
@@ -145,7 +148,7 @@ describe('Customized Product: Visual tests product with full customize option', 
             .should('be.visible')
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
-        cy.get('.flatpickr-day.today').click();
+        cy.get('.flatpickr-day.today').click({force: true});
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
@@ -166,6 +169,7 @@ describe('Customized Product: Visual tests product with full customize option', 
             .click();
         cy.get('.flatpickr-calendar').should('be.visible');
         cy.get('.numInputWrapper .flatpickr-hour').type('3');
+        cy.get('.swag-customized-products-options-datetime.active').click();
 
         // Price display
         cy.get('.swag-customized-product__price-display').should('be.exist');
@@ -195,7 +199,7 @@ describe('Customized Product: Visual tests product with full customize option', 
         cy.contains('.list__unit-price .price-display__item:nth-child(3) > .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€110.00*').should('be.visible');
+        cy.contains('.price-display__total-price > .price-display__price', '€100.00*').should('be.visible');
 
         // Expand all configuration
         cy.get('.swag-customized-products-option .toggle-icon-plus').each(($el) => {
@@ -219,12 +223,8 @@ describe('Customized Product: Visual tests product with full customize option', 
 
         // Login
         cy.get('.checkout-main').should('be.visible');
-
-        // TODO: using account page object
-        cy.get('#loginCollapse').click();
-        cy.get('#loginMail').type('test@example.com');
-        cy.get('#loginPassword').type('shopware');
-        cy.get('.login-submit [type="submit"]').click();
+        accountPage.getLoginCollapse().click();
+        accountPage.login();
 
         // Confirm
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
@@ -332,12 +332,8 @@ describe('Customized Product: Visual tests product with full customize option', 
 
                 // Login
                 cy.get('.checkout-main').should('be.visible');
-
-                // TODO: using account page object
-                cy.get('#loginCollapse').click();
-                cy.get('#loginMail').type('test@example.com');
-                cy.get('#loginPassword').type('shopware');
-                cy.get('.login-submit [type="submit"]').click();
+                accountPage.getLoginCollapse().click();
+                accountPage.login();
 
                 // Confirm
                 cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');

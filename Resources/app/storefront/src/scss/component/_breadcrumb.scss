@@ -25,10 +25,6 @@
     &.cms-breadcrumb {
         margin-bottom: 0;
     }
-
-    @include media-breakpoint-down(md) {
-        display: none;
-    }
 }
 
 @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {

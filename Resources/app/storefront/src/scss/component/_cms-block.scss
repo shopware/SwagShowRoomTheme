@@ -93,4 +93,15 @@
     .product-heading-name-container {
         margin-bottom: 30px;
     }
+
+    .privacy-notice {
+        .custom-control-label {
+            line-height: 19px;
+            margin-bottom: 12px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+            }
+        }
+    }
 }

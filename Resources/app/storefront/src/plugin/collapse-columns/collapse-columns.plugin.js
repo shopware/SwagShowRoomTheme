@@ -43,6 +43,7 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
 
             const collapseList = document.querySelectorAll('.product-detail-configurator-collapse .collapse.show')
             Iterator.iterate(collapseList, (collapseEl) => {
+                // eslint-disable-next-line
                 new bootstrap.Collapse(collapseEl).hide()
             })
 

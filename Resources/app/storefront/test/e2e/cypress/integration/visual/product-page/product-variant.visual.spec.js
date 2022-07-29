@@ -65,7 +65,7 @@ describe('Product Detail: Check appearance of product variants', () => {
 
             cy.get(`#${inputId}`).then(($input) => {
                 if (!$input.attr('checked')) {
-                    cy.contains('Green').click();
+                    cy.contains('Green').click({ force: true });
 
                     cy.wait('@changeVariant').then((xhr) => {
                         expect(xhr.response).to.have.property('statusCode', 200);

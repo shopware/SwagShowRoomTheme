@@ -414,3 +414,71 @@ $line-item-spacer: 20px;
         }
     }
 }
+
+.is-act-checkoutregisterpage {
+    .line-item-container,
+    .line-item-product {
+        .line-item-quantity {
+            order: 3;
+            @include make-col(12);
+        }
+    }
+
+    .line-item-info {
+        width: 100%;
+    }
+
+    .line-item-info-img {
+        @include make-col(5);
+    }
+
+    .line-item-details {
+        @include make-col(7);
+    }
+
+    .line-item-quantity {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0;
+
+        .line-item-quantity-label {
+            @include make-col(5);
+            display: inline-block;
+            padding-top: 0;
+            margin-bottom: 0;
+        }
+
+        .line-item-quantity-select-wrapper {
+            @include make-col(6);
+
+            .line-item-quantity {
+                @extend .justify-content-end;
+            }
+        }
+    }
+
+    .line-item-unit-price-label,
+    .line-item-total-price-label {
+        display: inline-block;
+    }
+
+    .line-item-total-price,
+    .line-item-unit-price {
+        @include make-col(12);
+        justify-content: space-between;
+    }
+
+    .line-item-ordernumber {
+        word-break: break-word;
+    }
+
+    .line-item-remove {
+        display: none;
+    }
+
+    .line-item-children {
+        .line-item-discount .line-item-total-price {
+            padding: 0 4px;
+        }
+    }
+}

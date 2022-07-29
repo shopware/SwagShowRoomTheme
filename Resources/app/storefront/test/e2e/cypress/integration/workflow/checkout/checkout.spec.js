@@ -51,11 +51,8 @@ describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
 
         // Login
         cy.get('.checkout-main').should('be.visible');
-        cy.get('#loginCollapse').click();
-
-        cy.get('#loginMail').type('test@example.com');
-        cy.get('#loginPassword').type('shopware');
-        cy.get(`${accountPage.elements.loginSubmit} [type="submit"]`).click();
+        accountPage.getLoginCollapse().click();
+        accountPage.login();
 
         // Confirm
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');

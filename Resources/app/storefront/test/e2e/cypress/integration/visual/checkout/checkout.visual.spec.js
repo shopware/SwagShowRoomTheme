@@ -66,7 +66,7 @@ describe('Checkout: Visual tests', () => {
 
         // Login
         cy.get('.checkout-main').should('be.visible');
-        cy.get('#loginCollapse').click();
+        accountPage.getLoginCollapse().click();
         accountPage.login();
 
         // Confirm
