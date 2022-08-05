@@ -1,7 +1,15 @@
+# 1.7.0
+- Optimized hover state of the promotion button
+- Added Bootstrap 5 compatibility
+- Fixed nested line items UI issues
+- Checked compatibility with platform v6.4.13.0
+- Checked compatibility with platform v6.4.14.0
+
 # 1.6.0
 - Fixed PDP without layout has no image navigation
 - Fixed product slider thumbnails are not on the bottom side
 - Changed hover of product box
+
 # 1.5.0
 - Support Bootstrap 5
 - Check theme compatibility with Shopware 6.4.11.0
