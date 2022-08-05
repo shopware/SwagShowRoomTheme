@@ -1,7 +1,15 @@
+#1.7.0
+- Optimierung von Hover-Status der Promotion-Buttons
+- Hinzufügen von Kompatibilität mit Bootstrap 5
+- Behoben der UI-Probleme mit verschachtelten Elementen
+- Überprüfung der Kompatibilität mit Platform v6.4.13.0
+- Überprüfung der Kompatibilität mit Platform v6.4.14.0
+
 # 1.6.0
 - Behoben PDP ohne Layout hat keine Bildnavigation
 - Behobene Produkt-Slider-Thumbnails sind nicht auf der Unterseite
 - Geänderter hover der Produktbox
+
 # 1.5.0
 - Unterstützung von Bootstrap 5
 - Prüfung der Theme-Kompatibilität mit Shopware 6.4.11.0
