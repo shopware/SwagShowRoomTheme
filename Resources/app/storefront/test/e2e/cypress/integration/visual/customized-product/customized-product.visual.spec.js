@@ -53,8 +53,10 @@ describe('Customized Product: Check appearance of customized products', () => {
         })
     });
 
-    it.skip('@visual @customized: Customized product with all options', () => {
+    it('@visual @customized: Customized product with all options', () => {
         cy.visit('/Product-name/RS-333');
+        cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
+        cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         // Check for the product price
         cy.contains('.price-display__product-price > .price-display__label', 'Product price');
@@ -156,16 +158,15 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.flatpickr-calendar').should('be.visible');
         cy.get('.numInputWrapper .cur-year').type('2021');
         cy.get('.flatpickr-monthDropdown-months').select('October');
-        cy.get('.flatpickr-day').contains('4').first().click({force:true});
+        cy.get('.flatpickr-day').contains('4').first().click();
 
-        cy.get('.swag-customized-product__price-display').should('be.exist');
         // Price display
-        // Todo: recheck in the next platform version
-        // cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__label', 'Example datefield');
-        // cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__price', '€10.00*');
+        cy.get('.swag-customized-product__price-display').should('be.exist');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__label', 'Example datefield');
+        cy.contains('.list__one-time-price .price-display__item:nth-child(6) .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€90.00*');
+        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
 
         // Time field
         cy.get('.swag-customized-products__type-timestamp > .input-group > input[type="text"].swag-customized-products-options-datetime')
@@ -186,7 +187,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.contains('.list__one-time-price .price-display__item:nth-child(7) .price-display__price', '€10.00*');
 
         // Total price
-        cy.contains('.price-display__total-price > .price-display__price', '€100.00*');
+        cy.contains('.price-display__total-price > .price-display__price', '€110.00*');
 
         // Color select
         cy.contains('.swag-customized-products-option-type-select-checkboxes-label__property', 'Example Purple')
@@ -242,7 +243,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
         cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
         cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
-        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout-wrapper');
+        cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout');
 
         cy.get('.cart-item-collapse-button').first().click()
 
@@ -256,6 +257,6 @@ describe('Customized Product: Check appearance of customized products', () => {
         // Let's check the calculation on /finish as well
         cy.contains(product.name);
         cy.get('.cart-item-collapse-button').first().click()
-        cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout-wrapper');
+        cy.takeSnapshot('[Customized Product] Finish checkout customized product', '.checkout');
     });
 });

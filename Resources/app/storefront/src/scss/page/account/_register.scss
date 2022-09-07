@@ -107,6 +107,14 @@
         }
     }
 
+    .register-shipping {
+        padding-top: 11px;
+    }
+
+    label[for="personalBirthday"] {
+        @extend .form-label;
+    }
+
     @include media-breakpoint-up(lg) {
         .account-register-login-headline {
             display: none;

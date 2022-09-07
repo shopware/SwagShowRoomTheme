@@ -53,7 +53,7 @@
                 {% endblock %}
 
                 {% block page_checkout_cart_shipping_costs_trigger %}
-                    <a class="btn btn-lg {% if not feature('V6_5_0_0') %}btn-block{% endif %}btn-outline-primary cart-shipping-costs-btn"
+                    <a class="btn btn-lg {% if not feature('V6_5_0_0') %} btn-block {% endif %}btn-outline-primary cart-shipping-costs-btn"
                     {{ dataBsToggleAttr }}="collapse"
                     href="#collapseShippingCost"
                     role="button"

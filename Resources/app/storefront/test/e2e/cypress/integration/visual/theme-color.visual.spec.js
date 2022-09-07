@@ -134,7 +134,7 @@ describe('ThemeColor: Visual tests', () => {
         cy.get('.product-detail-name').should('have.css', 'color', hexToRGB(colorScheme.primary));
         cy.get('.product-detail-manufacturer a').should('have.css', 'color', hexToRGB(colorScheme.primary));
         cy.get('.product-detail-tax-link').should('have.css', 'color', hexToRGB(colorScheme.primary));
-        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with red color', '.product-detail-content');
+        cy.takeSnapshot('[Theme Color] Product Detail Page - Buy button with orange color', '.product-detail-content');
 
         cy.get('.product-detail-buy .btn-buy').click();
         cy.wait('@cartInfo').then((xhr) => {
