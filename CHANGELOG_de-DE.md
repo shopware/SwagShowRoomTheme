@@ -1,3 +1,7 @@
+# 1.8.0
+- Behebung des Variantenwechsel in QuickView
+- Überprüfung der Kompatibilität mit Platform v6.4.15.0
+
 #1.7.0
 - Optimierung von Hover-Status der Promotion-Buttons
 - Hinzufügen von Kompatibilität mit Bootstrap 5
