@@ -286,3 +286,9 @@
         }
     }
 }
+
+.product-detail-quantity-input+.input-group-text {
+    border: none;
+    padding: 0 10px;
+    border-bottom: $border-width solid $border-color;
+}

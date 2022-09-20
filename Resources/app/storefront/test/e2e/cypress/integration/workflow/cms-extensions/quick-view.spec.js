@@ -15,7 +15,7 @@ describe('Quick View: Test if it works correctly', () => {
             })
     });
 
-    it.skip('@workflow @QuickView: Run Quick View in a product view directly in the listing page', () => {
+    it('@workflow @QuickView: Run Quick View in a product view directly in the listing page', () => {
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
@@ -84,7 +84,7 @@ describe('Quick View: Test if it works correctly', () => {
         cy.get('[data-slide="next"]').should('be.visible');
     });
 
-    it.skip('@workflow @QuickView: Run Quick View in search results', () => {
+    it('@workflow @QuickView: Run Quick View in search results', () => {
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/extension/config/SwagCmsExtensions`);
 
         cy.get('.sw-meteor-page__smart-bar-title').should('be.visible').contains('SwagCmsExtensions');

@@ -20,6 +20,10 @@ $configurator-padding: 40px;
         &:last-child {
             margin-bottom: 0;
         }
+
+        .col-4.col-md-12.col-lg-4 {
+            padding-right: 0;
+        }
     }
 
     &-active-option {
@@ -52,7 +56,8 @@ $configurator-padding: 40px;
         height: 24px;
         border-radius: 50%;
         display: inline-block;
-        margin-right: 1rem;
+        margin-right: 10px;
+        min-width: 24px;
     }
 
     &-option-image {
@@ -164,17 +169,16 @@ $configurator-padding: 40px;
     border-top: 1px solid $border-color;
 
     @include media-breakpoint-up(lg) {
-        padding-top: $configurator-padding;
+        padding-top: $configurator-padding-sm;
     }
 }
 
 .product-detail-button-container {
     padding-top: $configurator-padding-sm;
     margin-top: $configurator-padding-sm;
-    border-top: 1px solid $border-color;
 
     @include media-breakpoint-up(lg) {
-        padding-top: $configurator-padding;
+        padding-top: $configurator-padding-sm;
         margin-top: $configurator-padding;
     }
 }

@@ -1,6 +1,8 @@
 {% sw_extends '@Storefront/storefront/component/quickview/buy-widget-form.html.twig' %}
 
 {% block page_product_detail_buy_container %}
+    {% set isPricingTable = product.calculatedPrices|length > 1 %}
+    {% set selectQuantityThreshold = 100 %}
     {% if buyable %}
         <div class="{{ formRowClass }}">
             <div class="col-4 col-md-12 col-lg-4">
@@ -9,15 +11,21 @@
                 </div>
             </div>
             <div class="col-8 col-md-12 col-lg-8">
-                {% block page_product_detail_buy_quantity %}
-                    {{ parent() }}
-                {% endblock %}
+                <div class="swag-cms-extensions-quickview-content--buy-quantity col-12 col-md-4{% if (product.calculatedMaxPurchase - product.minPurchase) / product.purchaseSteps > selectQuantityThreshold %} quantity-input{% endif %}">
+                    {% block page_product_detail_buy_quantity %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
             </div>
         </div>
-        <div class="product-detail-button-container">
-            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+        <div class="{{ formRowClass }} product-detail-button-container">
+            <div class="col-12 buy-widget-price">
+                {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+            </div>
+            <div class="col-12 buy-widget-buy-button">
+                {{ parent() }}
+            </div>
         </div>
-        {{ parent() }}
     {% else %}
         {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
     {% endif %}

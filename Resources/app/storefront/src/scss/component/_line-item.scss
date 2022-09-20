@@ -198,8 +198,12 @@ $line-item-spacer: 20px;
 
     @include media-breakpoint-up(lg) {
         max-width: unset;
+
         .line-item-quantity {
             order: 0;
+            @include make-col(2);
+            flex-direction: row;
+            align-items: center;
         }
 
         .line-item-info {
@@ -217,13 +221,6 @@ $line-item-spacer: 20px;
 
         .line-item-img-container {
             width: 100px;
-        }
-
-        .line-item-quantity {
-            order: 0;
-            @include make-col(2);
-            flex-direction: row;
-            align-items: center;
         }
 
         .line-item-unit-price,
