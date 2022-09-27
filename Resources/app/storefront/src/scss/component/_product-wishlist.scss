@@ -67,7 +67,7 @@
     bottom: 0;
     right: 20px;
 
-    &:before {
+    &::before {
         content: unset;
     }
 

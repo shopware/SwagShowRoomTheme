@@ -10,14 +10,6 @@ $carousel-control-icon-width-sm: 16px;
 .swag-cms-extensions-quickview-modal {
     padding: 0 15px !important;
 
-    @include media-breakpoint-up(lg) {
-        padding: 0 104px !important;
-
-        .product-detail-advanced-list-price-wrapper {
-            padding-left: 0;
-        }
-    }
-
     .modal-dialog {
         max-width: 1000px;
         margin: 0 auto;
@@ -31,6 +23,26 @@ $carousel-control-icon-width-sm: 16px;
 
     .swag-cms-extensions-quickview-detail-page-button {
         padding: 3px;
+    }
+
+    .product-detail-price-unit {
+        padding: 15px 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 104px !important;
+
+        .product-detail-advanced-list-price-wrapper {
+            padding-left: 0;
+        }
+
+        .modal-dialog {
+            max-width: 1500px;
+        }
+
+        .swag-cms-extensions-quickview-product-buy-form {
+            padding-top: 0;
+        }
     }
 }
 
@@ -47,7 +59,26 @@ $carousel-control-icon-width-sm: 16px;
     }
 
     .product-detail-button-container {
-        margin-top: 30px;
+        margin: 30px 0;
+        padding-bottom: 30px;
+        border-top: $border-width solid $sw-border-color;
+        border-bottom: $border-width solid $sw-border-color;
+
+        .buy-widget-price {
+            padding: 0;
+            text-align: right;
+
+            &.col-md-4 {
+                @include media-breakpoint-up(md) {
+                    padding-top: 10px;
+                    padding-right: $grid-gutter-width/2;
+                }
+            }
+        }
+
+        .buy-widget-buy-button {
+            padding: 0;
+        }
     }
 
     .product-detail-configurator-group-title {
@@ -77,14 +108,36 @@ $carousel-control-icon-width-sm: 16px;
         }
     }
 
-    .product-detail-wrapper,
-    .product-detail-button-container {
+    .product-detail-wrapper {
         border-top: 1px solid $sw-border-color;
     }
 
-    .btn-buy-wrapper,
-    .product-detail-button-container {
+    .btn-buy-wrapper {
         padding: $spacer-lg 0 0;
+    }
+
+    .swag-cms-extensions-quickview-manufacturer-name,
+    .swag-cms-extensions-quickview-manufacturer-logo {
+        width: 100%;
+        text-align: right;
+    }
+
+    .swag-cms-extensions-quickview-content--buy-quantity {
+        width: 100%;
+
+        @if (not feature('V6_5_0_0')) {
+            @include make-col(12);
+            padding: 0;
+        }
+
+        .product-detail-quantity-select {
+            width: 100%;
+            line-height: 30px;
+        }
+    }
+
+    .swag-cms-extensions-quickview-detail-configurator {
+        margin-bottom: 15px;
     }
 }
 
@@ -216,3 +269,14 @@ $carousel-control-icon-width-sm: 16px;
     }
 }
 
+@if (feature('V6_5_0_0')) {
+    .buy-widget .form-row {
+        @extend .row;
+    }
+
+    .swag-cms-extensions-quickview-detail-page-button {
+        height: 50px;
+        width: 100%;
+        line-height: 38px;
+    }
+}
