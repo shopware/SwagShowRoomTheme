@@ -81,6 +81,10 @@
             padding-top: 27px;
             padding-bottom: 27px;
             justify-content: space-between;
+
+            +.container-main {
+                padding-top: 0;
+            }
         }
 
         .account-content {

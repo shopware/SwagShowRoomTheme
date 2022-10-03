@@ -29,7 +29,14 @@
 
     .order-table-header-context-menu-content {
         min-width: 290px;
-        padding: 40px;
+        padding: 30px;
+
+        .order-table-header-context-menu-content-link,
+        .order-table-header-context-menu-content-form {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
     }
 
     .order-item-header {
