@@ -1,3 +1,7 @@
+# 1.9.0
+- Checked compatibility with platform v6.4.16.0
+- Updated compatibility of CMS Extensions with Bootstrap 5
+
 # 1.8.0
 - Fixed the variant change in QuickView
 - Checked compatibility with platform v6.4.15.0
