@@ -47,8 +47,7 @@ $custom-box-standard-height-img: 220px;
         padding: 0 20px 20px;
 
         .product-price-unit,
-        .product-cheapest-price,
-        .product-price.with-regulation-price {
+        .product-cheapest-price {
             @extend .d-none;
         }
     }
@@ -96,12 +95,10 @@ $custom-box-standard-height-img: 220px;
             display: flex;
             justify-content: center;
             flex-direction: column;
-
         }
 
         .list-price {
-            color: $sw-color-brand-primary;
-            opacity: 0.3;
+            color: $gray-600;
             font-size: $font-size-base;
             padding: 0;
             order: -1;
@@ -328,6 +325,12 @@ $custom-box-standard-height-img: 220px;
     &.with-regulation-price br {
         display: none;
     }
+
+    .regulation-price {
+        color: $gray-600;
+        padding-left: 4px;
+        font-size: $font-size-base;
+    }
 }
 
 .product-cheapest-price {
@@ -350,7 +353,6 @@ $custom-box-standard-height-img: 220px;
             }
         }
 
-        .product-price,
         .product-name {
             font-size: $showroom-font-size-base;
         }
