@@ -27,7 +27,7 @@
                 {% endblock %}
             </div>
 
-            <div class="product-overlay__action">
+            <div class="product-overlay__action{% if config('core.cart.wishlistEnabled') %} wishlist{% endif %}">
                 <hr>
                 {% block component_product_box_price_unit %}
                     {% sw_include '@Storefront/storefront/component/product/card/box-price-unit.html.twig' %}
