@@ -14,6 +14,7 @@
         a {
             margin-top: 0;
             margin-bottom: 10px;
+            font-size: $font-size-sm;
         }
     }
 
@@ -110,12 +111,6 @@
         }
     }
 
-    .footer-contact-form {
-        a {
-            text-decoration: underline;
-        }
-    }
-
     @include media-breakpoint-up(md) {
         .footer-columns {
             padding: 100px 0 0;
@@ -148,6 +143,12 @@
 
         .footer-newsletter-content {
             padding-top: 0;
+        }
+
+        .footer-contact-hotline {
+            a {
+                font-size: $font-size-base;
+            }
         }
     }
 

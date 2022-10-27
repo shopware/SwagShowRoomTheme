@@ -40,9 +40,9 @@
     },
     "footer": {
         "newsletterHeadline": "Newsletter",
-        "newsletterYourEmail": "Oder über unser Kontaktformular",
+        "newsletterYourEmail": "Ihre e-mail adresse",
         "newsletterInfo": "Abonnieren Sie den kostenlosen Newsletter, um keine Angebote von %shopname% mehr zu verpassen.",
-        "serviceHotline": "<a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fr, 9 - 17 Uhr",
-        "serviceContactLink": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Oder über unser Kontaktformular</a>."
+        "serviceHotline": "Unterstützung und Beratung über: <a href=\"tel:+49180000000\">0180 - 000000</a>",
+        "serviceContactLink": "Mo-Fr, 9-17 Uhr<br><a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Oder über unser Kontaktformular</a>."
     }
 }
