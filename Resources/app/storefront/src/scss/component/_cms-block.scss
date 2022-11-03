@@ -37,14 +37,6 @@
         object-fit: cover;
     }
 
-    &-product-heading .cms-block-container:first-child {
-        @extend .p-0;
-    }
-
-    &-gallery-buybox .cms-block-container:first-child {
-        @extend .p-0;
-    }
-
     @include media-breakpoint-up(md) {
         &.cms-block-text-two-column {
             .cms-element-form {
@@ -88,10 +80,6 @@
         .sw-cms-form-cover-image {
             max-height: $cms-form-cover-image-height-sm;
         }
-    }
-
-    .product-heading-name-container {
-        margin-bottom: 30px;
     }
 
     .privacy-notice {
