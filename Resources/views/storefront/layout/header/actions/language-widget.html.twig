@@ -4,8 +4,9 @@
     <div data-showroom-collapse="true">
         <div class="js-collapse-column">
             {% set isoCode = page.header.activeLanguage.translationCode.code|lower|split('-') %}
-            {% set country = isoCode[0] %}
-            {% set language = isoCode[1] %}
+            {# @deprecated tag:v6.5.0 - Remove else cases, to maintain correct split of isoCode #}
+            {% set language = feature('v6.5.0.0') ? isoCode[0] : isoCode[1] %}
+            {% set country = feature('v6.5.0.0') ? isoCode[1] : isoCode[0] %}
 
             <div class="global-collapse-headline js-collapse-column-trigger"
                  id="collapseLanguage"
@@ -29,8 +30,9 @@
                                 {% if language.id is same as(page.header.activeLanguage.id) %}
                                 {% else %}
                                     {% set isoCode = language.translationCode.code|lower|split('-') %}
-                                    {% set flagCountry = isoCode[0] %}
-                                    {% set flagLanguage = isoCode[1] %}
+                                    {# @deprecated tag:v6.5.0 - Remove else cases, to maintain correct split of isoCode #}
+                                    {% set flagLanguage = feature('v6.5.0.0') ? isoCode[0] : isoCode[1] %}
+                                    {% set flagCountry = feature('v6.5.0.0') ? isoCode[1] : isoCode[0] %}
 
                                     <label class="top-bar-list-label"
                                            for="{{ position }}-{{ language.id }}">

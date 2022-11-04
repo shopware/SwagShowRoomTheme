@@ -8,6 +8,8 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
+const {v4: uuid} = require('uuid');
+
 Cypress.Commands.add('typeAndSelect', {
     prevSubject: 'element'
 }, (subject, value) => {
@@ -211,3 +213,18 @@ Cypress.Commands.add('openInitialPage', (url) => {
     cy.get('.sw-desktop').should('be.visible');
 });
 
+/**
+ * Create customer fixture using Shopware API at the given endpoint
+ * @memberOf Cypress.Chainable#
+ * @name createCustomerFixtureStorefront
+ * @function
+ * @param {Object} userData - Custom data for the customer to be created
+ */
+
+Cypress.Commands.overwrite('createCustomerFixtureStorefront', (originalFn, userData) => {
+    return originalFn(userData)
+        .then(() => {
+            return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console cache:clear`)
+                .its('code').should('eq', 0);
+        });
+});
