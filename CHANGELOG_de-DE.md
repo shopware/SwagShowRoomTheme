@@ -1,3 +1,11 @@
+# 1.10.0
+- Überprüfung der Kompatibilität mit Platform v6.4.17.0
+- Die Anzeige des günstigsten Preises ohne Hover auf der Listenseite ist behoben
+- Das Wechseln von Produktvarianten in der CMS-Quickview ist behoben
+- Die Breite der Produktaktionsschaltfläche auf der Listenseite ohne Wunschliste ist voll eingestellt
+- Fehlende Service-Informations-Snippets sind behoben
+- Galerie-Kaufbox-Block erlaubt keinen Rand ist behoben
+
 # 1.9.0
 - Überprüfung der Kompatibilität mit Platform v6.4.16.0
 - Aktualisierung der Kompatibilität von CMS-Erweiterungen mit Bootstrap 5
