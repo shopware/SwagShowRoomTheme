@@ -1,3 +1,11 @@
+# 1.10.0
+- Checked compatibility with platform v6.4.17.0
+- Fixed without hovered cheapest price is not seen on listing page
+- Fixed switching product variants in CMS-Quickview is not possible
+- Fixed product action button to full width without wishlist
+- Fixed service information snippets are missing
+- Fixed gallery buy box block does not allow margin
+
 # 1.9.0
 - Checked compatibility with platform v6.4.16.0
 - Updated compatibility of CMS Extensions with Bootstrap 5
