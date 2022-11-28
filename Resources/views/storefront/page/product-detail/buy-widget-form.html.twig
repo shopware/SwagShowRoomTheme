@@ -21,6 +21,7 @@
     <div class="col-8 col-md-12 col-lg-8">
         <div class="{% if (product.calculatedMaxPurchase - product.minPurchase) / product.purchaseSteps > selectQuantityThreshold %} quantity-input{% endif %}">
             {% block page_product_detail_buy_quantity %}
+                {# @deprecated tag:v6.5.0 - Numeric quantity input with additional plus/minus controls will be the default. #}
                 {{ parent() }}
             {% endblock %}
         </div>
