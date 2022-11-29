@@ -1,38 +1,37 @@
 {
     "showroom": {
         "account": {
-            "orRegisterLink": "register",
+            "orRegisterLink": "sign up",
             "loginHeader": "Login",
             "orderStatus": "-",
             "orderItemColumnDate": "Date:",
-            "overviewChangeBilling": "Edit address",
-            "overviewChangeShipping": "Edit address",
-            "loginOrRegisterHeadline": "Login or register"
+            "overviewChangeAddress": "Edit address",
+            "loginOrRegisterHeadline": "Log in or sign up"
         },
         "general": {
             "offcanvasCloseMenu": "Close",
             "mainMenu": "Menu",
-            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information</a>."
+            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information.</a>."
         },
         "listing": {
-            "boxAddProduct": "Add to cart"
+            "boxAddProduct": "Add to shopping cart"
         },
         "detail": {
             "quantity": "Quantity",
-            "finishConfigCustomizedProduct": "You have configured your product. You can now add it to your shopping cart or change your configuration."
+            "finishConfigCustomizedProduct": "You have successfully configured your product. You can now add it to your shopping cart or go back an revise your configuration."
         },
         "checkout": {
-            "finishButtonBackToShop": "Go to homepage",
+            "finishButtonBackToShop": "Back to shop",
             "summaryPositionPrice": "item total",
             "summaryTotalPrice": "Total",
             "summaryTax": "including %rate%% VAT",
             "confirmAddress": "Addresses",
-            "confirmPaymentShipping": "Payment & Shipping",
-            "confirmChangeShipping": "Edit Shipping",
-            "confirmChangePayment": "Edit Payment",
-            "finishCartHeader": "Your Order",
-            "addressLoginToggle": "If you already have an account.",
-            "registerHeader": "Register"
+            "confirmPaymentShipping": "Payment & shipping",
+            "confirmChangeShipping": "Edit shipping",
+            "confirmChangePayment": "Edit payment",
+            "finishCartHeader": "Your order",
+            "addressLoginToggle": "Are you a customer already? Click here to log in.",
+            "registerHeader": "Sign-up"
         },
         "navigation": {
             "title": "Categories"
@@ -40,9 +39,9 @@
     },
     "footer": {
         "newsletterHeadline": "Newsletter",
-        "newsletterYourEmail": "Your email address",
-        "newsletterInfo": "Subscribe to the free newsletter and ensure that you will no longer miss any offers or news of %shopname%.",
-        "serviceHotline": "Support and counselling via: <a href=\"tel:+49180000000\">0180 - 000000</a>",
-        "serviceContactLink": "Mon-Fri, 9 am - 5 pm<br><a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Or via our contact form</a>."
+        "newsletterYourEmail": "Email address",
+        "newsletterInfo": "Subscribe to the free newsletter and never miss any news or offers of %shopname%.",
+        "serviceHotline": "Support and counselling via: <a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm",
+        "serviceContactLink": "Or via our <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Contact form\">contact form</a>."
     }
 }
