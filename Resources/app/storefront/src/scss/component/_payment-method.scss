@@ -27,6 +27,10 @@
             display: none;
         }
 
+        .form-check-input:checked ~ label {
+            border-color: $sw-color-brand-primary;
+        }
+
     } @else {
         .custom-control {
             padding-left: 0;
@@ -36,6 +40,10 @@
         .custom-control-label::before,
         .custom-control-label::after {
             display: none;
+        }
+
+        .custom-control-input:checked ~ label {
+            border-color: $sw-color-brand-primary;
         }
     }
 
@@ -61,16 +69,6 @@
                 white-space: break-spaces;
                 margin-bottom: 0;
             }
-        }
-    }
-
-    @if (feature('V6_5_0_0')) {
-        .form-check-input:checked + label {
-            border-color: $sw-color-brand-primary;
-        }
-    } @else {
-        .custom-control-input:checked + label {
-            border-color: $sw-color-brand-primary;
         }
     }
 
