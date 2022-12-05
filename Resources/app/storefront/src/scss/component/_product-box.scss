@@ -9,29 +9,6 @@ $custom-box-standard-height-img: 220px;
         padding: 20px 20px 0;
         min-height: 100px;
     }
-
-    &.is-cover {
-        object-fit: cover;
-        // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
-        /* stylelint-disable-next-line */
-        font-family: 'object-fit: cover;'; // IE polyfill
-    }
-
-    &.is-contain {
-        object-fit: contain;
-        // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
-        /* stylelint-disable-next-line */
-        font-family: 'object-fit: contain;'; // IE polyfill
-    }
-
-    &.is-standard {
-        object-fit: cover;
-        // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
-        /* stylelint-disable-next-line */
-        font-family: 'object-fit: cover;'; // IE polyfill
-
-        min-height: 100%;
-    }
 }
 
 .product-box {
