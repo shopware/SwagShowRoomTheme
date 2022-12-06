@@ -63,7 +63,7 @@ $logo-height-lg: 60px;
 }
 
 .header-main {
-    border-bottom: 1px solid $border-color;
+    border-bottom: $border-width solid $border-color;
 
     .menu-button,
     .header-actions-btn {
@@ -72,6 +72,16 @@ $logo-height-lg: 60px;
             padding: 4px 10px;
             font-size: $h6-font-size;
             font-weight: normal;
+        }
+    }
+
+    .header-actions-col {
+        .header-actions-btn {
+            &,
+            &:active,
+            &:hover {
+                border: $border-width solid transparent;
+            }
         }
     }
 

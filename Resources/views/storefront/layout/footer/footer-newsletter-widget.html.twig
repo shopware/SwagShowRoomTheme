@@ -67,6 +67,7 @@
                                         <input type="hidden"
                                                value="{{ constant('Shopware\\Storefront\\Controller\\FormController::SUBSCRIBE') }}"
                                                name="option">
+                                        {# @deprecated tag:v6.5.0 - csrf will be removed. #}
                                         {{ sw_csrf('frontend.form.newsletter.register.handle') }}
                                         <input type="submit" class="submit--hidden d-none"/>
                                     </div>

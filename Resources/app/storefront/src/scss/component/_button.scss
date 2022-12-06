@@ -19,6 +19,11 @@
 }
 
 .btn-buy {
+    &,
+    &:hover {
+        color: $sw-color-buy-button-text;
+    }
+
     @if (feature('V6_5_0_0')) {
         @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
         line-height: $btn-line-height;
