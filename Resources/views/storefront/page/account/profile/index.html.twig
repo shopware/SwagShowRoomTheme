@@ -50,7 +50,7 @@
 
         <div class="col-auto col-md text-md-right account-profile-change">
             {% block page_account_profile_credentials_change_mail %}
-                <a class="{% if not emailFormViolation %} collapsed{% endif %}"
+                <a {% if not emailFormViolation %}class="collapsed"{% endif %}
                    {{ dataBsToggleAttr }}="collapse"
                    href="#profile-email-form"
                    role="button"

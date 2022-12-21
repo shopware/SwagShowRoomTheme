@@ -5,9 +5,8 @@
             "loginHeader": "Anmeldung",
             "orderStatus": "-",
             "orderItemColumnDate": "Datum:",
-            "overviewChangeBilling": "Adresse bearbeiten",
-            "overviewChangeShipping": "Adresse bearbeiten",
-            "loginOrRegisterHeadline": "Anmelden oder Registrieren"
+            "overviewChangeAddress": "Adresse bearbeiten",
+            "loginOrRegisterHeadline": "Anmelden oder registrieren"
         },
         "general": {
             "offcanvasCloseMenu": "Schließen",
@@ -18,20 +17,20 @@
             "boxAddProduct": "In den Warenkorb"
         },
         "detail": {
-            "quantity": "Menge",
-            "finishConfigCustomizedProduct": "Sie haben Ihr Produkt konfiguriert. Sie können es jetzt in Ihren Warenkorb legen oder Ihre Konfiguration ändern."
+            "quantity": "Anzahl",
+            "finishConfigCustomizedProduct": "Sie haben Ihr Produkt erfolgreich konfiguriert. Sie können es jetzt in Ihren Warenkorb legen, oder zurückgehen und die Konfiguration bearbeiten."
         },
         "checkout": {
-            "finishButtonBackToShop": "Zur Startseite",
+            "finishButtonBackToShop": "Zurück zum Shop",
             "summaryPositionPrice": "Artikel gesamt",
             "summaryTotalPrice": "Gesamt",
             "summaryTax": "einschließlich. %rate% % MwSt.",
             "confirmAddress": "Adressen",
-            "confirmPaymentShipping": "Bezahlung & Versand",
-            "confirmChangeShipping": "Versand bearbeiten",
-            "confirmChangePayment": "Zahlung bearbeiten",
+            "confirmPaymentShipping": "Zahlung & Versand",
+            "confirmChangeShipping": "Versandart bearbeiten",
+            "confirmChangePayment": "Zahlungsart bearbeiten",
             "finishCartHeader": "Ihre Bestellung",
-            "addressLoginToggle": "Wenn Sie bereits ein Konto haben.",
+            "addressLoginToggle": "Sie sind schon Kunde? Hier klicken zum Anmelden.",
             "registerHeader": "Registrieren"
         },
         "navigation": {
@@ -40,9 +39,9 @@
     },
     "footer": {
         "newsletterHeadline": "Newsletter",
-        "newsletterYourEmail": "Ihre e-mail adresse",
-        "newsletterInfo": "Abonnieren Sie den kostenlosen Newsletter, um keine Angebote von %shopname% mehr zu verpassen.",
-        "serviceHotline": "Unterstützung und Beratung über: <a href=\"tel:+49180000000\">0180 - 000000</a>",
-        "serviceContactLink": "Mo-Fr, 9-17 Uhr<br><a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"contact form\">Oder über unser Kontaktformular</a>."
+        "newsletterYourEmail": "E-Mail-Adresse",
+        "newsletterInfo": "Abonnieren Sie den kostenlosen Newsletter und verpassen Sie keine Neuigkeiten und Angebote von %shopname%.",
+        "serviceHotline": "Unterstützung und Beratung über: <a href=\"tel:+49180000000\">0180 - 000000</a> Mo-Fr, 9-17 Uhr",
+        "serviceContactLink": "Oder über unser <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Kontaktformular\">Kontaktformular</a>."
     }
 }

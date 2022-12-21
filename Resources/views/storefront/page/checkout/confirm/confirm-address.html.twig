@@ -2,22 +2,22 @@
 
 {% block  page_checkout_confirm_address_billing_actions_link %}
     <a href="{{ path('frontend.account.address.edit.page', {'addressId': billingAddress.id}) }}"
-       title="{{ "account.overviewChangeBilling"|trans|striptags }}"
+       title="{{ "account.overviewChangeAddress"|trans|striptags }}"
        data-address-editor="true"
        data-address-editor-options='{{ addressEditorOptions|json_encode }}'
        class="confirm-address-link"
     >
-        {{ "showroom.account.overviewChangeBilling"|trans|sw_sanitize }}
+        {{ "showroom.account.overviewChangeAddress"|trans|sw_sanitize }}
     </a>
 {% endblock %}
 
 {% block  page_checkout_confirm_address_shipping_actions_link %}
      <a href="{{ path('frontend.account.address.edit.page', {'addressId': shippingAddress.id}) }}"
-        title="{{ "account.overviewChangeShipping"|trans|striptags }}"
+        title="{{ "account.overviewChangeAddress"|trans|striptags }}"
         data-address-editor="true"
         data-address-editor-options='{{ addressEditorOptions|json_encode }}'
         class="confirm-address-link"
      >
-         {{ "showroom.account.overviewChangeShipping"|trans|sw_sanitize }}
+         {{ "showroom.account.overviewChangeAddress"|trans|sw_sanitize }}
      </a>
 {% endblock %}
