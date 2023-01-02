@@ -1,11 +1,6 @@
 .cms-element-product-listing {
     .cms-element-product-listing-actions {
-        @if (feature('V6_5_0_0')) {
-            @extend .g-0;
-        } @else {
-            @extend .no-gutters;
-        }
-
+        @extend .g-0;
         border-bottom: 1px solid $border-color;
         padding-bottom: 30px;
 
@@ -15,7 +10,7 @@
             }
         }
 
-        @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+        @include media-breakpoint-down(md) {
             border-bottom: unset;
         }
     }

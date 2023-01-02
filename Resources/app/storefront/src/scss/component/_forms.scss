@@ -14,9 +14,7 @@
 .form-control {
     border: none;
     border-bottom: $input-border-width solid $input-border-color;
-    @if (feature('V6_5_0_0')) {
-        line-height: 1;
-    }
+    line-height: 1;
 
     &:disabled,
     &[readonly] {
@@ -34,6 +32,10 @@
             color: $form-feedback-invalid-color;
         }
     }
+}
+
+.form-check label{
+    line-height: $font-size-lg * $line-height-base;
 }
 
 textarea.form-control {

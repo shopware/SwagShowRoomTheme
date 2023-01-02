@@ -33,11 +33,11 @@ describe(`Checkout as Guest`, () => {
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
-        cy.get('.offcanvas-cart-actions .btn-primary').click();
+        cy.get('.offcanvas-cart-actions .btn-primary').click({force: true});
 
         cy.get(accountPage.elements.registerCard).should('be.visible');
 
@@ -46,8 +46,8 @@ describe(`Checkout as Guest`, () => {
         cy.get('input[name="lastName"]').type('Doe');
 
         cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-        cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-        cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
+        cy.get('.register-guest-control.form-check label').scrollIntoView();
+        cy.get('.register-guest-control.form-check label').click(1, 1);
 
         cy.get('input[name="billingAddress[street]"]').type('123 Main St');
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
@@ -56,13 +56,14 @@ describe(`Checkout as Guest`, () => {
         cy.get('select[name="billingAddress[countryId]"]').select('USA');
         cy.get('select[name="billingAddress[countryStateId]"]').should('be.visible');
         cy.get('select[name="billingAddress[countryStateId]"]').select('Ohio');
+        cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Shopware@123');
 
         cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
         // Checkout
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('John Doe');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);
@@ -109,11 +110,11 @@ describe(`Checkout as Guest`, () => {
             cy.get('.product-detail-buy .btn-buy').click();
 
             // Off canvas
-            cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+            cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
             cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
             // Checkout
-            cy.get('.offcanvas-cart-actions .btn-primary').click();
+            cy.get('.offcanvas-cart-actions .btn-primary').click({force: true});
 
             cy.get(accountPage.elements.registerCard).should('be.visible');
 
@@ -167,8 +168,8 @@ describe(`Checkout as Guest`, () => {
             cy.get(`.register-shipping ${shippingAddressCompanySelector}`).should('be.visible').should('have.attr', 'required');
 
             cy.get(`${accountPage.elements.registerForm} input[name="email"]`).type('john-doe-for-testing@example.com');
-            cy.get('.register-guest-control.custom-checkbox label').scrollIntoView();
-            cy.get('.register-guest-control.custom-checkbox label').click(1, 1);
+            cy.get('.register-guest-control.form-check label').scrollIntoView();
+            cy.get('.register-guest-control.form-check label').click(1, 1);
 
             cy.get('input[name="billingAddress[street]"]').type('123 Main St');
             cy.get('input[name="billingAddress[zipcode]"]').type('9876');
@@ -178,13 +179,14 @@ describe(`Checkout as Guest`, () => {
             cy.get('select[name="billingAddress[countryStateId]"]').should('be.visible');
             cy.get('select[name="billingAddress[countryStateId]"]').select('Ohio');
             cy.get('.register-different-shipping label[for="differentShippingAddress"]').click();
+            cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Shopware@123');
 
             cy.get(`${accountPage.elements.registerSubmit} [type="submit"]`).click();
 
             // Checkout
             cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-            cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-            cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+            cy.get('.confirm-tos .form-check-input').scrollIntoView();
+            cy.get('.confirm-tos .form-check-input').click(1, 1);
             cy.get('.confirm-address').contains('John Doe');
             cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
             cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);

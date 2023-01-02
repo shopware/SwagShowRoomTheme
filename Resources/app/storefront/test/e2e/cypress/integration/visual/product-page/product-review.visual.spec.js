@@ -7,8 +7,13 @@ describe('Product Detail: Check appearance of product review', () => {
             })
             .then(() => cy.createProductFixture())
             .then(() => cy.createCustomerFixtureStorefront())
+            .then(() => cy.visit('/'))
+            .then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').click({force: true});
+                cy.get('.offcanvas-cookie > .btn').click({force: true});
+            })
             .then(() => cy.visit('/Product-name/RS-333'))
-            .then(() => cy.get('#review-tab').click())
+            .then(() => cy.get('.review-tab').click())
     });
 
     it('@visual, @review: show review tab', () => {
@@ -28,7 +33,7 @@ describe('Product Detail: Check appearance of product review', () => {
         cy.get('.login-submit [type="submit"]').click();
 
         cy.visit('/Product-name/RS-333');
-        cy.get('#review-tab').click();
+        cy.get('.review-tab').click();
         cy.get('.product-detail-review-teaser-btn').click();
 
         cy.get('#reviewTitle').type('Review title '.repeat(4));

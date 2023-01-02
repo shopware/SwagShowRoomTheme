@@ -1,7 +1,7 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
 
 {% block page_product_detail_configurator_groups %}
-    <div data-showroom-collapse="true" class="row mx-lg-0 product-detail-configurator-container">
+    <div data-showroom-collapse="true" class="row mx-lg-0 g-md-4 g-lg-0 product-detail-configurator-container">
         {% for group in page.configuratorSettings %}
 
             {% set activeOption = group.options|filter(option => option.id in page.product.optionIds)|first %}
@@ -19,8 +19,8 @@
             {% endif %}
 
             {% block page_product_detail_configurator_group %}
-                <div class="col-12 col-md col-lg-12 px-lg-0 product-detail-configurator-group">
-                    <div class="{{ formRowClass }}">
+                <div class="col-12 col-md-6 col-lg-12 px-lg-0 product-detail-configurator-group">
+                    <div class="row">
                         <div class="col-4 col-md-12 col-lg-4">
                             {% block page_product_detail_configurator_group_title %}
                                 {{ parent() }}

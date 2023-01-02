@@ -76,6 +76,14 @@
         }
     }
 
+    .order-detail-content {
+        border-top: none;
+    }
+
+    .order-item-detail-list-item-divider {
+        display: none;
+    }
+
     @include media-breakpoint-up(md) {
         .order-item-header {
             .order-table-header-order-table-body {
@@ -97,13 +105,13 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         .account-orders-main {
             padding-top: 30px;
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .order-item-header {
             padding-top: 15px;
             padding-bottom: 0;

@@ -4,12 +4,7 @@
     <form class="login-form"
           action="{{ path('frontend.account.login') }}"
           method="post"
-          data-form-csrf-handler="true"
           data-form-validation="true">
-
-        {% block component_account_login_form_csrf %}
-            {{ parent() }}
-        {% endblock %}
 
         {% block component_account_login_form_redirect %}
             {{ parent() }}
@@ -23,7 +18,7 @@
         {% endblock %}
 
         {% block component_account_login_form_fields %}
-            <div class="{{ formRowClass }}">
+            <div class="row">
                 {% block component_account_login_form_mail %}
                     <div class="form-group col-md-12">
                         {% block component_account_login_form_mail_label %}

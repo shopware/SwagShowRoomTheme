@@ -14,6 +14,7 @@
     }
 
     .profile-form-submit {
+        width: 100%;
         text-transform: uppercase;
     }
 
@@ -31,6 +32,10 @@
         }
     }
 
+    .account-profile-change {
+        text-align: right;
+    }
+
     .account-profile-change,
     .account-profile-credentials-current-mail {
         font-size: $showroom-font-size-base;
@@ -40,7 +45,25 @@
         padding-left: 20px;
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    .address {
+        margin-bottom: 15px;
+    }
+
+    .address-editor-edit,
+    .address-editor-create {
+        width: 100%;
+    }
+
+    #profilePasswordForm,
+    #profileMailForm {
+        .profile-form-submit {
+            @extend .btn-outline-primary;
+            margin-top: 20px;
+            background: none;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
         .account-profile-credentials {
             .card-title {
                 margin-bottom: 20px;
@@ -56,7 +79,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .account-profile-credentials-current-mail {
             padding-bottom: 20px;
 
@@ -90,26 +113,15 @@
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .account-password,
     .account-email {
-        @if (feature('V6_5_0_0')) {
-            .row {
-                flex-direction: column;
+        .row {
+            flex-direction: column;
 
-                .col-6 {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
-            }
-        } @else {
-            .form-row {
-                flex-direction: column;
-
-                .col-6 {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
+            .col-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
             }
         }
     }

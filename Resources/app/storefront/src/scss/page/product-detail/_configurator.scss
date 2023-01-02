@@ -5,7 +5,6 @@ $configurator-padding: 40px;
 .product-detail-configurator {
     width: 100%;
 
-    &-group,
     &-active-option {
         width: 100%;
         cursor: pointer;
@@ -144,6 +143,8 @@ $configurator-padding: 40px;
 
         &-collapse {
             padding: 15px 20px;
+            z-index: 3!important;
+            border-radius: $configurator-border-radius-lg;
         }
 
         &-group {
@@ -166,11 +167,7 @@ $configurator-padding: 40px;
 
 .product-detail-wrapper {
     padding-top: $configurator-padding-sm;
-    border-top: 1px solid $border-color;
-
-    @include media-breakpoint-up(lg) {
-        padding-top: $configurator-padding-sm;
-    }
+    border-top: $border-width solid $border-color;
 }
 
 .product-detail-button-container {

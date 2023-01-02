@@ -3,11 +3,10 @@
 {% block cms_form_contact %}
     <form action="{{ path(action) }}"
             method="post"
-            data-form-csrf-handler="true"
             data-form-validation="true">
 
         <div class="form-content">
-            <div class="{{ formRowClass }}">
+            <div class="row">
                 {% block cms_form_contact_select_salutation %}
                     {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
                         with {
@@ -17,7 +16,7 @@
                     %}
                 {% endblock %}
             </div>
-            <div class="{{ formRowClass }}">
+            <div class="row">
                 {% block cms_form_contact_input_first_name %}
                     {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
                         with {
@@ -43,7 +42,7 @@
                 {% endblock %}
             </div>
 
-            <div class="{{ formRowClass }}">
+            <div class="row">
                 {% block cms_form_contact_input_email %}
                     {{ parent() }}
                 {% endblock %}
@@ -53,19 +52,19 @@
                 {% endblock %}
             </div>
 
-            <div class="{{ formRowClass }}">
+            <div class="row">
                 {% block cms_form_contact_input_subject %}
                     {{ parent() }}
                 {% endblock %}
             </div>
 
-            <div class="{{ formRowClass }}">
+            <div class="row">
                 {% block cms_form_contact_comment_textarea %}
                     {{ parent() }}
                 {% endblock %}
             </div>
 
-            <div class="{{ formRowClass }} d-flex mt-1 justify-content-between align-items-end">
+            <div class="row d-flex mt-1 justify-content-between align-items-end">
                 <div class="col-12 col-md-8">
                     {% block cms_form_contact_required_fields_info %}
                         {{ parent() }}

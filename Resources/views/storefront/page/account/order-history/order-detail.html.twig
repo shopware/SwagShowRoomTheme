@@ -7,9 +7,9 @@
 
 {% block page_account_order_item_detail_table_labels_summary %}
     <div class="order-item-detail-footer">
-        <div class="row {{ gridNoGuttersClass }} order-item-detail-footer-container">
+        <div class="row g-0 order-item-detail-footer-container">
             <div class="col-12 col-md-7 col-xl-8">
-                <dl class="row {{ gridNoGuttersClass }} order-item-detail-labels">
+                <dl class="row g-0 order-item-detail-labels">
                     {% block page_account_order_item_detail_date %}
                         {% block page_account_order_item_detail_date_label %}
                             <dt class="col-6 col-md-4 col-xl-3">{{ "account.orderItemDate"|trans|sw_sanitize }}</dt>
@@ -99,7 +99,7 @@
 
             <div class="col-12 col-md-5 col-xl-4">
                 {% block page_account_order_item_detail_summary %}
-                    <dl class="row {{ gridNoGuttersClass }} order-item-detail-summary">
+                    <dl class="row g-0 order-item-detail-summary">
                         {% block page_account_order_item_detail_shipping_costs %}
                             {% block page_account_order_item_detail_shipping_costs_label %}
                                 <dt class="col-6 col-md-6 order-item-detail-summary-shipping-costs-label">

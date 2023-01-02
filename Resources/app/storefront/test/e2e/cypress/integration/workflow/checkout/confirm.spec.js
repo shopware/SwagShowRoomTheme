@@ -38,11 +38,11 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Go to cart
-        cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click();
+        cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click({force: true});
 
         cy.get(`${page.elements.paymentFormConfirm}`).should('be.visible');
         cy.get(`${page.elements.shippingFormConfirm}`).should('be.visible');
@@ -79,11 +79,11 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Off canvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
                 // Go to cart
-                cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click();
+                cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click({force: true});
 
                 // check for correct collapsed state at page initialization
                 cy.get(`${page.elements.paymentMethodsContainer}`)
@@ -122,14 +122,14 @@ describe('Checkout: Payment and Shipping methods selection', { tags: ['@workflow
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Off canvas
-        cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+        cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Go to cart
-        cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click();
+        cy.get('.offcanvas-cart-actions [href="/checkout/confirm"]').click({force: true});
 
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
 
         cy.get(`${page.elements.paymentMethodsContainer} > :nth-child(3) .payment-method-label`)
             .should('exist')

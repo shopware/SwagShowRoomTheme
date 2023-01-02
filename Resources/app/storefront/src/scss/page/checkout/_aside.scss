@@ -10,11 +10,7 @@ $checkout-aside-spacing: 20px;
     border-bottom: 1px solid $border-color;
 
     &-list {
-        @if (feature('V6_5_0_0')) {
-            @extend .g-0;
-        } @else {
-            @extend .no-gutters;
-        }
+        @extend .g-0;
 
         dd {
             margin-bottom: 0;
@@ -54,8 +50,8 @@ $checkout-aside-spacing: 20px;
 
 .cart-add-promotion {
     input.form-control {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 }
 

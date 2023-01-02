@@ -26,12 +26,10 @@ describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
 
         cy.get('.account-overview-profile').should('be.visible');
         cy.get('.account-overview-newsletter').should('be.visible');
-        cy.get('#newsletterRegister').should('not.be.visible')
-            .check({force: true})
-            .should('be.checked');
+        cy.get('label[for="newsletterRegister"]').click();
 
         cy.get('.newsletter-alerts').should((element) => {
-            expect(element).to.contain('You have subscribed to the newsletter');
+            expect(element).to.contain('We have sent a confirmation email containing an activation link. Please check your inbox and click the link to complete your newsletter subscription.');
         });
 
         // billing address
@@ -45,7 +43,7 @@ describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
         cy.get('.address-editor-create').click();
         cy.get(page.elements.createModal).should('have.class', 'show');
         cy.get(page.elements.editModal).should('not.have.class', 'show');
-        cy.get('.address-editor-modal').find('.modal-close').click();
+        cy.get('.address-editor-modal').find('.btn-close').click();
 
         // shipping address
         cy.get('.overview-shipping-address [data-address-editor="true"]').click();

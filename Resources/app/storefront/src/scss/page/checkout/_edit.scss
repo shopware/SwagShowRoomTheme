@@ -2,7 +2,7 @@
 .is-act-editorder {
 
     // The adustment if using for tablet and mobile only
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         .cart-item-details-container {
             overflow: hidden;
 

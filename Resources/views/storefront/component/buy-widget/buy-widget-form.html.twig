@@ -2,20 +2,21 @@
 
 {% block buy_widget_buy_quantity_container %}
     {% set selectQuantityThreshold = 100 %}
-    <div class="col-4 col-md-12 col-lg-4">
-        {% block buy_widget_configurator_group_title %}
-            <div class="product-detail-configurator-group-title">
-                {{ "showroom.detail.quantity"|trans|sw_sanitize }}
-            </div>
-        {% endblock %}
-    </div>
+    {% if showQuantitySelect %}
+        <div class="col-4 col-md-12 col-lg-4">
+            {% block buy_widget_configurator_group_title %}
+                <div class="product-detail-configurator-group-title">
+                    {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+                </div>
+            {% endblock %}
+        </div>
 
-    <div class="col-8 col-md-12 col-lg-8">
-        {% block buy_widget_buy_quantity %}
-            {# @deprecated tag:v6.5.0 - Numeric quantity input with additional plus/minus controls will be the default. #}
-            {{ parent() }}
-        {% endblock %}
-    </div>
+        <div class="col-8 col-md-12 col-lg-8">
+            {% block buy_widget_buy_quantity_input_group %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block buy_widget_buy_button_container %}

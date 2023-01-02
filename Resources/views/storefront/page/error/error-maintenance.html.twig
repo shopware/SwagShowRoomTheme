@@ -20,25 +20,25 @@
     {% else %}
         {% block error_maintenance_main_fallback %}
             <div class="container container-maintenance align-middle d-flex">
-                <div class="row {{ gridNoGuttersClass }} justify-content-center w-100">
+                <div class="row g-0 justify-content-center w-100">
                     <div class="col-12 col-lg-6 mb-5 mb-md-0">
                         <div class="maintenance-image-wrap">
                             {% block error_maintenance_main_picture %}
                                 <picture>
-                                    <source srcset="{{ asset('bundles/swagshowroomtheme/assets/images/maintenance-tablet.png', 'theme') }}"
+                                    <source srcset="{{ asset('assets/images/maintenance-tablet.png', 'theme') }}"
                                             media="(min-width: {{ theme_config('breakpoint.md') }}px) and (max-width: {{ theme_config('breakpoint.lg') - 1 }}px)">
 
-                                    <source srcset="{{ asset('bundles/swagshowroomtheme/assets/images/maintenance-mobile.png', 'theme') }}"
+                                    <source srcset="{{ asset('assets/images/maintenance-mobile.png', 'theme') }}"
                                             media="(max-width: {{ theme_config('breakpoint.md') - 1 }}px)">
 
-                                    <img src="{{ asset('bundles/swagshowroomtheme/assets/images/maintenance-desktop.png', 'theme') }}"
+                                    <img src="{{ asset('assets/images/maintenance-desktop.png', 'theme') }}"
                                          alt="{{ "general.maintenanceModeHeader"|trans|striptags }}"
                                          class="mx-auto py-3 py-lg-5"/>
                                 </picture>
                             {% endblock %}
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 {{ marginEndClass }}-md-auto col-lg-4 offset-lg-1 align-self-lg-center">
+                    <div class="col-12 col-md-6 me-md-auto col-lg-4 offset-lg-1 align-self-lg-center">
                         {% block error_maintenance_main_header %}
                             <h2>{{ "general.maintenanceModeHeader"|trans }}</h2>
                         {% endblock %}

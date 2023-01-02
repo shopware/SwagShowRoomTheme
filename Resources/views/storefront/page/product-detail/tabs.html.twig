@@ -4,7 +4,7 @@
     <li class="nav-item">
         <a class="nav-link {% if (ratingSuccess != 1) and (ratingSuccess != -1) %}active{% endif %} product-detail-tab-navigation-link"
            id="description-tab"
-           {{ dataBsToggleAttr }}="tab"
+           data-bs-toggle="tab"
            data-offcanvas-tabs="true"
            href="#description-tab-pane"
            role="tab"
@@ -18,7 +18,7 @@
                 <span class="product-detail-tab-preview">
                     {{ page.product.translated.description|raw|striptags|u.truncate(125, '…') }}
                     {% if page.product.translated.description|length >= 126 %}
-                        <span class="btn btn-sm {% if not feature('V6_5_0_0') %}btn-block{% endif%} btn-outline-secondary product-detail-tab-preview-more">
+                        <span class="btn btn-sm btn-outline-secondary product-detail-tab-preview-more">
                             {{ "detail.tabsPreviewMore"|trans|sw_sanitize }}
                         </span>
                     {% endif %}
@@ -33,7 +33,7 @@
         <li class="nav-item">
             <a class="nav-link {% if (ratingSuccess == 1) or (ratingSuccess == -1) %}active{% endif %} product-detail-tab-navigation-link"
                id="review-tab"
-               {{ dataBsToggleAttr }}="tab"
+               data-bs-toggle="tab"
                data-offcanvas-tabs="true"
                href="#review-tab-pane"
                role="tab"

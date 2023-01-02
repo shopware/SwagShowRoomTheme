@@ -40,7 +40,7 @@ export default class CheckoutPageObject {
             notification: '.sw-notifications__notification',
 
             // General cart selectors
-            cartItem: '.cart-item',
+            cartItem: '.line-item',
             cartItemFeatureList: '.component-product-feature-list--list',
             cartItemFeatureListItem: '.component-product-feature-list--item',
             cartItemFeatureContainer: '.component-product-feature--feature',

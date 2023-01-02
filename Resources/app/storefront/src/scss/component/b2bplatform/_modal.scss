@@ -17,11 +17,7 @@
     .modal-header {
         .only-close {
             .modal-close {
-                @if (feature('V6_5_0_0')) {
-                    @extend .me-4;
-                } @else {
-                    @extend .mr-4;
-                }
+                @extend .me-4;
             }
         }
     }
@@ -65,20 +61,10 @@
             }
         }
 
-        @if (feature('V6_5_0_0')) {
-            .btn-outline-primary {
-                @extend .btn-primary;
-                padding: 0 30px;
-                margin-left: 30px;
-            }
-        } @else {
-            .input-group-append {
-                .btn-outline-primary {
-                    @extend .btn-primary;
-                    padding: 0 30px;
-                    margin-left: 30px;
-                }
-            }
+        .btn-outline-primary {
+            @extend .btn-primary;
+            padding: 0 30px;
+            margin-left: 30px;
         }
     }
 
@@ -93,6 +79,3 @@
         }
     }
 }
-
-
-

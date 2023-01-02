@@ -152,7 +152,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+    @include media-breakpoint-down(md) {
         .footer-bottom {
             padding: 24px 0;
         }
@@ -195,7 +195,7 @@
 
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         .footer-service-menu-item,
         .footer-link-item {
             .footer-service-menu-link::before,
@@ -276,13 +276,6 @@
     .footer-link {
         color: $sw-footer-text-color;
         font-size: $showroom-font-size-base;
-    }
-}
-
-@if (feature('V6_5_0_0')) {
-    .footer-minimal .footer-bottom-mobile {
-        padding-left: 24px;
-        padding-right: 24px;
     }
 }
 

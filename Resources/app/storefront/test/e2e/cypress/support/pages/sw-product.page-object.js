@@ -36,14 +36,14 @@ export default class ProductPageObject {
         const optionString = totalCount === 1 ? 'value' : 'values';
 
         // Request we want to wait for later
-        cy.server();
-        cy.route({
+        cy.intercept({
             url: `${Cypress.env('apiPath')}/_action/sync`,
             method: 'post',
         }).as('productCall');
-        cy.route({
-            url: `${Cypress.env('apiPath')}/search/product`,
-            method: 'post',
+
+        cy.intercept({
+            path: `${Cypress.env('apiPath')}/search/product`,
+            method: 'post'
         }).as('searchCall');
 
         cy.contains(propertyName).click();
@@ -58,27 +58,20 @@ export default class ProductPageObject {
 
         cy.get(`.sw-grid ${optionsIndicator}`)
             .contains(`${optionPosition.length} ${optionString} selected`);
-        cy.get('.sw-product-variant-generation__generate-action').click();
-        cy.get('.sw-product-modal-variant-generation__notification-modal').should('be.visible');
-
+        cy.get('.sw-product-variant-generation__next-action').click();
+        cy.get('.sw-product-modal-variant-generation__infoBox').should('be.visible');
         if (totalCount !== 1) {
-            cy.get('.sw-product-modal-variant-generation__notification-modal .sw-modal__body')
+            cy.get('.sw-product-modal-variant-generation__infoBox')
                 .contains(`${totalCount} variants will be added`);
         }
 
-        cy.get('.sw-product-modal-variant-generation__notification-modal .sw-button--primary')
-            .click();
-
-        cy.wait('@productCall').then((xhr) => {
-            expect(xhr).to.have.property('status', 200);
-        });
+        cy.get('.sw-product-variant-generation__generate-action').click();
+        cy.get('.sw-product-detail__save-action').click();
+        cy.wait('@productCall').its('response.statusCode').should('equal', 200);
 
         cy.get('.sw-product-modal-variant-generation__notification-modal').should('not.exist');
-        cy.get('.generate-variant-progress-bar__description').contains(`0 of ${totalCount} variations generated`);
 
-        cy.wait('@searchCall').then((xhr) => {
-            expect(xhr).to.have.property('status', 200);
-        });
+        cy.wait('@searchCall').its('response.statusCode').should('equal', 200);
         cy.get('.sw-product-modal-variant-generation').should('not.exist');
     }
 }

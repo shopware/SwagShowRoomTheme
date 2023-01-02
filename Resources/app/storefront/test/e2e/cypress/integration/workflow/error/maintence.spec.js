@@ -20,6 +20,10 @@ describe('Error: maintenance page', { tags: ['@workflow'] }, () => {
             })
             .then(() => {
                 cy.visit('/', { failOnStatusCode: false });
+            })
+            .then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
             });
     });
 

@@ -68,7 +68,7 @@ describe('Account: Order page', () => {
 
         cy.get('.order-table-header-context-menu-content-form button').click();
         cy.get('.cart-offcanvas').should('be.visible');
-        cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
+        cy.get('.cart-offcanvas .alert-content').contains('1 product added to your shopping cart.');
         cy.takeSnapshot('[Order] Re-order - Add product to shopping cart', '.container');
 
         cy.get('.begin-checkout-btn').click();
@@ -76,7 +76,7 @@ describe('Account: Order page', () => {
         cy.get('.confirm-main-header').contains('Complete order');
         cy.takeSnapshot('[Order] Re-order - Confirm order page', '.checkout');
 
-        cy.get('.custom-control.custom-checkbox input').click({force: true});
+        cy.get('.checkout-confirm-tos-checkbox').click({force: true});
         cy.get('#confirmFormSubmit').click();
 
         // Verify order

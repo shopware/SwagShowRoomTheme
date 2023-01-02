@@ -1,66 +1,7 @@
 {% sw_extends '@Storefront/storefront/component/address/address.html.twig' %}
 
 {% block component_address %}
-    <div class="address">
-        {% if feature('FEATURE_NEXT_15707') and showShippingWarning and not address.country.shippingAvailable %}
-            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
-                type: "warning",
-                content: "address.countryNoShippingAlert"|trans|sw_sanitize
-            } %}
-        {% endif %}
-
-        {% if feature('v6.5.0.0') %}
-            {% sw_include '@Framework/snippets/render.html.twig' with {
-                format: address.country.translated.addressFormat,
-                address: address
-            } %}<br/>
-        {% else %}
-            {% if address.company or address.vatId %}
-                <p>
-                    <strong>{{ block('component_address_company_name') }}</strong>
-                </p>
-            {% endif %}
-
-            <p>
-                <strong>
-                    {% if address.salutation and address.salutation.salutationKey != 'not_specified' %}
-                        {{ block('component_address_salutation') }}
-                    {% endif %}
-
-                    {% if address.title %}
-                        {{ block('component_address_title') }}
-                    {% endif %}
-
-                    {{ block('component_address_name') }}
-                </strong>
-
-                {{  block('component_address_street') }}
-
-                {% if address.additionalAddressLine1 %}
-                    {{  block('component_address_additional_address_line_1') }}
-                {% endif %}
-
-                {% if address.additionalAddressLine2 %}
-                    {{ block('component_address_additional_address_line_2') }}
-                {% endif %}
-
-                {% if address.phoneNumber %}
-                    {{ block('component_address_phone_number') }}
-                {% endif %}
-
-                {# Override to change position of zipcode and city#}
-                {% if config('core.address.showZipcodeInFrontOfCity') %}
-                    {{ address.zipcode }} {{ address.city }}<br/>
-                {% else %}
-                    {{ address.zipcode }} {{ address.city }}<br/>
-                {% endif %}
-
-                {% if address.countryState %}
-                    {{ block('component_address_state') }}
-                {% endif %}
-
-                {{ block('component_address_country') }}
-            </p>
-        {% endif %}
-    </div>
+    {% apply spaceless %}
+        {{ parent() }}
+    {% endapply %}
 {% endblock %}

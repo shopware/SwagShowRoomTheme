@@ -202,17 +202,6 @@ Cypress.Commands.add('createCustomProductFixture', (userData = {}, templateFixtu
     });
 });
 
-Cypress.Commands.add('openInitialPage', (url) => {
-    // Request we want to wait for later
-    cy.intercept(`${Cypress.env('apiPath')}/_info/me`).as('meCall')
-
-    cy.visit(url);
-    cy.wait('@meCall').then((xhr) => {
-        expect(xhr.response).to.have.property('statusCode', 200);
-    });
-    cy.get('.sw-desktop').should('be.visible');
-});
-
 /**
  * Create customer fixture using Shopware API at the given endpoint
  * @memberOf Cypress.Chainable#

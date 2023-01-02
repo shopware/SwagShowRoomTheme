@@ -68,8 +68,13 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
 
         // Add three slider images
         cy.get('#sw-field--currentBlockCategory').select('Images');
+        cy.get('.sw-cms-sidebar__block-selection').should('be.visible');
+        cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)').should('exist');
 
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)').scrollIntoView();
+        cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)')
+            .invoke('outerHeight')
+            .should('be.greaterThan', 200);
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)')
             .dragTo('.sw-cms-stage-add-block:last-child');
         cy.get('.sw-cms-block').should('be.visible');
@@ -110,7 +115,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
         // Verify layout in ShowRoom Theme
         cy.visit('/landingpage');
         cy.get('.is-ctl-landingpage').should('be.visible');
-        cy.get('.cms-block h2').contains('This is the landing page');
+        cy.get('.cms-block .cms-element-text').contains('This is the landing page');
 
         images.forEach((image, index) => {
             cy.get(`#tns1-item${index} .image-slider-image`)

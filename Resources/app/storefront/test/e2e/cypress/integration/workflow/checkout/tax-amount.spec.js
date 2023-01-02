@@ -70,7 +70,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Off canvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(productName);
                 cy.get(`${page.elements.offCanvasCart} .offcanvas-close`).click();
 
@@ -83,7 +83,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 cy.get('.product-detail-buy .btn-buy').click();
 
                 // Off canvas
-                cy.get(`${page.elements.offCanvasCart}.is-open`).should('be.visible');
+                cy.get(`${page.elements.offCanvasCart}.show`).should('be.visible');
                 cy.get(`${page.elements.cartItem}-label`).contains(additionalProduct.name);
 
                 // Checkout
@@ -96,8 +96,8 @@ describe('Checkout: Use different taxes in products while checkout', () => {
 
                 // Confirm
                 cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-                cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-                cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+                cy.get('.confirm-tos .form-check-input').scrollIntoView();
+                cy.get('.confirm-tos .form-check-input').click(1, 1);
                 cy.get('.confirm-address').contains('Pep Eroni');
 
                 cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`)
@@ -106,7 +106,7 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 // We need to look at the calculation separately, for each test case
                 if (additionalProduct.name === '7% Product') {
                     // 2x same products of 7% tax
-                    cy.get(':nth-child(2) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(2) > :nth-child(1) > .line-item-total-price')
                         .contains(`${product.price[0].gross * 2}`);
                     cy.get('.checkout-aside-summary-value:last-child').contains(`${taxSum * 2}`);
                 } else if (additionalProduct.name === 'Mixed Products') {
@@ -114,10 +114,10 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                     cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`)
                         .contains(productName);
 
-                    cy.get(':nth-child(2) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(2) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
 
-                    cy.get(':nth-child(3) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(3) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
                     cy.get('.checkout-aside-summary-value:nth-of-type(5)').contains(taxSum);
                     cy.get('.checkout-aside-summary-value:last-child').contains(additionalTaxSum);
@@ -126,10 +126,10 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                     cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`)
                         .contains(productName);
 
-                    cy.get(':nth-child(2) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(2) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
 
-                    cy.get(':nth-child(3) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(3) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
                     cy.get('.checkout-aside-summary-value:last-child').contains(`${taxSum * 2}`);
                 }
@@ -146,13 +146,13 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                 if (additionalProduct.name === '7% Product') {
                     // 2x same products of 7% tax
 
-                    cy.get(':nth-child(2) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(2) > :nth-child(1) > .line-item-total-price')
                         .contains(`${product.price[0].gross * 2}`);
                     cy.get('.checkout-aside-summary-value:last-child').contains(`${taxSum * 2}`);
                 } else if (additionalProduct.name === 'Mixed Products') {
                     // 2 separate product of differing taxes (e.g. 19% and 7%)
                     cy.contains(productName);
-                    cy.get(':nth-child(2) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(2) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
                     cy.get('.checkout-aside-summary-value:nth-of-type(5)').contains(taxSum);
                     cy.get('.checkout-aside-summary-value:last-child').contains(additionalTaxSum);
@@ -160,9 +160,9 @@ describe('Checkout: Use different taxes in products while checkout', () => {
                     // 2 separate products of same tax (e.g. 19%)
                     cy.contains(productName);
 
-                    cy.get(':nth-child(2) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(2) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
-                    cy.get(':nth-child(3) > :nth-child(1) > .cart-item-total-price')
+                    cy.get(':nth-child(3) > :nth-child(1) > .line-item-total-price')
                         .contains(product.price[0].gross);
                     cy.get('.checkout-aside-summary-value:last-child').contains(`${taxSum * 2}`);
                 }
