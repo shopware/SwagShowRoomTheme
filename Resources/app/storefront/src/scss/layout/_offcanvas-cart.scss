@@ -1,3 +1,4 @@
+$cart-item-img-width-sm: 70px;
 $cart-item-img-width: 80px;
 
 .offcanvas-cart {
@@ -39,8 +40,19 @@ $cart-item-img-width: 80px;
     }
 
     .cart-item-img {
-        width: $cart-item-img-width;
         border: none;
+        width: $cart-item-img-width-sm;
+
+        @include media-breakpoint-up(sm) {
+            width: $cart-item-img-width;
+        }
+    }
+
+    .cart-item-details-container {
+        .cart-item-details {
+            margin-right: 15px;
+            padding-left: 5px;
+        }
     }
 
     .offcanvas-summary {

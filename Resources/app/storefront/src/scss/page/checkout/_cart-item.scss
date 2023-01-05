@@ -1,5 +1,5 @@
 // @deprecated tag:v6.5.0 - `scss/page/checkout/_cart-item.scss` is deprecated. Use `scss/component/_line-item.scss` instead.
-
+$cart-img-container-width-xs: 70px;
 $cart-img-container-width-sm: 80px;
 $cart-img-container-width: 100px;
 
@@ -21,7 +21,11 @@ $cart-img-container-width: 100px;
     }
 
     &-img-container {
-        width: $cart-img-container-width-sm;
+        width: $cart-img-container-width-xs;
+
+        @include media-breakpoint-up(sm) {
+            width: $cart-img-container-width-sm;
+        }
     }
 
     &-quantity-label {
