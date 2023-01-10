@@ -165,3 +165,9 @@
         margin-top: 10px;
     }
 }
+
+.product-detail-review-form-star.is-active {
+    .icon-star {
+        color: $sw-color-brand-primary;
+    }
+}
