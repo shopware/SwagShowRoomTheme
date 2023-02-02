@@ -76,6 +76,14 @@
         }
     }
 
+    .order-detail-content {
+        border-top: none;
+    }
+
+    .order-item-detail-list-item-divider {
+        display: none;
+    }
+
     @include media-breakpoint-up(md) {
         .order-item-header {
             .order-table-header-order-table-body {

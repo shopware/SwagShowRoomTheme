@@ -5,9 +5,11 @@
 {% block page_product_detail_tax %}{% endblock %}
 
 {% block page_product_detail_configurator_include %}
-    <div class="product-detail-wrapper">
-        {{ parent() }}
-    </div>
+    {% apply spaceless %}
+        <div class="product-detail-wrapper">
+            {{ parent() }}
+        </div>
+    {% endapply %}
 {% endblock %}
 
 {% block page_product_detail_wishlist %}
