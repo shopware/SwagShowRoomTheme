@@ -5,9 +5,11 @@
 {% block buy_widget_tax %}{% endblock %}
 
 {% block buy_widget_configurator_include %}
-    <div class="product-detail-wrapper">
-        {{ parent() }}
-    </div>
+    {% apply spaceless %}
+        <div class="product-detail-wrapper">
+            {{ parent() }}
+        </div>
+    {% endapply %}
 {% endblock %}
 
 {# the block buy_widget_wishlist was moved into buy-widget-form #}

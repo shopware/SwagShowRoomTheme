@@ -166,11 +166,7 @@ $configurator-padding: 40px;
 
 .product-detail-wrapper {
     padding-top: $configurator-padding-sm;
-    border-top: 1px solid $border-color;
-
-    @include media-breakpoint-up(lg) {
-        padding-top: $configurator-padding-sm;
-    }
+    border-top: $border-width solid $border-color;
 }
 
 .product-detail-button-container {
