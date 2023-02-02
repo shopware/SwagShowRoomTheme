@@ -1,3 +1,12 @@
+# 1.11.0
+- Checked compatibility with platform v6.4.18.0
+- Checked compatibility with platform v6.4.19.0
+- Fixed product image is scaled larger than the image viewer
+- Fixed item details misaligned for smaller mobile devices on off canvas
+- Fixed search suggested results overlay has no space enough
+- Fixed review stars are not filled out during the creation of the review
+- Revise text snippets
+
 # 1.10.0
 - Checked compatibility with platform v6.4.17.0
 - Fixed without hovered cheapest price is not seen on listing page

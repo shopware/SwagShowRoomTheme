@@ -1,3 +1,12 @@
+# 1.11.0
+- Überprüfung der Kompatibilität mit Platform v6.4.18.0
+- Überprüfung der Kompatibilität mit Platform v6.4.19.0
+- Behobene Produktbilder, die größer skaliert als der Bildbetrachter
+- Behobene Artikeldetails bei kleineren Mobilgeräten, die auf Off-Canvas falsch ausgerichtet
+- Behobene das Overlay der vorgeschlagenen Suchergebnisse mit nicht genug Platz
+- Behobene Bewertungssterne bei der Erstellung der Bewertung nicht automatisch ausgefüllt
+- Überarbeitete Textbausteine
+
 # 1.10.0
 - Überprüfung der Kompatibilität mit Platform v6.4.17.0
 - Die Anzeige des günstigsten Preises ohne Hover auf der Listenseite ist behoben
