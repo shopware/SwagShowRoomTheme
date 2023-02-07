@@ -19,9 +19,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     {% block page_account_profile_content %}
-                                        {% block page_account_overview_profile_title %}
-                                            {{ parent() }}
-                                        {% endblock %}
+                                        {{ block('page_account_overview_profile_title') }}
 
                                         {% block page_account_overview_profile_content %}
                                             <strong>
@@ -35,9 +33,9 @@
                                             </strong>
                                         {% endblock %}
 
-                                        {% block page_account_overview_profile_email %}
-                                            {{ parent() }}
-                                        {% endblock %}
+                                        {{ block('page_account_overview_profile_company') }}
+
+                                        {{ block('page_account_overview_profile_email') }}
 
                                         {% block page_account_overview_profile_actions %}
                                             <div class="card-actions">
