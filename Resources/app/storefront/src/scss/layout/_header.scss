@@ -121,6 +121,11 @@ $logo-height-lg: 60px;
             top: 44px !important;
         }
     }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .header-row {
@@ -182,6 +187,23 @@ $logo-height-lg: 60px;
             max-height: $logo-height-md;
         }
     }
+
+    .menu-button {
+        .nav-main-toggle-btn {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon svg {
+            top: 0
+        }
+
+        .header-actions-btn {
+            .icon {
+                margin-right: $spacer-sm;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(md) {
@@ -213,18 +235,9 @@ $logo-height-lg: 60px;
 
         .menu-button {
             .header-actions-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
                 .icon {
                     margin-right: $spacer;
                 }
-
-                .icon svg {
-                    top: 0;
-                }
-
             }
         }
 
