@@ -41,12 +41,6 @@ $checkout-aside-spacing: 50px;
         padding-right: 0;
         text-align: right;
     }
-
-    @include media-breakpoint-up(lg) {
-        .line-item-details-container {
-            padding-left: 0;
-        }
-    }
 }
 
 .checkout-container {
@@ -64,6 +58,17 @@ $checkout-aside-spacing: 50px;
     @include media-breakpoint-up(md) {
         .checkout-aside {
             background-color: $white;
+        }
+
+        .cart-table-header {
+            display: none;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .cart-table-header {
+            display: block;
+            margin-bottom: 15px;
         }
     }
 }

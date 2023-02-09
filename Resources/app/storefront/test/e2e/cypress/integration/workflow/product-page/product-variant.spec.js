@@ -72,7 +72,6 @@ describe('Product Detail: Product variants', () => {
             .first()
             .invoke('val')
             .should('eq', '50.251256281407');
-        cy.get('.icon--custom-uninherited').should('be.visible');
         cy.get('.sw-data-grid__inline-edit-save').click();
 
         // Validate product

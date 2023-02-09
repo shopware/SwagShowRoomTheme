@@ -95,6 +95,6 @@ describe('Product Detail: Check appearance of product variants', () => {
             });
         });
 
-        cy.takeSnapshot('[Product Detail] Product variants', '.product-detail');
+        cy.takeSnapshot('[Product Detail] Product variants', '.product-detail-buy');
     });
 });

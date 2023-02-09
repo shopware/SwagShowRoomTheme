@@ -67,6 +67,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.sw-cms-slot:nth-of-type(1) .sw-text-editor__content-editor').type('This is the listing page with a sidebar');
 
         cy.get('#sw-field--currentBlockCategory').should('be.visible').select('Text');
+        cy.changeElementStyling('.sw-cms-block-product-listing', 'display: none');
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(1)').scrollIntoView();
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(1)')
             .first()
@@ -144,7 +145,7 @@ describe('CMS: Listing Page', { tags: ['@visual', '@cms'] }, () => {
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.get('.nav-main-toggle-btn').first().click();
-        cy.get('.navigation-offcanvas.is-open .navigation-offcanvas-link[title="Sidebar Listing Categorian"]').should('be.visible').click();
+        cy.get('.navigation-offcanvas.show .navigation-offcanvas-link[title="Sidebar Listing Categorian"]').should('be.visible').click();
         cy.get('.cms-section-sidebar-sidebar-content').should('be.visible');
         cy.get('.cms-section-sidebar-main-content').should('be.visible');
         cy.takeSnapshot('[CMS] Listing Page with Sidebar', '.content-main');

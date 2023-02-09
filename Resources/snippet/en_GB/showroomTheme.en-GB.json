@@ -11,7 +11,7 @@
         "general": {
             "offcanvasCloseMenu": "Close",
             "mainMenu": "Menu",
-            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information.</a>."
+            "privacyNotice": "<a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information.</a>."
         },
         "listing": {
             "boxAddProduct": "Add to shopping cart"
@@ -42,6 +42,6 @@
         "newsletterYourEmail": "Email address",
         "newsletterInfo": "Subscribe to the free newsletter and never miss any news or offers of %shopname%.",
         "serviceHotline": "Support and counselling via: <a href=\"tel:+49180000000\">0180 - 000000</a> Mon-Fri, 9 am - 5 pm",
-        "serviceContactLink": "Or via our <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Contact form\">contact form</a>."
+        "serviceContactLink": "Or via our <a data-bs-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Contact form\">contact form</a>."
     }
 }

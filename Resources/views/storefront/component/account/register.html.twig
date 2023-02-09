@@ -12,12 +12,7 @@
     <form action="{{ path('frontend.account.register.save') }}"
           class="register-form"
           method="post"
-          data-form-csrf-handler="true"
           data-form-validation="true">
-
-        {% block component_account_register_form_csrf %}
-            {{ parent() }}
-        {% endblock %}
 
         {% block component_account_register_redirect %}
             {{ parent() }}
@@ -69,7 +64,7 @@
                         {% endset %}
 
                         {% block component_account_register_personal_account_fields %}
-                            <div class="{{ formRowClass }}">
+                            <div class="row">
                                 <div class="form-group col-sm-12">
                                     {{ formGroupMail }}
                                 </div>

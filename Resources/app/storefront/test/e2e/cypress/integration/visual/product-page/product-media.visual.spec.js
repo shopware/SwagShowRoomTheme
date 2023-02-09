@@ -32,14 +32,8 @@ describe('Product Detail: Product media', () => {
 
         // Add first image to product
         cy.get('.sw-product-media-form__previews').scrollIntoView();
-        cy.get('#files').attachFile(
-            'img/sw-product-preview.jpg',
-            {
-                fileName: 'sw-product-preview.jpg',
-                mimeType: 'image/jpg',
-                subjectType: 'input'
-            }
-        );
+        cy.get('.sw-product-media-form .sw-media-upload-v2__file-input')
+            .attachFile('img/sw-product-preview.jpg');
         cy.get('.sw-product-image__image img')
             .should('have.attr', 'src')
             .and('match', /sw-product-preview/);

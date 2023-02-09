@@ -1,7 +1,7 @@
 @font-face {
     // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
     font-family: 'Work Sans';
-    src: url('#{$asset-path}/font/worksans/WorkSans-VariableFont_wght.ttf');
+    src: url('#{$app-css-relative-asset-path}/font/worksans/WorkSans-VariableFont_wght.ttf');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
     // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
     font-family: 'Work Sans';
-    src: url('#{$asset-path}/font/worksans/WorkSans-Medium.ttf');
+    src: url('#{$app-css-relative-asset-path}/font/worksans/WorkSans-Medium.ttf');
     font-style: normal;
     font-weight: 500 600;
     font-display: swap;

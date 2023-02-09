@@ -10,7 +10,7 @@
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+@include media-breakpoint-down(lg) {
     .account-overview {
         .account-overview-main {
             .card-title {
@@ -30,7 +30,7 @@
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .account-overview-card {
         margin-top: 30px;
         margin-bottom: 30px;

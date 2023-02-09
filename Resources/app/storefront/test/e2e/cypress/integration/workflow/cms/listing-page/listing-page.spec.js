@@ -133,7 +133,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         // Verify category in ShowRoom Theme
         cy.visit('/');
         cy.get('.nav-main-toggle-btn').first().click();
-        cy.get('.navigation-offcanvas.is-open .navigation-offcanvas-link[title="Full width Listing Categorian"]').should('be.visible').click();
-        cy.get('.cms-block h2').contains('This is the listing page');
+        cy.get('.navigation-offcanvas.show .navigation-offcanvas-link[title="Full width Listing Categorian"]').should('be.visible').click();
+        cy.get('.cms-block .cms-element-text').contains('This is the listing page');
     });
 });

@@ -3,12 +3,7 @@
         @extend .row;
 
         .account-content-main {
-            @extend .col-xl;
             @extend .col-lg-7;
-
-            a:not(.btn):not(.order-table-header-context-menu-content-link) {
-                text-decoration: underline;
-            }
         }
 
         .account-content-aside {
@@ -62,7 +57,7 @@
         }
     }
 
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+    @include media-breakpoint-down(lg) {
         h1,
         h2,
         .card-title {

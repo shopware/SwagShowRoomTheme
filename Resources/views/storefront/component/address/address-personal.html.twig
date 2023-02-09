@@ -3,7 +3,7 @@
 {% block component_address_personal_fields %}
     {% block component_address_personal_account_type %}
         {% if onlyCompanyRegistration or (config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect) %}
-            <div class={{ formRowClass }}>
+            <div class="row">
                 <div class="form-group col-12 contact-type">
                     {% block component_address_personal_account_type_label %}
                         {{ parent() }}
@@ -23,7 +23,7 @@
         {% endif %}
     {% endblock %}
 
-    <div class="{% if feature('V6_5_0_0') %}row {% else %}form-row{% endif %}">
+    <div class="row">
         {% block component_address_personal_fields_salutation_title %}
             {% block component_address_personal_fields_salutation %}
                 <div class="form-group col-12">
@@ -116,7 +116,7 @@
     <div class="form-group col-4">
         <select id="{{ idPrefix ~ prefix }}personalBirthday"
                 name="{% if prefix %}{{ prefix }}[birthdayDay]{% else %}birthdayDay{% endif %}"
-                class="{{ formSelectClass }}{% if formViolations.getViolations('/birthdayDay') is not empty %} is-invalid{% endif %}"
+                class="form-select{% if formViolations.getViolations('/birthdayDay') is not empty %} is-invalid{% endif %}"
             {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
             {% if not data.get('birthdayDay') %}
                 <option selected="selected"
@@ -139,7 +139,7 @@
 {% block component_address_personal_fields_birthday_select_month %}
     <div class="form-group col-4">
         <select name="{% if prefix %}{{ prefix }}[birthdayMonth]{% else %}birthdayMonth{% endif %}"
-                class="{{ formSelectClass }}{% if formViolations.getViolations('/birthdayMonth') is not empty %} is-invalid{% endif %}"
+                class="form-select{% if formViolations.getViolations('/birthdayMonth') is not empty %} is-invalid{% endif %}"
             {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
             {% if not data.get('birthdayMonth') %}
                 <option selected="selected"
@@ -166,7 +166,7 @@
         {% set startYear = currentYear - 120 %}
 
         <select name="{% if prefix %}{{ prefix }}[birthdayYear]{% else %}birthdayYear{% endif %}"
-                class="{{ formSelectClass }}{% if formViolations.getViolations('/birthdayYear') is not empty %} is-invalid{% endif %}"
+                class="form-select{% if formViolations.getViolations('/birthdayYear') is not empty %} is-invalid{% endif %}"
             {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
             {% if not data.get('birthdayYear') %}
                 <option selected="selected"

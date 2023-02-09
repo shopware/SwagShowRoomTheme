@@ -3,6 +3,11 @@
 
     .account-aside-footer {
         padding-top: 40px;
+
+        .btn-outline-secondary {
+            width: 100%;
+            padding: 14px;
+        }
     }
 
     .account-guest-abort {
@@ -52,5 +57,17 @@
 .account-menu-offcanvas {
     .account-aside-footer {
         padding-top: 30px;
+    }
+}
+
+.account-content-aside,
+.account-menu-dropdown {
+    .account-menu-inner .account-aside-footer {
+        border-top: $border-width solid $border-color;
+
+        .btn-outline-secondary {
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
     }
 }

@@ -2,24 +2,24 @@
 
 {% block not_found_error_content %}
     <div class="container-404 mt-4 align-middle d-flex h-100">
-        <div class="row {{ gridNoGuttersClass }} m-0 w-100">
+        <div class="row g-0 m-0 w-100">
             <div class="col-12 col-lg-6 mb-5 mb-lg-0">
                 {% block not_found_error_picture %}
                     <picture>
-                        <source srcset="{{ asset('bundles/swagshowroomtheme/assets/images/404-tablet.png', 'theme') }}"
+                        <source srcset="{{ asset('assets/images/404-tablet.png', 'theme') }}"
                                 media="(min-width: {{ theme_config('breakpoint.md') }}px) and (max-width: {{ theme_config('breakpoint.lg') - 1 }}px)">
 
-                        <source srcset="{{ asset('bundles/swagshowroomtheme/assets/images/404-mobile.png', 'theme') }}"
+                        <source srcset="{{ asset('assets/images/404-mobile.png', 'theme') }}"
                                 media="(max-width: {{ theme_config('breakpoint.md') - 1 }}px)">
 
-                        <img src="{{ asset('bundles/swagshowroomtheme/assets/images/404-desktop.png', 'theme') }}"
+                        <img src="{{ asset('assets/images/404-desktop.png', 'theme') }}"
                                 alt="{{ "general.404ErrorPageHeader"|trans|striptags }}"
                                 class="img-fluid w-100"/>
                     </picture>
                 {% endblock %}
             </div>
             <div class="col-12 col-lg-3 offset-lg-1">
-                <div class="row {{ gridNoGuttersClass }} align-items-center h-100">
+                <div class="row g-0 align-items-center h-100">
                     <div class="col-12 col-md-6 col-lg-12">
                         {% block not_found_error_header %}
                             <h2>{{ "general.404ErrorPageHeader"|trans|sw_sanitize }}</h2>

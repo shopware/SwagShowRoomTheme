@@ -10,7 +10,7 @@ $enable-responsive-font-sizes: false !default;
 $font-size-base: 0.875rem !default;
 $font-size-sm: 0.75rem !default;
 $font-size-xs: 0.6875rem !default;
-$asset-path: '#{$sw-asset-theme-url}/bundles/swagshowroomtheme/assets' !default;
+$app-css-relative-asset-path: '../assets' !default;
 
 // Color system
 $gray-100: #f9f9f9 !default;
@@ -78,7 +78,7 @@ $input-font-size-lg: 1.125rem !default;
 $custom-control-indicator-border-color: $gray-300 !default;
 $custom-checkbox-indicator-border-radius: 4px !default;
 
-$custom-select-indicator: url('#{$asset-path}/icon/chevron-down.svg') !default;
+$custom-select-indicator: url('#{$app-css-relative-asset-path}/icon/chevron-down.svg') !default;
 $custom-select-bg-size: 1rem !default;
 
 $custom-switch-width: 1.75rem !default;
@@ -104,3 +104,6 @@ $modal-content-box-shadow-xs: 0 0 20px 0 rgba(38, 38, 47, 0.2) !default;
 $card-spacer-y: 20px;
 
 $line-height-base: 2 !default;
+
+//Form-check-variables
+$form-check-input-border-radius: 0 !default;

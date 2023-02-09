@@ -70,18 +70,18 @@ $register-form-control-height: 28px;
         margin-bottom: 30px;
     }
 
-    .login-form {
-        .form-control {
-            height: $register-form-control-height;
-        }
-    }
-
     .login-password-recover {
         font-size: $font-size-xs;
     }
 
     .register-footer {
         border-top: 1px solid $border-color;
+        align-items: center;
+
+        .register-submit {
+            margin-left: 0;
+            width: 100%;
+        }
     }
 
     .login-card,
@@ -95,10 +95,17 @@ $register-form-control-height: 28px;
         text-decoration: underline;
     }
 
+    .form-check .register-guest-control {
+        padding-left: $grid-gutter-width / 2;
+    }
+
     @include media-breakpoint-up(lg) {
         .global-collapse-headline {
             font-size: $h4-font-size;
         }
+
+        .login-password-recover {
+            text-align: left;
+        }
     }
 }
-

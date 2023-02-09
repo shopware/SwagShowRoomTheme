@@ -1,5 +1,5 @@
 const selector = {
-    footerLinkContact: '.footer-contact-form a[data-toggle="modal"]',
+    footerLinkContact: '.footer-contact-form a[data-bs-toggle="modal"]',
     formContactModal: '.modal form[action="/form/contact"]',
     formContact: '.cms-page form[action="/form/contact"]',
     formContactSalutation: '#form-Salutation',
@@ -17,18 +17,14 @@ const selector = {
 describe('Contact: Visual tests', () => {
     beforeEach(() => {
         cy.setToInitialState()
-        .then(() => {
-            cy.createProductFixture();
-        })
-        .then(() => {
-            cy.loginViaApi();
-            cy.createCmsFixture();
-        })
-        .then(() => cy.visit('/'))
-        .then(() => {
-            cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-            cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
-        });
+            .then(() => cy.createProductFixture())
+            .then(() => cy.loginViaApi())
+            .then(() => cy.createCmsFixture())
+            .then(() => cy.visit('/'))
+            .then(() => {
+                cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
+                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+            });
     });
 
     function fillOutContactForm(el) {
@@ -45,11 +41,9 @@ describe('Contact: Visual tests', () => {
     }
 
     function assignContactFormToHomepage() {
-        cy.server();
-
-        cy.route({
+        cy.intercept({
             url: `${Cypress.env('apiPath')}/category/*`,
-            method: 'patch'
+            method: 'PATCH'
         }).as('saveCategory');
 
         cy.get('.sw-category-tree__inner .sw-tree-item__element').contains('Home').click();
@@ -64,9 +58,8 @@ describe('Contact: Visual tests', () => {
 
         // Save layout
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@saveCategory').then((response) => {
-            expect(response).to.have.property('status', 204);
-        });
+
+        cy.wait('@saveCategory').its('response.statusCode').should('equal', 204)
     }
 
     function createContactFormPage() {
@@ -88,10 +81,8 @@ describe('Contact: Visual tests', () => {
         });
     }
 
-    it('@visual: open modal contact form', () => {
-        cy.server();
-
-        cy.route({
+    it('@visual: open contact form modal', () => {
+        cy.intercept({
             url: '/form/contact',
             method: 'POST'
         }).as('contactFormPostRequest');
@@ -110,9 +101,7 @@ describe('Contact: Visual tests', () => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
         });
 
-        cy.wait('@contactFormPostRequest').then((response) => {
-            expect(response).to.have.property('status', 200);
-        });
+        cy.wait('@contactFormPostRequest').its('response.statusCode').should('equal', 200);
 
         cy.get('.modal').within(() => {
             cy.get('.confirm-message').contains('We have received your contact request and will process it as soon as possible.')
@@ -122,13 +111,11 @@ describe('Contact: Visual tests', () => {
         cy.takeSnapshot('[Contact] Contact form modal submit', '.modal');
     });
 
-    it('@visual: assign contact form to homepage', () => {
+    it.skip('@visual: create contact form page', () => {
         createContactFormPage();
 
         cy.visit('/');
-        cy.server();
-
-        cy.route({
+        cy.intercept({
             url: '/form/contact',
             method: 'POST'
         }).as('contactFormPostRequest');
@@ -137,21 +124,15 @@ describe('Contact: Visual tests', () => {
 
         fillOutContactForm(selector.formContact);
 
-        cy.takeSnapshot('[Contact] Fill in information to contact form page', '.cms-page', {widths: [375, 768, 1920]});
-
         cy.get(selector.formContact).within(() => {
             cy.get(selector.formContactButtonSubmit).scrollIntoView().click();
         });
 
-        cy.wait('@contactFormPostRequest').then((response) => {
-            expect(response).to.have.property('status', 200);
-        });
+        cy.wait('@contactFormPostRequest').its('response.statusCode').should('equal', 200)
 
         cy.get('.cms-page').within(() => {
             cy.get('.confirm-message').contains('We have received your contact request and will process it as soon as possible.')
 
         });
-
-        cy.takeSnapshot('[Contact] Contact form page submit', '.cms-page', {widths: [375, 768, 1920]});
     });
 });

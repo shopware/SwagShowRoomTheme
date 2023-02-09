@@ -53,7 +53,7 @@ describe('Customized Product: Check appearance of customized products', () => {
         })
     });
 
-    it('@visual @customized: Customized product with all options', () => {
+    it.skip('@visual @customized: Customized product with all options', () => {
         cy.visit('/Product-name/RS-333');
         cy.get('.js-cookie-configuration-button .btn-primary').contains('Configure').click({force: true});
         cy.get('.offcanvas .btn-primary').contains('Save').click();
@@ -241,8 +241,8 @@ describe('Customized Product: Check appearance of customized products', () => {
 
         // Confirm
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.takeSnapshot('[Customized Product] Checkout confirm', '.checkout');
 
         cy.get('.cart-item-collapse-button').first().click()

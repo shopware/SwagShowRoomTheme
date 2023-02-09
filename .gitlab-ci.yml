@@ -1,15 +1,15 @@
 variables:
     CYPRESS_SPEC: 'cypress/**/workflow/**/*.spec.js'
     PERCY_SPEC: 'cypress/**/visual/**/*.visual.spec.js'
-    PLATFORM_BRANCH: "6.4.18.0"
+    PLATFORM_BRANCH: "trunk"
     PERCY_TARGET_BRANCH: 'master'
     PLUGIN_DEPENDENCIES:
         value: >
             [
-              { "name": "SwagCustomizedProducts", "url": "gitlab.shopware.com/shopware/6/services/customized-product", "branch": "master" },
-              { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" },
-              { "name": "SwagAmazonPay", "url": "gitlab.shopware.com/shopware/6/services/swagamazonpay", "branch": "master" },
-              { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "master" }
+            #   { "name": "SwagCustomizedProducts", "url": "gitlab.shopware.com/shopware/6/services/customized-product", "branch": "master" },
+            #   { "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" },
+            #   { "name": "SwagAmazonPay", "url": "gitlab.shopware.com/shopware/6/services/swagamazonpay", "branch": "master" },
+            #   { "name": "SwagCmsExtensions", "url": "gitlab.shopware.com/shopware/6/services/cms-extensions", "branch": "master" }
             ]
         description: 'Plugin dependencies. Defined in json. Example: [{ "name": "SwagPayPal", "url": "gitlab.shopware.com/shopware/6/services/paypal", "branch": "master" }]'
     COMPOSER_DEPENDENCIES:
@@ -19,8 +19,10 @@ variables:
               "amzn/amazon-pay-api-sdk-php:2.2.1"
             ]
         description: 'Additional composer dependencies. Defined in json. Example: ["theiconic/name-parser", "amzn/amazon-pay-api-sdk-php:2.2.1"]'
+    FEATURE_ALL: 'major'
+    v6_5_0_0: '1'
 
 include:
     project: 'shopware/6/product/platform'
-    ref: '6.4'
+    ref: 'trunk'
     file: '.gitlab/templates/theme.yml'

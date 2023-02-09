@@ -24,21 +24,13 @@
         color: $sw-color-buy-button-text;
     }
 
-    @if (feature('V6_5_0_0')) {
-        @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
-        line-height: $btn-line-height;
-        width: 100%;
-    } @else {
-        @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
-    }
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    line-height: $btn-line-height;
+    width: 100%;
 
     @include media-breakpoint-up(lg) {
-        @if (feature('V6_5_0_0')) {
-            @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
-            line-height: $btn-line-height-lg;
-        } @else {
-            @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
-        }
+        @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+        line-height: $btn-line-height-lg;
     }
 
     &:not(:disabled):not(.disabled) {
@@ -107,4 +99,9 @@
 
 .btn-lg {
     letter-spacing: $letter-spacing-base;
+}
+
+.btn.btn-primary {
+    background-color: $sw-color-brand-primary;
+    border-color: $sw-color-brand-primary;
 }

@@ -4,7 +4,7 @@
     {% set isPricingTable = product.calculatedPrices|length > 1 %}
     {% set selectQuantityThreshold = 100 %}
     {% if buyable %}
-        <div class="{{ formRowClass }}">
+        <div class="row">
             <div class="col-4 col-md-12 col-lg-4">
                 <div class="product-detail-configurator-group-title">
                     {{ "showroom.detail.quantity"|trans|sw_sanitize }}
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="{{ formRowClass }} product-detail-button-container">
+        <div class="row product-detail-button-container">
             <div class="col-12 buy-widget-price">
                 {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
             </div>

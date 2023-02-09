@@ -12,20 +12,21 @@
 
 {% block page_product_detail_buy_quantity_container %}
     {% set selectQuantityThreshold = 100 %}
-    <div class="col-4 col-md-12 col-lg-4">
-        <div class="product-detail-configurator-group-title">
-            {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+    {% if showQuantitySelect %}
+        <div class="col-4 col-md-12 col-lg-4">
+            <div class="product-detail-configurator-group-title">
+                {{ "showroom.detail.quantity"|trans|sw_sanitize }}
+            </div>
         </div>
-    </div>
 
-    <div class="col-8 col-md-12 col-lg-8">
-        <div class="{% if (product.calculatedMaxPurchase - product.minPurchase) / product.purchaseSteps > selectQuantityThreshold %} quantity-input{% endif %}">
-            {% block page_product_detail_buy_quantity %}
-                {# @deprecated tag:v6.5.0 - Numeric quantity input with additional plus/minus controls will be the default. #}
-                {{ parent() }}
-            {% endblock %}
+        <div class="col-8 col-md-12 col-lg-8">
+            <div class="{% if (product.calculatedMaxPurchase - product.minPurchase) / product.purchaseSteps > selectQuantityThreshold %} quantity-input{% endif %}">
+                {% block page_product_detail_buy_quantity %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}
 
 {% block page_product_detail_buy_button_container %}

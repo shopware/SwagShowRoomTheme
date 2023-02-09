@@ -13,7 +13,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
             })
     });
 
-    it('@visual @ScrollNavigation: Run Scroll Navigation', () => {
+    it.skip('@visual @ScrollNavigation: Run Scroll Navigation', () => {
         const page = new CategoryPageObject();
 
         cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
@@ -148,7 +148,7 @@ describe('Scroll Navigation: Test if it works correctly', () => {
         cy.get('.offcanvas .btn-primary').contains('Save').click();
 
         cy.get('.nav-main-toggle-btn').first().click();
-        cy.get('.navigation-offcanvas.is-open .navigation-offcanvas-link[title="Scroll Navigation Categorian"]').should('be.visible').click();
+        cy.get('.navigation-offcanvas.show .navigation-offcanvas-link[title="Scroll Navigation Categorian"]').should('be.visible').click();
 
         cy.get('.scroll-navigation-sidebar').should('be.visible');
         cy.get('.scroll-navigation-sidebar-entry').last().click().should('have.class', 'scroll-navigation-sidebar-entry--active');

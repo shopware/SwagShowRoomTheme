@@ -77,7 +77,7 @@ export default class AccountPageObject {
     }
 
     getLoginCollapse() {
-        return cy.get('[data-target="#loginCollapse"]')
+        return cy.get('[data-bs-target="#loginCollapse"]')
     }
 
     login(email = 'test@example.com', pw = 'shopware') {

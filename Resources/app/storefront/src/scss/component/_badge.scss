@@ -1,8 +1,6 @@
-@if (feature('V6_5_0_0')) {
-    @each $color, $value in $theme-colors {
-        .badge-#{$color} {
-            @extend .bg-#{$color};
-        }
+@each $color, $value in $theme-colors {
+    .badge-#{$color} {
+        @extend .bg-#{$color};
     }
 }
 

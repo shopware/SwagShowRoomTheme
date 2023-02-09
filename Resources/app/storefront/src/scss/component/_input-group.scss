@@ -1,39 +1,69 @@
 .input-group,
 .input-group-lg,
 .input-group-sm {
-    @if (feature('V6_5_0_0')) {
-        .btn {
-            padding: 0;
-            background-color: transparent;
-            line-height: $input-btn-padding-y-sm;
+    .btn {
+        padding: 0;
+        background-color: transparent;
+        line-height: $input-btn-padding-y-sm;
 
-            border: none;
-            border-bottom: $input-border-width solid $input-border-color;
-        }
-    } @else {
-        .input-group-append {
-            .btn {
-                padding: 0;
-                background-color: transparent;
-                line-height: $input-btn-padding-y-sm;
-
-                border: none;
-                border-bottom: $input-border-width solid $input-border-color;
-            }
-        }
+        border: none;
+        border-bottom: $input-border-width solid $input-border-color;
     }
 
     .form-control:focus {
-        @if (feature('V6_5_0_0')) {
-            + .btn {
-                border-color: $input-focus-color;
-            }
-        } @else {
-            + .input-group-append {
-                .btn {
-                    border-color: $input-focus-color;
-                }
+        + .btn {
+            border-color: $input-focus-color;
+        }
+    }
+}
+
+.form-select,
+.input-group input,
+input.form-control {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.quantity-selector-group {
+    border: $input-border-width solid $sw-color-brand-primary;
+    border-radius: 12px;
+    padding: 0 15px;
+
+    .form-control {
+        &,
+        &:focus,
+        &:focus +.btn {
+            border-color: transparent;
+        }
+    }
+
+    .quantity-selector-group-input {
+        padding: 8px 0!important;
+    }
+
+    .btn {
+        border-color: transparent;
+
+        .icon-xs {
+            height: 16px;
+            width: 16px!important;
+            color: $sw-color-brand-primary;
+
+            svg {
+                top: 0;
             }
         }
+
+        &:active {
+            background: none;
+            border-color: transparent;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .product-detail-quantity-group {
+        border-radius: 20px;
     }
 }

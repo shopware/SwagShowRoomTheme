@@ -35,7 +35,7 @@ describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
 
         // Offcanvas
         cy.get('.offcanvas').should('be.visible');
-        cy.get('.cart-item-price').contains('64');
+        cy.get('.line-item-price').contains('64');
         cy.contains('Continue shopping').should('be.visible');
         cy.contains('Continue shopping').click();
 
@@ -47,7 +47,7 @@ describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
         cy.get(`${page.elements.cartItem}-label`).contains(product.name);
 
         // Checkout
-        cy.get('.offcanvas-cart-actions .btn-primary').click();
+        cy.get('.offcanvas-cart-actions .btn-primary').click({force: true});
 
         // Login
         cy.get('.checkout-main').should('be.visible');
@@ -57,8 +57,8 @@ describe('Checkout: Basic', {tags: ['@workflow', '@checkout']}, () => {
         // Confirm
         cy.get('.confirm-tos .card-title').contains('Terms and conditions and cancellation policy');
 
-        cy.get('.confirm-tos .custom-checkbox label').scrollIntoView();
-        cy.get('.confirm-tos .custom-checkbox label').click(1, 1);
+        cy.get('.confirm-tos .form-check-input').scrollIntoView();
+        cy.get('.confirm-tos .form-check-input').click(1, 1);
         cy.get('.confirm-address').contains('Pep Eroni');
         cy.get(`${page.elements.cartItem}-details-container ${page.elements.cartItem}-label`).contains(product.name);
         cy.get(`${page.elements.cartItem}-total-price`).contains(product.price[0].gross);

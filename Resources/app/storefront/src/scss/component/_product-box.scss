@@ -57,7 +57,7 @@ $custom-box-standard-height-img: 220px;
         margin-top: 0;
 
         &-wrapper {
-            @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+            @include media-breakpoint-down(lg) {
                 font-size: 11px;
             }
 
@@ -133,11 +133,8 @@ $custom-box-standard-height-img: 220px;
         text-transform: uppercase;
         white-space: normal;
         padding: 0 10px;
-
-        line-height: 40px;
         letter-spacing: 1.5px;
         font-size: 10px;
-
         height: 40px;
         width: 100%;
 
@@ -326,7 +323,7 @@ $custom-box-standard-height-img: 220px;
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+@include media-breakpoint-down(xl) {
     .product-box {
         .product-info {
             .product-review-rating {

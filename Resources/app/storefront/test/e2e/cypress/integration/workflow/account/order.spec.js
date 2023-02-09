@@ -54,14 +54,14 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
 
         cy.get('.order-table-header-context-menu-content-form button').click();
         cy.get('.cart-offcanvas').should('be.visible');
-        cy.get('.cart-offcanvas .alert-content').contains('1 product has been added to the shopping cart.');
+        cy.get('.cart-offcanvas .alert-content').contains('1 product added to your shopping cart.');
 
-        cy.get('.begin-checkout-btn').click();
+        cy.get('.begin-checkout-btn').click({force: true});
         cy.get('.checkout-wrapper').should('be.visible');
         cy.get('.confirm-main-header').contains('Complete order');
 
-        cy.get('.custom-control.custom-checkbox input').click({force: true});
-        cy.get('#confirmFormSubmit').click();
+        cy.get('.checkout-confirm-tos-checkbox').click({force: true});
+        cy.get('#confirmFormSubmit').click({force: true});
 
         // Verify order
         cy.get('.finish-header').contains('Thank you for your order');

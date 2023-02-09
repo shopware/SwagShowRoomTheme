@@ -123,12 +123,9 @@ $carousel-control-icon-width-sm: 16px;
     }
 
     .swag-cms-extensions-quickview-content--buy-quantity {
+        @include make-col(12);
         width: 100%;
-
-        @if (not feature('V6_5_0_0')) {
-            @include make-col(12);
-            padding: 0;
-        }
+        padding: 0;
 
         .product-detail-quantity-select {
             width: 100%;
@@ -141,7 +138,7 @@ $carousel-control-icon-width-sm: 16px;
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .swag-cms-extensions-quickview-container .product-detail-configurator-group {
         margin-bottom: 0;
     }
@@ -254,7 +251,7 @@ $carousel-control-icon-width-sm: 16px;
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+@include media-breakpoint-down(xl) {
     #swag-cms-extensions-quickview-carousel {
         .carousel-control {
             &-next,
@@ -269,14 +266,12 @@ $carousel-control-icon-width-sm: 16px;
     }
 }
 
-@if (feature('V6_5_0_0')) {
-    .buy-widget .form-row {
-        @extend .row;
-    }
+.buy-widget .form-row {
+    @extend .row;
+}
 
-    .swag-cms-extensions-quickview-detail-page-button {
-        height: 50px;
-        width: 100%;
-        line-height: 38px;
-    }
+.swag-cms-extensions-quickview-detail-page-button {
+    height: 50px;
+    width: 100%;
+    line-height: 38px;
 }

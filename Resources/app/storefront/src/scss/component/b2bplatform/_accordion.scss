@@ -12,14 +12,8 @@
 
 .module-statistic {
     .b2b-accordion__body {
-        @if (feature('V6_5_0_0')) {
-            .row {
-                margin: 0;
-            }
-        } @else {
-            .form-row {
-                margin: 0;
-            }
+        .row {
+            margin: 0;
         }
     }
 

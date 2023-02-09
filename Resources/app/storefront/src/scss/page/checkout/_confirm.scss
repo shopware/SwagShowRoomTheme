@@ -30,28 +30,15 @@ $confirm-product-spacer-lg: 50px;
             }
         }
 
-        @if (feature('V6_5_0_0')) {
-            .form-check {
-                padding-left: $grid-gutter-width / 2;
-            }
+        .form-check {
+            padding-left: $grid-gutter-width / 2;
+        }
 
-            .form-check-input:checked,
-            .form-check-label::before,
-            .form-check-label::after,
-            .payment-method-input {
-                display: block;
-            }
-
-        } @else {
-            .custom-control {
-                padding-left: $grid-gutter-width / 2;
-            }
-
-            .custom-control-input:checked,
-            .custom-control-label::before,
-            .custom-control-label::after {
-                display: block;
-            }
+        .form-check-input:checked,
+        .form-check-label::before,
+        .form-check-label::after,
+        .payment-method-input {
+            display: block;
         }
     }
 
@@ -79,6 +66,7 @@ $confirm-product-spacer-lg: 50px;
     .confirm-billing-address {
         @extend .col-6;
         margin-bottom: 0;
+        padding-right: 0;
     }
 
     .shipping-method-label {
@@ -101,17 +89,15 @@ $confirm-product-spacer-lg: 50px;
         }
     }
 
+    .checkout-customer-comment-control {
+        margin-top: 15px;
+    }
+
     @include media-breakpoint-up(lg) {
         .confirm-product,
         .confirm-main-header,
         .confirm-product-header {
             margin-bottom: $confirm-product-spacer-lg;
-        }
-    }
-
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
-        .cart-item-tax-price {
-            padding-top: 20px;
         }
     }
 }

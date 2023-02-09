@@ -1,7 +1,7 @@
 $navigation-offcanvas-padding: 24px;
 $navigation-offcanvas-spacing: 10px;
 $offcanvas-overlay-font-size: 18px;
-
+$navigation-offcanvas-width: 800px;
 $navigation-offcanvas-image-width: 500px;
 $navigation-offcanvas-image-height: 307px;
 
@@ -106,25 +106,32 @@ $navigation-offcanvas-image-height: 307px;
 
 @include media-breakpoint-up(lg) {
     .navigation-offcanvas {
-        width: 800px;
+        &.offcanvas-start {
+            width: $navigation-offcanvas-width;
+        }
 
-        &-container {
+        .navigation-offcanvas-container {
             font-size: $h4-font-size;
+
+            .navigation-offcanvas-placeholder,
+            .navigation-offcanvas-overlay,
+            .navigation-offcanvas-overlay-content {
+                padding: 0 ($navigation-offcanvas-width - $navigation-offcanvas-image-width) / 2;
+            }
         }
 
         &-actions {
             display: none;
         }
 
-        &-headline,
-        &-link {
+        .navigation-offcanvas-headline,
+        .navigation-offcanvas-link {
             background-color: transparent;
             color: $gray-700;
             border-bottom: 1px solid $border-color;
-            margin-left: 150px;
-            margin-right: 150px;
             padding-left: 0;
-            padding-right: 10px;
+            padding-right: 0;
+            margin: 0;
 
             &.is-home-link {
                 border: none;
@@ -165,7 +172,7 @@ $navigation-offcanvas-image-height: 307px;
             font-size: $offcanvas-overlay-font-size;
         }
 
-        &-teaser-image-container {
+        .navigation-offcanvas-teaser-image-container {
             display: block;
             width: $navigation-offcanvas-image-width;
             height: $navigation-offcanvas-image-height;
@@ -197,14 +204,9 @@ $navigation-offcanvas-image-height: 307px;
     }
 
     .offcanvas {
-        @if (feature('V6_5_0_0')) {
-            .offcanvas-body {
-                width: 100%;
-            }
-        } @else {
-            .offcanvas-content-container {
-                width: 100%;
-            }
+        .offcanvas-body {
+            width: 100%;
+            overflow-x: hidden;
         }
     }
 }

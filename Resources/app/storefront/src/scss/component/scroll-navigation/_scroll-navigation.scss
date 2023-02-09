@@ -1,5 +1,5 @@
 .scroll-navigation-sidebar-mobile {
-    @include media-breakpoint-down(if(feature('V6_5_0_0'), xl, lg)) {
+    @include media-breakpoint-down(xl) {
         &-menu {
             display: flex;
             justify-content: space-around;

@@ -61,24 +61,12 @@ $offcanvas-content-width-lg: 800px;
             gap: 10px;
         }
 
-        @if (feature('V6_5_0_0')) {
-            .offcanvas-body {
-                padding-top: 40px;
+        .offcanvas-body {
+            padding-top: 40px;
+        }
 
-                @include media-breakpoint-up(lg) {
-                    width: $offcanvas-content-width-lg;
-                    padding-top: 70px;
-                }
-            }
-        } @else {
-            .offcanvas-content-container {
-                padding-top: 40px;
-
-                @include media-breakpoint-up(lg) {
-                    width: $offcanvas-content-width-lg;
-                    padding-top: 70px;
-                }
-            }
+        @include media-breakpoint-up(lg) {
+            width: $offcanvas-content-width-lg;
         }
     }
 }

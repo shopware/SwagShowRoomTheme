@@ -193,7 +193,7 @@ $gallery-image-height-lg: 800px;
 
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), lg, md)) {
+@include media-breakpoint-down(lg) {
     .gallery-slider-row {
         &.is-loading {
             min-height: $gallery-image-height-sm;
@@ -246,7 +246,7 @@ $gallery-image-height-lg: 800px;
     }
 }
 
-@include media-breakpoint-down(if(feature('V6_5_0_0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .product-detail-media {
         padding-top: 20px;
 
@@ -262,8 +262,7 @@ $gallery-image-height-lg: 800px;
     }
 }
 
-// @deprecated tag:v6.5.0 - Bootstrap v5 uses the breakpoint itself instead of the next breakpoint in `media-breakpoint-down()`, use `sm` instead of `xs`.
-@include media-breakpoint-down(if(feature('v6.5.0.0'), sm, xs)) {
+@include media-breakpoint-down(sm) {
     // override inline style on mobile devices
     .gallery-slider-item {
         &.is-cover,
@@ -273,8 +272,7 @@ $gallery-image-height-lg: 800px;
     }
 }
 
-// @deprecated tag:v6.5.0 - Bootstrap v5 uses the breakpoint itself instead of the next breakpoint in `media-breakpoint-down()`, use `md` instead of `sm`.
-@include media-breakpoint-down(if(feature('v6.5.0.0'), md, sm)) {
+@include media-breakpoint-down(md) {
     .gallery-slider-single-image {
         &.is-cover,
         &.is-contain {
