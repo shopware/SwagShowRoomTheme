@@ -8,7 +8,7 @@
 
                 {% if data.get('countryId') %}
                     {% set initialCountryId = data.get('countryId') %}
-                {% elseif page.countries|length == 1 %}
+                {% elseif page.countries|length == 1 and disableNonShippableCountries is not defined %}
                     {% set initialCountryId = (page.countries|first).id %}
                 {% endif %}
 
