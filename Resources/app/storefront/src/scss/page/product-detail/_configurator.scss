@@ -5,11 +5,6 @@ $configurator-padding: 40px;
 .product-detail-configurator {
     width: 100%;
 
-    &-active-option {
-        width: 100%;
-        cursor: pointer;
-    }
-
     &-group {
         flex-direction: row;
         line-height: $configurator-group-line-height;
@@ -26,6 +21,8 @@ $configurator-padding: 40px;
     }
 
     &-active-option {
+        width: 100%;
+        cursor: pointer;
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -143,7 +140,7 @@ $configurator-padding: 40px;
 
         &-collapse {
             padding: 15px 20px;
-            z-index: 3!important;
+            z-index: 3 !important;
             border-radius: $configurator-border-radius-lg;
         }
 
