@@ -154,7 +154,6 @@ $line-item-spacer: 20px;
 
 .line-item-container,
 .line-item-product {
-
     .line-item-total-price {
         order: 4;
         padding-bottom: 10px;
@@ -305,7 +304,7 @@ $line-item-spacer: 20px;
     @include media-breakpoint-up(xl) {
         .line-item-info {
             .line-item-details {
-                padding-left: 0px;
+                padding-left: 0;
             }
         }
     }
@@ -470,7 +469,6 @@ $line-item-spacer: 20px;
 .is-act-cartpage,
 .is-act-confirmpage {
     .line-item-product {
-
         .line-item-quantity-label {
             display: none;
         }
