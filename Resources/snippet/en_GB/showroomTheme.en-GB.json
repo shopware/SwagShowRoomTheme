@@ -11,7 +11,8 @@
         "general": {
             "offcanvasCloseMenu": "Close",
             "mainMenu": "Menu",
-            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information.</a>."
+            "privacyNotice": "<a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Data protection information\">I have read the data protection information.</a>.",
+            "settings": "Settings"
         },
         "listing": {
             "boxAddProduct": "Add to shopping cart"
