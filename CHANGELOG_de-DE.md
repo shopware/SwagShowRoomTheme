@@ -1,9 +1,9 @@
 # 1.12.0
 - Überprüfung der Kompatibilität mit Platform v6.4.20.0
-- Behobene Benutzerdefinierte Produkte in Kombination mit dem Showroom-Theme
-- Behobene Falsche Icon-Größe in der Kopfzeile für kleine Ansichtsfenster
-- Behobene Die Umsatzsteuer-Identifikationsnummer fehlt in der Übersicht Ihres Profils
-- Behobene Falsche Anzeige des Hinweises für die Sprachwechsel-Kombobox
+- Behobene Custom Products in Kombination mit dem Showroom-Theme
+- Behobene falsche Icon-Größe in der Kopfzeile für kleine Ansichtsfenster
+- Behobene fehlende Umsatzsteuer-Identifikationsnummer in der Übersicht Ihres Profils
+- Behobene falsche Anzeige des Hinweises für die Sprachwechsel-Kombobox
 
 # 1.11.0
 - Überprüfung der Kompatibilität mit Platform v6.4.18.0
