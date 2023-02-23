@@ -2,7 +2,7 @@ $header-height: 69px;
 $footer-height: 69px;
 
 @mixin contain-height() {
-    height: calc(100vh - #{$header-height} -  #{$footer-height});
+    height: calc(100vh - #{$header-height} - #{$footer-height});
 }
 
 .is-ctl-maintenance {

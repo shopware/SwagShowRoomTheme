@@ -38,12 +38,12 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
 
         if (Feature.isActive('V6_5_0_0')) {
 
-            // stylelint-disable-next-line
+            /* stylelint-disable-line */
             new bootstrap.Collapse(collapse, { collapse: true });
 
             const collapseList = document.querySelectorAll('.product-detail-configurator-collapse .collapse.show')
             Iterator.iterate(collapseList, (collapseEl) => {
-                // stylelint-disable-next-line
+                /* stylelint-disable-line */
                 new bootstrap.Collapse(collapseEl).hide()
             })
 
