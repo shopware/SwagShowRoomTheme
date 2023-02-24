@@ -1,3 +1,10 @@
+# 1.12.0
+- Checked compatibility with platform v6.4.20.0
+- Fixed Custom Products in combination with the Showroom Theme
+- Fixed wrong icon size in header for small viewport
+- Fixed VAT Reg.No. is missing in Your Profile overview
+- Fixed wrong hint display for language change combobox
+
 # 1.11.0
 - Checked compatibility with platform v6.4.18.0
 - Checked compatibility with platform v6.4.19.0
