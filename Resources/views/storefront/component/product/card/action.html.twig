@@ -4,12 +4,41 @@
     {{ parent() }}
 
     {% if config('core.cart.wishlistEnabled') %}
-        {% block component_product_box_wishlist_action %}
-            {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
-                appearance: 'circle',
-                productId: id
-            } %}
-        {% endblock %}
+        {% if wishListPage %}
+            {% block component_product_wishlist_remove_form %}
+                {% set size = size ?? 'md' %}
+
+                <form action="{{ path('frontend.wishlist.product.delete', {'id': id}) }}"
+                      method="post"
+                      class="product-wishlist-form product-wishlist"
+                      data-form-csrf-handler="true">
+
+                    {# @deprecated tag:v6.5.0 - Block component_product_box_wishlist_remove_csrf will be removed. #}
+                    {% block component_product_box_wishlist_remove_csrf %}
+                        {{ sw_csrf('frontend.wishlist.product.delete') }}
+                    {% endblock %}
+
+                    {% block component_product_wishlist_remove_redirect %}
+                        <input type="hidden"
+                               name="redirectTo"
+                               value="frontend.wishlist.page"/>
+                    {% endblock %}
+
+                    {% block component_product_wishlist_remove_submit %}
+                        <button type="submit" class="btn product-wishlist-btn product-wishlist-btn-remove">
+                            {% sw_icon 'heart-fill' style { 'class': 'wishlist icon-wishlist-added'} %}
+                        </button>
+                    {% endblock %}
+                </form>
+            {% endblock %}
+        {% else %}
+            {% block component_product_box_wishlist_action %}
+                {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                    appearance: 'circle',
+                    productId: id
+                } %}
+            {% endblock %}
+        {% endif %}
     {% endif %}
 {% endblock %}
 
