@@ -5,7 +5,14 @@
         {% block component_product_box_image %}
             <div class="product-box-image-container">
                 {{ parent() }}
-                {{ block('component_product_box_wishlist') }}
+                {% if config('core.cart.wishlistEnabled') %}
+                    {% block component_product_box_wishlist_action %}
+                        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                            appearance: 'circle',
+                            productId: id
+                        } %}
+                    {% endblock %}
+                {% endif %}
             </div>
         {% endblock %}
 
