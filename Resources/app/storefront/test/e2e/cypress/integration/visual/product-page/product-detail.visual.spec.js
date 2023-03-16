@@ -8,8 +8,8 @@ describe('Product Detail: Product', () => {
             .then(() => {
                 return cy.createPropertyFixture({options: [{name: 'Red'}]});
             })
-            .then(() => cy.loginViaApi())
-            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
+            .then(() => cy.login())
+            .then(() => cy.visit(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@visual @detail: check appearance of product cross selling workflow', () => {

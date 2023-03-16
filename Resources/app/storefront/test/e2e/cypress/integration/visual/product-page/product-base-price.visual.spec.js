@@ -5,10 +5,10 @@ import ProductPageObject from '../../../support/pages/sw-product.page-object';
 describe('Product: Base price', () => {
     beforeEach(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
+            .then(() => cy.login())
             .then(() => cy.createProductFixture())
             .then(() => cy.createDefaultFixture('unit'))
-            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/product/index`));
+            .then(() => cy.visit(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
     it('@visual @detail: Editing product with base price', () => {

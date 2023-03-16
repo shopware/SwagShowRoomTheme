@@ -1,6 +1,6 @@
 describe('Error: maintenance page', { tags: ['@workflow'] }, () => {
     beforeEach(() => {
-        cy.loginViaApi()
+        cy.login()
             .then(() => {
                 cy.searchViaAdminApi({
                     endpoint: 'sales-channel',
@@ -38,7 +38,7 @@ describe('Error: maintenance page', { tags: ['@workflow'] }, () => {
         cy.get('.header-main').should('be.visible');
         cy.get('.footer-simple').should('be.visible');
 
-        cy.loginViaApi()
+        cy.login()
             .then(() => {
                 cy.searchViaAdminApi({
                     endpoint: 'sales-channel',

@@ -40,6 +40,7 @@
     }
 }
 
+.alert-danger,
 .alert-error {
     background-color: $alert-color-error;
 
@@ -110,4 +111,32 @@
 
 .flashbags .alert {
     margin-top: $alert-margin-bottom;
+}
+
+.swag-customized-products {
+    .swag-customized-products__violation-list-holder {
+        .alert .icon {
+            align-self: center;
+
+            svg {
+                top: 0;
+            }
+        }
+
+        .alert-content-container {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 0;
+            padding: 0 1rem;
+            border-left: $border-width solid $sw-color-danger;
+        }
+        //
+        //.alert-heading {
+        //    font-size: 1rem;
+        //}
+        //
+        //.entry__link {
+        //    color: #fff;
+        //}
+    }
 }

@@ -29,7 +29,7 @@ describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
         cy.get('label[for="newsletterRegister"]').click();
 
         cy.get('.newsletter-alerts').should((element) => {
-            expect(element).to.contain('We have sent a confirmation email containing an activation link. Please check your inbox and click the link to complete your newsletter subscription.');
+            expect(element).to.contain('You have successfully subscribed to the newsletter.');
         });
 
         // billing address

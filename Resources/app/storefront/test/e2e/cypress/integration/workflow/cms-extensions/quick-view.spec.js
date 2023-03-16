@@ -10,13 +10,13 @@ describe('Quick View: Test if it works correctly', () => {
                 product = result;
             })
             .then(() => {
-                cy.loginViaApi();
+                cy.login();
                 cy.createCmsFixture();
             })
     });
 
     it.skip('@workflow @QuickView: Run Quick View in a product view directly in the listing page', () => {
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/cms/index`);
+        cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
             method: 'POST',
@@ -85,7 +85,7 @@ describe('Quick View: Test if it works correctly', () => {
     });
 
     it.skip('@workflow @QuickView: Run Quick View in search results', () => {
-        cy.openInitialPage(`${Cypress.env('admin')}#/sw/extension/config/SwagCmsExtensions`);
+        cy.visit(`${Cypress.env('admin')}#/sw/extension/config/SwagCmsExtensions`);
 
         cy.get('.sw-meteor-page__smart-bar-title').should('be.visible').contains('SwagCmsExtensions');
         cy.get('.sw-field--switch__input [type="checkbox"]').check();

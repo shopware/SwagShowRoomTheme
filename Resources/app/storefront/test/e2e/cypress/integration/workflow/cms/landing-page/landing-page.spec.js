@@ -7,7 +7,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
         let salesChannel;
         cy.setToInitialState()
             .then(() => {
-                cy.loginViaApi()
+                cy.login()
             })
             .then(() => {
                 return cy.searchViaAdminApi({

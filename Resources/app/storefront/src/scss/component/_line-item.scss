@@ -1,5 +1,6 @@
 $line-item-spacer: 20px;
 
+.line-item-customized-products,
 .line-item-product {
     background-color: $white;
     padding: $line-item-spacer;
@@ -56,6 +57,7 @@ $line-item-spacer: 20px;
     .line-item-total-price-label {
         display: inline;
         font-weight: $font-weight-base;
+        margin-bottom: 0;
     }
 
     .line-item-unit-price,
@@ -86,6 +88,15 @@ $line-item-spacer: 20px;
         .line-item-unit-price {
             font-size: 14px;
         }
+    }
+}
+
+.line-item-product {
+    .line-item-quantity,
+    .line-item-unit-price,
+    .line-item-tax-price,
+    .line-item-total-price {
+        padding: 0;
     }
 }
 
@@ -130,7 +141,7 @@ $line-item-spacer: 20px;
         }
 
         .line-item-quantity {
-            order: 5;
+            order: 3;
             width: 50%;
             flex-direction: column;
             text-align: left;
@@ -145,13 +156,14 @@ $line-item-spacer: 20px;
     }
 
     @include media-breakpoint-up(lg) {
+        .line-item-customized-products .line-item-quantity,
         .line-item-product .line-item-quantity {
             @include make-col(2);
         }
     }
-
 }
 
+.line-item-customized-products,
 .line-item-container,
 .line-item-product {
     .line-item-total-price {
@@ -164,7 +176,7 @@ $line-item-spacer: 20px;
         @include make-col(12);
         padding-bottom: 16px;
         border-bottom: $border-width solid $border-color;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .line-item-quantity {
@@ -241,7 +253,7 @@ $line-item-spacer: 20px;
         max-width: unset;
 
         .line-item-quantity {
-            order: 0;
+            order: 3;
             @include make-col(2);
             flex-direction: row;
             align-items: center;
@@ -311,6 +323,7 @@ $line-item-spacer: 20px;
 }
 
 .offcanvas-cart {
+    .line-item-customized-products,
     .line-item-container,
     .line-item-product {
         padding: 15px 0;
@@ -409,6 +422,7 @@ $line-item-spacer: 20px;
         }
 
         .line-item-children-elements {
+            .line-item-customized-products,
             .line-item-container,
             .line-item-product {
                 padding: $line-item-spacer 0;
@@ -435,6 +449,7 @@ $line-item-spacer: 20px;
 }
 
 .is-act-finishpage {
+    .line-item-customized-products,
     .line-item-product {
         @include media-breakpoint-up(md) {
             .line-item-details-container {
@@ -468,6 +483,7 @@ $line-item-spacer: 20px;
 
 .is-act-cartpage,
 .is-act-confirmpage {
+    .line-item-customized-products,
     .line-item-product {
         .line-item-quantity-label {
             display: none;
@@ -484,6 +500,7 @@ $line-item-spacer: 20px;
 }
 
 .is-act-checkoutregisterpage {
+    .line-item-customized-products,
     .line-item-container,
     .line-item-product {
         .line-item-quantity {

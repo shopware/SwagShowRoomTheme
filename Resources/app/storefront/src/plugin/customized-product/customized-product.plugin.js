@@ -32,6 +32,7 @@ function wrapper() {
 
                 this.containerEl = DomAccess.querySelector(this.el, SwagCustomizedProductsStepByStepWizard.options.containerSelector);
                 this.buyButton = DomAccess.querySelector(document, SwagCustomizedProductsStepByStepWizard.options.buyButtonSelector);
+                this.form = this.el.closest('form');
 
                 // Setup pages (and associated variables)
                 this.pages = DomAccess.querySelectorAll(this.el, SwagCustomizedProductsStepByStepWizard.options.pageSelector);

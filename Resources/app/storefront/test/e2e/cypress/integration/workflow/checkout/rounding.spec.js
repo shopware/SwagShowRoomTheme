@@ -36,7 +36,7 @@ describe('Checkout: Use rounding', () => {
             method: 'PATCH'
         }).as('saveData');
 
-        cy.loginViaApi();
+        cy.login();
 
         cy.visit('/admin#/sw/settings/currency/detail/b7d2554b0ce847cd82f3ac9bd1c0dfca');
 

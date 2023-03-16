@@ -42,7 +42,6 @@ $finish-content-spacer-lg: 70px;
 
     .line-item-info {
         border-bottom: $border-width solid $border-color;
-        margin-bottom: 0;
         padding-bottom: 15px;
 
         @include media-breakpoint-up(lg) {
@@ -79,7 +78,7 @@ $finish-content-spacer-lg: 70px;
         }
 
         @include media-breakpoint-up(md) {
-            order: 0;
+            order: 3;
             flex-direction: row;
         }
 
@@ -92,7 +91,6 @@ $finish-content-spacer-lg: 70px;
     .line-item-total-price,
     .line-item-tax-price {
         border: none;
-        padding: 0;
     }
 
     .line-item-total-price-label {
