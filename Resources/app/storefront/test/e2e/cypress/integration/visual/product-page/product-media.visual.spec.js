@@ -3,8 +3,8 @@ import ProductPageObject from "../../../support/pages/sw-product.page-object";
 describe('Product Detail: Product media', () => {
     before(() => {
         cy.setToInitialState()
-            .then(() => cy.loginViaApi())
-            .then(() => cy.openInitialPage(`${Cypress.env('admin')}#/sw/media/index`));
+            .then(() => cy.login())
+            .then(() => cy.visit(`${Cypress.env('admin')}#/sw/media/index`));
     });
 
     beforeEach(() => {

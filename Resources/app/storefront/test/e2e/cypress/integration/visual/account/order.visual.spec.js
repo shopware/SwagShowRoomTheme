@@ -87,7 +87,7 @@ describe('Account: Order page', () => {
 
     it('@visual: cancel order', () => {
         // Enable refunds
-        cy.loginViaApi().then(() => {
+        cy.login().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
             cy.contains('Enable refunds').click();
             cy.get('.sw-settings-cart__save-action').click();

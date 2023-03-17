@@ -37,7 +37,7 @@ describe('Account: Overview page', () => {
             .should('be.checked');
 
         cy.get('.newsletter-alerts').should((element) => {
-            expect(element).to.contain('We have sent a confirmation email containing an activation link. Please check your inbox and click the link to complete your newsletter subscription.');
+            expect(element).to.contain('You have successfully subscribed to the newsletter.');
         });
 
         cy.takeSnapshot('[Overview] Newsletter subscription', '.account-overview', {widths: [375, 768, 1920]});

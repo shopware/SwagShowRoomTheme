@@ -53,7 +53,7 @@ describe(`Checkout as Guest`, () => {
         cy.get('input[name="billingAddress[zipcode]"]').type('9876');
         cy.get('input[name="billingAddress[city]"]').type('Anytown');
 
-        cy.get('select[name="billingAddress[countryId]"]').select('USA');
+        cy.get('select[name="billingAddress[countryId]"]').select('United States of America', {force: true});
         cy.get('select[name="billingAddress[countryStateId]"]').should('be.visible');
         cy.get('select[name="billingAddress[countryStateId]"]').select('Ohio');
         cy.get(`${accountPage.elements.registerForm} input[name="password"]`).type('Shopware@123');
@@ -175,7 +175,7 @@ describe(`Checkout as Guest`, () => {
             cy.get('input[name="billingAddress[zipcode]"]').type('9876');
             cy.get('input[name="billingAddress[city]"]').type('Anytown');
 
-            cy.get('select[name="billingAddress[countryId]"]').select('USA');
+            cy.get('select[name="billingAddress[countryId]"]').select('United States of America', {force: true});
             cy.get('select[name="billingAddress[countryStateId]"]').should('be.visible');
             cy.get('select[name="billingAddress[countryStateId]"]').select('Ohio');
             cy.get('.register-different-shipping label[for="differentShippingAddress"]').click();

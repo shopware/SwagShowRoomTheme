@@ -46,6 +46,12 @@
             height: 12px;
         }
     }
+
+    &.form-switch {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
 }
 
 .form-select {
@@ -88,11 +94,6 @@
     }
 }
 
-@include media-breakpoint-down(xl) {
-    .form-check .form-check-label {
-        &::before,
-        &::after {
-            top: 2px;
-        }
-    }
+.input-group > .swag-customized-products-form-control:focus {
+    z-index: 1;
 }

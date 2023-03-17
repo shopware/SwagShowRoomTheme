@@ -75,8 +75,8 @@ describe('Wishlist: for wishlist page', () => {
                 expect(win.localStorage.getItem('wishlist-' + win.salesChannelId)).to.equal(null)
             });
 
-            cy.get('.cms-listing-row').find('h1').contains('Your wishlist is empty')
-            cy.get('.cms-listing-row').find('p').contains('Keep an eye on products you like by adding them to your wishlist.');
+            cy.get('.wishlist-listing-header').contains('Your wishlist is empty')
+            cy.get('.wishlist-listing-description').contains('Keep an eye on products you like by adding them to your wishlist.');
         });
     });
 

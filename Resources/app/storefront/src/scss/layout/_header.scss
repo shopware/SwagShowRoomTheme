@@ -141,6 +141,10 @@ $logo-height-lg: 60px;
     overflow: hidden;
 }
 
+.header-logo-picture {
+    min-width: 32px;
+}
+
 .header-cart {
     .header-cart-badge {
         top: 6px;
