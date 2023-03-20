@@ -1,3 +1,6 @@
+# 2.0.0
+- Release v2.0 compatible with 6.5 version
+
 # 1.10.0
 - Checked compatibility with platform v6.4.17.0
 - Fixed without hovered cheapest price is not seen on listing page
