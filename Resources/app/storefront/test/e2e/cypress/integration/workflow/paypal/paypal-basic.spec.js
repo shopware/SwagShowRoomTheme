@@ -44,44 +44,47 @@ describe('Paypal: Checkout', () => {
             })
     });
 
-    it.skip('@workflow @paypal: should see Paypal logo in footer', () => {
+    it('@workflow @paypal: should see Paypal logo in footer', () => {
         cy.get('.footer-logos div[data-swag-paypal-installment-banner="true"]')
             .should('be.visible');
     });
 
-    it.skip('@workflow @paypal: should be visible in product box', () => {
+    it('@workflow @paypal: should be visible in product box', () => {
         cy.get('.product-overlay').should('be.exist').trigger('mouseover');
         cy.get('.paypal-buttons').should('be.exist').click({force: true});
     });
 
-    it.skip('@workflow @paypal: should have Paypal checkout button for default settings', () => {
+    it('@workflow @paypal: should have Paypal checkout button for default settings', () => {
         // Product detail
-        cy.get('.search-toggle-btn').click();
+        // cy.get('.search-toggle-btn').click();
 
-        cy.get('.header-search-input')
-            .type(product.name);
-        cy.get('.search-suggest-product-name').contains(product.name);
+        // cy.get('.header-search-input')
+        //     .type(product.name);
+        // cy.get('.search-suggest-product-name').contains(product.name);
 
-        cy.get('.search-suggest-product-name').click();
+        // cy.get('.search-suggest-product-name').click();
 
+
+        cy.visit('/Product-name/RS-333');
         cy.get('h1.product-detail-name').contains('Product name');
         cy.get('div[data-swag-paypal-express-button="true"]').scrollIntoView().should('be.visible');
     });
 
-    it.skip('@workflow @paypal: should have Paypal checkout button in Offcanvas cart', () => {
+    it('@workflow @paypal: should have Paypal checkout button in Offcanvas cart', () => {
         cy.get('.product-box .btn-buy').should('be.exist').click({force: true});
 
         cy.get('.offcanvas-cart div[data-swag-paypal-express-button="true"]').should('be.visible');
         cy.get('.offcanvas-cart div[data-swag-paypal-installment-banner="true"]').should('be.visible');
     });
 
-    it.skip('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
-        cy.get('.search-toggle-btn').click();
+    it('@workflow @paypal: should have Paypal checkout in checkout register page', () => {
+        // cy.get('.search-toggle-btn').click();
 
-        cy.get('.header-search-input')
-            .type(product.name);
-        cy.get('.search-suggest-product-name').contains(product.name);
-        cy.get('.search-suggest-product-name').click();
+        // cy.get('.header-search-input')
+        //     .type(product.name);
+        // cy.get('.search-suggest-product-name').contains(product.name);
+        // cy.get('.search-suggest-product-name').click();
+        cy.visit('/Product-name/RS-333');
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
@@ -96,13 +99,14 @@ describe('Paypal: Checkout', () => {
         cy.get('div[data-swag-paypal-installment-banner="true"]').should('be.visible');
     });
 
-    it.skip('@workflow @paypal: should have Paypal checkout in checkout cart page', () => {
-        cy.get('.search-toggle-btn').click();
+    it('@workflow @paypal: should have Paypal checkout in checkout cart page', () => {
+        // cy.get('.search-toggle-btn').click();
 
-        cy.get('.header-search-input')
-            .type(product.name);
-        cy.get('.search-suggest-product-name').contains(product.name);
-        cy.get('.search-suggest-product-name').click();
+        // cy.get('.header-search-input')
+        //     .type(product.name);
+        // cy.get('.search-suggest-product-name').contains(product.name);
+        // cy.get('.search-suggest-product-name').click();
+        cy.visit('/Product-name/RS-333');
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas
@@ -113,14 +117,15 @@ describe('Paypal: Checkout', () => {
         cy.get('div[data-swag-paypal-express-button="true"]').scrollIntoView().should('be.visible');
     });
 
-    it.skip('@workflow @paypal: should be able to checkout using Paypal as payment method', () => {
+    it('@workflow @paypal: should be able to checkout using Paypal as payment method', () => {
         cy.createCustomerFixtureStorefront();
 
-        cy.get('.search-toggle-btn').click();
-        cy.get('.header-search-input')
-            .type(product.name);
-        cy.get('.search-suggest-product-name').contains(product.name);
-        cy.get('.search-suggest-product-name').click();
+        // cy.get('.search-toggle-btn').click();
+        // cy.get('.header-search-input')
+        //     .type(product.name);
+        // cy.get('.search-suggest-product-name').contains(product.name);
+        // cy.get('.search-suggest-product-name').click();
+        cy.visit('/Product-name/RS-333');
         cy.get('.product-detail-buy .btn-buy').click();
 
         // Offcanvas

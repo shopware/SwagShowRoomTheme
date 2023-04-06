@@ -69,4 +69,13 @@ export default class CheckoutPageObject {
             shippingFormConfirm: '#changeShippingForm'
         };
     }
+
+    searchInput() {
+        cy.get('.search-toggle-btn').click();
+        return cy.get('.header-search-form .header-search-input')
+    }
+
+    search(searchTerm = '' ) {
+        this.searchInput().type(searchTerm)
+    }
 }
