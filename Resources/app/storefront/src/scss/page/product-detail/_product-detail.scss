@@ -178,15 +178,32 @@
     div[data-swag-paypal-express-button='true'] {
         @extend .col-12;
 
+        &::after {
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+
         @include media-breakpoint-up(md) {
             @include make-col(8);
+            padding-left: $grid-gutter-width/2 - 8px;
+            margin-top: 15px;
+
+            &::after {
+                left: $grid-gutter-width/2 - 8px;
+            }
         }
     }
 
     div[data-amazon-pay-button-product-detail='true'] {
-        @include media-breakpoint-down(md) {
+        > .col-8 {
+            @include make-col(12);
+        }
+
+        @include media-breakpoint-up(md) {
             > .col-8 {
-                @include make-col(12);
+                @include make-col(8);
+                padding-left: $grid-gutter-width/2 - 8px;
             }
         }
     }
@@ -208,9 +225,7 @@
 .swag-cms-extensions-quickview-product-buy-form {
     div[data-swag-paypal-installment-banner='true'],
     div[data-swag-paypal-express-button='true'] {
-        @include media-breakpoint-up(md) {
-            @include make-col(12);
-        }
+        @include make-col(12);
     }
 
     .buy-widget__price,

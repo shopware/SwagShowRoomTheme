@@ -49,6 +49,10 @@ $register-form-control-height: 28px;
         line-height: normal;
         flex-wrap: wrap;
         align-items: center;
+
+        div[data-swag-paypal-express-button='true'] {
+            padding-right: 30px;
+        }
     }
 
     .swag-amazon-pay-wrapper.account-login {

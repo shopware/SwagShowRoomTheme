@@ -87,6 +87,10 @@ $cart-item-img-width: 80px;
 
     &-actions {
         border-top: 1px solid $border-color;
+
+        [data-swag-paypal-express-button='true'] {
+            margin-top: 20px;
+        }
     }
 
     &-tax {
