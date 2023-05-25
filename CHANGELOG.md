@@ -1,3 +1,6 @@
+# 2.1.0
+- Updated the icon utilities
+
 # 2.0.0
 - Release v2.0 compatible with 6.5 version
 
