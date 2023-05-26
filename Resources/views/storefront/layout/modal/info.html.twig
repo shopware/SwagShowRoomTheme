@@ -1,0 +1,41 @@
+{% set infoModalOptions = {
+    blurBackground: config('SwagCustomNotification.config.infoBlurBackground')
+} %}
+
+{% set image = null %}
+
+{% if not config('SwagCustomNotification.config.infoImage') is empty %}
+    {% set imageId = config('SwagCustomNotification.config.infoImage') %}
+    {% set mediaCollection = searchMedia([imageId], context.context) %}
+    {% set image = mediaCollection.get(imageId) %}
+{% endif %}
+
+{% block swag_custom_notifications_info_modal %}
+    <div
+        class="swag-custom-notification-info-modal"
+        id="swag-custom-notification-info-modal"
+        data-notification-modal="true"
+        data-notification-modal-plugin-options="{{ infoModalOptions|json_encode }}"
+        hidden
+    >
+        {% block swag_custom_notifications_info_modal_title %}
+            <h5 class="swag-custom-notification-info-modal__content card-title mb-3">
+                {{ 'SwagCustomNotification.infoPopup.title'|trans }}
+            </h5>
+        {% endblock %}
+
+        {% block swag_custom_notifications_info_modal_content %}
+            <div class="swag-custom-notification-info-modal__content">
+                {% if not image is null %}
+                    {% block swag_custom_notifications_info_modal_image %}
+                        <img src="{{ image.url }}">
+                    {% endblock %}
+                {% endif %}
+
+                {% block swag_custom_notifications_info_modal_text %}
+                    <p>{{ 'SwagCustomNotification.infoPopup.text'|trans }}</p>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

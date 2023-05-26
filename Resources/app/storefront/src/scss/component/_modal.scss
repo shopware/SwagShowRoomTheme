@@ -28,10 +28,18 @@ $modal-title-font-size: 18px;
         .close {
             padding: 0;
             margin-bottom: -70px;
-            margin-right: $modal-padding;
+            margin-right: 40px;
             z-index: 1;
             margin-top: 0;
             background: none;
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            .icon>svg {
+                top: 0;
+            }
         }
     }
 
@@ -64,7 +72,7 @@ $modal-title-font-size: 18px;
     .card-title {
         font-weight: $font-weight-bold;
         color: $sw-color-brand-primary;
-        font-size: $h2-font-size;
+        font-size: $h2-font-size-lg;
         line-height: 40px;
     }
 
@@ -88,5 +96,15 @@ $modal-title-font-size: 18px;
                 margin-right: $modal-padding-mobile;
             }
         }
+    }
+}
+
+
+.swag-custom-notification-info-modal__content,
+.swag-custom-notifications-newsletter-popup__content {
+    padding: 0 $grid-gutter-width / 2;
+
+    .modal-body {
+        padding: 0;
     }
 }

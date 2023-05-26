@@ -1,0 +1,99 @@
+{% block swag_custom_notifications_newsletter_popup %}
+    <div class="swag-custom-notifications-newsletter-popup"
+         id="swag-custom-notifications-newsletter-popup"
+         data-notification-modal="true"
+         hidden>
+        <div class="swag-custom-notifications-newsletter-popup__content cms-element-form">
+            {% block swag_custom_notifications_newsletter_title %}
+                <h5 class="card-title mb-3">
+                    {{ 'SwagCustomNotification.newsletterPopup.heading'|trans }}
+                </h5>
+            {% endblock %}
+
+            {% block swag_custom_notifications_newsletter_form %}
+                <div class="cms-block cms-block-form cms-block">
+                    <form action="{{ path('frontend.form.newsletter.register.handle') }}"
+                          method="post"
+                          data-custom-notification-form="true"
+                          data-form-validation="true">
+                        <div class="modal-body form-content">
+
+                            {% block swag_custom_notifications_newsletter_text %}
+                                <p>{{ 'SwagCustomNotification.newsletterPopup.text'|trans }}</p>
+                            {% endblock %}
+
+                            <div class="form-content">
+                                <div class="row">
+                                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                                        with {
+                                        fieldName: 'email',
+                                        type: 'email',
+                                        required: true,
+                                        additionalClass: 'col-12',
+                                        label: 'newsletter.labelMail',
+                                        placeholder: 'newsletter.placeholderMail'
+                                    }
+                                    %}
+                                </div>
+
+                                {% block swag_custom_notifications_newsletter_additional_fields %}
+                                    {% if config('SwagCustomNotification.config.newsletterShowNameInput') %}
+                                        <div class="row">
+                                            {% block swag_custom_notifications_newsletter_firstname %}
+                                                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                                                    with {
+                                                    fieldName: 'firstName',
+                                                    additionalClass: 'col-md-12',
+                                                    label: 'newsletter.labelFirstName',
+                                                    placeholder: 'newsletter.placeholderFirstName'
+                                                }
+                                                %}
+                                            {% endblock %}
+
+                                            {% block swag_custom_notifications_newsletter_lastname %}
+                                                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                                                    with {
+                                                    fieldName: 'lastName',
+                                                    additionalClass: 'col-md-12',
+                                                    label: 'newsletter.labelLastName',
+                                                    placeholder: 'newsletter.placeholderLastName'
+                                                }
+                                                %}
+                                            {% endblock %}
+                                        </div>
+                                    {% endif %}
+                                {% endblock %}
+
+                                {% block swag_custom_notifications_newsletter_captcha %}
+                                    {% sw_include '@Storefront/storefront/component/captcha/base.html.twig' with { 'captchas': config('core.basicInformation.activeCaptchas') } %}
+                                {% endblock %}
+
+                                {% block swag_custom_notifications_newsletter_privacy %}
+                                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-privacy.html.twig' %}
+                                {% endblock %}
+
+                                {% block swag_custom_notifications_newsletter_required_fields_info %}
+                                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-info-required.html.twig' %}
+                                {% endblock %}
+
+                                {% block swag_custom_notifications_newsletter_hidden_fields %}
+                                    <input type="hidden" name="option" value="{{ constant('Shopware\\Storefront\\Controller\\FormController::SUBSCRIBE') }}">
+                                    <input type="submit" class="submit--hidden d-none" />
+                                {% endblock %}
+                            </div>
+
+                            {% block swag_custom_notifications_newsletter_submit %}
+                                <div class="modal-footer form-submit">
+                                    <button type="submit"
+                                            class="btn btn-primary float-end">
+                                        {{ 'SwagCustomNotification.newsletterPopup.labelSubmit'|trans }}
+                                    </button>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    </form>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
