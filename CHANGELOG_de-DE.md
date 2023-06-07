@@ -1,3 +1,6 @@
+# 2.1.0
+- Icon Utilities wurden aktualisiert
+
 # 2.0.0
 - Freigabe v2.0 kompatibel mit Version 6.5
 
