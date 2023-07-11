@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/layout/footer/footer.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block layout_footer_navigation %}
     <div id="footerColumns" class="row footer-columns" data-collapse-footer="true">

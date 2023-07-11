@@ -23,7 +23,9 @@
                 </div>
 
                 {% block component_product_box_price %}
-                    {{ parent() }}
+                    {% if not getLicense('SUBSCRIPTIONS-6549379') %}
+                        {{ parent() }}
+                    {% endif %}
                 {% endblock %}
             </div>
 

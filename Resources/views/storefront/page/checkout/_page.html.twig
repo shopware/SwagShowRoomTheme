@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/page/checkout/_page.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block base_main_inner %}
     <div class="checkout-wrapper">

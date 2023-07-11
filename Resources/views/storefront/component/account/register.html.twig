@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/component/account/register.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/component/account/register.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block component_account_register_header %}
     {% if cardTitle %}

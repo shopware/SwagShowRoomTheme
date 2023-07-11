@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/layout/header/header-minimal.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/layout/header/header-minimal.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block layout_header_minimal_row %}
     <div class="row header-row header-minimal-row">

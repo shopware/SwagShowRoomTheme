@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/component/address/address-form.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/component/address/address-form.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block component_address_form_address_fields %}
     <div class="row country-and-state-form-elements" data-country-state-select="true">

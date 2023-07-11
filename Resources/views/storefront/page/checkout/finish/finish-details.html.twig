@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/page/checkout/finish/finish-details.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/page/checkout/finish/finish-details.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block page_checkout_finish_action_back %}
     <div class="finish-back-to-shop-button">
