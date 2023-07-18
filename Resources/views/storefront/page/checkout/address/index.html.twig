@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/page/checkout/address/index.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/page/checkout/address/index.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block page_checkout_address %}
     {% block page_checkout_address_header %}

@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/page/checkout/address/register.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/page/checkout/address/register.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block component_account_register_address_billing_header %}
 {% endblock %}

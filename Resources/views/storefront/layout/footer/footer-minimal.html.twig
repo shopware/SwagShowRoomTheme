@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/layout/footer/footer-minimal.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/layout/footer/footer-minimal.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block layout_footer_inner_container %}
     <footer class="footer-minimal">

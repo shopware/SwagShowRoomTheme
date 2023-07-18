@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/component/line-item/element/quantity.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/component/line-item/element/quantity.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block component_line_item_quantity_inner %}
     {{ block('component_line_item_quantity_label') }}

@@ -1,4 +1,8 @@
-{% sw_extends '@Storefront/storefront/page/checkout/confirm/confirm-address.html.twig' %}
+{% sw_extends {
+    template: '@Storefront/storefront/page/checkout/confirm/confirm-address.html.twig',
+    scopes: ['default', 'subscription']
+    }
+%}
 
 {% block  page_checkout_confirm_address_billing_actions_link %}
     <a href="{{ path('frontend.account.address.edit.page', {'addressId': billingAddress.id}) }}"
