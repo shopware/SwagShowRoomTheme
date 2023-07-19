@@ -23,16 +23,16 @@
                 </div>
 
                 {% block component_product_box_price %}
-                    {% if not getLicense('SUBSCRIPTIONS-6549379') %}
-                        {{ parent() }}
-                    {% endif %}
+                    {{ parent() }}
                 {% endblock %}
             </div>
 
             <div class="product-overlay__action{% if config('core.cart.wishlistEnabled') %} wishlist{% endif %}">
                 <hr>
                 {% block component_product_box_price_unit %}
-                    {% sw_include '@Storefront/storefront/component/product/card/box-price-unit.html.twig' %}
+                    {% if not product.extensions.subscription_data.subscribable %}
+                        {% sw_include '@Storefront/storefront/component/product/card/box-price-unit.html.twig' %}
+                    {% endif %}
                 {% endblock %}
 
                 {% block component_product_box_action %}
