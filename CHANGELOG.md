@@ -1,3 +1,7 @@
+# 2.2.0
+- Adjusted if condition of price unit
+- Checked compatibility with the subscription
+
 # 2.1.0
 - Updated the icon utilities
 
