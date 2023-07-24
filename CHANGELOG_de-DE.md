@@ -1,3 +1,7 @@
+# 2.2.0
+- If-Bedingung der Preiseinheit wurde eingestellt
+- Überprüfung der Kompatibilität mit dem Abonnement
+
 # 2.1.0
 - Icon Utilities wurden aktualisiert
 
