@@ -1,7 +1,6 @@
 .address-editor-list-wrapper,
 .address-editor-create-address-wrapper {
     margin-top: $spacer;
-    border-top: 1px solid $gray-300;
 }
 
 .address-editor-modal {
@@ -12,7 +11,7 @@
     .btn {
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        padding: $btn-padding-y $btn-padding-y;
+        padding: 7px $btn-padding-y;
         cursor: pointer;
     }
 
@@ -24,13 +23,16 @@
 
     .modal-header .close {
         z-index: 1;
+        margin-bottom: -20px;
+        margin-right: 20px;
     }
 }
 
 @include media-breakpoint-down(md) {
     .address-editor-modal {
         .modal-header .close {
-            margin-right: 0;
+            margin-right: 12px;
+            margin-bottom: -16px;
         }
 
         .btn {

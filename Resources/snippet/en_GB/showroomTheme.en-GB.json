@@ -38,6 +38,10 @@
             "title": "Categories"
         }
     },
+    "account": {
+        "addressesSetAsDefaultShippingAction": "Use as default shipping",
+        "addressesSetAsDefaultBillingAction": "Use as default billing"
+    },
     "footer": {
         "newsletterHeadline": "Newsletter",
         "newsletterYourEmail": "Email address",

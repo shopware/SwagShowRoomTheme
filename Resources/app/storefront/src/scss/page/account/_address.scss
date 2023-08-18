@@ -7,31 +7,99 @@
         .account-welcome {
             @extend .col-12;
             @extend .col-md-8;
+
+            h1 {
+                font-weight: 500;
+            }
         }
     }
 
     .address-action-create {
         @extend .col-12;
-        @extend .col-md-4;
-
+        @extend .btn-primary;
+        height: 44px;
         padding: 20px 0 0;
+        font-size: 10px;
+        display: inline-flex;
+        align-items: center;
+
+        .icon {
+            display: none;
+        }
+    }
+
+    .account-address {
+        .alert {
+            margin-top: 30px;
+        }
+
+        .btn-link {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: normal;
+            text-transform: none;
+        }
     }
 
     .account-welcome-container {
         border-bottom: 1px solid $border-color;
         margin-right: 0;
         margin-left: 0;
+        padding-bottom: 20px;
+
+        .btn-link {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: normal;
+            text-transform: uppercase;
+            --#{$prefix}border-width: 0;
+        }
     }
 
     .default-address {
         padding-top: 30px;
         border-bottom: 1px solid $border-color;
+        padding-bottom: 30px;
+
+        .address-actions {
+           display: none;
+        }
+
+        .address-card .h3 {
+            font-size: 14px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 20px;
+            }
+        }
+
+        .address {
+            &:first-line {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .other-address {
+        .address {
+            font-size: 14px;
+        }
+
+        .address-actions {
+            > *:last-child {
+                padding: 0 !important;
+            }
+        }
     }
 
     .address-action-set-default {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
         text-decoration: underline;
+
+        .icon {
+            display: none;
+        }
     }
 
     .address-form-actions {
@@ -45,12 +113,21 @@
             font-size: $h4-font-size;
             line-height: $line-height-base;
         }
+
+        .card-body {
+            --#{$prefix}border-width: 0;
+            padding: 0 !important;
+        }
     }
 
-    .account-address {
-        .alert {
-            margin-top: 30px;
-        }
+    .address-action-create {
+        padding-top: 40px;
+        padding-right: 0;
+        position: absolute;
+        bottom: 20px;
+        right: auto;
+        left: 0;
+        width: auto;
     }
 
     @include media-breakpoint-up(md) {
@@ -64,20 +141,12 @@
         }
 
         .address-action-create {
-            padding-top: 40px;
-            padding-right: 0;
-            text-align: end;
-            position: absolute;
-            top: 0;
             right: 0;
+            left: auto;
         }
 
         .address-list {
             padding-bottom: 30px;
-        }
-
-        .address-action-delete {
-            margin-left: 20px;
         }
     }
 
@@ -91,10 +160,6 @@
         .address-actions-buttons .btn,
         .address-action-create a {
             width: 100%;
-        }
-
-        .address-action-delete {
-            margin-left: 14px;
         }
 
         .address-list {
