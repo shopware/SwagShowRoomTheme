@@ -10,3 +10,17 @@
         {% endblock %}
     </div>
 {% endblock %}
+
+{% block component_address_address_editor_modal_list_address %}
+    <div class="card mb-4">
+        {% block component_address_address_editor_modal_list_address_body %}
+            <div class="card-body">
+                <div class="d-flex flex-column flex-md-row gap-3">
+                    {{ block('component_address_address_editor_modal_list_address_include') }}
+
+                    {{ block('component_address_address_editor_modal_list_address_actions') }}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

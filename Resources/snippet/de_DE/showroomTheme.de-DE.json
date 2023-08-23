@@ -38,6 +38,10 @@
             "title": "Kategorien"
         }
     },
+    "account": {
+        "addressesSetAsDefaultShippingAction": "Als Standardversand verwenden",
+        "addressesSetAsDefaultBillingAction": "Als Standardabrechnung verwenden"
+    },
     "footer": {
         "newsletterHeadline": "Newsletter",
         "newsletterYourEmail": "E-Mail-Adresse",

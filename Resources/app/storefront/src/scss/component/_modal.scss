@@ -76,6 +76,47 @@ $modal-title-font-size: 18px;
         line-height: 40px;
     }
 
+    .js-address-editor {
+        .address-editor-title {
+            display: none;
+        }
+
+        .address-editor-card {
+            .address {
+                margin: 30px 0;
+            }
+        }
+
+        .address-editor-actions {
+            display: flex;
+            gap: 24px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid $gray-300;
+
+            > .btn {
+                width: auto;
+                text-decoration: underline;
+                text-transform: none;
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .icon {
+                display: none;
+            }
+        }
+
+        .address-editor-list-wrapper {
+            margin-top: 30px;
+            padding-bottom: 30px;
+
+            .card-title {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .modal-title {
             font-size: $h2-font-size;

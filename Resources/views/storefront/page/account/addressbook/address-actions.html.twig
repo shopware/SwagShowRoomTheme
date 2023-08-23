@@ -1,10 +1,10 @@
 {% sw_extends '@Storefront/storefront/page/account/addressbook/address-actions.html.twig' %}
 
 {% block page_account_address_actions_update %}
-    <div class="col-6 col-md-auto">
+    <div class="col-auto p-0">
         <a href="{{ path('frontend.account.address.edit.page', {'addressId': address.id}) }}"
            title="{{ "account.addressesContentItemActionEdit"|trans|striptags }}"
-           class="btn btn-outline-secondary btn-sm">
+           class="btn btn-link btn-sm ps-0 text-decoration-underline">
             {{ "account.addressesContentItemActionEdit"|trans|sw_sanitize }}
         </a>
     </div>
@@ -12,13 +12,13 @@
 
 {% block page_account_address_actions_delete %}
     {% if defaultShippingAddress.id != address.id and defaultBillingAddress.id != address.id %}
-        <div class="col-6 col-md-auto">
+        <div class="col-auto p-0">
             <form action="{{ path('frontend.account.address.delete', {'addressId': address.id}) }}"
                   class="address-action-delete"
                   method="post">
 
                 <button type="submit"
-                        class="btn btn-outline-secondary btn-sm"
+                        class="btn btn-link btn-sm ps-0 text-decoration-underline"
                         title="{{ "account.addressesContentItemActionDelete"|trans|striptags }}">
                     {{ "account.addressesContentItemActionDelete"|trans|sw_sanitize }}
                 </button>
