@@ -74,6 +74,11 @@
             letter-spacing: 1.88px;
             color: $sw-color-brand-primary;
         }
+
+        .order-table-b2b-employee {
+            margin: -10px 0 10px 0;
+            padding: 0;
+        }
     }
 
     .order-detail-content {
@@ -94,7 +99,7 @@
                 }
             }
 
-            .order-table-header-label {
+            .order-table-header-label, .order-table-b2b-employee-label {
                 font-weight: normal;
                 width: unset;
             }
@@ -130,6 +135,10 @@
                 strong {
                     font-weight: $font-weight-bold;
                 }
+            }
+
+            .order-table-b2b-employee {
+                margin: 0;
             }
 
             .order-table-header-order-number {
