@@ -32,13 +32,17 @@
                         {% endblock %}
 
                         {% block page_account_address_shipping %}
-                            <div class="address-card col-sm p-0 pt-4">
-                                {{ block('page_account_address_shipping_title') }}
+                            {% if feature('v6.6.0.0') %}
+                                <div class="address-card col-sm p-0 pt-4">
+                                    {{ block('page_account_address_shipping_title') }}
 
-                                <div class="card shipping-address">
-                                   {{ block('page_account_address_shipping_body') }}
+                                    <div class="card shipping-address">
+                                       {{ block('page_account_address_shipping_body') }}
+                                    </div>
                                 </div>
-                            </div>
+                            {% else %}
+                                {{ parent() }}
+                            {% endif %}
                         {% endblock %}
                     </div>
                 </div>
@@ -52,11 +56,16 @@
 {% endblock %}
 
 {% block page_account_address_billing_body %}
-    {{ block('page_account_address_billing_address') }}
+    {% if feature('v6.6.0.0') %}
+        {{ block('page_account_address_billing_address') }}
 
-    <div class="address-actions pt-2">
-        {% sw_include '@Storefront/storefront/page/account/addressbook/default-address-actions.html.twig' with {
-            'address': defaultBillingAddress
-        } %}
-    </div>
+        <div class="address-actions pt-2">
+            {% sw_include '@Storefront/storefront/page/account/addressbook/default-address-actions.html.twig' ignore missing with {
+                'address': defaultBillingAddress
+            } %}
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
 {% endblock %}
+

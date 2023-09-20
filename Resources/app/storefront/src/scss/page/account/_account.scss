@@ -24,11 +24,14 @@
 
         .account-welcome {
             margin-bottom: 30px;
-            padding: 20px 0 40px;
             border-bottom: 1px solid $border-color;
-
-            &-container {
-                position: relative;
+            @if feature('v6.6.0.0') {
+                padding: 20px 0 40px;
+                &-container {
+                    position: relative;
+                }
+            } @else {
+                padding: 75px 0 40px;
             }
         }
 
@@ -109,7 +112,11 @@
             .account-welcome {
                 margin-bottom: 0;
                 padding-top: 30px;
-                padding-bottom: 60px;
+                @if feature('v6.6.0.0') {
+                    padding-bottom: 60px;
+                } @else {
+                    padding-bottom: 30px;
+                }
             }
         }
     }
