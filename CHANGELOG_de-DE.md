@@ -1,3 +1,6 @@
+# 2.3.0
+- Überprüfung der Kompatibilität mit der Kontextsuche
+
 # 2.2.0
 - If-Bedingung der Preiseinheit wurde eingestellt
 - Überprüfung der Kompatibilität mit dem Abonnement
