@@ -1,3 +1,6 @@
+# 2.3.0
+- Checked search by context compatability
+
 # 2.2.0
 - Adjusted if condition of price unit
 - Checked compatibility with the subscription
