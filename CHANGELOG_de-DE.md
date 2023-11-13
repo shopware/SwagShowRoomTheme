@@ -1,5 +1,8 @@
 # 2.3.0
 - Überprüfung der Kompatibilität mit der Kontextsuche
+- Überprüfung der Adressenverwaltung
+- Die Bestellelemente wurden angepasst
+- Der Gefahrenknopf wurde angepasst
 
 # 2.2.0
 - If-Bedingung der Preiseinheit wurde eingestellt

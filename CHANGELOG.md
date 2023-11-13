@@ -1,5 +1,8 @@
 # 2.3.0
 - Checked search by context compatability
+- Checked address handling compatability
+- Fixed order items
+- Adjusted danger button
 
 # 2.2.0
 - Adjusted if condition of price unit
