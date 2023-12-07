@@ -1,3 +1,6 @@
+# 2.4.0
+- Fixed issues during theme activation
+
 # 2.3.0
 - Checked search by context compatability
 - Checked address handling compatability

@@ -1,3 +1,6 @@
+# 2.4.0
+- Fehler während Themeaktivierung behoben
+
 # 2.3.0
 - Überprüfung der Kompatibilität mit der Kontextsuche
 - Überprüfung der Adressenverwaltung
