@@ -1,6 +1,5 @@
-import deepmerge from 'deepmerge';
 import CollapseFooterColumnsPlugin from 'src/plugin/collapse/collapse-footer-columns.plugin';
-import Feature from 'src/helper/feature.helper';
+import deepmerge from 'deepmerge';
 import Iterator from 'src/helper/iterator.helper';
 
 export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
@@ -20,7 +19,6 @@ export default class CollapseColumnsPlugin extends CollapseFooterColumnsPlugin {
         this._columns = this.el.querySelectorAll(this.options.collapseColumnSelector);
         this._registerEvents();
 
-        document.$emitter.reset();
         document.$emitter.subscribe('openMenu', (event) => {
             this._columns = document.querySelectorAll(this.options.collapseColumnSelector);
             this._registerEvents();

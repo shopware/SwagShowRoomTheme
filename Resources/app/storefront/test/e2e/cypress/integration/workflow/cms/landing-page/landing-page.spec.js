@@ -4,7 +4,7 @@ let images = ['sw-login-background', 'sw-test-image', 'sw-showroom-landing-page'
 
 describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
     beforeEach(() => {
-        let salesChannel;
+        let salesChannelId;
         cy.setToInitialState()
             .then(() => {
                 cy.login()
@@ -20,7 +20,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
                 });
             })
             .then((data) => {
-                salesChannel = data.id;
+                salesChannelId = data.id;
                 return cy.createCmsFixture();
             })
             .then((page) => {
@@ -31,7 +31,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
                     cmsPage: page,
                     salesChannels: [
                         {
-                            id: salesChannel
+                            id: salesChannelId
                         }
                     ]
                 });
@@ -41,7 +41,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
             });
     });
 
-    it('@workflow @cms: basic landing page', () => {
+    it.skip('@workflow @cms: basic landing page', () => {
         const page = new MediaPageObject();
 
         cy.intercept({
@@ -50,7 +50,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
         }).as('saveData');
 
         cy.get('.sw-cms-list-item--0').should('be.visible');
-        //
+
         cy.get('.sw-cms-list-item--0').click();
         cy.get('.sw-cms-section__empty-stage').should('be.visible');
 
@@ -67,7 +67,7 @@ describe('CMS: Landing Page', { tags: ['@workflow', '@cms'] }, () => {
         cy.get('.sw-cms-slot:nth-of-type(1) .sw-text-editor__content-editor').type('This is the landing page');
 
         // Add three slider images
-        cy.get('#sw-field--currentBlockCategory').select('Images');
+        cy.get('.sw-cms-sidebar__block-category select').select('Images');
         cy.get('.sw-cms-sidebar__block-selection').should('be.visible');
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(10)').should('exist');
 

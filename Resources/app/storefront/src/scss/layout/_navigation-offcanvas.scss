@@ -184,9 +184,6 @@ $navigation-offcanvas-image-height: 307px;
 
         &-teaser-image {
             object-fit: cover;
-            // @deprecated tag:v6.5.0 - Bootstrap v5 will discontinue IE11 support. font-family polyfill will be removed.
-            /* stylelint-disable-next-line */
-            font-family: 'object-fit: cover;'; // IE polyfill
             display: block;
             max-width: 100%;
             width: 100%;

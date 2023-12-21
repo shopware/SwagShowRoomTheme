@@ -23,7 +23,7 @@ describe('Error: maintenance page', { tags: ['@workflow'] }, () => {
             })
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                cy.get('.js-offcanvas-cookie-submit').scrollIntoView().should('be.visible').click();
             });
     });
 

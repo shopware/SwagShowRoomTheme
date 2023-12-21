@@ -40,8 +40,8 @@ describe('Shop page: CMS service page', () => {
         cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
 
         cy.intercept({
-            url: `${Cypress.env('apiPath')}/search/category`,
-            method: 'POST'
+            url: `${Cypress.env('apiPath')}/category/*`,
+            method: 'PATCH'
         }).as('saveData');
 
         cy.get('.sw-empty-state__title').contains('No category selected');
@@ -54,7 +54,7 @@ describe('Shop page: CMS service page', () => {
         cy.get('.sw-tree-item__sub-action')
             .contains('New subcategory')
             .click();
-        cy.get('#sw-field--draft').type('Shipping and payment');
+        cy.get('.sw-tree-detail__edit-tree-item input').type('Shipping and payment');
         cy.get('.sw-confirm-field__button.sw-button--primary').click();
         cy.get('.sw-tree-item__children .tree-link')
             .contains('Shipping and payment')
@@ -76,12 +76,10 @@ describe('Shop page: CMS service page', () => {
         cy.get('.sw-category-detail__save-action').click();
 
         // Wait for category request with correct data to be successful
-        cy.wait('@saveData').its('response.statusCode').should('equal', 200);
+        cy.wait('@saveData').its('response.statusCode').should('equal', 204);
     }
 
     function createServicePage() {
-        let salesChannel;
-
         return cy.searchViaAdminApi({
             endpoint: 'sales-channel',
             data: {
@@ -89,8 +87,7 @@ describe('Shop page: CMS service page', () => {
                 type: 'equals',
                 value: 'Storefront'
             }
-        }).then((data) => {
-            salesChannel = data.id;
+        }).then(() => {
             cy.createDefaultFixture('cms-page', {}, 'cms-service-page')
         }).then(() => {
             cy.visit(`${Cypress.env('admin')}#/sw/category/index`);

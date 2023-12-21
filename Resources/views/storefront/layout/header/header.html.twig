@@ -10,10 +10,12 @@
                 <div class="col-2 d-none d-sm-block">
                     <div class="menu-button">
                         {% block layout_header_navigation_toggle_button %}
-                            <button class="btn nav-main-toggle-btn header-actions-btn ps-0"
+                                <button
+                                    class="btn nav-main-toggle-btn header-actions-btn ps-0"
                                     type="button"
-                                    data-offcanvas-menu="true"
-                                    aria-label="{{ "general.menuLink"|trans|striptags }}">
+                                    data-off-canvas-menu="true"
+                                    aria-label="{{ "general.menuLink"|trans|striptags }}"
+                                >
                                 {% block layout_header_navigation_toggle_button_icon %}
                                     {{ parent() }}
                                 {% endblock %}

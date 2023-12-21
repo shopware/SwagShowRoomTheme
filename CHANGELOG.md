@@ -1,3 +1,6 @@
+# 3.0.0
+- Release v3.0 compatible with 6.6 version
+
 # 2.4.0
 - Fixed issues during theme activation
 

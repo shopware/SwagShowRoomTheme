@@ -4,7 +4,6 @@
     <div data-showroom-collapse="true">
         <div class="js-collapse-column">
             {% set isoCode = page.header.activeLanguage.translationCode.code|lower|split('-') %}
-            {# @deprecated tag:v6.5.0 - Remove else cases, to maintain correct split of isoCode #}
             {% set language = isoCode[0] %}
             {% set country = isoCode[1] %}
 
@@ -30,7 +29,6 @@
                                 {% if language.id is same as(page.header.activeLanguage.id) %}
                                 {% else %}
                                     {% set isoCode = language.translationCode.code|lower|split('-') %}
-                                    {# @deprecated tag:v6.5.0 - Remove else cases, to maintain correct split of isoCode #}
                                     {% set flagLanguage = isoCode[0] %}
                                     {% set flagCountry = isoCode[1] %}
 

@@ -1,23 +1,5 @@
 {% sw_extends '@Storefront/storefront/page/checkout/finish/finish-address.html.twig' %}
 
-{# @deprecated tag:v6.5.0 - Billing address will be displayed after the shipping address. #}
-{% block page_checkout_finish_address_billing %}
-    <div class="col-6">
-        <div class="card checkout-card">
-            <div class="card-body">
-                {% block page_checkout_finish_address_billing_title %}
-                    {{ parent() }}
-                {% endblock %}
-
-                {% block page_checkout_finish_address_billing_data %}
-                    {{ parent() }}
-                {% endblock %}
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-{# @deprecated tag:v6.5.0 - Shipping address will be displayed before the billing address. #}
 {% block page_checkout_finish_address_shipping %}
     <div class="col-6">
         <div class="card checkout-card">
@@ -27,6 +9,22 @@
                 {% endblock %}
 
                 {% block page_checkout_finish_address_shipping_data %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_checkout_finish_address_billing %}
+    <div class="col-6">
+        <div class="card checkout-card">
+            <div class="card-body">
+                {% block page_checkout_finish_address_billing_title %}
+                    {{ parent() }}
+                {% endblock %}
+
+                {% block page_checkout_finish_address_billing_data %}
                     {{ parent() }}
                 {% endblock %}
             </div>

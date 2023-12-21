@@ -47,7 +47,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         cy.contains('.sw-cms-stage-section-selection__sidebar', 'Sidebar').click();
         cy.get('.sw-cms-create-wizard__title').contains('How do you want to label your new layout?');
         cy.contains('.sw-button--primary', 'Create layout').should('not.be.enabled');
-        cy.get('#sw-field--page-name').typeAndCheck('CMS Sidebar Listing Page');
+        cy.get('.sw-cms-create-wizard__page-completion-name input').typeAndCheck('CMS Sidebar Listing Page');
         cy.contains('.sw-button--primary', 'Create layout').should('be.enabled');
         cy.contains('.sw-button--primary', 'Create layout').click();
         cy.get('.sw-loader').should('not.exist');
@@ -66,7 +66,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
         cy.get('.sw-cms-slot:nth-of-type(1) .sw-text-editor__content-editor').clear();
         cy.get('.sw-cms-slot:nth-of-type(1) .sw-text-editor__content-editor').type('This is the listing page with a sidebar');
 
-        cy.get('#sw-field--currentBlockCategory').should('be.visible').select('Text');
+        cy.get('.sw-cms-sidebar__block-category select').should('be.visible').select('Text');
         cy.changeElementStyling('.sw-cms-block-product-listing', 'display: none');
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(1)').scrollIntoView();
         cy.get('.sw-cms-sidebar__block-selection > div:nth-of-type(1)')

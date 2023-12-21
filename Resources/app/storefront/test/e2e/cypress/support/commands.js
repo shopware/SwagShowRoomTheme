@@ -202,18 +202,3 @@ Cypress.Commands.add('createCustomProductFixture', (userData = {}, templateFixtu
     });
 });
 
-/**
- * Create customer fixture using Shopware API at the given endpoint
- * @memberOf Cypress.Chainable#
- * @name createCustomerFixtureStorefront
- * @function
- * @param {Object} userData - Custom data for the customer to be created
- */
-
-Cypress.Commands.overwrite('createCustomerFixtureStorefront', (originalFn, userData) => {
-    return originalFn(userData)
-        .then(() => {
-            return cy.exec(`${Cypress.env('shopwareRoot')}/bin/console cache:clear`)
-                .its('code').should('eq', 0);
-        });
-});

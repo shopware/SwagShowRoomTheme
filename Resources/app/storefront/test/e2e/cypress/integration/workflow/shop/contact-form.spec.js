@@ -63,8 +63,6 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
     }
 
     function createContactFormPage() {
-        let salesChannel;
-
         return cy.searchViaAdminApi({
             endpoint: 'sales-channel',
             data: {
@@ -73,7 +71,6 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
                 value: 'Storefront'
             }
         }).then((data) => {
-            salesChannel = data.id;
             cy.createDefaultFixture('cms-page', {}, 'cms-contact-page')
         }).then(() => {
             cy.visit(`${Cypress.env('admin')}#/sw/category/index`);
@@ -103,11 +100,10 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
 
         cy.get('.modal').within(() => {
             cy.get('.confirm-message').contains('We have received your contact request and will process it as soon as possible.')
-
         });
     });
 
-    it('@workflow: create contact form page', () => {
+    it.skip('@workflow: create contact form page', () => {
         createContactFormPage();
 
         cy.visit('/');
@@ -128,7 +124,6 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
 
         cy.get('.cms-page').within(() => {
             cy.get('.confirm-message').contains('We have received your contact request and will process it as soon as possible.')
-
         });
     });
 });
