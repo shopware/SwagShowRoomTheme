@@ -10,6 +10,6 @@ export default class ShowroomOffcanvasMenuPlugin extends OffcanvasMenuPlugin {
      */
     _openMenu(event) {
         super._openMenu(event);
-        window.eventEmitter.publish('openMenu')
+        document.$emitter.publish('openMenu')
     }
 }

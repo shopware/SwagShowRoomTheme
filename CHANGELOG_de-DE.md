@@ -1,3 +1,6 @@
+# 3.0.0
+- Kompatibilität mit mit Version 6.6
+
 # 2.4.0
 - Fehler während Themeaktivierung behoben
 

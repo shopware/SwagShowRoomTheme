@@ -22,7 +22,7 @@
     ],
     "script": [
         "@Storefront",
-        "app/storefront/dist/storefront/js/swag-show-room-theme.js"
+        "app/storefront/dist/storefront/js/swag-show-room-theme/swag-show-room-theme.js"
     ],
     "asset": [
         "app/storefront/src/assets"

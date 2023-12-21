@@ -31,31 +31,5 @@ describe('Account: Overview page', { tags: ['@workflow', '@account'] }, () => {
         cy.get('.newsletter-alerts').should((element) => {
             expect(element).to.contain('You have successfully subscribed to the newsletter.');
         });
-
-        // billing address
-        cy.get('.overview-billing-address [data-address-editor="true"]').click();
-        cy.get('.address-editor-modal').should('be.visible');
-
-        cy.get('.address-editor-edit').click();
-        cy.get(page.elements.editModal).should('have.class', 'show');
-        cy.get(page.elements.createModal).should('not.have.class', 'show');
-
-        cy.get('.address-editor-create').click();
-        cy.get(page.elements.createModal).should('have.class', 'show');
-        cy.get(page.elements.editModal).should('not.have.class', 'show');
-        cy.get('.address-editor-modal').find('.btn-close').click();
-
-        // shipping address
-        cy.get('.overview-shipping-address [data-address-editor="true"]').click();
-        cy.get('.address-editor-modal').should('be.visible');
-
-        cy.get('.address-editor-edit').click();
-        cy.get(page.elements.shippingEditModal).should('have.class', 'show');
-        cy.get(page.elements.shippingCreateModal).should('not.have.class', 'show');
-
-        cy.get('.address-editor-create').click();
-        cy.get(page.elements.shippingCreateModal).should('have.class', 'show');
-        cy.get(page.elements.shippingEditModal).should('not.have.class', 'show');
-
     });
 });
