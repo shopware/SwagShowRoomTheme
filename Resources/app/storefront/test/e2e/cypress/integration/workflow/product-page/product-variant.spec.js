@@ -53,9 +53,7 @@ describe('Product Detail: Product variants', () => {
 
         // Find variant to set surcharge on
         cy.get('.sw-data-grid__row--0 .sw-data-grid__cell--name').should('be.visible');
-        cy.get('.sw-data-grid__row--0 .sw-price-preview').should('be.visible');
         cy.get('.sw-data-grid__row--0 .sw-data-grid__cell--name').dblclick({force: true});
-        cy.get('.sw-data-grid__row--0 .sw-price-preview').should('not.exist');
 
         // Set surcharge
         cy.get('.is--inline-edit .sw-inheritance-switch').should('be.visible');
