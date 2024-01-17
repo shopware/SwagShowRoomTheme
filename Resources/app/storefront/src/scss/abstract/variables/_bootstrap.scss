@@ -10,7 +10,6 @@ $enable-responsive-font-sizes: false !default;
 $font-size-base: 0.875rem !default;
 $font-size-sm: 0.75rem !default;
 $font-size-xs: 0.6875rem !default;
-$app-css-relative-asset-path: '../assets' !default;
 
 // Color system
 $gray-100: #f9f9f9 !default;
@@ -78,7 +77,6 @@ $input-font-size-lg: 1.125rem !default;
 $custom-control-indicator-border-color: $gray-300 !default;
 $custom-checkbox-indicator-border-radius: 4px !default;
 
-$custom-select-indicator: url('#{$app-css-relative-asset-path}/icon/chevron-down.svg') !default;
 $custom-select-bg-size: 1rem !default;
 
 $custom-switch-width: 1.75rem !default;
