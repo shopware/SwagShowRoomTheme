@@ -10,7 +10,7 @@ describe('Product Detail: Check appearance of product review', () => {
             .then(() => cy.visit('/'))
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').click({force: true});
-                cy.get('.offcanvas-cookie > .btn').click({force: true});
+                cy.get('.offcanvas-cookie .btn-primary').click({force: true});
             })
             .then(() => cy.visit('/Product-name/RS-333'))
             .then(() => cy.get('.review-tab').click())

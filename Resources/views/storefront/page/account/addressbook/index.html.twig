@@ -32,13 +32,7 @@
                         {% endblock %}
 
                         {% block page_account_address_shipping %}
-                            <div class="address-card col-sm p-0 pt-4">
-                                {{ block('page_account_address_shipping_title') }}
-
-                                <div class="card shipping-address">
-                                   {{ block('page_account_address_shipping_body') }}
-                                </div>
-                            </div>
+                            {{ parent() }}
                         {% endblock %}
                     </div>
                 </div>
@@ -48,15 +42,5 @@
                 {{ parent() }}
             {% endblock %}
         {% endblock %}
-    </div>
-{% endblock %}
-
-{% block page_account_address_billing_body %}
-    {{ block('page_account_address_billing_address') }}
-
-    <div class="address-actions pt-2">
-        {% sw_include '@Storefront/storefront/page/account/addressbook/default-address-actions.html.twig' with {
-            'address': defaultBillingAddress
-        } %}
     </div>
 {% endblock %}

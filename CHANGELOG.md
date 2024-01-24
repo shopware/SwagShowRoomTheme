@@ -1,3 +1,6 @@
+# 2.5.0
+- Fixed addresses page on customer account
+
 # 2.4.0
 - Fixed issues during theme activation
 

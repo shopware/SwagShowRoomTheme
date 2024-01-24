@@ -48,7 +48,7 @@ describe('Customized Product: Check appearance of customized products', () => {
                 .then(() => {
                     cy.visit('/')
                     cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                    cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                    cy.get('.offcanvas-cookie .btn-primary').scrollIntoView().should('be.visible').click();
                 });
         })
     });
