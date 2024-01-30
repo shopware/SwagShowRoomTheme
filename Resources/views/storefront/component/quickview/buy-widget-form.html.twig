@@ -19,12 +19,7 @@
             </div>
         </div>
         <div class="row product-detail-button-container">
-            <div class="col-12 buy-widget-price">
-                {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
-            </div>
-            <div class="col-12 buy-widget-buy-button">
-                {{ parent() }}
-            </div>
+            {{ parent() }}
         </div>
     {% else %}
         {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
