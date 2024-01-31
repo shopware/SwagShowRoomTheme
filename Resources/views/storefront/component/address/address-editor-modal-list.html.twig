@@ -24,3 +24,12 @@
         {% endblock %}
     </div>
 {% endblock %}
+
+{# @deprecated tag:v6.7.0 - Block will be removed. Use `component_address_address_editor_modal_list_address_body_action_billing_form_button` instead. #}
+{% block component_address_address_editor_modal_list_address_action_billing_form_button_text %}
+    {{ "account.selectAddress"|trans|sw_sanitize }}
+{% endblock %}
+
+{% block component_address_address_editor_modal_list_address_action_shipping_form_text %}
+    {{ "account.selectAddress"|trans|sw_sanitize }}
+{% endblock %}
