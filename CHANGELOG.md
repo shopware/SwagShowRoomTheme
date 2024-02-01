@@ -1,5 +1,6 @@
 # 2.5.0
 - Fixed addresses page on customer account
+* TSR-604 - Removed duplicate price from quickview component
 
 # 2.4.0
 - Fixed issues during theme activation
