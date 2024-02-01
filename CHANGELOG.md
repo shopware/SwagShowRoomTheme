@@ -1,3 +1,6 @@
+# 3.1.0
+* TSR-604 - Removed duplicate price from quickview component
+
 # 3.0.0
 - Release v3.0 compatible with 6.6 version
 

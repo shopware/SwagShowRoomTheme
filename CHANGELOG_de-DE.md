@@ -1,3 +1,6 @@
+# 3.1.0
+* TSR-604 - Der doppelte Preis in der Quickview-Komponente wurde entfernt
+
 # 3.0.0
 - Kompatibilität mit mit Version 6.6
 
