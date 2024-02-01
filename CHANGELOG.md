@@ -1,13 +1,14 @@
 # 2.5.0
 - Fixed addresses page on customer account
-* TSR-604 - Removed duplicate price from quickview component
+- Removed duplicate price from quickview component
+- Fixed `z-height` problems in the product configurator
 
 # 2.4.0
 - Fixed issues during theme activation
 
 # 2.3.0
-- Checked search by context compatability
-- Checked address handling compatability
+- Checked search by context compatibility
+- Checked address handling compatibility
 - Fixed order items
 - Adjusted danger button
 
