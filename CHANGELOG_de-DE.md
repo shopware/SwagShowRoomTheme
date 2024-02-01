@@ -1,3 +1,6 @@
+# 2.5.0
+- Fehler auf Adressverwaltungsseite behoben
+
 # 2.4.0
 - Fehler während Themeaktivierung behoben
 

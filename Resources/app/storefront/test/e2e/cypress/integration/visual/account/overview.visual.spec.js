@@ -10,7 +10,7 @@ describe('Account: Overview page', () => {
                 cy.visit('/');
             }).then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                cy.get('.offcanvas-cookie .btn-primary').scrollIntoView().should('be.visible').click();
             });
     });
 

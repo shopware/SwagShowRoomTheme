@@ -23,7 +23,7 @@ describe('Contact: Visual tests', () => {
             .then(() => cy.visit('/'))
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                cy.get('.offcanvas-cookie .btn-primary').scrollIntoView().should('be.visible').click();
             });
     });
 
