@@ -31,12 +31,12 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
     function fillOutContactForm(el) {
         cy.get(el).within(() => {
             cy.get(selector.formContactSalutation).select('Not specified');
-            cy.get(selector.formContactFirstName).type('Foo');
-            cy.get(selector.formContactLastName).type('Bar');
-            cy.get(selector.formContactMail).type('user@example.com');
-            cy.get(selector.formContactPhone).type('+123456789');
-            cy.get(selector.formContactSubject).type('Lorem ipsum');
-            cy.get(selector.formContactComment).type('Dolor sit amet.');
+            cy.get(selector.formContactFirstName).should('be.enabled').type('Foo');
+            cy.get(selector.formContactLastName).should('be.enabled').type('Bar');
+            cy.get(selector.formContactMail).should('be.enabled').type('user@example.com');
+            cy.get(selector.formContactPhone).should('be.enabled').type('+123456789');
+            cy.get(selector.formContactSubject).should('be.enabled').type('Lorem ipsum');
+            cy.get(selector.formContactComment).should('be.enabled').type('Dolor sit amet.');
             cy.get(selector.formContactDataProtectionCheckbox).check({force: true});
         });
     }
@@ -59,7 +59,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
 
         // Save layout
         cy.get('.sw-category-detail__save-action').click();
-        cy.wait('@saveCategory').its('response.statusCode').should('equal', 204)
+        cy.wait('@saveCategory').its('response.statusCode').should('equal', 204);
     }
 
     function createContactFormPage() {
@@ -103,7 +103,7 @@ describe('Contact: Basic', { tags: ['@workflow'] }, () => {
         });
     });
 
-    it.skip('@workflow: create contact form page', () => {
+    it('@workflow: create contact form page', () => {
         createContactFormPage();
 
         cy.visit('/');

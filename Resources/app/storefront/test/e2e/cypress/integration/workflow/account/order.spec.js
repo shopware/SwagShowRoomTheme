@@ -68,7 +68,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.finish-ordernumber').contains('Your order number: #10001');
     });
 
-    it.only('@workflow @order: cancel order', () => {
+    it('@workflow @order: cancel order', () => {
         // Enable refunds
         cy.login().then(() => {
             cy.visit('/admin#/sw/settings/cart/index');
@@ -106,7 +106,7 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         cy.get('.order-table').should('be.visible');
         cy.get('.order-table-header-order-table-body > :nth-child(3)').contains('Invoice');
         cy.get('.order-table-header-context-menu').click();
-        cy.get('.order-table-header-context-menu-content-link').click();
+        cy.get('.order-table-header-context-menu-content-link').contains('Change payment method').click();
 
         // change payment
         cy.get('.payment-methods').should('be.visible');
