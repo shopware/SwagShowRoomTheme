@@ -1,6 +1,7 @@
 # 2.5.0
 - Fehler auf Adressverwaltungsseite behoben
-* TSR-604 - Der doppelte Preis in der Quickview-Komponente wurde entfernt
+- Der doppelte Preis in der Quickview-Komponente wurde entfernt
+- `z-index` Probleme im Produktkonfigurator behoben
 
 # 2.4.0
 - Fehler während Themeaktivierung behoben
