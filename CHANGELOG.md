@@ -1,5 +1,6 @@
 # 3.1.0
-* TSR-604 - Removed duplicate price from quickview component
+- TSR-604 - Removed duplicate price from quickview component
+- Fixed `z-height` problems in the product configurator
 
 # 3.0.0
 - Release v3.0 compatible with 6.6 version
@@ -8,8 +9,8 @@
 - Fixed issues during theme activation
 
 # 2.3.0
-- Checked search by context compatability
-- Checked address handling compatability
+- Checked search by context compatibility
+- Checked address handling compatibility
 - Fixed order items
 - Adjusted danger button
 
