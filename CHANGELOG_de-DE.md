@@ -1,5 +1,6 @@
 # 3.1.0
-* TSR-604 - Der doppelte Preis in der Quickview-Komponente wurde entfernt
+- Der doppelte Preis in der Quickview-Komponente wurde entfernt
+- `z-index` Probleme im Produktkonfigurator behoben
 
 # 3.0.0
 - Kompatibilität mit mit Version 6.6
@@ -39,7 +40,7 @@
 - Behebung des Variantenwechsel in QuickView
 - Überprüfung der Kompatibilität mit Platform v6.4.15.0
 
-#1.7.0
+# 1.7.0
 - Optimierung von Hover-Status der Promotion-Buttons
 - Hinzufügen von Kompatibilität mit Bootstrap 5
 - Behoben der UI-Probleme mit verschachtelten Elementen
