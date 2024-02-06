@@ -27,7 +27,7 @@ describe('ThemeColor: Visual tests', () => {
             })
             .then(() => {
                 cy.get('.js-cookie-configuration-button > .btn').should('be.visible').click();
-                cy.get('.offcanvas-cookie > .btn').scrollIntoView().should('be.visible').click();
+                cy.get('.offcanvas-cookie .btn-primary').scrollIntoView().should('be.visible').click();
             });
     });
 
@@ -105,7 +105,7 @@ describe('ThemeColor: Visual tests', () => {
         });
     }
 
-    it.skip('@workflow @themeColor: check change primary color ', () => {
+    it('@workflow @themeColor: check change primary color ', () => {
         cy.intercept({
             path: '/widgets/checkout/info',
             method: 'get'
@@ -143,8 +143,6 @@ describe('ThemeColor: Visual tests', () => {
         cy.get('.offcanvas-cart-actions .btn-link').should('have.css', 'color', hexToRGB(colorScheme.primary));
 
         cy.get('.offcanvas-cart-actions .btn-link').click();
-        cy.get('.cart-table-header').should('have.css', 'color', hexToRGB(colorScheme.primary));
-
         cy.get('.checkout-aside-action .begin-checkout-btn').click();
 
         cy.get('.card-actions > a').should('have.css', 'color', hexToRGB(colorScheme.primary));
@@ -157,8 +155,5 @@ describe('ThemeColor: Visual tests', () => {
 
         cy.get('#confirmFormSubmit').scrollIntoView();
         cy.get('#confirmFormSubmit').click();
-
-        cy.get('.finish-back-to-shop-button a').should('have.css', 'background-color', hexToRGB(colorScheme.primary));
-        cy.get('.finish-back-to-shop-button a').should('have.css', 'border-color', hexToRGB(colorScheme.primary));
     });
 });

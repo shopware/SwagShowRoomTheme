@@ -18,7 +18,7 @@ describe('CMS: Listing Page', { tags: ['@workflow', '@cms'] }, () => {
             });
     });
 
-    it.skip('@base @cms: Create listing page', () => {
+    it('@base @cms: Create listing page', () => {
         const page = new CategoryPageObject();
 
         // Request we want to wait for later

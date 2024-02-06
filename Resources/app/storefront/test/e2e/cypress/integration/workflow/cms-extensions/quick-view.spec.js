@@ -15,7 +15,7 @@ describe('Quick View: Test if it works correctly', () => {
             })
     });
 
-    it.skip('@workflow @QuickView: Run Quick View in a product view directly in the listing page', () => {
+    it('@workflow @QuickView: Run Quick View in a product view directly in the listing page', () => {
         cy.visit(`${Cypress.env('admin')}#/sw/cms/index`);
 
         cy.intercept({
@@ -36,7 +36,7 @@ describe('Quick View: Test if it works correctly', () => {
         cy.contains('.sw-cms-stage-section-selection__default', 'Full width').click();
         cy.get('.sw-cms-create-wizard__title').contains('How do you want to label your new layout?');
         cy.contains('.sw-button--primary', 'Create layout').should('not.be.enabled');
-        cy.get('#sw-field--page-name').typeAndCheck('Custom Full Listing Page');
+        cy.get('.sw-cms-create-wizard__page-completion-name input').typeAndCheck('Custom Full Listing Page');
         cy.contains('.sw-button--primary', 'Create layout').should('be.enabled');
         cy.contains('.sw-button--primary', 'Create layout').click();
         cy.get('.sw-loader').should('not.exist');
@@ -80,11 +80,11 @@ describe('Quick View: Test if it works correctly', () => {
         cy.get('.cms-listing-row').should('be.visible');
         cy.get('.cms-listing-row > :nth-child(1) .product-name').last().click({ force: true });
         cy.get('.swag-cms-extensions-quickview-modal').should('be.visible');
-        cy.get('[data-slide="prev"]').should('be.visible');
-        cy.get('[data-slide="next"]').should('be.visible');
+        cy.get('[data-bs-slide="prev"]').should('be.visible');
+        cy.get('[data-bs-slide="next"]').should('be.visible');
     });
 
-    it.skip('@workflow @QuickView: Run Quick View in search results', () => {
+    it('@workflow @QuickView: Run Quick View in search results', () => {
         cy.visit(`${Cypress.env('admin')}#/sw/extension/config/SwagCmsExtensions`);
 
         cy.get('.sw-meteor-page__smart-bar-title').should('be.visible').contains('SwagCmsExtensions');
@@ -104,7 +104,7 @@ describe('Quick View: Test if it works correctly', () => {
         cy.get('.cms-listing-row > :nth-child(1) .product-name').last().click({ force: true });
         cy.get('.swag-cms-extensions-quickview-modal').should('be.visible');
         cy.get('.swag-cms-extensions-quickview-header-headline').should('be.visible');
-        cy.get('[data-slide="prev"]').should('be.visible');
-        cy.get('[data-slide="next"]').should('be.visible');
+        cy.get('[data-bs-slide="prev"]').should('be.visible');
+        cy.get('[data-bs-slide="next"]').should('be.visible');
     });
 })

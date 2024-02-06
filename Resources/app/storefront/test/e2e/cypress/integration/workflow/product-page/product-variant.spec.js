@@ -8,7 +8,7 @@ describe('Product Detail: Product variants', () => {
             .then(() => cy.visit(`${Cypress.env('admin')}#/sw/product/index`));
     });
 
-    it.skip('@workflow @variants: add variant with surcharge to product', () => {
+    it('@workflow @variants: add variant with surcharge to product', () => {
         const page = new ProductPageObject();
 
         // Request we want to wait for later

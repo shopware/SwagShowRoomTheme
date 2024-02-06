@@ -18,6 +18,28 @@
                 "displayMode": {
                   "source": "static",
                   "value": "cover"
+                },
+                "type": {
+                  "source": "static",
+                  "value": "contact"
+                },
+                "title": {
+                  "source": "static",
+                  "value": ""
+                },
+                "mailReceiver": {
+                  "source": "static",
+                  "value": [
+                    "doNotReply@localhost.com"
+                  ]
+                },
+                "defaultMailReceiver": {
+                  "source": "static",
+                  "value": true
+                },
+                "confirmationText": {
+                  "source": "static",
+                  "value": ""
                 }
               }
             }
