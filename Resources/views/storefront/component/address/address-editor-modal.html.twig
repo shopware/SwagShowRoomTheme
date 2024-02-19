@@ -1,0 +1,33 @@
+{% sw_extends "@Storefront/storefront/component/address/address-editor-modal.html.twig" %}
+
+{% block component_address_address_editor_modal_accordion_action_edit %}
+    <div class="col-auto">
+        <a href="{{ path('frontend.account.address.edit.page', {'addressId': address.id}) }}"
+           title="{{ "account.addressEditBtn"|trans|striptags }}"
+           class="btn btn-link btn-sm ps-0 text-decoration-underline">
+            {{ "account.addressEditBtn"|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block component_address_address_editor_modal_accordion_action_create %}
+    <div class="col-auto">
+        <a href="{{ path('frontend.account.address.create.page', {'addressId': address.id}) }}"
+           title="{{ "account.addressCreateBtn"|trans|striptags }}"
+           class="btn btn-link btn-sm ps-0 text-decoration-underline">
+            {{ "account.addressCreateBtn"|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}
+
+{# @deprecated tag:v6.7.0 - Block will be removed. Use `component_address_editor_modal_accordion_action_list` instead. #}
+{% block component_address_address_editor_modal_accordion_action_list %}
+{% endblock %}
+
+{# @deprecated tag:v6.7.0 - Block will be removed. Use `component_address_editor_modal_accordion_edit_include` instead. #}
+{% block component_address_address_editor_modal_accordion_edit_include %}
+{% endblock %}
+
+{# @deprecated tag:v6.7.0 - Block will be removed. Use `component_address_editor_modal_accordion_create_include` instead. #}
+{% block component_address_address_editor_modal_accordion_create_include %}
+{% endblock %}

@@ -15,6 +15,10 @@
         cursor: pointer;
     }
 
+    .btn-link {
+        padding: 7px 0;
+    }
+
     .address-editor-edit,
     .address-editor-create,
     .address-editor-select {
@@ -28,15 +32,40 @@
     }
 }
 
+.address-editor-list-wrapper {
+    .address:first-line {
+        font-weight: bold;
+    }
+
+    .card-actions {
+        margin-top: 0;
+    }
+
+    .flex-column {
+        @extend .align-items-start;
+        @extend .justify-content-between;
+    }
+
+    .card {
+        --bs-card-spacer-y: 15px;
+    }
+
+    .card-body .card {
+        @extend .mb-0;
+    }
+}
+
+.js-address-editor {
+    .row {
+        --bs-gutter-x: 24px;
+    }
+}
+
 @include media-breakpoint-down(md) {
     .address-editor-modal {
         .modal-header .close {
             margin-right: 12px;
             margin-bottom: -16px;
-        }
-
-        .btn {
-            margin-bottom: $spacer;
         }
     }
 }

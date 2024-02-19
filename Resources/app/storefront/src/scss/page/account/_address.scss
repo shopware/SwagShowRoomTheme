@@ -34,7 +34,7 @@
         }
 
         .btn-link {
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 400;
             letter-spacing: normal;
             text-transform: none;
@@ -81,10 +81,6 @@
     }
 
     .other-address {
-        .address {
-            font-size: 14px;
-        }
-
         .address-actions {
             > *:last-child {
                 padding: 0 !important;
@@ -112,6 +108,7 @@
         .h3 {
             font-size: $h4-font-size;
             line-height: $line-height-base;
+            font-weight: 400;
         }
 
         .card-body {
@@ -123,14 +120,17 @@
     .address-action-create {
         padding-top: 40px;
         padding-right: 0;
-        position: absolute;
-        bottom: 20px;
-        right: auto;
-        left: 0;
         width: auto;
     }
 
     @include media-breakpoint-up(md) {
+        .address-action-create {
+            position: absolute;
+            bottom: 20px;
+            right: auto;
+            left: 0;
+        }
+
         .account-content {
             .account-welcome {
                 border-bottom: unset;
@@ -166,10 +166,46 @@
             padding-bottom: unset;
         }
     }
+
+    @include media-breakpoint-up(lg) {
+        .account-address {
+            .btn-link {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 .account-address {
     position: relative;
+}
+
+.address-card {
+    margin-bottom: 0;
+
+    .address-list & {
+        @extend .col-sm-12;
+        margin-bottom: 26px;
+    }
+
+    .card-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+.address-actions-defaults {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    width: auto;
+}
+
+.billing-address,
+.shipping-address {
+    --bs-card-spacer-y: 5px;
 }
 
 @include media-breakpoint-up(lg) {

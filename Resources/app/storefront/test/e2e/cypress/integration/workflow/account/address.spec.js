@@ -24,7 +24,7 @@ describe('Account: Address page', { tags: ['@workflow', '@address'] }, () => {
             .should('be.visible')
             .click();
 
-        cy.get('.account-welcome h1').should((element) => {
+        cy.get('.account-welcome-container h1').should((element) => {
             expect(element).to.contain('Addresses');
         });
 
