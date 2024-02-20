@@ -1,3 +1,6 @@
+# 3.2.0
+- TSR-592 - Fehler bei Styles der Address-Komponenten behoben
+
 # 3.1.0
 - Der doppelte Preis in der Quickview-Komponente wurde entfernt
 - `z-index` Probleme im Produktkonfigurator behoben
