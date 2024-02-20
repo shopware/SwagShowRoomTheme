@@ -1,3 +1,6 @@
+# 3.2.0
+- TSR-592 - Fixed styling of address components
+
 # 3.1.0
 - TSR-604 - Removed duplicate price from quickview component
 - Fixed `z-height` problems in the product configurator
