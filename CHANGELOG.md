@@ -1,3 +1,6 @@
+# Next Version
+- TSR-611 - Fixed footer accordion expand on mobile viewports
+
 # 3.2.0
 - TSR-592 - Fixed styling of address components
 

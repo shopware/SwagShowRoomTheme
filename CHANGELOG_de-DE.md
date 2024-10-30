@@ -1,3 +1,6 @@
+# Next Version
+- TSR-611 - Fehler beim Ausklappen des Footer-Akkordeons auf Mobile-Viewports behoben 
+
 # 3.2.0
 - TSR-592 - Fehler bei Styles der Address-Komponenten behoben
 
