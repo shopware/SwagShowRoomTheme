@@ -98,7 +98,7 @@ describe('Quick View: Test if it works correctly', () => {
         cy.get('.search-toggle-btn').click({ force: true });
         cy.get('.header-search-input').type(product.name);
         cy.get('.search-suggest-product-name').contains(product.name);
-        cy.get('.header-search-btn').click();
+        cy.get('.search-suggest-total-link').click();
 
         cy.get('.cms-listing-row').should('be.visible');
         cy.get('.cms-listing-row > :nth-child(1) .product-name').last().click({ force: true });

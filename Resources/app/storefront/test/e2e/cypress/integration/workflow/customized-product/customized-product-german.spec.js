@@ -1,6 +1,6 @@
 let product;
 
-describe('Customize Product: Visual test customize product in German', () => {
+describe('Customized Products: Visual test customized product in German', () => {
 
     beforeEach(() => {
         let salesChannelId = '';

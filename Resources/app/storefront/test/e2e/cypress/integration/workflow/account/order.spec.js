@@ -111,9 +111,9 @@ describe('Account: Order page', { tags: ['@workflow', '@order'] }, () => {
         // change payment
         cy.get('.payment-methods').should('be.visible');
         cy.get('.payment-methods > :nth-child(3)').click();
-        cy.get('#confirmOrderForm > .btn').scrollIntoView();
+        cy.get('#confirmOrderForm > .d-grid > .btn').scrollIntoView();
 
-        cy.get('#confirmOrderForm > .btn').click();
+        cy.get('#confirmOrderForm > .d-grid > .btn').click();
         cy.get('.finish-order-subtitle').should('contain', 'Paid in advance');
     });
 });
