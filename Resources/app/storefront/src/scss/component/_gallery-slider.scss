@@ -11,8 +11,8 @@ $gallery-image-height-sm: 250px;
 $gallery-image-height-md: 500px;
 $gallery-image-height-lg: 800px;
 
-.gallery-slider-thumbnails-image,
-.gallery-slider-image {
+.gallery-slider-item-container .gallery-slider-image,
+.gallery-slider-thumbnails-image {
     width: 100%;
 }
 
