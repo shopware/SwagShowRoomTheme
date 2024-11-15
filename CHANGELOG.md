@@ -1,4 +1,5 @@
-# Next Version
+# 3.3.0 
+- TSR-610 - Fixed aspect ratio in the product detail page image gallery
 - TSR-611 - Fixed footer accordion expand on mobile viewports
 
 # 3.2.0

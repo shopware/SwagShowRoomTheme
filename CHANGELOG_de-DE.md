@@ -1,4 +1,5 @@
-# Next Version
+# 3.3.0
+- TSR-610 - Fehler beim Seitenverhältnis der Gallerie auf Produktdetailseiten behoben
 - TSR-611 - Fehler beim Ausklappen des Footer-Akkordeons auf Mobile-Viewports behoben 
 
 # 3.2.0
