@@ -5,8 +5,7 @@
         <label>Showroom Theme</label>
         <label lang="de-DE">Showroom Theme</label>
         <description>The Shopware Showroom Theme has a clean and light design for perfect product placement. It can be used in any branch, offers additional functions and can be extended by apps.</description>
-        <description lang="de-DE">Das Showroom Theme von Shopware hat ein cleanes und leichtes Design für eine perfekte Produktplatzierung. Es ist in jeder Branche einsetzbar, bietet zusätzliche Funktionen und kann durch Apps erweitert werden.</description>
-        <author>shopware AG</author>
+        <description lang="de-DE">Das Showroom Theme von Shopware hat ein cleanes, leichtes Design für perfekte Produktplatzierung. Es ist vielseitig, bietet Zusatzfunktionen und ist durch Apps erweiterbar.</description>        <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
         <version>3.3.0</version>
         <icon>icon.png</icon>
