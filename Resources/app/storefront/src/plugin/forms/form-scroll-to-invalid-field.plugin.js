@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 import FormScrollToInvalidFieldPlugin from 'src/plugin/forms/form-scroll-to-invalid-field.plugin';
 
 export default class ShowRoomFormScrollToInvalidFieldPlugin extends FormScrollToInvalidFieldPlugin {

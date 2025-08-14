@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 import Plugin from 'src/plugin-system/plugin.class';
 import DomAccess from 'src/helper/dom-access.helper';
 

@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 import OffcanvasMenuPlugin from 'src/plugin/main-menu/offcanvas-menu.plugin';
 
 export default class ShowroomOffcanvasMenuPlugin extends OffcanvasMenuPlugin {

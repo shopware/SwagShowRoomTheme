@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 import deepmerge from 'deepmerge';
 
 import DatePickerPlugin from 'src/plugin/date-picker/date-picker.plugin';

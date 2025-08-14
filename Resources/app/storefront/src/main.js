@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 const PluginManager = window.PluginManager;
 PluginManager.register('LanguageCurrency', () => import( './plugin/language-currency/language-currency.plugin'), '[data-language-currency]');
 PluginManager.register('ShowroomCollapseColumn', () => import('./plugin/collapse-columns/collapse-columns.plugin'), '[data-showroom-collapse]');
