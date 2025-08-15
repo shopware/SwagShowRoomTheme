@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 import CollapseFooterColumnsPlugin from 'src/plugin/collapse/collapse-footer-columns.plugin';
 import deepmerge from 'deepmerge';
 import Iterator from 'src/helper/iterator.helper';

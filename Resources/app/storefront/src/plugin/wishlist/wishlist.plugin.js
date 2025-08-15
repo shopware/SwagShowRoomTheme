@@ -1,3 +1,5 @@
+// SwagShowRoomTheme Copyright (C) 2025 shopware AG
+
 import WishlistWidgetPlugin from 'src/plugin/header/wishlist-widget.plugin.js';
 
 export default class WishlistPlugin extends WishlistWidgetPlugin {
