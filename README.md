@@ -1,4 +1,4 @@
-# ShowRoom Theme for Shopware 6
+# Showroom Theme for Shopware 6
 
 > [!WARNING]  
 > This repository is not actively maintained, since the last compatible Shopware version is 6.6.
